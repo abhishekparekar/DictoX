@@ -3,7 +3,7 @@ import { ArrowRight, Quote } from 'lucide-react';
 
 export default function AboutFounderSection({ onOpenConsultation }) {
   return (
-    <section id="about" className="py-20 md:py-24 lg:py-28 bg-[#f8fafc] text-slate-900 border-b border-slate-200/80">
+    <section id="about" className="py-20 md:py-24 lg:py-28 bg-[#f8fafc] text-slate-900 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
@@ -28,7 +28,7 @@ export default function AboutFounderSection({ onOpenConsultation }) {
             <div className="pt-2">
               <button
                 onClick={onOpenConsultation}
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-none text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all shadow-md hover:shadow-lg cursor-pointer uppercase tracking-wider"
+                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all shadow-md hover:shadow-lg cursor-pointer"
               >
                 <span>Know More About DictoX</span>
                 <ArrowRight className="w-4 h-4" />
@@ -36,26 +36,24 @@ export default function AboutFounderSection({ onOpenConsultation }) {
             </div>
           </div>
 
-          {/* Center Column: Founder Photo (Sharp Rectangle) */}
+          {/* Center Column: Founder Photo */}
           <div className="lg:col-span-3 flex justify-center">
-            <div className="relative w-64 h-72 sm:w-72 sm:h-84 rounded-none overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group">
+            <div className="relative w-64 h-72 sm:w-72 sm:h-84 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group">
               <img
                 src="/images/founder.jpg"
                 alt="Suresh More - Founder DictoX"
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 rounded-none"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent text-white text-center">
-                <div className="text-sm font-bold font-display">Suresh More</div>
+              <div className="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent text-white text-center">
+                <div className="text-base font-bold font-display">Suresh More</div>
                 <div className="text-xs text-[#00f59b] font-medium">Founder & Strategist</div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Founder Profile & Bio Card (Sharp Rectangle) */}
+          {/* Right Column: Founder Profile & Bio Card */}
           <div className="lg:col-span-4">
-            <div className="bg-white border-2 border-slate-200 rounded-none p-6 sm:p-7 shadow-sm space-y-4 relative">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-[#00d084]" />
-
+            <div className="bg-gradient-to-b from-white to-slate-50 border-2 border-slate-200/90 rounded-2xl p-6 sm:p-7 shadow-sm space-y-4">
               <div>
                 <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-500">
                   Meet The Founder
@@ -76,8 +74,8 @@ export default function AboutFounderSection({ onOpenConsultation }) {
                 Today, DictoX works with businesses across different industries, combining advertising strategy, campaign management, creative execution and lead-generation systems under one roof.
               </p>
 
-              {/* Stats Bar: Sharp Rectangle */}
-              <div className="grid grid-cols-3 gap-2 py-3 px-3 rounded-none bg-slate-50 border border-slate-200 text-center">
+              {/* Stats Bar */}
+              <div className="grid grid-cols-3 gap-2 py-3 px-3 rounded-xl bg-slate-100/80 border border-slate-200 text-center">
                 <div>
                   <div className="text-sm font-bold font-display text-slate-900">5+ Years</div>
                   <div className="text-[10px] text-slate-500 font-medium">Experience</div>
@@ -92,8 +90,8 @@ export default function AboutFounderSection({ onOpenConsultation }) {
                 </div>
               </div>
 
-              {/* Quote: Sharp Rectangle */}
-              <div className="relative p-4 bg-emerald-50/80 rounded-none border border-emerald-200 text-slate-800">
+              {/* Quote */}
+              <div className="relative p-4 bg-emerald-50 rounded-xl border border-emerald-200 text-slate-800">
                 <Quote className="w-5 h-5 text-[#00d084] opacity-40 absolute -top-2 -left-2" />
                 <p className="text-xs sm:text-sm italic leading-relaxed font-medium">
                   “Our goal is simple — help businesses get more from every advertising opportunity.”

@@ -27,7 +27,7 @@ export default function IndustriesSection({ onOpenConsultation }) {
   ];
 
   return (
-    <section id="industries" className="py-16 md:py-20 bg-white text-slate-900 border-b border-slate-100">
+    <section id="industries" className="py-16 md:py-20 bg-white text-slate-900 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Header */}
@@ -40,7 +40,7 @@ export default function IndustriesSection({ onOpenConsultation }) {
           </h2>
         </div>
 
-        {/* 10 Industries Grid: Sharp Rectangular Tiles */}
+        {/* 10 Industries Grid: Modern Gradient Tiles */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-10 gap-3.5 sm:gap-4">
           {industries.map((item) => {
             const Icon = item.icon;
@@ -48,12 +48,9 @@ export default function IndustriesSection({ onOpenConsultation }) {
               <button
                 key={item.title}
                 onClick={onOpenConsultation}
-                className="flex flex-col items-center justify-center p-4 rounded-none bg-slate-50 border-2 border-slate-200 hover:bg-white hover:border-[#00d084] hover:shadow-lg transition-all duration-300 group text-center cursor-pointer hover:-translate-y-1 relative"
+                className="flex flex-col items-center justify-center p-4 rounded-xl bg-gradient-to-b from-slate-50 to-white border border-slate-200/90 hover:border-[#00d084] hover:shadow-lg transition-all duration-300 group text-center cursor-pointer hover:-translate-y-1 relative"
               >
-                {/* Top border accent line on hover */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-[#00d084] transition-colors" />
-
-                <div className="w-12 h-12 rounded-none bg-white border border-slate-200 flex items-center justify-center text-slate-800 group-hover:text-[#00d084] group-hover:border-[#00d084]/40 transition-colors shadow-2xs mb-3">
+                <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-800 group-hover:text-[#00d084] group-hover:border-[#00d084]/40 transition-colors shadow-2xs mb-3">
                   <Icon className="w-5 h-5" />
                 </div>
                 <span className="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-slate-950 leading-tight">

@@ -8,41 +8,47 @@ export default function ProcessSection({ onOpenConsultation }) {
       title: 'Understand',
       desc: 'Understand your business, goals & target audience.',
       icon: Search,
+      glow: 'from-blue-500/10 to-transparent',
     },
     {
       num: '02',
       title: 'Strategize',
       desc: 'Build the right advertising strategy based on your business objectives.',
       icon: Lightbulb,
+      glow: 'from-amber-500/10 to-transparent',
     },
     {
       num: '03',
       title: 'Create',
       desc: 'Develop creatives, copy & campaign structure.',
       icon: Palette,
+      glow: 'from-purple-500/10 to-transparent',
     },
     {
       num: '04',
       title: 'Launch',
       desc: 'Launch campaigns across the right advertising platforms.',
       icon: Rocket,
+      glow: 'from-emerald-500/10 to-transparent',
     },
     {
       num: '05',
       title: 'Optimize',
       desc: 'Monitor performance and continuously optimize campaigns.',
       icon: Sliders,
+      glow: 'from-cyan-500/10 to-transparent',
     },
     {
       num: '06',
       title: 'Scale',
       desc: 'Identify opportunities to improve performance and scale what works.',
       icon: TrendingUp,
+      glow: 'from-[#00f59b]/20 to-transparent',
     },
   ];
 
   return (
-    <section className="py-20 md:py-24 lg:py-28 bg-white text-slate-900 border-b border-slate-100">
+    <section className="py-20 md:py-24 lg:py-28 bg-white text-slate-900 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Header */}
@@ -55,24 +61,24 @@ export default function ProcessSection({ onOpenConsultation }) {
           </h2>
         </div>
 
-        {/* 6 Steps Grid: Sharp Rectangles */}
+        {/* 6 Steps Grid: Modern Gradient Boxes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 sm:gap-6 relative">
           {steps.map((step) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.num}
-                className="bg-slate-50 border-2 border-slate-200 hover:border-[#00d084] rounded-none p-6 flex flex-col justify-between hover:bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group relative"
+                className="relative bg-gradient-to-b from-white via-slate-50/60 to-slate-100/40 border-2 border-slate-200/90 hover:border-[#00d084] rounded-2xl p-6 flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group overflow-hidden"
               >
-                {/* Top border accent line on hover */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-[#00d084] transition-colors" />
+                {/* Subtle top gradient glow */}
+                <div className={`absolute top-0 inset-x-0 h-16 bg-gradient-to-b ${step.glow} pointer-events-none`} />
 
-                <div>
+                <div className="relative z-10">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-11 h-11 rounded-none bg-white border border-slate-200 flex items-center justify-center text-slate-800 group-hover:text-[#00d084] group-hover:border-[#00d084]/50 shadow-2xs transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-800 group-hover:text-[#00d084] group-hover:border-[#00d084]/40 shadow-xs transition-colors">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-xs sm:text-sm font-mono font-extrabold text-slate-400 group-hover:text-[#00d084]">
+                    <span className="text-xs sm:text-sm font-mono font-bold text-slate-400 group-hover:text-[#00d084]">
                       {step.num}
                     </span>
                   </div>

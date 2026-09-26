@@ -74,7 +74,7 @@ export default function FAQSection({ onOpenConsultation }) {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#00d084]">
+          <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#00b370]">
             Frequently Asked Questions
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display tracking-tight text-slate-900 mt-2">
@@ -82,8 +82,8 @@ export default function FAQSection({ onOpenConsultation }) {
           </h2>
         </div>
 
-        {/* 2 Column Accordion Grid: Sharp Rectangular Accordions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 max-w-6xl mx-auto">
+        {/* 2 Column Accordion Grid: Rounded-2xl Gradient Accordion Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-6xl mx-auto">
           
           {/* Left Column (01 to 05) */}
           <div className="space-y-4">
@@ -92,22 +92,28 @@ export default function FAQSection({ onOpenConsultation }) {
               return (
                 <div
                   key={faq.num}
-                  className="border-2 border-slate-200 rounded-none bg-slate-50 hover:border-slate-800 overflow-hidden transition-all duration-200"
+                  className={`border-2 rounded-2xl transition-all duration-300 overflow-hidden shadow-xs ${
+                    isOpen 
+                      ? 'border-[#00b370] bg-gradient-to-b from-white to-emerald-50/20 shadow-md' 
+                      : 'border-slate-200/90 bg-white hover:border-slate-300'
+                  }`}
                 >
                   <button
                     onClick={() => toggleLeft(idx)}
-                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-slate-900 hover:text-[#00d084] transition-colors cursor-pointer"
+                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-slate-900 hover:text-[#00b370] transition-colors cursor-pointer"
                   >
-                    <span className="flex items-center gap-2.5">
-                      <span className="text-xs font-mono font-extrabold text-[#00d084]">{faq.num}.</span>
+                    <span className="flex items-center gap-3">
+                      <span className="text-xs font-mono font-extrabold text-[#00b370]">{faq.num}.</span>
                       <span>{faq.q}</span>
                     </span>
-                    <span className="w-8 h-8 rounded-none bg-white border border-slate-300 flex items-center justify-center shrink-0 text-slate-700 shadow-2xs">
+                    <span className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors shadow-2xs ${
+                      isOpen ? 'bg-[#00f59b] text-slate-950 font-bold' : 'bg-slate-100 text-slate-600'
+                    }`}>
                       {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </span>
                   </button>
                   {isOpen && (
-                    <div className="px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                    <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
                       {faq.a}
                     </div>
                   )}
@@ -123,22 +129,28 @@ export default function FAQSection({ onOpenConsultation }) {
               return (
                 <div
                   key={faq.num}
-                  className="border-2 border-slate-200 rounded-none bg-slate-50 hover:border-slate-800 overflow-hidden transition-all duration-200"
+                  className={`border-2 rounded-2xl transition-all duration-300 overflow-hidden shadow-xs ${
+                    isOpen 
+                      ? 'border-[#00b370] bg-gradient-to-b from-white to-emerald-50/20 shadow-md' 
+                      : 'border-slate-200/90 bg-white hover:border-slate-300'
+                  }`}
                 >
                   <button
                     onClick={() => toggleRight(idx)}
-                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-slate-900 hover:text-[#00d084] transition-colors cursor-pointer"
+                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-slate-900 hover:text-[#00b370] transition-colors cursor-pointer"
                   >
-                    <span className="flex items-center gap-2.5">
-                      <span className="text-xs font-mono font-extrabold text-[#00d084]">{faq.num}.</span>
+                    <span className="flex items-center gap-3">
+                      <span className="text-xs font-mono font-extrabold text-[#00b370]">{faq.num}.</span>
                       <span>{faq.q}</span>
                     </span>
-                    <span className="w-8 h-8 rounded-none bg-white border border-slate-300 flex items-center justify-center shrink-0 text-slate-700 shadow-2xs">
+                    <span className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors shadow-2xs ${
+                      isOpen ? 'bg-[#00f59b] text-slate-950 font-bold' : 'bg-slate-100 text-slate-600'
+                    }`}>
                       {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </span>
                   </button>
                   {isOpen && (
-                    <div className="px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                    <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
                       {faq.a}
                     </div>
                   )}
