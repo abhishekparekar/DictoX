@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowRight, MessageSquare, Bot, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowRight, MessageSquare, Bot, CheckCircle2, Sparkles, Search, Layers } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function ServicesSection({ onOpenConsultation }) {
   const services = [
@@ -7,166 +8,156 @@ export default function ServicesSection({ onOpenConsultation }) {
       id: 'meta',
       title: 'Meta Ads',
       subtitle: 'Facebook & Instagram Ads',
-      desc: 'Facebook & Instagram advertising focused on reaching your target audience and generating potential leads and customers.',
-      targetTag: 'High Intent Targeting',
-      cardHoverBorder: 'hover:border-blue-500/50',
-      gradientBoxBg: 'bg-gradient-to-br from-blue-600/12 via-indigo-600/8 to-pink-500/10 border-blue-200/80',
-      boxBadge: 'Meta Partner',
-      boxBadgeColor: 'bg-blue-600 text-white',
-      boxTitle: 'Lead Ad Campaign',
-      boxSub: 'Instant Forms + Reels',
-      features: ['Custom Audience Targeting', 'High-Converting Creatives', 'Instant Lead Forms & Reels'],
+      desc: 'Reach high-intent audiences on Instagram and Facebook with conversion-optimized creatives and instant lead funnels.',
+      tag: 'Meta Partner',
+      tagColor: 'bg-blue-50 text-blue-700 border-blue-200',
+      features: [
+        'Custom & Lookalike Targeting',
+        'High-Converting Reels & Creatives',
+        'Instant Forms & Direct Retargeting',
+      ],
       icon: (
-        <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] p-0.5 shadow-md flex items-center justify-center shrink-0">
-          <span className="text-xs font-black text-white tracking-wider">IG</span>
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white font-bold text-xs shadow-sm shrink-0">
+          IG
         </div>
       ),
+      hoverBorder: 'hover:border-blue-400',
     },
     {
       id: 'google',
       title: 'Google & YouTube Ads',
-      subtitle: 'Search + Video Ads',
-      desc: 'Reach potential customers when they are actively searching for your products or services on Google and watching YouTube.',
-      targetTag: 'Intent Driven',
-      cardHoverBorder: 'hover:border-red-500/50',
-      gradientBoxBg: 'bg-gradient-to-br from-red-600/12 via-amber-500/8 to-orange-500/10 border-red-200/80',
-      boxBadge: 'Rank #1',
-      boxBadgeColor: 'bg-amber-500 text-slate-950 font-black',
-      boxTitle: 'High-Intent Search',
-      boxSub: 'Google Ads + YouTube',
-      features: ['High-Intent Search Ads', 'YouTube In-Stream Video Ads', 'Google Maps Local Pack Ads'],
+      subtitle: 'Search + Video Campaigns',
+      desc: 'Capture ready-to-buy customers actively searching for your services on Google Search, Maps, and YouTube.',
+      tag: 'High-Intent Search',
+      tagColor: 'bg-red-50 text-red-700 border-red-200',
+      features: [
+        'Commercial Keyword Search Ads',
+        'Google Maps Local Pack Ads',
+        'YouTube In-Stream Video Ads',
+      ],
       icon: (
-        <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-red-600 to-rose-700 flex items-center justify-center text-white font-black text-xs shadow-md shrink-0">
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-red-600 to-rose-700 flex items-center justify-center text-white font-black text-xs shadow-sm shrink-0">
           YT
         </div>
       ),
+      hoverBorder: 'hover:border-red-400',
     },
     {
       id: 'whatsapp',
       title: 'WhatsApp API',
       subtitle: 'Connect → Follow Up → Convert',
-      desc: 'Connect your advertising campaigns with WhatsApp for faster lead communication, instant follow-ups and customer engagement.',
-      targetTag: '< 90s Response',
-      cardHoverBorder: 'hover:border-emerald-500/50',
-      gradientBoxBg: 'bg-gradient-to-br from-emerald-600/12 via-teal-600/8 to-green-500/10 border-emerald-200/80',
-      boxBadge: '98% Open Rate',
-      boxBadgeColor: 'bg-emerald-600 text-white',
-      boxTitle: 'Auto Welcome & CRM',
-      boxSub: 'Green Tick Certified',
-      features: ['Automated Welcome Message', 'Green Tick Verified API', '98% Message Open Rate'],
+      desc: 'Instant automated welcome, verification, and lead qualification via official Meta WhatsApp Business API.',
+      tag: '98% Open Rate',
+      tagColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+      features: [
+        'Automated Instant Welcome Bot',
+        'Green Tick Verified Meta API',
+        'Broadcasts & Smart Drip Sequences',
+      ],
       icon: (
-        <div className="w-11 h-11 rounded-xl bg-[#25D366] flex items-center justify-center text-white shadow-md shrink-0">
+        <div className="w-10 h-10 rounded-xl bg-[#25D366] flex items-center justify-center text-white shadow-sm shrink-0">
           <MessageSquare className="w-5 h-5 fill-white" />
         </div>
       ),
+      hoverBorder: 'hover:border-emerald-400',
     },
     {
       id: 'automation',
       title: 'Automation Services',
       subtitle: 'Save Time, Grow Faster',
-      desc: 'Automate repetitive marketing and lead-management processes to improve team efficiency, speed to lead, and closing rate.',
-      targetTag: 'Zero Manual Work',
-      cardHoverBorder: 'hover:border-purple-500/50',
-      gradientBoxBg: 'bg-gradient-to-br from-purple-600/12 via-violet-600/8 to-indigo-500/10 border-purple-200/80',
-      boxBadge: '24/7 Sync',
-      boxBadgeColor: 'bg-purple-600 text-white',
-      boxTitle: 'CRM & Funnels',
-      boxSub: 'Pabbly, Zapier, Webhooks',
-      features: ['CRM Auto-Sync (Google Sheets/Zoho)', 'Instant Lead Distribution', '24/7 Webhook Integration'],
+      desc: 'Auto-sync incoming leads to Google Sheets, CRM, and sales reps within seconds with zero manual friction.',
+      tag: '24/7 CRM Sync',
+      tagColor: 'bg-purple-50 text-purple-700 border-purple-200',
+      features: [
+        'Instant Multi-Channel CRM Sync',
+        'Speed-To-Lead Alert System',
+        'Zero Manual Data Entry Workflows',
+      ],
       icon: (
-        <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-700 flex items-center justify-center text-white shadow-md shrink-0">
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-700 flex items-center justify-center text-white shadow-sm shrink-0">
           <Bot className="w-5 h-5" />
         </div>
       ),
+      hoverBorder: 'hover:border-purple-400',
     },
   ];
 
   return (
-    <section id="services" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-b from-white via-slate-50/60 to-white text-slate-900 border-b border-slate-200">
+    <section id="services" className="py-10 sm:py-14 md:py-16 bg-[#fafcfb] text-slate-900 border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-16">
-          <div className="space-y-2">
-            <span className="inline-block text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#00b370]">
-              Our Services
+        {/* Compact Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10">
+          <div className="space-y-1">
+            <span className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#00b370]">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Our Capabilities</span>
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display tracking-tight text-slate-900 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display tracking-tight text-slate-900 leading-tight">
               Performance Marketing Services
             </h2>
+            <p className="text-xs sm:text-sm text-slate-500 font-medium max-w-xl">
+              Engineered to turn ad spend into qualified inquiries, predictable sales, and measurable revenue growth.
+            </p>
           </div>
 
-          <button
-            onClick={onOpenConsultation}
-            className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-slate-900 hover:text-[#00b370] transition-colors group cursor-pointer self-start sm:self-auto"
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-900 hover:text-[#00b370] transition-colors group cursor-pointer self-start sm:self-auto shrink-0 pb-1"
           >
-            <span>Explore Our Services</span>
+            <span>Explore All Services</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-[#00b370]" />
-          </button>
+          </Link>
         </div>
 
-        {/* 4 Service Cards Grid: Perfect Proportional Gradient Cards for Mobile, Tablet, PC */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 xl:gap-7 items-stretch">
+        {/* 4 Crisp, Compact Service Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-stretch">
           {services.map((item) => (
             <div
               key={item.id}
-              className={`bg-white border-2 border-slate-200/90 rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-1.5 group ${item.cardHoverBorder}`}
+              className={`bg-white border border-slate-200/90 rounded-2xl p-5 flex flex-col justify-between shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group ${item.hoverBorder}`}
             >
               <div>
-                {/* 1. Proper Looking Gradient Showcase Box (Top Feature Box) */}
-                <div className={`w-full rounded-xl p-3.5 border mb-5 ${item.gradientBoxBg} transition-all duration-300 group-hover:shadow-sm`}>
-                  <div className="flex items-center justify-between gap-2 mb-2">
-                    <div className="flex items-center gap-2.5">
-                      {item.icon}
-                      <div>
-                        <div className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
-                          {item.boxTitle}
-                        </div>
-                        <div className="text-[11px] font-medium text-slate-600 leading-tight mt-0.5">
-                          {item.boxSub}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Bottom strip of the gradient box: Tag and Badge */}
-                  <div className="flex items-center justify-between gap-2 pt-2 border-t border-slate-200/60 text-[10px] font-semibold">
-                    <span className="text-slate-600 font-medium">
-                      {item.targetTag}
-                    </span>
-                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold shrink-0 ${item.boxBadgeColor}`}>
-                      {item.boxBadge}
-                    </span>
-                  </div>
+                {/* Top Row: Icon + Badge */}
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  {item.icon}
+                  <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full border ${item.tagColor}`}>
+                    {item.tag}
+                  </span>
                 </div>
 
-                {/* 2. Service Title & Subtitle */}
-                <h3 className="text-xl sm:text-2xl font-bold font-display text-slate-900 group-hover:text-slate-950 transition-colors">
+                {/* Service Title & Subtitle */}
+                <h3 className="text-lg sm:text-xl font-bold font-display text-slate-900 group-hover:text-slate-950 transition-colors leading-snug">
                   {item.title}
                 </h3>
-                <div className="text-xs sm:text-sm font-bold text-[#00b370] mt-1 mb-4">
+                <div className="text-xs font-semibold text-[#00b370] mt-0.5 mb-2.5">
                   {item.subtitle}
                 </div>
 
-                {/* 3. Micro Features Checklist - Clean, Crisp & High-Impact */}
-                <div className="space-y-2.5 pt-3 border-t border-slate-100">
+                {/* Clear 1-2 sentence description */}
+                <p className="text-xs text-slate-600 leading-relaxed font-normal mb-4">
+                  {item.desc}
+                </p>
+
+                {/* Micro Features Checklist */}
+                <div className="space-y-2 pt-3 border-t border-slate-100">
                   {item.features.map((feat, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs sm:text-[13px] text-slate-800 font-semibold">
-                      <CheckCircle2 className="w-4 h-4 text-[#00b370] shrink-0" />
-                      <span>{feat}</span>
+                    <div key={idx} className="flex items-start gap-2 text-xs text-slate-700 font-medium">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#00b370] shrink-0 mt-0.5" />
+                      <span className="leading-snug">{feat}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* 5. Action Button: Proper Gradient Button with High-Contrast Text */}
-              <div className="pt-6 mt-6 border-t border-slate-100">
+              {/* Action Button */}
+              <div className="pt-4 mt-4 border-t border-slate-100">
                 <button
                   onClick={onOpenConsultation}
-                  className="w-full py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:shadow-[0_6px_20px_rgba(0,245,155,0.35)] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                  className="w-full py-2.5 px-3.5 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:shadow-[0_4px_16px_rgba(0,245,155,0.3)] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
                 >
                   <span>Explore Service</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                 </button>
               </div>
 
@@ -178,3 +169,4 @@ export default function ServicesSection({ onOpenConsultation }) {
     </section>
   );
 }
+
