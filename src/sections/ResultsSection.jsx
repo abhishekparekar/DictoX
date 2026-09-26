@@ -37,19 +37,19 @@ export default function ResultsSection({ onOpenConsultation }) {
   ];
 
   return (
-    <section id="results" className="py-10 sm:py-14 md:py-18 bg-[#051714] text-white relative overflow-hidden">
+    <section id="results" className="py-8 sm:py-12 md:py-16 bg-[#051714] text-white relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/3 left-1/3 w-[600px] h-[350px] bg-[#00f59b]/8 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5 sm:mb-8">
           <div>
             <span className="text-xs sm:text-[13px] font-mono uppercase tracking-[0.2em] text-[#00f59b] font-bold block mb-1">
               REAL RESULTS
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display tracking-tight text-white leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white leading-tight">
               Real Campaigns. Real Results.
             </h2>
           </div>
@@ -59,21 +59,21 @@ export default function ResultsSection({ onOpenConsultation }) {
             className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-300 hover:text-[#00f59b] transition-colors cursor-pointer group self-start sm:self-auto pb-1"
           >
             <span>View All Case Studies</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
 
         {/* 3 White Horizontal Case Study Cards matching Screenshot 2 */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 items-stretch">
           {caseStudies.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-200/90 text-slate-900 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group"
+              className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border border-slate-200/90 text-slate-900 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group"
             >
               <div>
                 <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row">
-                  {/* Left Thumbnail */}
-                  <div className="w-full sm:w-44 lg:w-full xl:w-44 h-44 sm:h-auto lg:h-44 xl:h-auto shrink-0 overflow-hidden bg-slate-900 relative">
+                  {/* Thumbnail */}
+                  <div className="w-full sm:w-44 lg:w-full xl:w-44 h-36 sm:h-auto lg:h-40 xl:h-auto shrink-0 overflow-hidden bg-slate-900 relative">
                     <img
                       src={item.image}
                       alt={item.industry}
@@ -81,10 +81,10 @@ export default function ResultsSection({ onOpenConsultation }) {
                     />
                   </div>
 
-                  {/* Right Details */}
-                  <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+                  {/* Details */}
+                  <div className="p-3.5 sm:p-4 lg:p-5 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-base font-bold font-display text-slate-900 leading-tight">
+                      <h3 className="text-sm sm:text-base font-bold font-display text-slate-900 leading-tight">
                         {item.industry}
                       </h3>
                       <div className="text-xs text-slate-500 font-medium mb-3">

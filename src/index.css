@@ -80,3 +80,23 @@
 .radial-glow-corner {
   background: radial-gradient(circle at top right, rgba(24, 230, 160, 0.14), transparent 50%);
 }
+
+/* Continuous infinite marquee for logo wall */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 22s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
