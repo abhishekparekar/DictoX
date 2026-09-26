@@ -42,43 +42,43 @@ export default function ProcessSection({ onOpenConsultation }) {
   ];
 
   return (
-    <section className="py-14 sm:py-16 bg-white text-slate-900 border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 md:py-24 lg:py-28 bg-white text-slate-900 border-b border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#00d084]">
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+          <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#00d084]">
             How We Work
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold font-display tracking-tight text-slate-900 mt-1">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display tracking-tight text-slate-900 mt-2">
             From Strategy To Customers — We Handle It All.
           </h2>
         </div>
 
-        {/* 6 Steps in 1 Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 relative">
+        {/* 6 Steps Grid: Comfortable width across all devices */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 sm:gap-6 relative">
           {steps.map((step) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.num}
-                className="bg-slate-50/80 border border-slate-200/90 rounded-2xl p-4 flex flex-col justify-between hover:bg-white hover:border-[#00d084]/60 hover:shadow-md transition-all duration-300 group"
+                className="bg-slate-50/80 border-2 border-slate-100 hover:border-[#00d084]/60 rounded-3xl p-5 sm:p-6 flex flex-col justify-between hover:bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="w-8 h-8 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-700 group-hover:text-[#00d084] group-hover:border-[#00d084]/40 shadow-xs transition-colors">
-                      <Icon className="w-4 h-4" />
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-800 group-hover:text-[#00d084] group-hover:border-[#00d084]/50 shadow-xs transition-colors">
+                      <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[11px] font-mono font-bold text-slate-400 group-hover:text-[#00d084]">
+                    <span className="text-xs sm:text-sm font-mono font-bold text-slate-400 group-hover:text-[#00d084]">
                       {step.num}
                     </span>
                   </div>
 
-                  <h3 className="text-sm font-bold font-display text-slate-900 mb-1.5 group-hover:text-[#00d084] transition-colors">
+                  <h3 className="text-base sm:text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-[#00d084] transition-colors">
                     {step.title}
                   </h3>
 
-                  <p className="text-[11px] text-slate-500 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                     {step.desc}
                   </p>
                 </div>

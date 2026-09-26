@@ -69,45 +69,45 @@ export default function FAQSection({ onOpenConsultation }) {
   };
 
   return (
-    <section className="py-14 sm:py-16 bg-white text-slate-900 border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 md:py-24 lg:py-28 bg-white text-slate-900 border-b border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#00d084]">
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+          <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#00d084]">
             Frequently Asked Questions
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold font-display tracking-tight text-slate-900 mt-1">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display tracking-tight text-slate-900 mt-2">
             Got Questions? We've Got Answers.
           </h2>
         </div>
 
         {/* 2 Column Accordion Grid (5 left, 5 right = 10 FAQs) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 max-w-6xl mx-auto">
           
           {/* Left Column (01 to 05) */}
-          <div className="space-y-3">
+          <div className="space-y-4">
             {leftFaqs.map((faq, idx) => {
               const isOpen = openIndex === `l-${idx}`;
               return (
                 <div
                   key={faq.num}
-                  className="border border-slate-200 rounded-xl bg-slate-50/60 overflow-hidden transition-all"
+                  className="border-2 border-slate-100 rounded-2xl bg-slate-50/70 hover:border-slate-200 overflow-hidden transition-all duration-200"
                 >
                   <button
                     onClick={() => toggleLeft(idx)}
-                    className="w-full p-4 text-left flex items-center justify-between gap-3 font-semibold text-xs sm:text-sm text-slate-900 hover:text-[#00d084] transition-colors"
+                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-slate-900 hover:text-[#00d084] transition-colors cursor-pointer"
                   >
-                    <span className="flex items-center gap-2">
-                      <span className="text-[11px] font-mono font-bold text-slate-400">{faq.num}.</span>
+                    <span className="flex items-center gap-2.5">
+                      <span className="text-xs font-mono font-extrabold text-[#00d084]">{faq.num}.</span>
                       <span>{faq.q}</span>
                     </span>
-                    <span className="w-6 h-6 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 text-slate-600">
-                      {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+                    <span className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 text-slate-700 shadow-2xs">
+                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </span>
                   </button>
                   {isOpen && (
-                    <div className="px-4 pb-4 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                    <div className="px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 pt-4">
                       {faq.a}
                     </div>
                   )}
@@ -117,28 +117,28 @@ export default function FAQSection({ onOpenConsultation }) {
           </div>
 
           {/* Right Column (06 to 10) */}
-          <div className="space-y-3">
+          <div className="space-y-4">
             {rightFaqs.map((faq, idx) => {
               const isOpen = openIndex === `r-${idx}`;
               return (
                 <div
                   key={faq.num}
-                  className="border border-slate-200 rounded-xl bg-slate-50/60 overflow-hidden transition-all"
+                  className="border-2 border-slate-100 rounded-2xl bg-slate-50/70 hover:border-slate-200 overflow-hidden transition-all duration-200"
                 >
                   <button
                     onClick={() => toggleRight(idx)}
-                    className="w-full p-4 text-left flex items-center justify-between gap-3 font-semibold text-xs sm:text-sm text-slate-900 hover:text-[#00d084] transition-colors"
+                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-slate-900 hover:text-[#00d084] transition-colors cursor-pointer"
                   >
-                    <span className="flex items-center gap-2">
-                      <span className="text-[11px] font-mono font-bold text-slate-400">{faq.num}.</span>
+                    <span className="flex items-center gap-2.5">
+                      <span className="text-xs font-mono font-extrabold text-[#00d084]">{faq.num}.</span>
                       <span>{faq.q}</span>
                     </span>
-                    <span className="w-6 h-6 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 text-slate-600">
-                      {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+                    <span className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 text-slate-700 shadow-2xs">
+                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </span>
                   </button>
                   {isOpen && (
-                    <div className="px-4 pb-4 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                    <div className="px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 pt-4">
                       {faq.a}
                     </div>
                   )}

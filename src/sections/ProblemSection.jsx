@@ -36,61 +36,61 @@ export default function ProblemSection({ onOpenConsultation }) {
   ];
 
   return (
-    <section className="relative py-14 sm:py-16 bg-[#051518] text-white overflow-hidden">
+    <section className="relative py-20 md:py-24 lg:py-28 bg-[#051518] text-white overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#00f59b]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#00f59b]/8 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         
         {/* Header with handwritten note */}
-        <div className="relative text-center max-w-3xl mx-auto mb-10">
+        <div className="relative text-center max-w-4xl mx-auto mb-14 sm:mb-16">
           {/* Handwritten Sticky Note */}
-          <div className="hidden md:flex absolute -top-3 right-0 lg:-right-16 items-center gap-1.5 rotate-6">
-            <span className="font-handwriting text-xl sm:text-2xl text-[#00f59b] font-bold">
+          <div className="hidden lg:flex absolute -top-4 right-0 xl:-right-12 items-center gap-2 rotate-6">
+            <span className="font-handwriting text-2xl sm:text-3xl text-[#00f59b] font-bold drop-shadow">
               Same Problems?<br />Let's Fix This
             </span>
-            <span className="text-2xl text-[#00f59b]">↗</span>
+            <span className="text-3xl text-[#00f59b]">↗</span>
           </div>
 
-          <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#00f59b] font-semibold">
+          <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-[#00f59b] font-bold">
             Is Your Advertising Really Working?
           </span>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display tracking-tight text-white mt-2 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display tracking-tight text-white mt-3 leading-tight">
             Getting Leads Is Not Enough.<br />
             <span className="text-slate-300">
               You Need Customers, Sales & Consistent Growth.
             </span>
           </h2>
 
-          <p className="text-xs sm:text-sm text-slate-400 mt-2">
+          <p className="text-sm sm:text-base md:text-lg text-slate-300 mt-4 max-w-2xl mx-auto leading-relaxed">
             You’re spending on advertising — but is it actually helping your business grow?
           </p>
         </div>
 
-        {/* 5 Problem Cards in 1 Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+        {/* 5 Problem Cards: Full width grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6">
           {problems.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.num}
-                className="bg-[#091f22]/90 border border-white/10 hover:border-[#00f59b]/40 rounded-xl p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#00f59b]/5 group"
+                className="bg-[#091f22]/90 border border-white/15 hover:border-[#00f59b]/50 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-[#00f59b]/10 group"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-mono font-bold text-slate-500 group-hover:text-[#00f59b] transition-colors">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-sm font-mono font-extrabold text-slate-400 group-hover:text-[#00f59b] transition-colors">
                       {item.num}
                     </span>
-                    <div className="w-8 h-8 rounded-lg bg-white/5 group-hover:bg-[#00f59b]/15 flex items-center justify-center text-slate-300 group-hover:text-[#00f59b] transition-colors">
-                      <Icon className="w-4 h-4" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 group-hover:bg-[#00f59b]/15 flex items-center justify-center text-slate-200 group-hover:text-[#00f59b] transition-colors">
+                      <Icon className="w-5 h-5" />
                     </div>
                   </div>
 
-                  <h3 className="text-sm font-bold font-display text-white mb-2 leading-snug">
+                  <h3 className="text-base sm:text-lg font-bold font-display text-white mb-2.5 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
                     {item.desc}
                   </p>
                 </div>
@@ -100,16 +100,16 @@ export default function ProblemSection({ onOpenConsultation }) {
         </div>
 
         {/* Bottom Callout & CTA */}
-        <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
-          <span className="text-sm font-medium text-slate-300">
+        <div className="mt-14 sm:mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-6 text-center">
+          <span className="text-base sm:text-lg font-semibold text-slate-200">
             It Should Help You Get Customers, Generate Sales & Grow Your Business.
           </span>
           <button
             onClick={onOpenConsultation}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all duration-200 shadow-md hover:scale-102"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-[#00f59b]/25 hover:-translate-y-0.5 cursor-pointer"
           >
             <span>Get A Free Strategy Consultation</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 
