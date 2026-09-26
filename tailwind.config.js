@@ -28,6 +28,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         display: ['Space Grotesk', 'sans-serif'],
+        handwriting: ['Caveat', 'cursive'],
       },
       maxWidth: {
         'content': '1280px',

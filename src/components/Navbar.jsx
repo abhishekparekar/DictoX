@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, PhoneCall, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 export default function Navbar({ onOpenConsultation }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -7,11 +7,7 @@ export default function Navbar({ onOpenConsultation }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -40,39 +36,34 @@ export default function Navbar({ onOpenConsultation }) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-brand-dark/95 backdrop-blur-md border-b border-brand-border/80 shadow-lg shadow-black/40 py-3.5'
-          : 'bg-brand-dark/70 backdrop-blur-sm border-b border-white/5 py-5'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80 py-3'
+          : 'bg-white border-b border-slate-100 py-3.5'
       }`}
     >
-      <div className="max-w-content mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
-        <a href="#home" className="flex items-center gap-3 group focus:outline-none">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-emerald to-brand-deepEmerald p-0.5 shadow-glow-sm transition-transform duration-300 group-hover:scale-105">
-            <div className="w-full h-full bg-brand-dark rounded-[10px] flex items-center justify-center">
-              <span className="font-display font-extrabold text-xl tracking-tight text-white flex items-center">
-                D<span className="text-brand-emerald">X</span>
-              </span>
-            </div>
-          </div>
+        <a href="#home" className="flex items-center gap-2 group focus:outline-none">
           <div className="flex flex-col">
-            <span className="font-display font-bold text-xl tracking-tight text-white flex items-center gap-1">
-              Dicto<span className="text-brand-emerald">X</span>
-              <span className="text-xs uppercase tracking-widest text-brand-emerald/90 font-mono font-medium ml-1 px-1.5 py-0.5 bg-brand-emerald/10 rounded border border-brand-emerald/20">Agency</span>
-            </span>
-            <span className="text-[10px] text-zinc-400 font-medium tracking-wide -mt-0.5 hidden sm:inline-block">
-              Performance Marketing
+            <div className="flex items-baseline">
+              <span className="font-display font-extrabold text-2xl tracking-tight text-slate-900">
+                Dicto<span className="text-[#00d084]">X</span>
+              </span>
+              <span className="text-[10px] font-semibold text-slate-400 ml-0.5">®</span>
+            </div>
+            <span className="text-[9px] uppercase tracking-[0.25em] text-slate-500 font-semibold -mt-1">
+              Marketing
             </span>
           </div>
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2 bg-brand-surface/70 border border-brand-border/60 rounded-full px-5 py-1.5 shadow-inner-glow">
+        <nav className="hidden lg:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="text-sm font-medium text-zinc-300 hover:text-brand-emerald px-3.5 py-1.5 rounded-full transition-colors duration-200 hover:bg-white/5"
+              className="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors duration-200"
             >
               {link.name}
             </a>
@@ -80,20 +71,12 @@ export default function Navbar({ onOpenConsultation }) {
         </nav>
 
         {/* Desktop Primary CTA */}
-        <div className="hidden md:flex items-center gap-4">
-          <a
-            href="tel:+917796407424"
-            className="hidden xl:flex items-center gap-2 text-xs font-medium text-zinc-400 hover:text-brand-emerald transition-colors"
-          >
-            <PhoneCall className="w-3.5 h-3.5 text-brand-emerald" />
-            +91 7796407424
-          </a>
+        <div className="hidden md:flex items-center">
           <button
             onClick={onOpenConsultation}
-            className="btn-primary text-xs sm:text-sm font-semibold !py-2.5 !px-5 flex items-center gap-2 shadow-glow-sm hover:shadow-glow-md"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5"
           >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Get Free Consultation</span>
+            <span>Get Free Strategy Consultation</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
           </button>
         </div>
@@ -102,14 +85,13 @@ export default function Navbar({ onOpenConsultation }) {
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={onOpenConsultation}
-            className="btn-primary text-xs font-semibold !py-2 !px-3.5 flex items-center gap-1.5"
+            className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084]"
           >
             <span>Consult</span>
-            <ArrowRight className="w-3 h-3" />
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-brand-surface border border-brand-border text-zinc-300 hover:text-white hover:bg-brand-border transition-colors"
+            className="p-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -119,38 +101,28 @@ export default function Navbar({ onOpenConsultation }) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[65px] bg-brand-dark/98 border-b border-brand-border shadow-2xl backdrop-blur-xl animate-in slide-in-from-top-4 duration-200">
-          <div className="max-w-content mx-auto px-6 py-6 flex flex-col gap-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-base font-medium text-zinc-200 hover:text-brand-emerald py-2 border-b border-brand-border/40 flex items-center justify-between"
-              >
-                <span>{link.name}</span>
-                <ArrowRight className="w-4 h-4 text-brand-emerald/70" />
-              </a>
-            ))}
-            
-            <div className="pt-4 flex flex-col gap-3">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenConsultation();
-                }}
-                className="btn-primary w-full text-sm font-semibold justify-center py-3"
-              >
-                <Sparkles className="w-4 h-4" />
-                <span>Get Free Strategy Consultation</span>
-              </button>
-              <div className="text-center text-xs text-zinc-400 pt-2">
-                Call Founder directly:{' '}
-                <a href="tel:+917796407424" className="text-brand-emerald font-semibold underline">
-                  +91 7796407424
-                </a>
-              </div>
-            </div>
+        <div className="lg:hidden bg-white border-b border-slate-200 shadow-xl px-5 py-4 flex flex-col gap-2">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
+              className="text-sm font-medium text-slate-700 hover:text-[#00d084] py-2 border-b border-slate-100 flex items-center justify-between"
+            >
+              <span>{link.name}</span>
+              <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+            </a>
+          ))}
+          <div className="pt-3">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenConsultation();
+              }}
+              className="w-full text-center py-2.5 rounded-full text-xs font-semibold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] shadow-sm"
+            >
+              Get Free Strategy Consultation →
+            </button>
           </div>
         </div>
       )}

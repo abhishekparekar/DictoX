@@ -32,7 +32,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-dark text-white flex flex-col selection:bg-brand-emerald selection:text-brand-dark">
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-brand-emerald selection:text-brand-dark overflow-x-hidden">
       {/* 09. Navigation / Sticky Header */}
       <Navbar onOpenConsultation={handleOpenConsultation} />
 

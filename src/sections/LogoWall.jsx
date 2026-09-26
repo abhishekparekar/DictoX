@@ -1,60 +1,50 @@
 import React from 'react';
-import { ShieldCheck } from 'lucide-react';
-
-const brands = [
-  { name: 'Kulkarni Builders', category: 'Real Estate' },
-  { name: 'Aura Smile Clinics', category: 'Healthcare' },
-  { name: 'SkillForge Tech', category: 'Education' },
-  { name: 'EcoDrive Motors', category: 'Automobile' },
-  { name: 'FitPulse Studios', category: 'Gym & Fitness' },
-  { name: 'Urban Dine Café', category: 'Hospitality' },
-  { name: 'Goyal & Landmark', category: 'Real Estate' },
-  { name: 'PrimeCare Hospitals', category: 'Healthcare' },
-  { name: 'Apex Career Academy', category: 'Education' },
-  { name: 'Luxe Salon & Spa', category: 'Wellness' },
-  { name: 'Mahindra Dealer PCMC', category: 'Automobile' },
-  { name: 'Deshmukh Dental', category: 'Healthcare' }
-];
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function LogoWall() {
-  return (
-    <section className="py-16 bg-brand-surface/30 border-y border-brand-border/60">
-      <div className="max-w-content mx-auto px-4 sm:px-6">
-        <div className="text-center space-y-2 mb-10">
-          <span className="text-[11px] font-mono tracking-widest uppercase text-brand-emerald font-semibold">
-            Track Record Across India
-          </span>
-          <h3 className="text-2xl sm:text-3xl font-bold font-display text-white">
-            Trusted By 500+ Brands & Growing
-          </h3>
-          <p className="text-xs sm:text-sm text-zinc-400 max-w-xl mx-auto">
-            From local Pune regional leaders to high-growth Indian enterprises across real estate, education, healthcare, and retail.
-          </p>
-        </div>
+  const brands = [
+    { name: 'TATA', color: 'text-blue-900', font: 'font-extrabold tracking-widest' },
+    { name: 'mahindra', color: 'text-red-600', font: 'font-black tracking-wider lowercase' },
+    { name: 'KIA', color: 'text-red-700', font: 'font-black tracking-widest' },
+    { name: 'Godrej', color: 'text-slate-800', font: 'font-serif italic font-bold' },
+    { name: 'Amul', color: 'text-red-600', font: 'font-serif font-black tracking-tight' },
+    { name: 'HDFC BANK', color: 'text-blue-800', font: 'font-bold tracking-tight' },
+    { name: 'croma', color: 'text-teal-700', font: 'font-bold tracking-wide lowercase' },
+    { name: 'zepto', color: 'text-purple-700', font: 'font-extrabold tracking-tight lowercase' },
+    { name: 'cult.fit', color: 'text-orange-600', font: 'font-black lowercase tracking-tight' },
+    { name: 'asianpaints', color: 'text-red-500', font: 'font-extrabold tracking-tighter' },
+  ];
 
-        {/* Clean Logo Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
-          {brands.map((b, i) => (
-            <div
-              key={i}
-              className="p-4 rounded-xl bg-brand-dark/70 border border-brand-border/70 flex flex-col items-center justify-center text-center group hover:border-brand-emerald/40 hover:bg-brand-surface transition-all duration-300"
-            >
-              <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center font-display font-bold text-xs text-zinc-400 group-hover:text-brand-emerald transition-colors">
-                {b.name.substring(0, 2).toUpperCase()}
-              </div>
-              <span className="text-xs font-semibold text-zinc-300 group-hover:text-white transition-colors mt-2">
+  return (
+    <section className="bg-slate-50/80 border-b border-slate-200/80 py-5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          
+          {/* Label with arrows */}
+          <div className="flex items-center gap-2 text-slate-500 shrink-0">
+            <button className="p-1 rounded hover:bg-slate-200 transition-colors" aria-label="Previous brands">
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-600">
+              Trusted By 500+ Brands
+            </span>
+            <button className="p-1 rounded hover:bg-slate-200 transition-colors" aria-label="Next brands">
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Brands List */}
+          <div className="flex flex-wrap items-center justify-center lg:justify-between gap-6 sm:gap-8 flex-1 w-full overflow-hidden">
+            {brands.map((b) => (
+              <span
+                key={b.name}
+                className={`text-sm sm:text-base ${b.color} ${b.font} opacity-80 hover:opacity-100 transition-opacity cursor-default select-none`}
+              >
                 {b.name}
               </span>
-              <span className="text-[10px] text-zinc-500 font-mono mt-0.5">
-                {b.category}
-              </span>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <div className="mt-8 flex items-center justify-center gap-2 text-xs text-zinc-400">
-          <ShieldCheck className="w-4 h-4 text-brand-emerald" />
-          <span>Real, authorized business collaborations across Maharashtra and pan-India.</span>
         </div>
       </div>
     </section>

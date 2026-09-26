@@ -1,94 +1,130 @@
 import React, { useState } from 'react';
-import { faqsData } from '../data/faqs';
-import { Plus, Minus, HelpCircle, ArrowRight } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 
 export default function FAQSection({ onOpenConsultation }) {
-  const [openId, setOpenId] = useState('faq-1');
+  const [openIndex, setOpenIndex] = useState(null);
 
-  const toggleFAQ = (id) => {
-    setOpenId(openId === id ? null : id);
+  const leftFaqs = [
+    {
+      q: 'What does DictoX Marketing do?',
+      a: 'DictoX Marketing is a performance marketing agency specializing in qualified customer acquisition through Meta Ads, Google & YouTube Ads, WhatsApp API automation, and high-converting funnel design.',
+    },
+    {
+      q: 'Which services does DictoX provide?',
+      a: 'We offer full-service performance marketing: Meta Ads (FB & IG), Google Search & YouTube Ads, WhatsApp Business API automation, creative ad design, copywriting, and CRM integration.',
+    },
+    {
+      q: 'Do you work with businesses across India?',
+      a: 'Yes, we manage advertising campaigns for ambitious brands across India in real estate, education, healthcare, ecommerce, restaurants, salons, and franchise businesses.',
+    },
+    {
+      q: 'Is the advertising budget separate from your service fees?',
+      a: 'Yes. Ad spend is paid directly to advertising platforms (Meta/Google) from your dedicated ad account for 100% transparency. Our fee covers strategy, execution, creative production, and daily optimization.',
+    },
+  ];
+
+  const rightFaqs = [
+    {
+      q: 'How much should I spend on advertising?',
+      a: 'We recommend starting with an ad budget of ₹20,000 to ₹50,000 per month depending on your industry and market size to test, gather data, and validate cost per acquisition.',
+    },
+    {
+      q: 'Do you provide ad creatives and copywriting?',
+      a: 'Yes! We create all high-converting ad visuals, carousel graphics, reel scripts, and conversion copy tailored specifically to your target demographic.',
+    },
+    {
+      q: 'How quickly can we start?',
+      a: 'Once we complete your strategy consultation and audit, our team builds the campaign structure, creatives, and tracking setup to launch within 4 to 7 business days.',
+    },
+    {
+      q: 'Do you provide a money-back guarantee?',
+      a: 'While ad platforms charge for ad impressions, we work on performance milestones and transparent daily dashboards so you have complete control over spend and results.',
+    },
+  ];
+
+  const toggleLeft = (idx) => {
+    setOpenIndex(openIndex === `l-${idx}` ? null : `l-${idx}`);
+  };
+
+  const toggleRight = (idx) => {
+    setOpenIndex(openIndex === `r-${idx}` ? null : `r-${idx}`);
   };
 
   return (
-    <section id="faq" className="py-20 md:py-28 bg-[#F5F8F7] text-[#0A1714] relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        {/* Section Header */}
-        <div className="text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider font-mono">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>Got Questions? We Have Answers</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-[#0A1714] tracking-tight">
+    <section className="py-14 sm:py-16 bg-white text-slate-900 border-b border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#00d084]">
             Frequently Asked Questions
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold font-display tracking-tight text-slate-900 mt-1">
+            Got Questions? We've Got Answers.
           </h2>
-
-          <p className="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-            Everything you need to know about working with DictoX Marketing, our advertising philosophy, ad budgets, and onboarding timelines.
-          </p>
         </div>
 
-        {/* 10 Accordion Items */}
-        <div className="mt-14 space-y-3.5">
-          {faqsData.map((faq) => {
-            const isOpen = openId === faq.id;
-            return (
-              <div
-                key={faq.id}
-                className="bg-white border border-zinc-200/90 rounded-2xl overflow-hidden transition-all duration-200 shadow-sm hover:border-emerald-300"
-              >
-                <button
-                  type="button"
-                  onClick={() => toggleFAQ(faq.id)}
-                  aria-expanded={isOpen}
-                  aria-controls={`faq-answer-${faq.id}`}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-emerald"
+        {/* 2 Column Accordion Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto">
+          
+          {/* Left Column */}
+          <div className="space-y-3">
+            {leftFaqs.map((faq, idx) => {
+              const isOpen = openIndex === `l-${idx}`;
+              return (
+                <div
+                  key={idx}
+                  className="border border-slate-200 rounded-xl bg-slate-50/60 overflow-hidden transition-all"
                 >
-                  <span className="font-display font-bold text-base sm:text-lg text-zinc-900 leading-snug">
-                    {faq.question}
-                  </span>
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${
-                      isOpen
-                        ? 'bg-emerald-600 text-white'
-                        : 'bg-zinc-100 text-zinc-600'
-                    }`}
+                  <button
+                    onClick={() => toggleLeft(idx)}
+                    className="w-full p-4 text-left flex items-center justify-between gap-3 font-semibold text-xs sm:text-sm text-slate-900 hover:text-[#00d084] transition-colors"
                   >
-                    {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                  </div>
-                </button>
-
-                {isOpen && (
-                  <div
-                    id={`faq-answer-${faq.id}`}
-                    className="px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-600 leading-relaxed border-t border-zinc-100 animate-in fade-in-50 duration-200"
-                  >
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Still Have Questions CTA */}
-        <div className="mt-12 text-center bg-white p-6 sm:p-8 rounded-2xl border border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-center sm:text-left">
-            <h4 className="font-display font-bold text-base sm:text-lg text-zinc-900">
-              Have a question specific to your business?
-            </h4>
-            <p className="text-xs sm:text-sm text-zinc-500 mt-0.5">
-              Speak directly with founder Suresh More on our free strategy consultation.
-            </p>
+                    <span>{faq.q}</span>
+                    <span className="w-6 h-6 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 text-slate-600">
+                      {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+                    </span>
+                  </button>
+                  {isOpen && (
+                    <div className="px-4 pb-4 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
-          <button
-            onClick={onOpenConsultation}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-xs sm:text-sm text-white bg-brand-dark hover:bg-brand-surface border border-zinc-800 transition-all duration-300 shadow-md whitespace-nowrap"
-          >
-            <span>Ask On Strategy Call</span>
-            <ArrowRight className="w-4 h-4 text-brand-emerald" />
-          </button>
+
+          {/* Right Column */}
+          <div className="space-y-3">
+            {rightFaqs.map((faq, idx) => {
+              const isOpen = openIndex === `r-${idx}`;
+              return (
+                <div
+                  key={idx}
+                  className="border border-slate-200 rounded-xl bg-slate-50/60 overflow-hidden transition-all"
+                >
+                  <button
+                    onClick={() => toggleRight(idx)}
+                    className="w-full p-4 text-left flex items-center justify-between gap-3 font-semibold text-xs sm:text-sm text-slate-900 hover:text-[#00d084] transition-colors"
+                  >
+                    <span>{faq.q}</span>
+                    <span className="w-6 h-6 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 text-slate-600">
+                      {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+                    </span>
+                  </button>
+                  {isOpen && (
+                    <div className="px-4 pb-4 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
         </div>
+
       </div>
     </section>
   );

@@ -1,210 +1,175 @@
-import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Instagram, Facebook, ArrowUpRight, ShieldCheck, Sparkles, Navigation } from 'lucide-react';
+import React from 'react';
+import { Phone, Mail, MapPin, Clock, ArrowRight, Instagram, Facebook, Youtube, Linkedin } from 'lucide-react';
 
 export default function ContactSection({ onOpenConsultation }) {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    businessName: '',
-    budget: '₹50,000 - ₹1,00,000',
-    message: ''
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 800);
+  const openGoogleMaps = () => {
+    window.open('https://maps.google.com/?q=Navale+Icon+Narhe+Pune+Maharashtra', '_blank');
   };
 
-  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.4532296434407!2d73.8184589758784!3d18.463102182619714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2950549c71e21%3A0xe7bc8cf243388711!2sNavale%20Icon!5e0!3m2!1sen!2sin!4v1711450000000!5m2!1sen!2sin";
-  const directionsUrl = "https://www.google.com/maps/dir/?api=1&destination=Navale+Icon+Narhe+Pune+Maharashtra";
-
   return (
-    <section id="contact" className="py-20 md:py-28 bg-brand-surface/40 border-t border-brand-border relative">
-      <div className="max-w-content mx-auto px-4 sm:px-6">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-surface border border-brand-border text-brand-emerald text-xs font-mono uppercase tracking-wider">
-            <MapPin className="w-3.5 h-3.5" />
-            <span>Connect Directly With Our Team</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white tracking-tight">
-            Let’s Talk About Your Business
+    <section id="contact" className="py-14 sm:py-16 bg-white text-slate-900 border-b border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="text-center sm:text-left mb-8">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#00d084]">
+            Contact Us
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold font-display tracking-tight text-slate-900 mt-1">
+            Let's Talk About Your Business.
           </h2>
-
-          <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
-            Have questions or want to discuss a customized performance marketing strategy? Reach out through our direct office line, WhatsApp, or drop by our Pune headquarters.
-          </p>
         </div>
 
-        {/* Contact Layout: 2 Columns on Desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          {/* Left Column: Detailed Business Cards & Interactive Fast Form */}
-          <div className="lg:col-span-6 space-y-6">
-            {/* Contact Details Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Phone Card */}
-              <div className="p-5 rounded-2xl bg-brand-surface border border-brand-border space-y-2 card-hover-glow">
-                <div className="w-10 h-10 rounded-xl bg-brand-emerald/10 border border-brand-emerald/20 flex items-center justify-center text-brand-emerald">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <h4 className="text-xs font-mono font-semibold text-zinc-400 uppercase tracking-wider">
-                  Call & WhatsApp
-                </h4>
-                <div className="space-y-0.5 text-sm font-bold font-display text-white">
-                  <div>
-                    <a href="tel:+917796407424" className="hover:text-brand-emerald transition-colors">
-                      +91 7796407424
-                    </a>
-                  </div>
-                  <div>
-                    <a href="tel:+919834036821" className="hover:text-brand-emerald transition-colors">
-                      +91 9834036821
-                    </a>
-                  </div>
+        {/* 3 Column Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          
+          {/* Column 1: Contact Details */}
+          <div className="lg:col-span-5 space-y-4">
+            
+            {/* Phone */}
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-800 shrink-0 mt-0.5">
+                <Phone className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-xs text-slate-500 font-medium">Phone Numbers</div>
+                <div className="text-xs sm:text-sm font-semibold text-slate-900 mt-0.5">
+                  <a href="tel:+917798407424" className="hover:text-[#00d084] transition-colors">7798407424</a> / <a href="tel:+919834036821" className="hover:text-[#00d084] transition-colors">9834036821</a>
                 </div>
               </div>
+            </div>
 
-              {/* Email Card */}
-              <div className="p-5 rounded-2xl bg-brand-surface border border-brand-border space-y-2 card-hover-glow">
-                <div className="w-10 h-10 rounded-xl bg-brand-emerald/10 border border-brand-emerald/20 flex items-center justify-center text-brand-emerald">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <h4 className="text-xs font-mono font-semibold text-zinc-400 uppercase tracking-wider">
-                  Official Email
-                </h4>
-                <div className="text-sm font-bold font-display text-white break-all">
-                  <a href="mailto:dictoxmarketing@gmail.com" className="hover:text-brand-emerald transition-colors">
+            {/* Email */}
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-800 shrink-0 mt-0.5">
+                <Mail className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-xs text-slate-500 font-medium">Email Address</div>
+                <div className="text-xs sm:text-sm font-semibold text-slate-900 mt-0.5">
+                  <a href="mailto:dictoxmarketing@gmail.com" className="hover:text-[#00d084] transition-colors">
                     dictoxmarketing@gmail.com
                   </a>
                 </div>
               </div>
-
-              {/* Address Card (Full width on sm) */}
-              <div className="sm:col-span-2 p-5 rounded-2xl bg-brand-surface border border-brand-border space-y-2 card-hover-glow">
-                <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-xl bg-brand-emerald/10 border border-brand-emerald/20 flex items-center justify-center text-brand-emerald">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <a
-                    href={directionsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-mono text-brand-emerald hover:underline font-semibold"
-                  >
-                    <span>Get Directions</span>
-                    <Navigation className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-                <h4 className="text-xs font-mono font-semibold text-zinc-400 uppercase tracking-wider">
-                  Agency Headquarters
-                </h4>
-                <p className="text-sm text-zinc-200 leading-relaxed font-medium">
-                  DictoX Marketing — Office No. 603, 6th Floor, Navale Icon, Bengaluru - Mumbai Hwy, Near Navale Bridge, Wadgaon Budruk, Narhe, Pune, Maharashtra 411041.
-                </p>
-                <div className="pt-2 flex items-center gap-2 text-xs text-zinc-400 font-mono">
-                  <Clock className="w-3.5 h-3.5 text-brand-emerald" />
-                  <span>Monday to Saturday — 10:00 AM to 7:00 PM IST</span>
-                </div>
-              </div>
             </div>
 
-            {/* Social Channels Card */}
-            <div className="p-5 rounded-2xl bg-brand-dark border border-brand-border flex items-center justify-between">
+            {/* Address */}
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-800 shrink-0 mt-0.5">
+                <MapPin className="w-4 h-4" />
+              </div>
               <div>
-                <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider block">
-                  Follow Our Agency Updates
-                </span>
-                <span className="text-sm font-bold text-white font-display">
-                  Instagram & Facebook
-                </span>
+                <div className="text-xs text-slate-500 font-medium">Office Address</div>
+                <div className="text-xs sm:text-sm text-slate-700 leading-relaxed mt-0.5">
+                  Office No. 603, 6th Floor, Navale Icon, Bengaluru - Mumbai Hwy, Near Navale Bridge, Vadgaon Budruk, Narhe, Pune, Maharashtra 411041
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <a
-                  href="https://instagram.com/dictoxmarketing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1.5 rounded-lg bg-brand-surface border border-brand-border text-xs text-zinc-200 hover:text-brand-emerald hover:border-brand-emerald transition-colors flex items-center gap-1.5"
-                >
-                  <Instagram className="w-3.5 h-3.5" />
-                  <span>@dictoxmarketing</span>
-                </a>
-                <a
-                  href="https://facebook.com/dictoxmarketing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1.5 rounded-lg bg-brand-surface border border-brand-border text-xs text-zinc-200 hover:text-brand-emerald hover:border-brand-emerald transition-colors flex items-center gap-1.5"
-                >
-                  <Facebook className="w-3.5 h-3.5" />
-                  <span>dictoxmarketing</span>
-                </a>
+            </div>
+
+            {/* Working Hours */}
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-800 shrink-0 mt-0.5">
+                <Clock className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-xs text-slate-500 font-medium">Business Hours</div>
+                <div className="text-xs sm:text-sm font-medium text-slate-800 mt-0.5">
+                  Mon - Sat, 10:00 AM - 7:00 PM
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Column 2: Stylized Map Card */}
+          <div className="lg:col-span-4">
+            <div 
+              onClick={openGoogleMaps}
+              className="relative h-48 sm:h-52 rounded-2xl overflow-hidden border border-slate-200 shadow-sm cursor-pointer group bg-slate-100"
+            >
+              {/* Clean Map Graphic */}
+              <div className="absolute inset-0 bg-[#e5e9ec] flex items-center justify-center">
+                <svg className="w-full h-full opacity-60" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="400" height="250" fill="#E8ECEF"/>
+                  <path d="M-10 80 Q 150 120 420 70" stroke="#CBD5E1" strokeWidth="14"/>
+                  <path d="M80 -10 Q 120 150 160 270" stroke="#CBD5E1" strokeWidth="12"/>
+                  <path d="M250 -10 Q 230 140 320 270" stroke="#CBD5E1" strokeWidth="8"/>
+                  <path d="M-10 180 Q 200 160 420 210" stroke="#FFFFFF" strokeWidth="10"/>
+                  <circle cx="160" cy="120" r="40" fill="#00d084" fillOpacity="0.1"/>
+                </svg>
+              </div>
+
+              {/* Pin Callout */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group-hover:scale-105 transition-transform">
+                <div className="px-2.5 py-1 rounded bg-white shadow-md border border-slate-200 text-[10px] font-bold text-slate-900 whitespace-nowrap flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
+                  DictoX Marketing
+                </div>
+                <div className="w-6 h-6 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg -mt-1">
+                  <MapPin className="w-3.5 h-3.5" />
+                </div>
+              </div>
+
+              <div className="absolute bottom-2 right-2 bg-white/90 backdrop-blur-xs px-2 py-0.5 rounded text-[10px] font-mono text-slate-600">
+                Pune, Narhe
               </div>
             </div>
           </div>
 
-          {/* Right Column: Google Maps Embed & Quick Message Form */}
-          <div className="lg:col-span-6 space-y-6">
-            {/* Map Frame Card */}
-            <div className="bg-brand-surface rounded-2xl sm:rounded-3xl border border-brand-border overflow-hidden shadow-xl">
-              <div className="p-4 sm:p-5 bg-brand-dark/80 border-b border-brand-border flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-brand-emerald animate-pulse" />
-                  <span className="text-xs font-mono font-semibold text-white uppercase tracking-wider">
-                    Navale Icon, Narhe, Pune
-                  </span>
-                </div>
+          {/* Column 3: Social & Get Directions */}
+          <div className="lg:col-span-3 flex flex-col items-center lg:items-start space-y-4">
+            <div>
+              <span className="text-xs font-bold text-slate-900 block mb-2 text-center lg:text-left">
+                Follow Us
+              </span>
+              <div className="flex items-center gap-2.5">
                 <a
-                  href={directionsUrl}
+                  href="https://instagram.com"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs text-brand-emerald hover:underline font-mono"
+                  rel="noreferrer"
+                  className="w-9 h-9 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 flex items-center justify-center text-white shadow-xs hover:scale-110 transition-transform"
                 >
-                  <span>Open in Google Maps</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
+                  <Instagram className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-9 h-9 rounded-full bg-[#1877F2] flex items-center justify-center text-white shadow-xs hover:scale-110 transition-transform"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-9 h-9 rounded-full bg-[#FF0000] flex items-center justify-center text-white shadow-xs hover:scale-110 transition-transform"
+                >
+                  <Youtube className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-9 h-9 rounded-full bg-[#0A66C2] flex items-center justify-center text-white shadow-xs hover:scale-110 transition-transform"
+                >
+                  <Linkedin className="w-4 h-4" />
                 </a>
               </div>
-
-              {/* Map Embed Frame */}
-              <div className="relative h-64 sm:h-72 w-full bg-brand-dark">
-                <iframe
-                  title="DictoX Marketing Office Location Map"
-                  src={mapEmbedUrl}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, filter: 'grayscale(20%) contrast(1.1) invert(90%) hue-rotate(180deg)' }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
-
-              {/* Direct Booking Action Banner */}
-              <div className="p-5 bg-brand-surface flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-brand-border">
-                <div className="text-center sm:text-left">
-                  <div className="text-sm font-bold text-white font-display">
-                    Prefer an in-person meeting in Pune?
-                  </div>
-                  <div className="text-xs text-zinc-400">
-                    Schedule an appointment with founder Suresh More.
-                  </div>
-                </div>
-                <button
-                  onClick={onOpenConsultation}
-                  className="btn-primary text-xs font-semibold !py-2.5 !px-5 whitespace-nowrap"
-                >
-                  <span>Book Office Visit</span>
-                </button>
-              </div>
             </div>
+
+            <button
+              onClick={openGoogleMaps}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-slate-950 hover:bg-slate-800 transition-all shadow-sm"
+            >
+              <span>Get Directions</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
           </div>
+
         </div>
+
       </div>
     </section>
   );
