@@ -10,10 +10,10 @@ export default function ServicesSection({ onOpenConsultation }) {
       desc: 'Facebook & Instagram advertising focused on reaching your target audience and generating potential leads and customers.',
       badge: 'High Intent Targeting',
       visual: (
-        <div className="w-full h-28 bg-gradient-to-br from-blue-50 to-indigo-50/60 rounded-xl p-3 border border-blue-100/80 flex items-center justify-between">
+        <div className="w-full h-28 bg-gradient-to-br from-blue-50 to-indigo-50/60 rounded-none p-3 border border-blue-100 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 via-pink-500 to-amber-400 p-0.5 shadow-sm">
-              <div className="w-full h-full bg-white rounded-[14px] flex items-center justify-center">
+            <div className="w-12 h-12 rounded-none bg-gradient-to-tr from-purple-600 via-pink-500 to-amber-400 p-0.5 shadow-sm">
+              <div className="w-full h-full bg-white rounded-none flex items-center justify-center">
                 <span className="text-sm font-black text-pink-600">IG</span>
               </div>
             </div>
@@ -22,7 +22,7 @@ export default function ServicesSection({ onOpenConsultation }) {
               <div className="text-[11px] text-slate-500 font-medium">Instant Forms + Reels</div>
             </div>
           </div>
-          <span className="text-[11px] font-bold text-blue-700 bg-blue-100 px-2.5 py-1 rounded-md">
+          <span className="text-[11px] font-bold text-blue-700 bg-blue-100 px-2.5 py-1 rounded-none">
             Meta Partner
           </span>
         </div>
@@ -35,9 +35,9 @@ export default function ServicesSection({ onOpenConsultation }) {
       desc: 'Reach potential customers when they are actively searching for your products or services.',
       badge: 'Intent Driven',
       visual: (
-        <div className="w-full h-28 bg-gradient-to-br from-red-50 to-amber-50/60 rounded-xl p-3 border border-red-100/80 flex items-center justify-between">
+        <div className="w-full h-28 bg-gradient-to-br from-red-50 to-amber-50/60 rounded-none p-3 border border-red-100 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-red-600 flex items-center justify-center text-white font-black text-base shadow-sm">
+            <div className="w-12 h-12 rounded-none bg-red-600 flex items-center justify-center text-white font-black text-base shadow-sm">
               YT
             </div>
             <div>
@@ -45,7 +45,7 @@ export default function ServicesSection({ onOpenConsultation }) {
               <div className="text-[11px] text-slate-500 font-medium">Google Ads + YouTube</div>
             </div>
           </div>
-          <span className="text-[11px] font-bold text-red-700 bg-red-100 px-2.5 py-1 rounded-md">
+          <span className="text-[11px] font-bold text-red-700 bg-red-100 px-2.5 py-1 rounded-none">
             Rank #1
           </span>
         </div>
@@ -58,9 +58,9 @@ export default function ServicesSection({ onOpenConsultation }) {
       desc: 'Connect your advertising campaigns with WhatsApp for faster lead communication, follow-ups and customer engagement.',
       badge: '< 90s Response',
       visual: (
-        <div className="w-full h-28 bg-gradient-to-br from-emerald-50 to-teal-50/60 rounded-xl p-3 border border-emerald-100/80 flex items-center justify-between">
+        <div className="w-full h-28 bg-gradient-to-br from-emerald-50 to-teal-50/60 rounded-none p-3 border border-emerald-100 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-[#25D366] flex items-center justify-center text-white shadow-sm">
+            <div className="w-12 h-12 rounded-none bg-[#25D366] flex items-center justify-center text-white shadow-sm">
               <MessageSquare className="w-6 h-6 fill-white" />
             </div>
             <div>
@@ -68,7 +68,7 @@ export default function ServicesSection({ onOpenConsultation }) {
               <div className="text-[11px] text-slate-500 font-medium">Green Tick Certified</div>
             </div>
           </div>
-          <span className="text-[11px] font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-md">
+          <span className="text-[11px] font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-none">
             98% Open Rate
           </span>
         </div>
@@ -81,9 +81,9 @@ export default function ServicesSection({ onOpenConsultation }) {
       desc: 'Automate repetitive marketing and lead-management processes to improve efficiency and response time.',
       badge: 'Zero Manual Work',
       visual: (
-        <div className="w-full h-28 bg-gradient-to-br from-purple-50 to-violet-50/60 rounded-xl p-3 border border-purple-100/80 flex items-center justify-between">
+        <div className="w-full h-28 bg-gradient-to-br from-purple-50 to-violet-50/60 rounded-none p-3 border border-purple-100 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-purple-600 flex items-center justify-center text-white shadow-sm">
+            <div className="w-12 h-12 rounded-none bg-purple-600 flex items-center justify-center text-white shadow-sm">
               <Bot className="w-6 h-6" />
             </div>
             <div>
@@ -91,7 +91,7 @@ export default function ServicesSection({ onOpenConsultation }) {
               <div className="text-[11px] text-slate-500 font-medium">Pabbly, Zapier, Webhooks</div>
             </div>
           </div>
-          <span className="text-[11px] font-bold text-purple-700 bg-purple-100 px-2.5 py-1 rounded-md">
+          <span className="text-[11px] font-bold text-purple-700 bg-purple-100 px-2.5 py-1 rounded-none">
             24/7 Sync
           </span>
         </div>
@@ -123,13 +123,16 @@ export default function ServicesSection({ onOpenConsultation }) {
           </button>
         </div>
 
-        {/* 4 Service Cards Grid */}
+        {/* 4 Service Cards: Sharp Rectangular Format */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {services.map((item) => (
             <div
               key={item.id}
-              className="bg-white border-2 border-slate-100 hover:border-slate-300 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+              className="bg-white border-2 border-slate-200 hover:border-slate-900 rounded-none p-6 sm:p-7 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 group relative"
             >
+              {/* Top border accent line on hover */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-[#00d084] transition-colors" />
+
               <div>
                 {/* Visual Preview */}
                 <div className="mb-6">{item.visual}</div>

@@ -82,7 +82,7 @@ export default function FAQSection({ onOpenConsultation }) {
           </h2>
         </div>
 
-        {/* 2 Column Accordion Grid (5 left, 5 right = 10 FAQs) */}
+        {/* 2 Column Accordion Grid: Sharp Rectangular Accordions */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 max-w-6xl mx-auto">
           
           {/* Left Column (01 to 05) */}
@@ -92,7 +92,7 @@ export default function FAQSection({ onOpenConsultation }) {
               return (
                 <div
                   key={faq.num}
-                  className="border-2 border-slate-100 rounded-2xl bg-slate-50/70 hover:border-slate-200 overflow-hidden transition-all duration-200"
+                  className="border-2 border-slate-200 rounded-none bg-slate-50 hover:border-slate-800 overflow-hidden transition-all duration-200"
                 >
                   <button
                     onClick={() => toggleLeft(idx)}
@@ -102,12 +102,12 @@ export default function FAQSection({ onOpenConsultation }) {
                       <span className="text-xs font-mono font-extrabold text-[#00d084]">{faq.num}.</span>
                       <span>{faq.q}</span>
                     </span>
-                    <span className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 text-slate-700 shadow-2xs">
+                    <span className="w-8 h-8 rounded-none bg-white border border-slate-300 flex items-center justify-center shrink-0 text-slate-700 shadow-2xs">
                       {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </span>
                   </button>
                   {isOpen && (
-                    <div className="px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 pt-4">
+                    <div className="px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                       {faq.a}
                     </div>
                   )}
@@ -123,7 +123,7 @@ export default function FAQSection({ onOpenConsultation }) {
               return (
                 <div
                   key={faq.num}
-                  className="border-2 border-slate-100 rounded-2xl bg-slate-50/70 hover:border-slate-200 overflow-hidden transition-all duration-200"
+                  className="border-2 border-slate-200 rounded-none bg-slate-50 hover:border-slate-800 overflow-hidden transition-all duration-200"
                 >
                   <button
                     onClick={() => toggleRight(idx)}
@@ -133,12 +133,12 @@ export default function FAQSection({ onOpenConsultation }) {
                       <span className="text-xs font-mono font-extrabold text-[#00d084]">{faq.num}.</span>
                       <span>{faq.q}</span>
                     </span>
-                    <span className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 text-slate-700 shadow-2xs">
+                    <span className="w-8 h-8 rounded-none bg-white border border-slate-300 flex items-center justify-center shrink-0 text-slate-700 shadow-2xs">
                       {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </span>
                   </button>
                   {isOpen && (
-                    <div className="px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 pt-4">
+                    <div className="px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                       {faq.a}
                     </div>
                   )}

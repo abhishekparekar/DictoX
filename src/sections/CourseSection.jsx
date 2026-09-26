@@ -43,16 +43,17 @@ export default function CourseSection({ onOpenConsultation }) {
           </p>
         </div>
 
-        {/* 5 Icons Row */}
+        {/* 5 Icons Row: Sharp Rectangles */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto mb-12">
           {topics.map((t) => {
             const Icon = t.icon;
             return (
               <div
                 key={t.title}
-                className="flex flex-col items-center p-4 rounded-2xl bg-slate-50 border border-slate-200/90 text-center hover:bg-white hover:border-[#00d084]/50 hover:shadow-md transition-all duration-300"
+                className="flex flex-col items-center p-4 rounded-none bg-slate-50 border-2 border-slate-200 text-center hover:bg-white hover:border-[#00d084] hover:shadow-md transition-all duration-300 relative group"
               >
-                <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-800 mb-2.5 shadow-2xs">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-[#00d084] transition-colors" />
+                <div className="w-11 h-11 rounded-none bg-white border border-slate-200 flex items-center justify-center text-slate-800 mb-2.5 shadow-2xs">
                   <Icon className="w-5 h-5 text-[#00d084]" />
                 </div>
                 <span className="text-xs sm:text-sm font-bold text-slate-800 leading-tight">
@@ -63,22 +64,23 @@ export default function CourseSection({ onOpenConsultation }) {
           })}
         </div>
 
-        {/* Course Card & Details */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-slate-50 border-2 border-slate-100 rounded-3xl p-6 sm:p-8 md:p-10 shadow-xs">
-          
-          {/* Video Preview Card */}
-          <div className="md:col-span-6 relative rounded-2xl overflow-hidden bg-slate-900 aspect-video flex flex-col justify-between p-5 text-white group cursor-pointer shadow-lg">
+        {/* Course Card: Sharp Rectangle */}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-slate-50 border-2 border-slate-200 rounded-none p-6 sm:p-8 md:p-10 shadow-xs relative">
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#00d084]" />
+
+          {/* Video Preview Card: Sharp Rectangle */}
+          <div className="md:col-span-6 relative rounded-none overflow-hidden bg-slate-900 aspect-video flex flex-col justify-between p-5 text-white group cursor-pointer shadow-lg border border-slate-700">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-blue-600/90 text-white font-bold">
+              <span className="text-xs font-mono px-2.5 py-1 rounded-none bg-blue-600 text-white font-bold">
                 Meta Ads Mastery
               </span>
-              <span className="text-xs font-mono text-slate-300 bg-black/40 px-2.5 py-1 rounded-full">
+              <span className="text-xs font-mono text-slate-300 bg-black/60 px-2.5 py-1 rounded-none">
                 12 In-Depth Modules
               </span>
             </div>
 
             <div className="self-center">
-              <div className="w-14 h-14 rounded-full bg-[#00f59b] text-slate-950 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">
+              <div className="w-14 h-14 rounded-none bg-[#00f59b] text-slate-950 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">
                 <Play className="w-6 h-6 fill-slate-950 translate-x-0.5" />
               </div>
             </div>
@@ -102,7 +104,7 @@ export default function CourseSection({ onOpenConsultation }) {
             <ul className="space-y-3">
               {highlights.map((h, i) => (
                 <li key={i} className="flex items-center gap-3 text-sm sm:text-base text-slate-700 font-medium">
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-[#00d084] flex items-center justify-center shrink-0">
+                  <div className="w-5 h-5 rounded-none bg-emerald-100 text-[#00d084] flex items-center justify-center shrink-0 border border-emerald-300">
                     <Check className="w-3.5 h-3.5 stroke-[3]" />
                   </div>
                   <span>{h}</span>
@@ -113,7 +115,7 @@ export default function CourseSection({ onOpenConsultation }) {
             <div className="pt-2">
               <button
                 onClick={onOpenConsultation}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all shadow-md hover:shadow-lg cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-none text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all shadow-md hover:shadow-lg cursor-pointer uppercase tracking-wider"
               >
                 <span>Explore Course</span>
                 <ArrowRight className="w-4 h-4" />

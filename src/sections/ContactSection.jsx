@@ -23,15 +23,15 @@ export default function ContactSection({ onOpenConsultation }) {
           </div>
         </div>
 
-        {/* 3 Column Grid */}
+        {/* 3 Column Grid: Sharp Rectangular Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Column 1: Contact Details */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-4">
             
             {/* Phone */}
-            <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-[#00d084]/40 transition-colors">
-              <div className="w-11 h-11 rounded-xl bg-white shadow-2xs border border-slate-200 flex items-center justify-center text-[#00d084] shrink-0 mt-0.5">
+            <div className="flex items-start gap-4 p-5 rounded-none bg-slate-50 border-2 border-slate-200 hover:border-slate-900 transition-colors">
+              <div className="w-11 h-11 rounded-none bg-white shadow-2xs border border-slate-200 flex items-center justify-center text-[#00d084] shrink-0 mt-0.5">
                 <Phone className="w-5 h-5" />
               </div>
               <div>
@@ -43,8 +43,8 @@ export default function ContactSection({ onOpenConsultation }) {
             </div>
 
             {/* Email */}
-            <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-[#00d084]/40 transition-colors">
-              <div className="w-11 h-11 rounded-xl bg-white shadow-2xs border border-slate-200 flex items-center justify-center text-[#00d084] shrink-0 mt-0.5">
+            <div className="flex items-start gap-4 p-5 rounded-none bg-slate-50 border-2 border-slate-200 hover:border-slate-900 transition-colors">
+              <div className="w-11 h-11 rounded-none bg-white shadow-2xs border border-slate-200 flex items-center justify-center text-[#00d084] shrink-0 mt-0.5">
                 <Mail className="w-5 h-5" />
               </div>
               <div>
@@ -58,8 +58,8 @@ export default function ContactSection({ onOpenConsultation }) {
             </div>
 
             {/* Address */}
-            <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-[#00d084]/40 transition-colors">
-              <div className="w-11 h-11 rounded-xl bg-white shadow-2xs border border-slate-200 flex items-center justify-center text-[#00d084] shrink-0 mt-0.5">
+            <div className="flex items-start gap-4 p-5 rounded-none bg-slate-50 border-2 border-slate-200 hover:border-slate-900 transition-colors">
+              <div className="w-11 h-11 rounded-none bg-white shadow-2xs border border-slate-200 flex items-center justify-center text-[#00d084] shrink-0 mt-0.5">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
@@ -73,8 +73,8 @@ export default function ContactSection({ onOpenConsultation }) {
             </div>
 
             {/* Working Hours */}
-            <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-[#00d084]/40 transition-colors">
-              <div className="w-11 h-11 rounded-xl bg-white shadow-2xs border border-slate-200 flex items-center justify-center text-[#00d084] shrink-0 mt-0.5">
+            <div className="flex items-start gap-4 p-5 rounded-none bg-slate-50 border-2 border-slate-200 hover:border-slate-900 transition-colors">
+              <div className="w-11 h-11 rounded-none bg-white shadow-2xs border border-slate-200 flex items-center justify-center text-[#00d084] shrink-0 mt-0.5">
                 <Clock className="w-5 h-5" />
               </div>
               <div>
@@ -87,11 +87,11 @@ export default function ContactSection({ onOpenConsultation }) {
 
           </div>
 
-          {/* Column 2: Stylized Embedded Google Map Card */}
+          {/* Column 2: Stylized Embedded Google Map Card (Sharp Rectangle) */}
           <div className="lg:col-span-4">
             <div 
               onClick={openGoogleMaps}
-              className="relative h-64 sm:h-72 rounded-3xl overflow-hidden border-2 border-slate-200 shadow-md cursor-pointer group bg-slate-100"
+              className="relative h-64 sm:h-80 rounded-none overflow-hidden border-2 border-slate-200 shadow-md cursor-pointer group bg-slate-100"
               title="Click to open Google Maps"
             >
               {/* Clean Map Graphic */}
@@ -108,16 +108,16 @@ export default function ContactSection({ onOpenConsultation }) {
 
               {/* Pin Callout */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group-hover:scale-105 transition-transform">
-                <div className="px-3 py-1.5 rounded-full bg-white shadow-lg border border-slate-200 text-xs font-bold text-slate-900 whitespace-nowrap flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                <div className="px-3.5 py-1.5 rounded-none bg-white shadow-lg border border-slate-200 text-xs font-bold text-slate-900 whitespace-nowrap flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-none bg-red-500 animate-pulse" />
                   DictoX Marketing
                 </div>
-                <div className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center shadow-xl -mt-1">
+                <div className="w-8 h-8 rounded-none bg-red-600 text-white flex items-center justify-center shadow-xl -mt-1">
                   <MapPin className="w-4 h-4" />
                 </div>
               </div>
 
-              <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-xs px-3 py-1 rounded-xl text-xs font-mono text-slate-700 shadow-sm border border-slate-200">
+              <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-xs px-3 py-1 rounded-none text-xs font-mono text-slate-700 shadow-sm border border-slate-200">
                 Near Navale Bridge, Narhe
               </div>
             </div>
@@ -138,7 +138,7 @@ export default function ContactSection({ onOpenConsultation }) {
                   href="https://facebook.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1877F2]/10 text-[#1877F2] border border-[#1877F2]/20 hover:bg-[#1877F2] hover:text-white transition-all text-xs sm:text-sm font-bold"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-none bg-[#1877F2]/10 text-[#1877F2] border border-[#1877F2]/25 hover:bg-[#1877F2] hover:text-white transition-all text-xs sm:text-sm font-bold"
                 >
                   <Facebook className="w-4 h-4" />
                   <span>Facebook</span>
@@ -147,7 +147,7 @@ export default function ContactSection({ onOpenConsultation }) {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-50 text-pink-600 border border-pink-200 hover:bg-pink-600 hover:text-white transition-all text-xs sm:text-sm font-bold"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-none bg-pink-50 text-pink-600 border border-pink-200 hover:bg-pink-600 hover:text-white transition-all text-xs sm:text-sm font-bold"
                 >
                   <Instagram className="w-4 h-4" />
                   <span>Instagram</span>
@@ -157,7 +157,7 @@ export default function ContactSection({ onOpenConsultation }) {
 
             <button
               onClick={openGoogleMaps}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold text-white bg-slate-950 hover:bg-slate-800 transition-all shadow-md hover:shadow-lg cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-none text-xs sm:text-sm font-bold text-white bg-slate-950 hover:bg-slate-800 transition-all shadow-md hover:shadow-lg cursor-pointer uppercase tracking-wider"
             >
               <span>Get Directions</span>
               <ArrowRight className="w-4 h-4" />

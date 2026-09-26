@@ -40,7 +40,7 @@ export default function IndustriesSection({ onOpenConsultation }) {
           </h2>
         </div>
 
-        {/* 10 Industries Grid: Clean flow across all screens */}
+        {/* 10 Industries Grid: Sharp Rectangular Tiles */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-10 gap-3.5 sm:gap-4">
           {industries.map((item) => {
             const Icon = item.icon;
@@ -48,9 +48,12 @@ export default function IndustriesSection({ onOpenConsultation }) {
               <button
                 key={item.title}
                 onClick={onOpenConsultation}
-                className="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-50 border border-slate-200/90 hover:bg-white hover:border-[#00d084] hover:shadow-lg transition-all duration-300 group text-center cursor-pointer hover:-translate-y-1"
+                className="flex flex-col items-center justify-center p-4 rounded-none bg-slate-50 border-2 border-slate-200 hover:bg-white hover:border-[#00d084] hover:shadow-lg transition-all duration-300 group text-center cursor-pointer hover:-translate-y-1 relative"
               >
-                <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-700 group-hover:text-[#00d084] group-hover:border-[#00d084]/40 transition-colors shadow-2xs mb-3">
+                {/* Top border accent line on hover */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-[#00d084] transition-colors" />
+
+                <div className="w-12 h-12 rounded-none bg-white border border-slate-200 flex items-center justify-center text-slate-800 group-hover:text-[#00d084] group-hover:border-[#00d084]/40 transition-colors shadow-2xs mb-3">
                   <Icon className="w-5 h-5" />
                 </div>
                 <span className="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-slate-950 leading-tight">

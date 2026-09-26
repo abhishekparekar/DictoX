@@ -41,7 +41,7 @@ export default function ResultsSection({ onOpenConsultation }) {
   return (
     <section id="results" className="py-20 md:py-24 lg:py-28 bg-[#051416] text-white relative overflow-hidden">
       {/* Glow */}
-      <div className="absolute top-1/3 left-1/3 w-[600px] h-[350px] bg-[#00f59b]/8 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/3 w-[600px] h-[350px] bg-[#00f59b]/8 rounded-none blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         
@@ -68,29 +68,32 @@ export default function ResultsSection({ onOpenConsultation }) {
           </button>
         </div>
 
-        {/* 3 Case Study Cards */}
+        {/* 3 Case Study Cards: Sharp Rectangles */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
           {caseStudies.map((item) => (
             <div
               key={item.id}
-              className="bg-[#091f22]/90 border border-white/15 rounded-3xl overflow-hidden hover:border-[#00f59b]/50 hover:shadow-2xl hover:shadow-[#00f59b]/10 transition-all duration-300 group flex flex-col justify-between"
+              className="bg-[#091f22]/95 border-2 border-white/15 rounded-none overflow-hidden hover:border-[#00f59b] hover:shadow-2xl hover:shadow-[#00f59b]/15 transition-all duration-300 group flex flex-col justify-between relative"
             >
+              {/* Top border accent line on hover */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-[#00f59b] transition-colors z-20" />
+
               <div>
                 {/* Image Frame */}
-                <div className="relative h-52 sm:h-60 overflow-hidden bg-slate-900">
+                <div className="relative h-56 sm:h-64 overflow-hidden bg-slate-900 rounded-none">
                   <img
                     src={item.image}
                     alt={item.industry}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-none"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#091f22] via-[#091f22]/40 to-transparent" />
                   
                   {/* Category & Objective */}
-                  <div className="absolute bottom-4 left-5 right-5">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#00f59b] bg-black/60 px-3 py-1 rounded-full border border-white/10">
+                  <div className="absolute bottom-4 left-6 right-6">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#00f59b] bg-black/70 px-3 py-1 rounded-none border border-[#00f59b]/40">
                       {item.industry}
                     </span>
-                    <h3 className="text-lg font-bold font-display text-white mt-2 leading-snug">
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-white mt-2 leading-snug">
                       {item.objective}
                     </h3>
                   </div>
@@ -118,7 +121,7 @@ export default function ResultsSection({ onOpenConsultation }) {
                   </div>
 
                   {/* Key Outcome */}
-                  <div className="bg-[#051518] rounded-2xl p-4 border border-[#00f59b]/25">
+                  <div className="bg-[#051518] rounded-none p-4 border-l-4 border-l-[#00f59b] border-y border-r border-white/10">
                     <div className="text-xs uppercase font-mono font-bold text-[#00f59b] flex items-center gap-1.5">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#00f59b]" />
                       Key Outcome
@@ -134,7 +137,7 @@ export default function ResultsSection({ onOpenConsultation }) {
               <div className="px-6 pb-6 sm:px-7 sm:pb-7">
                 <button
                   onClick={onOpenConsultation}
-                  className="w-full py-3.5 rounded-2xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg cursor-pointer"
+                  className="w-full py-3.5 rounded-none text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg cursor-pointer uppercase tracking-wider"
                 >
                   <span>View Case Study</span>
                   <ArrowRight className="w-4 h-4" />

@@ -70,7 +70,7 @@ export default function Navbar({ onOpenConsultation }) {
         <div className="hidden md:flex items-center">
           <button
             onClick={onOpenConsultation}
-            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-[#00f59b]/25 hover:-translate-y-0.5 cursor-pointer"
+            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-none text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-[#00f59b]/25 hover:-translate-y-0.5 cursor-pointer uppercase tracking-wider"
           >
             <span>Get Free Strategy Consultation</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
@@ -81,7 +81,7 @@ export default function Navbar({ onOpenConsultation }) {
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={onOpenConsultation}
-            className="px-3.5 py-2 rounded-full text-xs font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] shadow-sm"
+            className="px-3.5 py-2 rounded-none text-xs font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] shadow-sm uppercase tracking-wider"
           >
             <span>Consult</span>
           </button>
@@ -118,7 +118,7 @@ export default function Navbar({ onOpenConsultation }) {
                 setMobileMenuOpen(false);
                 onOpenConsultation();
               }}
-              className="w-full text-center py-3.5 rounded-full text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] shadow-md flex items-center justify-center gap-2"
+              className="w-full text-center py-3.5 rounded-none text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] shadow-md flex items-center justify-center gap-2 uppercase tracking-wider"
             >
               <Sparkles className="w-4 h-4" />
               <span>Get Free Strategy Consultation</span>

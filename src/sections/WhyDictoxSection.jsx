@@ -25,7 +25,7 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
   return (
     <section className="py-20 md:py-24 lg:py-28 bg-[#041214] text-white relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 right-1/4 w-[600px] h-[400px] bg-[#00f59b]/8 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[400px] bg-[#00f59b]/8 rounded-none blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -47,7 +47,7 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
             <div className="pt-2">
               <button
                 onClick={onOpenConsultation}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#00f59b]/25 hover:-translate-y-0.5 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-none text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#00f59b]/25 hover:-translate-y-0.5 cursor-pointer uppercase tracking-wider"
               >
                 <span>Get A Free Strategy Consultation</span>
                 <ArrowRight className="w-4 h-4" />
@@ -55,15 +55,15 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
             </div>
           </div>
 
-          {/* Right Column: Side-by-Side Comparison Cards */}
+          {/* Right Column: Side-by-Side Comparison Cards (Sharp Rectangles) */}
           <div className="lg:col-span-8 relative">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
               {/* Typical Agency Card */}
-              <div className="bg-[#081a1c]/90 border border-white/15 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-xl">
+              <div className="bg-[#081a1c]/95 border border-white/15 rounded-none p-6 sm:p-8 flex flex-col justify-between shadow-xl">
                 <div>
                   <div className="flex items-center gap-3 pb-4 mb-5 border-b border-white/10">
-                    <div className="w-6 h-6 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xs font-bold">
+                    <div className="w-6 h-6 rounded-none bg-red-500/20 text-red-400 flex items-center justify-center text-xs font-bold border border-red-500/30">
                       ✕
                     </div>
                     <h3 className="text-base sm:text-lg font-bold text-slate-200 font-display">
@@ -83,15 +83,15 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
               </div>
 
               {/* DICTOX Approach Card */}
-              <div className="bg-[#092225] border-2 border-[#00f59b]/60 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-[#00f59b]/10 flex flex-col justify-between relative">
+              <div className="bg-[#092225] border-2 border-[#00f59b] rounded-none p-6 sm:p-8 shadow-2xl shadow-[#00f59b]/15 flex flex-col justify-between relative">
                 {/* Highlight Tag */}
-                <div className="absolute -top-3.5 right-6 bg-gradient-to-r from-[#00f59b] to-[#00d084] text-slate-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                <div className="absolute -top-3.5 right-6 bg-[#00f59b] text-slate-950 text-xs font-black px-3.5 py-1 rounded-none uppercase tracking-wider shadow-md">
                   Recommended
                 </div>
 
                 <div>
                   <div className="flex items-center gap-3 pb-4 mb-5 border-b border-white/15">
-                    <div className="w-6 h-6 rounded-full bg-[#00f59b]/25 text-[#00f59b] flex items-center justify-center text-xs font-bold">
+                    <div className="w-6 h-6 rounded-none bg-[#00f59b]/25 text-[#00f59b] flex items-center justify-center text-xs font-bold border border-[#00f59b]/40">
                       ✓
                     </div>
                     <h3 className="text-base sm:text-lg font-bold text-white font-display">

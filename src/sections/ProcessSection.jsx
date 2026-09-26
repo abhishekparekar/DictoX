@@ -55,21 +55,24 @@ export default function ProcessSection({ onOpenConsultation }) {
           </h2>
         </div>
 
-        {/* 6 Steps Grid: Comfortable width across all devices */}
+        {/* 6 Steps Grid: Sharp Rectangles */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 sm:gap-6 relative">
           {steps.map((step) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.num}
-                className="bg-slate-50/80 border-2 border-slate-100 hover:border-[#00d084]/60 rounded-3xl p-5 sm:p-6 flex flex-col justify-between hover:bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group"
+                className="bg-slate-50 border-2 border-slate-200 hover:border-[#00d084] rounded-none p-6 flex flex-col justify-between hover:bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group relative"
               >
+                {/* Top border accent line on hover */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-[#00d084] transition-colors" />
+
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-800 group-hover:text-[#00d084] group-hover:border-[#00d084]/50 shadow-xs transition-colors">
+                    <div className="w-11 h-11 rounded-none bg-white border border-slate-200 flex items-center justify-center text-slate-800 group-hover:text-[#00d084] group-hover:border-[#00d084]/50 shadow-2xs transition-colors">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-xs sm:text-sm font-mono font-bold text-slate-400 group-hover:text-[#00d084]">
+                    <span className="text-xs sm:text-sm font-mono font-extrabold text-slate-400 group-hover:text-[#00d084]">
                       {step.num}
                     </span>
                   </div>

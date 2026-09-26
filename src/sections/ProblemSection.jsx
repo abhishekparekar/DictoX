@@ -38,13 +38,12 @@ export default function ProblemSection({ onOpenConsultation }) {
   return (
     <section className="relative py-20 md:py-24 lg:py-28 bg-[#051518] text-white overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#00f59b]/8 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#00f59b]/8 rounded-none blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         
         {/* Header with handwritten note */}
         <div className="relative text-center max-w-4xl mx-auto mb-14 sm:mb-16">
-          {/* Handwritten Sticky Note */}
           <div className="hidden lg:flex absolute -top-4 right-0 xl:-right-12 items-center gap-2 rotate-6">
             <span className="font-handwriting text-2xl sm:text-3xl text-[#00f59b] font-bold drop-shadow">
               Same Problems?<br />Let's Fix This
@@ -68,21 +67,24 @@ export default function ProblemSection({ onOpenConsultation }) {
           </p>
         </div>
 
-        {/* 5 Problem Cards: Full width grid */}
+        {/* 5 Problem Cards in Sharp Rectangular Format */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6">
           {problems.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.num}
-                className="bg-[#091f22]/90 border border-white/15 hover:border-[#00f59b]/50 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-[#00f59b]/10 group"
+                className="bg-[#091f22]/95 border border-white/15 hover:border-[#00f59b] rounded-none p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00f59b]/15 group relative"
               >
+                {/* Top border accent line on hover */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-[#00f59b] transition-colors" />
+
                 <div>
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-5">
                     <span className="text-sm font-mono font-extrabold text-slate-400 group-hover:text-[#00f59b] transition-colors">
                       {item.num}
                     </span>
-                    <div className="w-10 h-10 rounded-xl bg-white/5 group-hover:bg-[#00f59b]/15 flex items-center justify-center text-slate-200 group-hover:text-[#00f59b] transition-colors">
+                    <div className="w-10 h-10 rounded-none bg-white/5 border border-white/10 group-hover:bg-[#00f59b]/20 group-hover:border-[#00f59b]/40 flex items-center justify-center text-slate-200 group-hover:text-[#00f59b] transition-all">
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
@@ -106,7 +108,7 @@ export default function ProblemSection({ onOpenConsultation }) {
           </span>
           <button
             onClick={onOpenConsultation}
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-[#00f59b]/25 hover:-translate-y-0.5 cursor-pointer"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-none text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-[#00f59b]/25 hover:-translate-y-0.5 cursor-pointer uppercase tracking-wider"
           >
             <span>Get A Free Strategy Consultation</span>
             <ArrowRight className="w-4 h-4" />
