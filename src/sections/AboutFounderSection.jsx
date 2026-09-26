@@ -35,7 +35,7 @@ export default function AboutFounderSection({ onOpenConsultation }) {
 
           {/* Center Column: Founder Cutout/Photo */}
           <div className="lg:col-span-4 flex justify-center">
-            <div className="relative w-64 h-80 sm:w-72 sm:h-92 rounded-2xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-900">
+            <div className="relative w-48 h-60 sm:w-64 sm:h-80 md:w-72 md:h-88 rounded-2xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-900">
               <img
                 src="/images/founder.jpg"
                 alt="Suresh More - Founder DictoX"

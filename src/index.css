@@ -100,3 +100,24 @@
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Horizontal scrollbar for mobile testimonials */
+.testimonial-scroll {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #00b370 #e2e8f0;
+}
+
+.testimonial-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.testimonial-scroll::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 9999px;
+}
+
+.testimonial-scroll::-webkit-scrollbar-thumb {
+  background: #00b370;
+  border-radius: 9999px;
+}

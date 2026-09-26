@@ -7,41 +7,41 @@ export default function ContactSection({ onOpenConsultation }) {
   };
 
   return (
-    <section id="contact" className="py-10 sm:py-14 bg-white text-slate-900 border-b border-slate-200/80">
+    <section id="contact" className="py-8 sm:py-12 md:py-14 bg-white text-slate-900 border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Header */}
-        <div className="mb-6 sm:mb-8">
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
+        <div className="mb-4 sm:mb-6">
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
             CONTACT US
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display tracking-tight text-slate-900">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-display tracking-tight text-slate-900">
             Let's Talk About Your Business.
           </h2>
         </div>
 
         {/* 2-Part Grid: Left Details + Right Map & Socials */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-center">
           
           {/* Left: Contact Info (6 cols) */}
-          <div className="lg:col-span-6 space-y-4">
+          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 sm:gap-2.5">
             
             {/* Phone */}
-            <div className="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
-              <div className="w-9 h-9 rounded-lg bg-emerald-50 text-[#00b370] flex items-center justify-center shrink-0">
-                <Phone className="w-4 h-4" />
+            <div className="flex items-center gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-50/90 border border-slate-200/80">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-emerald-50 text-[#00b370] flex items-center justify-center shrink-0">
+                <Phone className="w-3.5 h-3.5" />
               </div>
-              <div className="text-xs sm:text-sm font-bold text-slate-900">
+              <div className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
                 <a href="tel:+917796407424" className="hover:text-[#00b370] transition-colors">7796407424</a> / <a href="tel:+919834036821" className="hover:text-[#00b370] transition-colors">9834036821</a>
               </div>
             </div>
 
             {/* Email */}
-            <div className="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
-              <div className="w-9 h-9 rounded-lg bg-emerald-50 text-[#00b370] flex items-center justify-center shrink-0">
-                <Mail className="w-4 h-4" />
+            <div className="flex items-center gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-50/90 border border-slate-200/80">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-emerald-50 text-[#00b370] flex items-center justify-center shrink-0">
+                <Mail className="w-3.5 h-3.5" />
               </div>
-              <div className="text-xs sm:text-sm font-bold text-slate-900">
+              <div className="text-xs sm:text-sm font-bold text-slate-900 leading-tight truncate">
                 <a href="mailto:dictoxmarketing@gmail.com" className="hover:text-[#00b370] transition-colors">
                   dictoxmarketing@gmail.com
                 </a>
@@ -49,23 +49,21 @@ export default function ContactSection({ onOpenConsultation }) {
             </div>
 
             {/* Address */}
-            <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
-              <div className="w-9 h-9 rounded-lg bg-emerald-50 text-[#00b370] flex items-center justify-center shrink-0 mt-0.5">
-                <MapPin className="w-4 h-4" />
+            <div className="flex items-start gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-50/90 border border-slate-200/80 sm:col-span-2 lg:col-span-1">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-emerald-50 text-[#00b370] flex items-center justify-center shrink-0 mt-0.5">
+                <MapPin className="w-3.5 h-3.5" />
               </div>
-              <div className="text-xs sm:text-sm text-slate-700 leading-snug font-medium">
-                Office No. 603, 6th Floor, Navale Icon,<br />
-                Bengaluru - Mumbai Hwy, Near Navale Bridge,<br />
-                Wadgaon Budruk, Narhe, Pune, Maharashtra 411041
+              <div className="text-[11px] sm:text-xs text-slate-700 leading-snug font-medium">
+                Office No. 603, 6th Fl, Navale Icon, Near Navale Bridge, Narhe, Pune 411041
               </div>
             </div>
 
             {/* Hours */}
-            <div className="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
-              <div className="w-9 h-9 rounded-lg bg-emerald-50 text-[#00b370] flex items-center justify-center shrink-0">
-                <Clock className="w-4 h-4" />
+            <div className="flex items-center gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-50/90 border border-slate-200/80 sm:col-span-2 lg:col-span-1">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-emerald-50 text-[#00b370] flex items-center justify-center shrink-0">
+                <Clock className="w-3.5 h-3.5" />
               </div>
-              <div className="text-xs sm:text-sm font-semibold text-slate-800">
+              <div className="text-[11px] sm:text-xs font-semibold text-slate-800">
                 Mon – Sat, 10:00 AM – 7:00 PM
               </div>
             </div>
@@ -73,12 +71,12 @@ export default function ContactSection({ onOpenConsultation }) {
           </div>
 
           {/* Right: Map Preview + Follow Us + Get Directions (6 cols) */}
-          <div className="lg:col-span-6 flex flex-col sm:flex-row gap-5 items-stretch">
+          <div className="lg:col-span-6 flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch">
             
             {/* Map Preview */}
             <div 
               onClick={openGoogleMaps}
-              className="flex-1 min-h-[200px] rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 relative cursor-pointer group shadow-xs"
+              className="flex-1 h-32 sm:h-auto min-h-[130px] rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 relative cursor-pointer group shadow-xs"
             >
               <div className="absolute inset-0 bg-[#e8ecef] flex items-center justify-center">
                 <svg className="w-full h-full opacity-60" viewBox="0 0 300 200" fill="none">
@@ -91,44 +89,44 @@ export default function ContactSection({ onOpenConsultation }) {
 
               {/* Pin Callout */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                <div className="px-2.5 py-1 rounded-full bg-white shadow-md border border-slate-200 text-[10px] font-bold text-slate-900 whitespace-nowrap flex items-center gap-1">
+                <div className="px-2 py-0.5 rounded-full bg-white shadow-md border border-slate-200 text-[9px] sm:text-[10px] font-bold text-slate-900 whitespace-nowrap flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
                   DictoX Marketing
                 </div>
-                <div className="w-7 h-7 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg -mt-1">
-                  <MapPin className="w-3.5 h-3.5" />
+                <div className="w-6 h-6 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg -mt-0.5">
+                  <MapPin className="w-3 h-3" />
                 </div>
               </div>
             </div>
 
             {/* Socials & Get Directions Button */}
-            <div className="flex flex-col justify-between sm:w-48 gap-4 text-center sm:text-left">
-              <div>
-                <span className="text-xs font-bold text-slate-900 block mb-2">
+            <div className="flex sm:flex-col items-center sm:items-stretch justify-between sm:justify-between sm:w-44 gap-2.5 sm:gap-3 p-1 sm:p-0">
+              <div className="flex sm:flex-col items-center sm:items-start gap-2">
+                <span className="text-[10px] sm:text-xs font-bold text-slate-900 hidden sm:block">
                   Follow Us
                 </span>
-                <div className="flex items-center justify-center sm:justify-start gap-2">
-                  <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-pink-500 text-white flex items-center justify-center shadow-xs hover:scale-105 transition-transform">
-                    <Instagram className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-pink-500 text-white flex items-center justify-center shadow-xs hover:scale-105 transition-transform">
+                    <Instagram className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </a>
-                  <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shadow-xs hover:scale-105 transition-transform">
-                    <Facebook className="w-4 h-4" />
+                  <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shadow-xs hover:scale-105 transition-transform">
+                    <Facebook className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </a>
-                  <a href="https://youtube.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center shadow-xs hover:scale-105 transition-transform">
-                    <Youtube className="w-4 h-4" />
+                  <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube" className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-red-600 text-white flex items-center justify-center shadow-xs hover:scale-105 transition-transform">
+                    <Youtube className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-blue-700 text-white flex items-center justify-center shadow-xs hover:scale-105 transition-transform">
-                    <Linkedin className="w-4 h-4" />
+                  <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-blue-700 text-white flex items-center justify-center shadow-xs hover:scale-105 transition-transform">
+                    <Linkedin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </a>
                 </div>
               </div>
 
               <button
                 onClick={openGoogleMaps}
-                className="w-full py-3 px-4 rounded-full text-xs font-bold text-white bg-slate-950 hover:bg-slate-800 transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
+                className="py-2 sm:py-2.5 px-3.5 sm:px-4 rounded-full text-xs font-bold text-white bg-slate-950 hover:bg-slate-800 transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm shrink-0"
               >
                 <span>Get Directions</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
               </button>
             </div>
 

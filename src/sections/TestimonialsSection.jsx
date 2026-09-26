@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Play, ArrowRight } from 'lucide-react';
+import React, { useRef } from 'react';
+import { ArrowRight, Star, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
 
 export default function TestimonialsSection({ onOpenConsultation }) {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const scrollRef = useRef(null);
 
   const testimonials = [
     {
@@ -10,89 +10,116 @@ export default function TestimonialsSection({ onOpenConsultation }) {
       role: 'Real Estate',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
       quote: '“Got 3x more enquiries in just 1 month. Highly recommended!”',
+      highlight: '3x More Enquiries',
     },
     {
       name: 'Sneha Kulkarni',
       role: 'Salon Owner',
       avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
       quote: '“Professional team, clear communication and real results.”',
+      highlight: 'Real Measurable Results',
     },
     {
       name: 'Amit Deshmukh',
       role: 'Coaching Institute',
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
       quote: '“Our admissions increased significantly. Great support and service!”',
+      highlight: 'Admissions Scaled',
     },
   ];
 
+  const handleScrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -260, behavior: 'smooth' });
+    }
+  };
+
+  const handleScrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 260, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="testimonials" className="py-10 sm:py-14 md:py-16 bg-[#f8faf9] text-slate-900 border-b border-slate-200/80">
+    <section id="testimonials" className="py-8 sm:py-12 md:py-16 bg-[#f8faf9] text-slate-900 border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5 sm:mb-7">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
+            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
               WHAT OUR CLIENTS SAY
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display tracking-tight text-slate-900 leading-tight">
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-bold font-display tracking-tight text-slate-900 leading-tight">
               Businesses That Grow With Us.
             </h2>
           </div>
 
-          <button
-            onClick={onOpenConsultation}
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-900 hover:text-[#00b370] transition-colors cursor-pointer group self-start sm:self-auto pb-1"
-          >
-            <span>View All Testimonials</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </button>
-        </div>
-
-        {/* 4 Cards in 1 Row matching Screenshot 3 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-stretch">
-          
-          {/* Card 1: Video Testimonial Card */}
-          <div className="relative rounded-2xl overflow-hidden bg-slate-900 shadow-md group flex flex-col justify-end p-4 min-h-[220px]">
-            <img
-              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80"
-              alt="Client Video Testimonial"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-70"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-            <div className="relative z-10">
+          <div className="flex items-center gap-2 self-end sm:self-auto">
+            {/* Scroll Navigation Chevrons for Mobile and Tablet */}
+            <div className="flex items-center gap-1.5 md:hidden">
               <button
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#00f59b] text-slate-950 text-xs font-bold shadow-md hover:bg-[#15f8a3] transition-colors cursor-pointer"
+                onClick={handleScrollLeft}
+                aria-label="Scroll left"
+                className="w-8 h-8 rounded-full bg-white border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-slate-50 transition-colors shadow-2xs"
               >
-                <Play className="w-3.5 h-3.5 fill-slate-950" />
-                <span>Play Client Video</span>
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                onClick={handleScrollRight}
+                aria-label="Scroll right"
+                className="w-8 h-8 rounded-full bg-white border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-slate-50 transition-colors shadow-2xs"
+              >
+                <ChevronRight className="w-4 h-4" />
               </button>
             </div>
-          </div>
 
-          {/* Cards 2, 3, 4: Client Reviews */}
+            <button
+              onClick={onOpenConsultation}
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-900 hover:text-[#00b370] transition-colors cursor-pointer group pb-0.5 ml-2"
+            >
+              <span>View All Testimonials</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Horizontal Scrollable Reviews with visible scrollbar / Desktop 3-Column Grid */}
+        <div
+          ref={scrollRef}
+          className="flex md:grid overflow-x-auto md:overflow-x-visible md:grid-cols-3 gap-3.5 sm:gap-5 pb-3 md:pb-0 testimonial-scroll snap-x snap-mandatory"
+        >
           {testimonials.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white border border-slate-200/90 rounded-2xl p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 group"
+              className="w-[82vw] max-w-[310px] md:w-auto shrink-0 snap-start bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 group"
             >
-              {/* Quote */}
-              <p className="text-xs sm:text-[13px] text-slate-800 font-medium leading-relaxed mb-6">
-                {item.quote}
-              </p>
+              <div>
+                {/* 5 Rating Stars */}
+                <div className="flex items-center gap-1 text-amber-400 mb-2.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  ))}
+                  <span className="text-[10px] font-bold text-slate-400 ml-1">5.0</span>
+                </div>
+
+                {/* Quote */}
+                <p className="text-xs sm:text-[13px] text-slate-800 font-medium leading-relaxed mb-4">
+                  {item.quote}
+                </p>
+              </div>
 
               {/* Author Info */}
               <div className="flex items-center gap-3 pt-3 border-t border-slate-100">
                 <img
                   src={item.avatar}
                   alt={item.name}
-                  className="w-10 h-10 rounded-full object-cover border border-slate-200 shrink-0"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-slate-200 shrink-0"
                 />
                 <div className="min-w-0">
-                  <div className="text-xs sm:text-sm font-bold text-slate-900 truncate">
-                    {item.name}
+                  <div className="text-xs sm:text-sm font-bold text-slate-900 truncate flex items-center gap-1">
+                    <span>{item.name}</span>
+                    <CheckCircle2 className="w-3 h-3 text-[#00b370] shrink-0" />
                   </div>
                   <div className="text-[11px] text-slate-500 font-medium truncate">
                     {item.role}
@@ -101,7 +128,11 @@ export default function TestimonialsSection({ onOpenConsultation }) {
               </div>
             </div>
           ))}
+        </div>
 
+        {/* Mobile Swipe Hint */}
+        <div className="flex md:hidden items-center justify-center gap-1.5 text-[11px] text-slate-400 font-medium mt-2">
+          <span>← Scroll to see more reviews →</span>
         </div>
 
       </div>
