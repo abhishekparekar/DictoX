@@ -1,15 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 export default function Footer({ onOpenConsultation }) {
-  const handleLinkClick = (e, href) => {
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   return (
     <footer className="bg-[#03090b] text-slate-400 text-xs sm:text-sm py-16 border-t-2 border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
@@ -19,13 +12,13 @@ export default function Footer({ onOpenConsultation }) {
           
           {/* Column 1: Brand & Bio (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
-            <a href="#home" className="inline-block focus:outline-none">
+            <Link to="/" className="inline-block focus:outline-none">
               <img
                 src="/images/logo1.png"
                 alt="DictoX Marketing"
                 className="h-11 sm:h-12 w-auto object-contain brightness-0 invert"
               />
-            </a>
+            </Link>
             
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
               Performance Marketing & Customer Acquisition Agency helping ambitious brands across India scale profitably through data-driven campaigns, WhatsApp automation, and high-converting funnels.
@@ -46,29 +39,29 @@ export default function Footer({ onOpenConsultation }) {
           {/* Column 2: Quick Links (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
             <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white border-l-2 border-[#00f59b] pl-2.5">
-              Quick Links
+              Explore Pages
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
-                <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="hover:text-[#00f59b] transition-colors">Home</a>
+                <Link to="/" className="hover:text-[#00f59b] transition-colors">Home</Link>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleLinkClick(e, '#services')} className="hover:text-[#00f59b] transition-colors">Services</a>
+                <Link to="/services" className="hover:text-[#00f59b] transition-colors">Services</Link>
               </li>
               <li>
-                <a href="#results" onClick={(e) => handleLinkClick(e, '#results')} className="hover:text-[#00f59b] transition-colors">Results</a>
+                <Link to="/results" className="hover:text-[#00f59b] transition-colors">Results</Link>
               </li>
               <li>
-                <a href="#industries" onClick={(e) => handleLinkClick(e, '#industries')} className="hover:text-[#00f59b] transition-colors">Industries</a>
+                <Link to="/industries" className="hover:text-[#00f59b] transition-colors">Industries</Link>
               </li>
               <li>
-                <a href="#about" onClick={(e) => handleLinkClick(e, '#about')} className="hover:text-[#00f59b] transition-colors">About</a>
+                <Link to="/about" className="hover:text-[#00f59b] transition-colors">About Suresh More</Link>
               </li>
               <li>
-                <a href="#course" onClick={(e) => handleLinkClick(e, '#course')} className="hover:text-[#00f59b] transition-colors">Course</a>
+                <Link to="/course" className="hover:text-[#00f59b] transition-colors">Meta Ads Course</Link>
               </li>
               <li>
-                <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')} className="hover:text-[#00f59b] transition-colors">Contact</a>
+                <Link to="/contact" className="hover:text-[#00f59b] transition-colors">Contact / Location</Link>
               </li>
             </ul>
           </div>
@@ -80,28 +73,28 @@ export default function Footer({ onOpenConsultation }) {
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
-                <button onClick={onOpenConsultation} className="hover:text-[#00f59b] text-left transition-colors cursor-pointer">
+                <Link to="/services#meta-ads" className="hover:text-[#00f59b] text-left transition-colors">
                   Meta Ads (Facebook & IG)
-                </button>
+                </Link>
               </li>
               <li>
-                <button onClick={onOpenConsultation} className="hover:text-[#00f59b] text-left transition-colors cursor-pointer">
+                <Link to="/services#google-ads" className="hover:text-[#00f59b] text-left transition-colors">
                   Google & YouTube Ads
-                </button>
+                </Link>
               </li>
               <li>
-                <button onClick={onOpenConsultation} className="hover:text-[#00f59b] text-left transition-colors cursor-pointer">
+                <Link to="/services#whatsapp-api" className="hover:text-[#00f59b] text-left transition-colors">
                   WhatsApp Business API
-                </button>
+                </Link>
               </li>
               <li>
-                <button onClick={onOpenConsultation} className="hover:text-[#00f59b] text-left transition-colors cursor-pointer">
+                <Link to="/services#automation" className="hover:text-[#00f59b] text-left transition-colors">
                   Automation & CRM Sync
-                </button>
+                </Link>
               </li>
               <li>
                 <button onClick={onOpenConsultation} className="hover:text-[#00f59b] text-left transition-colors cursor-pointer">
-                  Lead Funnel Optimization
+                  Custom Strategy Audit
                 </button>
               </li>
             </ul>
@@ -126,7 +119,7 @@ export default function Footer({ onOpenConsultation }) {
             <div className="pt-2">
               <button
                 onClick={onOpenConsultation}
-                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-none text-xs font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all shadow-md cursor-pointer uppercase tracking-wider"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:shadow-[0_4px_16px_rgba(0,245,155,0.35)] transition-all cursor-pointer uppercase tracking-wider"
               >
                 <span>Book Consultation</span>
                 <ArrowRight className="w-3.5 h-3.5" />

@@ -116,13 +116,13 @@ export default function ServicesSection({ onOpenConsultation }) {
                 {/* 1. Proper Looking Gradient Showcase Box (Top Feature Box) */}
                 <div className={`w-full rounded-xl p-3.5 border mb-5 ${item.gradientBoxBg} transition-all duration-300 group-hover:shadow-sm`}>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <div className="flex items-center gap-2.5 min-w-0">
+                    <div className="flex items-center gap-2.5">
                       {item.icon}
-                      <div className="min-w-0">
-                        <div className="text-xs sm:text-sm font-bold text-slate-900 truncate">
+                      <div>
+                        <div className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
                           {item.boxTitle}
                         </div>
-                        <div className="text-[11px] font-medium text-slate-600 truncate">
+                        <div className="text-[11px] font-medium text-slate-600 leading-tight mt-0.5">
                           {item.boxSub}
                         </div>
                       </div>
@@ -131,7 +131,7 @@ export default function ServicesSection({ onOpenConsultation }) {
                   
                   {/* Bottom strip of the gradient box: Tag and Badge */}
                   <div className="flex items-center justify-between gap-2 pt-2 border-t border-slate-200/60 text-[10px] font-semibold">
-                    <span className="text-slate-600 truncate">
+                    <span className="text-slate-600 font-medium">
                       {item.targetTag}
                     </span>
                     <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold shrink-0 ${item.boxBadgeColor}`}>
@@ -144,20 +144,15 @@ export default function ServicesSection({ onOpenConsultation }) {
                 <h3 className="text-xl sm:text-2xl font-bold font-display text-slate-900 group-hover:text-slate-950 transition-colors">
                   {item.title}
                 </h3>
-                <div className="text-xs sm:text-sm font-semibold text-[#00b370] mt-1 mb-3">
+                <div className="text-xs sm:text-sm font-bold text-[#00b370] mt-1 mb-4">
                   {item.subtitle}
                 </div>
 
-                {/* 3. High-Contrast Description */}
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal mb-5">
-                  {item.desc}
-                </p>
-
-                {/* 4. Micro Features Checklist */}
-                <div className="space-y-2 pt-4 border-t border-slate-100">
+                {/* 3. Micro Features Checklist - Clean, Crisp & High-Impact */}
+                <div className="space-y-2.5 pt-3 border-t border-slate-100">
                   {item.features.map((feat, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#00b370] shrink-0" />
+                    <div key={idx} className="flex items-center gap-2 text-xs sm:text-[13px] text-slate-800 font-semibold">
+                      <CheckCircle2 className="w-4 h-4 text-[#00b370] shrink-0" />
                       <span>{feat}</span>
                     </div>
                   ))}

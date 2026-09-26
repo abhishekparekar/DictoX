@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import { Menu, X, ArrowRight, Sparkles } from 'lucide-react';
 
 export default function Navbar({ onOpenConsultation }) {
@@ -14,23 +15,14 @@ export default function Navbar({ onOpenConsultation }) {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Results', href: '#results' },
-    { name: 'Industries', href: '#industries' },
-    { name: 'About', href: '#about' },
-    { name: 'Course', href: '#course' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'Results', path: '/results' },
+    { name: 'Industries', path: '/industries' },
+    { name: 'About', path: '/about' },
+    { name: 'Course', path: '/course' },
+    { name: 'Contact', path: '/contact' },
   ];
-
-  const handleLinkClick = (e, href) => {
-    e.preventDefault();
-    setMobileMenuOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
 
   return (
     <header
@@ -43,26 +35,37 @@ export default function Navbar({ onOpenConsultation }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between">
         
         {/* Brand Official Logo */}
-        <a href="#home" className="flex items-center gap-3 group focus:outline-none shrink-0">
+        <Link to="/" className="flex items-center gap-3 group focus:outline-none shrink-0">
           <img
             src="/images/logo1.png"
             alt="DictoX Marketing - Performance Marketing Agency"
             className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-102"
           />
-        </a>
+        </Link>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Navigation Links (Multi-Page Navigation) */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navLinks.map((link) => (
-            <a
+            <NavLink
               key={link.name}
-              href={link.href}
-              onClick={(e) => handleLinkClick(e, link.href)}
-              className="text-sm xl:text-base font-semibold text-slate-700 hover:text-slate-950 transition-colors duration-200 relative py-1 group"
+              to={link.path}
+              className={({ isActive }) =>
+                `text-sm xl:text-base font-bold transition-colors duration-200 relative py-1 group ${
+                  isActive ? 'text-[#00b370]' : 'text-slate-700 hover:text-slate-950'
+                }`
+              }
             >
-              <span>{link.name}</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#00d084] transition-all duration-300 group-hover:w-full" />
-            </a>
+              {({ isActive }) => (
+                <>
+                  <span>{link.name}</span>
+                  <span
+                    className={`absolute bottom-0 left-0 h-0.5 bg-[#00b370] transition-all duration-300 ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  />
+                </>
+              )}
+            </NavLink>
           ))}
         </nav>
 
@@ -70,7 +73,7 @@ export default function Navbar({ onOpenConsultation }) {
         <div className="hidden md:flex items-center">
           <button
             onClick={onOpenConsultation}
-            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-none text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-[#00f59b]/25 hover:-translate-y-0.5 cursor-pointer uppercase tracking-wider"
+            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:shadow-[0_6px_20px_rgba(0,245,155,0.4)] transition-all duration-300 cursor-pointer uppercase tracking-wider"
           >
             <span>Get Free Strategy Consultation</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
@@ -81,7 +84,7 @@ export default function Navbar({ onOpenConsultation }) {
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={onOpenConsultation}
-            className="px-3.5 py-2 rounded-none text-xs font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] shadow-sm uppercase tracking-wider"
+            className="px-3.5 py-2 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] shadow-sm uppercase tracking-wider"
           >
             <span>Consult</span>
           </button>
@@ -99,17 +102,21 @@ export default function Navbar({ onOpenConsultation }) {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 shadow-2xl px-6 py-5 flex flex-col gap-3 animate-in slide-in-from-top-4 duration-200">
+        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 shadow-2xl px-6 py-5 flex flex-col gap-2.5 animate-in slide-in-from-top-4 duration-200">
           {navLinks.map((link) => (
-            <a
+            <NavLink
               key={link.name}
-              href={link.href}
-              onClick={(e) => handleLinkClick(e, link.href)}
-              className="text-base font-semibold text-slate-800 hover:text-[#00d084] py-2.5 border-b border-slate-100 flex items-center justify-between transition-colors"
+              to={link.path}
+              onClick={() => setMobileMenuOpen(false)}
+              className={({ isActive }) =>
+                `text-base font-bold py-2.5 border-b border-slate-100 flex items-center justify-between transition-colors ${
+                  isActive ? 'text-[#00b370]' : 'text-slate-800 hover:text-[#00b370]'
+                }`
+              }
             >
               <span>{link.name}</span>
               <ArrowRight className="w-4 h-4 text-slate-400" />
-            </a>
+            </NavLink>
           ))}
           
           <div className="pt-4 flex flex-col gap-3">
@@ -118,7 +125,7 @@ export default function Navbar({ onOpenConsultation }) {
                 setMobileMenuOpen(false);
                 onOpenConsultation();
               }}
-              className="w-full text-center py-3.5 rounded-none text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] shadow-md flex items-center justify-center gap-2 uppercase tracking-wider"
+              className="w-full text-center py-3.5 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] shadow-md flex items-center justify-center gap-2 uppercase tracking-wider"
             >
               <Sparkles className="w-4 h-4" />
               <span>Get Free Strategy Consultation</span>

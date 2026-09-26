@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 
 export default function LogoWall() {
   const brands = [
@@ -18,27 +18,22 @@ export default function LogoWall() {
   return (
     <section className="bg-slate-50/90 border-b border-slate-200/80 py-8 sm:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
           
-          {/* Label with arrows */}
-          <div className="flex items-center gap-2.5 text-slate-500 shrink-0">
-            <button className="p-1.5 rounded-lg hover:bg-slate-200 transition-colors" aria-label="Previous brands">
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-slate-700">
+          {/* Label Badge */}
+          <div className="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white border border-slate-200 shadow-2xs shrink-0">
+            <span className="w-2 h-2 rounded-full bg-[#00b370] animate-pulse" />
+            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-slate-800">
               Trusted By 500+ Brands
             </span>
-            <button className="p-1.5 rounded-lg hover:bg-slate-200 transition-colors" aria-label="Next brands">
-              <ChevronRight className="w-4 h-4" />
-            </button>
           </div>
 
-          {/* Brands List */}
-          <div className="flex flex-wrap items-center justify-center lg:justify-between gap-8 sm:gap-10 flex-1 w-full overflow-hidden">
+          {/* Balanced 2x5 Brands Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-4 gap-x-8 sm:gap-x-12 items-center justify-items-center flex-1 w-full">
             {brands.map((b) => (
               <span
                 key={b.name}
-                className={`${b.color} ${b.font} opacity-85 hover:opacity-100 transition-opacity cursor-default select-none hover:scale-105 transform duration-200`}
+                className={`${b.color} ${b.font} opacity-80 hover:opacity-100 transition-opacity cursor-default select-none hover:scale-105 transform duration-200`}
               >
                 {b.name}
               </span>

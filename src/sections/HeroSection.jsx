@@ -98,41 +98,23 @@ export default function HeroSection({ onOpenConsultation }) {
                   className="w-full h-[400px] sm:h-[460px] md:h-[480px] object-cover object-top hover:scale-102 transition-transform duration-500 rounded-3xl"
                 />
                 
-                {/* Gradient overlay at bottom of photo */}
-                <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#020a0c] via-[#020a0c]/80 to-transparent" />
-                
-                {/* Floating Founder Name */}
-                <div className="absolute bottom-16 sm:bottom-20 left-5 right-5 z-10">
-                  <div className="text-white font-display font-bold text-xl sm:text-2xl leading-tight">
+                {/* Subtle gradient vignette at bottom of photo */}
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#020a0c]/90 via-[#020a0c]/40 to-transparent" />
+              </div>
+
+              {/* Floating Bottom Card: Dedicated Founder & Strategist Badge */}
+              <div className="absolute -bottom-7 inset-x-2 sm:-inset-x-3 bg-gradient-to-r from-[#061a1d] via-[#09262b] to-[#05171a] border-2 border-[#00f59b] rounded-2xl p-4 sm:p-4.5 shadow-[0_12px_40px_rgba(0,245,155,0.3)] backdrop-blur-md z-20 flex items-center justify-between gap-3">
+                <div>
+                  <div className="text-white font-display font-black text-lg sm:text-xl md:text-2xl tracking-tight leading-tight">
                     Suresh More
                   </div>
-                  <div className="text-[#00f59b] text-xs sm:text-sm font-semibold mt-0.5">
+                  <div className="text-[#00f59b] text-xs sm:text-sm font-bold tracking-wide mt-1">
                     Founder & Performance Marketing Strategist
                   </div>
                 </div>
-              </div>
 
-              {/* Floating Bottom Card */}
-              <div className="absolute -bottom-8 inset-x-2 sm:-inset-x-2 bg-[#06181b]/95 border-2 border-[#00f59b] rounded-2xl p-4 shadow-2xl backdrop-blur-md z-20">
-                <div className="flex items-center justify-between pb-2.5 border-b border-white/10">
-                  <span className="text-xs sm:text-sm text-slate-200 font-semibold flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-none bg-[#00f59b] animate-pulse" />
-                    Helping Businesses Grow With Online Ads
-                  </span>
-                </div>
-                <div className="grid grid-cols-3 gap-2 text-center pt-2.5 text-white">
-                  <div>
-                    <div className="text-sm sm:text-base font-extrabold font-display text-[#00f59b]">5+</div>
-                    <div className="text-[10px] sm:text-xs text-slate-400 font-medium">Years Experience</div>
-                  </div>
-                  <div className="border-x border-white/10">
-                    <div className="text-sm sm:text-base font-extrabold font-display text-[#00f59b]">500+</div>
-                    <div className="text-[10px] sm:text-xs text-slate-400 font-medium">Brands Scaled</div>
-                  </div>
-                  <div>
-                    <div className="text-sm sm:text-base font-extrabold font-display text-[#00f59b]">₹10+ Cr</div>
-                    <div className="text-[10px] sm:text-xs text-slate-400 font-medium">Ad Spend Managed</div>
-                  </div>
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-[#00f59b] to-[#00d084] flex items-center justify-center text-slate-950 shadow-md shrink-0">
+                  <Check className="w-6 h-6 stroke-[3]" />
                 </div>
               </div>
 

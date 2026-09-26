@@ -1,24 +1,18 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import ConsultationModal from './components/ConsultationModal';
 import FloatingActions from './components/FloatingActions';
 
-import HeroSection from './sections/HeroSection';
-import TrustBar from './sections/TrustBar';
-import ProblemSection from './sections/ProblemSection';
-import ServicesSection from './sections/ServicesSection';
-import WhyDictoxSection from './sections/WhyDictoxSection';
-import ProcessSection from './sections/ProcessSection';
-import ResultsSection from './sections/ResultsSection';
-import IndustriesSection from './sections/IndustriesSection';
-import LogoWall from './sections/LogoWall';
-import TestimonialsSection from './sections/TestimonialsSection';
-import AboutFounderSection from './sections/AboutFounderSection';
-import CourseSection from './sections/CourseSection';
-import FAQSection from './sections/FAQSection';
-import FinalCTA from './sections/FinalCTA';
-import ContactSection from './sections/ContactSection';
+import HomePage from './pages/HomePage';
+import ServicesPage from './pages/ServicesPage';
+import ResultsPage from './pages/ResultsPage';
+import IndustriesPage from './pages/IndustriesPage';
+import AboutPage from './pages/AboutPage';
+import CoursePage from './pages/CoursePage';
+import ContactPage from './pages/ContactPage';
 
 export default function App() {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
@@ -32,68 +26,63 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-brand-emerald selection:text-brand-dark overflow-x-hidden">
-      {/* 09. Navigation / Sticky Header */}
-      <Navbar onOpenConsultation={handleOpenConsultation} />
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-brand-emerald selection:text-brand-dark overflow-x-hidden">
+        {/* Navigation / Sticky Header */}
+        <Navbar onOpenConsultation={handleOpenConsultation} />
 
-      <main className="flex-grow">
-        {/* 10. Hero Section */}
-        <HeroSection onOpenConsultation={handleOpenConsultation} />
+        <main className="flex-grow">
+          <Routes>
+            <Route
+              path="/"
+              element={<HomePage onOpenConsultation={handleOpenConsultation} />}
+            />
+            <Route
+              path="/services"
+              element={<ServicesPage onOpenConsultation={handleOpenConsultation} />}
+            />
+            <Route
+              path="/results"
+              element={<ResultsPage onOpenConsultation={handleOpenConsultation} />}
+            />
+            <Route
+              path="/industries"
+              element={<IndustriesPage onOpenConsultation={handleOpenConsultation} />}
+            />
+            <Route
+              path="/about"
+              element={<AboutPage onOpenConsultation={handleOpenConsultation} />}
+            />
+            <Route
+              path="/course"
+              element={<CoursePage onOpenConsultation={handleOpenConsultation} />}
+            />
+            <Route
+              path="/contact"
+              element={<ContactPage onOpenConsultation={handleOpenConsultation} />}
+            />
+            {/* Catch-all fallback */}
+            <Route
+              path="*"
+              element={<HomePage onOpenConsultation={handleOpenConsultation} />}
+            />
+          </Routes>
+        </main>
 
-        {/* 11. Trust / Certification Bar */}
-        <TrustBar />
+        {/* Global Footer */}
+        <Footer onOpenConsultation={handleOpenConsultation} />
 
-        {/* 12. Business Problem Section */}
-        <ProblemSection onOpenConsultation={handleOpenConsultation} />
+        {/* Global Interactive Consultation Modal */}
+        <ConsultationModal
+          isOpen={isConsultationOpen}
+          onClose={handleCloseConsultation}
+        />
 
-        {/* 13. Services Section */}
-        <ServicesSection onOpenConsultation={handleOpenConsultation} />
-
-        {/* 14. Why DictoX Section (Comparison) */}
-        <WhyDictoxSection onOpenConsultation={handleOpenConsultation} />
-
-        {/* 15. How We Work — Process */}
-        <ProcessSection onOpenConsultation={handleOpenConsultation} />
-
-        {/* 16. Results / Case Studies */}
-        <ResultsSection onOpenConsultation={handleOpenConsultation} />
-
-        {/* 17. Industries We Work With */}
-        <IndustriesSection onOpenConsultation={handleOpenConsultation} />
-
-        {/* 18. Client Logo Wall */}
-        <LogoWall />
-
-        {/* 19. Testimonials */}
-        <TestimonialsSection onOpenConsultation={handleOpenConsultation} />
-
-        {/* 20. About / Founder (Suresh More) */}
-        <AboutFounderSection onOpenConsultation={handleOpenConsultation} />
-
-        {/* 21. Meta Ads Course */}
-        <CourseSection onOpenConsultation={handleOpenConsultation} />
-
-        {/* 22. FAQ Accordion */}
-        <FAQSection onOpenConsultation={handleOpenConsultation} />
-
-        {/* 23. Final CTA Band */}
-        <FinalCTA onOpenConsultation={handleOpenConsultation} />
-
-        {/* 24. Contact & Location Section */}
-        <ContactSection onOpenConsultation={handleOpenConsultation} />
-      </main>
-
-      {/* 26. Footer */}
-      <Footer onOpenConsultation={handleOpenConsultation} />
-
-      {/* Global Interactive Consultation Modal */}
-      <ConsultationModal
-        isOpen={isConsultationOpen}
-        onClose={handleCloseConsultation}
-      />
-
-      {/* Floating WhatsApp and Back to Top Actions */}
-      <FloatingActions />
-    </div>
+        {/* Floating WhatsApp and Back to Top Actions */}
+        <FloatingActions />
+      </div>
+    </BrowserRouter>
   );
 }
+
