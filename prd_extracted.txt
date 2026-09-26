@@ -1,0 +1,370 @@
+﻿DictoX Marketing — Website Product Requirements Document (PRD)
+Premium Performance Marketing & Customer Acquisition Agency Website
+Version 1.0 | 26 September 2026
+Item
+Requirement
+Framework
+React.js + Vite
+Styling
+Tailwind CSS
+Primary visual
+Dark premium + white/light sections + emerald gradient
+Display font
+Space Grotesk
+Body font
+Inter
+Primary CTA
+Get Free Strategy Consultation
+Primary conversion
+Consultation enquiry
+Production data rule
+Only genuine, client-approved proof and claims
+
+01. Product Overview
+Build a premium, conversion-focused static website for DictoX Marketing, positioned as a Performance Marketing & Customer Acquisition Agency serving businesses across India.
+The website should communicate a simple business outcome: advertising should not stop at clicks or leads; it should help businesses acquire customers, generate sales opportunities and grow consistently.
+The experience should be original to DictoX Marketing. The supplied reference image and Adymize reference are design-direction inputs only; do not copy their branding, exact layouts, copy, illustrations or visual identity.
+02. Business Information
+Company: DictoX Marketing
+Category: Performance Marketing & Customer Acquisition Agency
+Founder: Suresh More
+Founder Designation: Founder & Performance Marketing Strategist
+Primary Positioning: Performance Marketing & Customer Acquisition Agency
+Primary Heading: Optimize Your Ads For More Profit.
+Supporting Message: A dedicated team of performance marketing specialists helping businesses across India generate better results and acquire more customers through online advertising.
+Primary CTA: Get Free Strategy Consultation
+Secondary CTA: View Our Results
+Experience: 5+ Years
+Brands / Clients: 500+ Brands
+Ad Spend Managed: ₹10+ Crore
+Leads Generated: 5 Lakh+ Leads
+Coverage: Businesses across India
+03. Product Goals & Success Criteria
+1. Establish DictoX as a credible performance marketing and customer acquisition brand.
+2. Explain the difference between generic advertising management and DictoX's business-growth approach.
+3. Convert visitors into consultation enquiries through repeated, contextual CTAs.
+4. Present genuine case studies, client logos and testimonials as trust proof without inventing data.
+5. Make the website fast, responsive, accessible and SEO-friendly.
+6. Make the structure scalable so case studies, testimonials, services and course content can be updated later.
+04. Technology Stack
+Frontend: React.js
+Build Tool: Vite
+Styling: Tailwind CSS
+Icons: Lucide React or an equivalent lightweight icon library
+Animation: CSS transitions + Framer Motion only where it materially improves UX; avoid animation overload.
+Forms: React controlled form with validation. Connect to the final lead endpoint/API when supplied.
+Map: Google Maps embed or supplied Google Maps embed URL.
+Deployment: Vercel / Netlify / equivalent static hosting.
+Data Model: Static JSON/JS objects for services, industries, case studies, testimonials and FAQs so content is easy to maintain.
+No backend is required for V1 unless the client provides a lead-management/API requirement.
+05. Visual Design Direction
+Overall style: premium, modern, performance-driven, technology-led, editorial and conversion-focused.
+Core visual idea: dark premium sections communicate performance, strategy and authority; light sections improve readability and create visual rhythm.
+Use large typography, generous whitespace, rounded cards, thin borders, subtle glows, restrained gradients, data-focused visual blocks and clear CTA hierarchy.
+The supplied screenshot indicates a dark/white alternating rhythm, emerald/green accents, metric cards, process steps, case-study cards and strong CTA bands. Reinterpret these patterns with an original DictoX system.
+Do not use excessive glassmorphism, excessive neon, heavy 3D effects or distracting motion.
+06. Color System
+Primary Dark: #061512 — main hero, CTA bands, footer and premium sections.
+Dark Surface: #0B211D — cards and secondary dark panels.
+Dark Border: #1E3A34 — subtle card/section borders.
+Primary Emerald: #18E6A0 — main CTA, active states and performance highlights.
+Emerald Deep: #0BAA75 — gradient endpoint and hover treatment.
+Mint Accent: #8CFFE0 — small highlights and gradient glow.
+White: #FFFFFF — primary light-section background and text on dark backgrounds.
+Off White: #F5F8F7 — light section background.
+Text Primary: #0A1714 — dark text on light backgrounds.
+Text Secondary: #5B6965 — supporting copy.
+Warning/Problem Accent: #F59E0B — use sparingly for problem indicators only.
+Success: #18E6A0 — success states.
+Gradient recommendation: linear-gradient(135deg, #18E6A0 0%, #0BAA75 100%).
+Dark glow recommendation: radial-gradient(circle at 50% 20%, rgba(24,230,160,.18), transparent 55%).
+07. Typography System
+Primary UI / Body Font: Inter. Use 400, 500, 600 and 700 weights.
+Display / Heading Font: Space Grotesk. Use 500, 600 and 700 weights.
+Hero heading: Space Grotesk, 64–76px desktop, 42–52px tablet, 36–42px mobile, tight line-height around 0.95–1.05.
+Section heading: Space Grotesk, 42–56px desktop, 32–40px mobile.
+Body: Inter, 16–18px desktop, 15–16px mobile, line-height 1.55–1.7.
+Metric numbers: Space Grotesk, 30–48px, 600–700 weight.
+Eyebrows/labels: Inter, 11–13px, 600 weight, uppercase with modest letter spacing.
+Avoid more than two font families.
+08. Layout & Responsive System
+Desktop container: max-width 1200–1280px with 24px side padding.
+Large desktop: max-width 1320px where the hero or case-study visuals need additional breathing room.
+Tablet breakpoint: around 768px.
+Desktop breakpoint: around 1024px.
+Mobile: 360px–767px. All sections must remain readable and tappable.
+Grid: 12-column desktop system; 2-column / 1-column responsive collapse as appropriate.
+Section spacing: approximately 96–140px desktop, 64–90px tablet, 52–72px mobile.
+Buttons: minimum 44px touch target height; pill/rounded style with clear hover and focus states.
+09. Navigation / Header
+Sticky header with subtle backdrop blur after scroll.
+Left: DictoX Marketing logo.
+Navigation: Home | Services | Results | Industries | About | Course | Contact.
+Right: primary CTA — Get Free Strategy Consultation.
+Desktop: compact, premium header with thin bottom border.
+Mobile: logo + menu trigger + CTA icon/button; navigation opens as a full-width drawer/dropdown.
+Header should become slightly more opaque after scrolling for readability.
+10. Hero Section — UX Specification
+Eyebrow: MAHARASHTRA'S NO.1 LEAD GENERATION AGENCY — only use this claim if the client can substantiate it; otherwise replace with a verifiable positioning statement.
+Headline: Optimize Your Ads For More Profit.
+Supporting copy: Performance marketing specialists helping businesses across India generate better results and acquire more customers through online advertising.
+Primary CTA: Get Free Strategy Consultation →
+Secondary CTA: View Our Results →
+Proof row: 5+ Years Experience | 500+ Brands | ₹10+ Crore Ad Spend Managed.
+Visual direction: founder/strategist image on right with an original performance dashboard / growth graphic, abstract chart lines or campaign metrics. Use real supplied founder photo when available.
+Hero background: deep dark green-black with subtle emerald radial glow and fine decorative grid/noise.
+CTA interaction: primary button uses emerald gradient, slight lift and glow on hover; secondary button is outlined.
+11. Trust / Certification
+Heading: Our Performance Marketing Services Are Certified By
+Show: Meta Business Partner | Google Partner.
+Use official logos only after client supplies or approves the correct assets.
+Add compact proof metrics alongside certification where useful: 5+ Years Experience, 500+ Brands, ₹10+ Crore Ad Spend Managed.
+Keep this section visually calm; it is a credibility bridge between hero and problem statement.
+12. Business Problem Section
+Heading: IS YOUR ADVERTISING REALLY WORKING?
+Subheading: Getting Leads Is Not Enough. You Need Customers, Sales & Consistent Growth.
+Intro: You’re spending on advertising — but is it actually helping your business grow?
+Create five numbered problem cards: 01 No New Customers; 02 Low-Quality Leads; 03 Low Sales; 04 High Cost, Low Return; 05 Inconsistent Customer Flow.
+Each card contains a simple line icon, short title and 1–2 line explanation.
+End statement: It Should Help You Get Customers, Generate Sales & Grow Your Business.
+CTA: Get A Free Strategy Consultation →
+Interaction: cards can reveal a subtle emerald border/glow on hover.
+13. Services Section
+Heading: Performance Marketing Services
+Service cards: Meta Ads; Google & YouTube Ads; WhatsApp API; Automation Services.
+Meta Ads copy: Facebook & Instagram advertising focused on reaching your target audience and generating potential leads and customers.
+Google & YouTube Ads copy: Reach potential customers when they are actively searching for your products or services.
+WhatsApp API copy: Connect advertising campaigns with WhatsApp for faster lead communication, follow-ups and customer engagement.
+Automation copy: Automate repetitive marketing and lead-management processes to improve efficiency and response time.
+CTA: Explore Our Services →
+Card design: white/light surface cards with dark text, compact icon area, service label, description and arrow link.
+14. Why DictoX Section
+Heading: A Different Approach To Your Advertising
+Use a side-by-side comparison layout: Typical Agency Approach vs DICTOX Approach.
+Rows: Ads are the main focus → Your business growth is the focus; Campaigns are launched and managed → Campaigns are continuously improved; Focus on clicks/reach/impressions → Focus on potential leads/customers; Generic strategy → Strategy built around your business; Unclear performance → Clear tracking of spend/leads/results; Separate follow-up → WhatsApp integration for faster follow-up; Campaigns run as they are → What works is optimized & scaled.
+Visual: dark section with two contrasting tables/cards. DictoX side uses check icons and emerald accents.
+CTA statement: Your Ad Budget Should Work For Your Business.
+15. How We Work — Process
+Heading: From Strategy To Customers — We Handle It All.
+Six-step horizontal process on desktop, vertical timeline on mobile.
+01 Understand — Understand your business, goals & target audience.
+02 Strategize — Build the right advertising strategy based on your business objectives.
+03 Create — Develop creatives, copy & campaign structure.
+04 Launch — Launch campaigns across the right advertising platforms.
+05 Optimize — Monitor performance and continuously optimize campaigns.
+06 Scale — Identify opportunities to improve performance and scale what works.
+Use numbered circles, thin connector lines and small animated progress indicators. Keep animation subtle.
+16. Results / Case Studies
+Heading: Real Campaigns. Real Results.
+This section is conversion-critical and must use genuine, verifiable client results only.
+Each case-study card must support: Industry, Campaign Objective, Ad Spend, Leads Generated, Cost Per Lead, Campaign Duration, Key Outcome.
+Numbers should be visually prominent, but no numbers should be fabricated or placeholder data shown in production.
+Recommended desktop layout: featured case study + two supporting cards; mobile: stacked cards.
+CTA on each: View Case Study →
+Optional case-study detail route: /results/:slug.
+Use real campaign screenshots/creative previews when supplied. Add a light image overlay for readability.
+17. Industries
+Heading: Industries We Work With
+Industries: Real Estate; Education & Coaching; Healthcare; Restaurants & Cafés; Gyms & Fitness; Salons & Local Services; Automobile; Franchise & Dealerships; E-commerce; Professional Services.
+Use an icon grid or compact pill/grid system rather than large text-only cards.
+Each item may later link to an industry-specific landing page, but V1 can use anchor/hover interaction only.
+18. Client Logo Wall
+Heading: Trusted By 500+ Brands.
+Display only genuine client logos supplied/approved by DictoX.
+Use grayscale or low-contrast logos by default with subtle opacity/contrast enhancement on hover.
+Desktop: multi-column logo wall; mobile: 2-column or horizontal marquee only if performance remains strong.
+Do not invent or borrow logos from the reference screenshot.
+19. Testimonials
+Heading: What Our Clients Say
+Each testimonial requires: Client Photo, Client Name, Business Name, Genuine Testimonial.
+Video testimonials should receive a prominent card with thumbnail, play button and short quote.
+Recommended layout: one large featured testimonial + 2–3 smaller testimonials.
+Use quotation marks, client identity and business name clearly; no anonymous testimonials unless explicitly approved.
+20. About / Founder
+Heading: We Help Businesses Turn Advertising Into Growth.
+Body: DictoX Marketing is a performance marketing agency helping businesses across India acquire customers through Meta Ads, Google Ads, WhatsApp and marketing automation.
+Founder: Suresh More — Founder & Performance Marketing Strategist — DictoX Marketing.
+Founder story: With 5+ years of experience in digital advertising, Suresh More founded DictoX Marketing with a simple goal — help businesses use online advertising to generate more customers and grow with a clear, performance-focused approach.
+Founder statement: “Our goal is simple — help businesses get more from every advertising opportunity.”
+Metrics: 5+ Years Experience | 500+ Brands | ₹10+ Crore Ad Spend Managed.
+CTA: Know More About DictoX →
+Visual: professional founder portrait with original decorative growth chart/metric elements. Avoid stock-photo look.
+21. Meta Ads Course
+Heading: Meta Ads For Business Owners
+Subheading: Learn How To Generate Customers Using Facebook & Instagram Ads.
+Topics: Campaign Setup | Audience Targeting | Lead Generation | Creative Strategy | Campaign Optimization.
+CTA: Explore Course →
+Visual direction: course card / laptop or ad-dashboard visual, but keep it consistent with the core brand. This section should feel like an educational product, not a generic blog.
+22. FAQ
+Use an accessible accordion with one open item at a time on mobile and optionally multiple open items on desktop.
+Questions: What does DictoX Marketing do? Which services does DictoX provide? Do you work with businesses across India? How do you decide which advertising platform is right for my business? Is the advertising budget separate from your service fees? How much should I spend on advertising? Do you provide ad creatives and copywriting? How do you track leads and campaign performance? How quickly can we start? How do I get started with DictoX?
+Accordion behavior: keyboard accessible, aria-expanded, smooth height transition, clear plus/minus state.
+23. Final CTA
+Heading: Ready To Get More From Your Ads?
+Subheading: Let's Build A Performance Marketing Strategy For Your Business.
+CTA: Get Free Strategy Consultation →
+Design: full-width dark emerald-gradient CTA band with subtle glow and decorative line/chart motif.
+Include small reassurance labels where true: No Obligation | Expert Advice | Free Consultation.
+24. Contact / Location
+Heading: Let’s Talk About Your Business
+Company: DictoX Marketing
+Address: Office No. 603, 6th Floor, Navale Icon, Bengaluru - Mumbai Hwy, Near Navale Bridge, Wadgaon Budruk, Narhe, Pune, Maharashtra 411041.
+Phone / WhatsApp: 7796407424 / 9834036821.
+Email: dictoxmarketing@gmail.com.
+Business Hours: Monday to Saturday — 10:00 AM to 7:00 PM.
+Map: Google Maps embedded location + Get Directions button using the client-provided map/embed link.
+Social: Facebook — dictoxmarketing; Instagram — @dictoxmarketing.
+Contact UI: two-column desktop layout with contact details on the left and map on the right; stack on mobile.
+25. Lead / Consultation CTA Flow
+Every primary CTA should lead to a consultation action. V1 can use a modal or dedicated /contact section.
+Recommended fields: Name, Business Name, Phone/WhatsApp, Email, Business/Industry, Current Advertising Platform, Monthly Ad Budget Range, Primary Goal, Message.
+Validation: required name + phone/email + business/goal. Show inline validation and success/error states.
+Success state: Thank the visitor and communicate the expected next step without promising an exact response time unless the client confirms one.
+Track CTA clicks and form submissions with the analytics platform selected by the client.
+26. Footer
+Brand: DictoX Marketing.
+Positioning: Performance Marketing & Customer Acquisition Agency.
+Navigation: Home | Services | Results | Industries | About | Course | Contact.
+Services: Meta Ads | Google Ads | YouTube Ads | WhatsApp API | Automation.
+Legal: Privacy Policy | Terms & Conditions.
+Footer should use the darkest brand background, compact navigation, social links and copyright.
+Do not add unsupported certifications, awards or claims.
+27. Micro-interactions & Motion
+Page load: subtle fade/translate for hero content; avoid long splash screens.
+Buttons: 150–250ms hover transition with small translateY(-1px) and controlled shadow/glow.
+Cards: border/glow transition on hover.
+Metric counters: optional count-up when the section enters the viewport, but display final values in HTML so content is accessible.
+Process timeline: subtle reveal as each step enters viewport.
+Case-study cards: image zoom 1.02–1.04 on hover.
+FAQ: smooth accordion open/close.
+Respect prefers-reduced-motion and disable non-essential animations when requested.
+28. Component Architecture (React)
+AppShell / Layout
+Header
+MobileMenu
+HeroSection
+TrustBar
+ProblemSection
+ProblemCard
+ServicesSection
+ServiceCard
+WhyDictoxSection
+ComparisonTable
+ProcessSection
+ProcessStep
+ResultsSection
+CaseStudyCard
+IndustriesSection
+IndustryCard
+LogoWall
+TestimonialsSection
+TestimonialCard
+VideoTestimonialCard
+AboutFounderSection
+CourseSection
+FAQSection
+FAQItem
+FinalCTA
+ContactSection
+ConsultationForm
+Footer
+BackToTop / FloatingWhatsApp (only if client approves).
+29. Suggested Project Structure
+src/
+  components/
+  sections/
+  data/
+  assets/
+  hooks/
+  lib/
+  App.jsx
+  main.jsx
+  index.css
+data/services.js, data/caseStudies.js, data/testimonials.js, data/faqs.js, data/industries.js.
+Use reusable components and data-driven rendering instead of hardcoding repeated cards.
+30. SEO Requirements
+Page title: DictoX Marketing | Performance Marketing & Customer Acquisition Agency.
+Meta description should naturally include performance marketing, Meta Ads, Google Ads, customer acquisition and India/Pune positioning.
+Use one H1 only: Optimize Your Ads For More Profit.
+Use semantic H2/H3 headings for all sections.
+Add Organization / LocalBusiness structured data only with verified business information.
+Add Open Graph and Twitter/X metadata.
+Use descriptive alt text for founder, case-study and client visuals.
+Use clean anchor IDs: #home, #services, #results, #industries, #about, #course, #contact.
+31. Performance Requirements
+Target Lighthouse: Performance 90+ where practical on production assets.
+Optimize founder and case-study images using WebP/AVIF where supported.
+Lazy-load below-the-fold images and videos.
+Do not load heavy animation libraries unless required.
+Use SVG icons and logos instead of large PNGs where appropriate.
+Avoid layout shift by reserving image dimensions/aspect ratios.
+Keep third-party scripts limited to required analytics, maps and approved integrations.
+32. Accessibility Requirements
+WCAG-oriented contrast for all text and interactive controls.
+All buttons/links must have visible focus states.
+Keyboard navigation for header, mobile menu, accordions and forms.
+Semantic HTML: header, nav, main, section, article, footer.
+Images require meaningful alt text; decorative images should use empty alt.
+Form fields require labels and accessible error messaging.
+Respect prefers-reduced-motion.
+33. Content & Asset Rules
+Production website must use only client-approved logo, founder photo, team images, client logos, case-study screenshots and testimonials.
+Do not fabricate client names, logos, campaign numbers, testimonials, certifications or awards.
+If an asset is pending, use a clearly marked development placeholder that cannot accidentally ship to production.
+Client must supply: high-resolution logo, founder photos, genuine client logos, case-study data/screenshots, genuine testimonials/video testimonials, Google Maps embed link and service/business photographs.
+34. Functional Requirements
+FR-01 Header navigation scrolls to correct sections.
+FR-02 Sticky header remains usable on desktop and mobile.
+FR-03 Primary CTA opens or navigates to consultation flow.
+FR-04 Results cards support verified case-study content.
+FR-05 FAQ accordion is keyboard accessible.
+FR-06 Contact details provide clickable tel/mail links on mobile.
+FR-07 Social links open the client-provided social profiles.
+FR-08 Google Maps embed loads the verified location.
+FR-09 Form validates inputs and displays success/error states.
+FR-10 Layout is responsive from 360px mobile through large desktop.
+FR-11 No horizontal overflow at any supported viewport.
+FR-12 Reduced-motion preference is respected.
+35. Acceptance Criteria
+Visual: The final website feels premium, modern and original to DictoX, with dark/light section rhythm and emerald performance accents.
+Content: All 16 planned content areas are represented and use the supplied approved copy.
+Trust: Certification and client-proof areas use only approved assets and verified claims.
+Conversion: Primary consultation CTA is visible in hero, relevant mid-page sections and final CTA.
+Responsive: Mobile navigation, grids, cards, process and contact layout work without overflow.
+Accessibility: Keyboard navigation, focus states, labels and semantic structure are implemented.
+Performance: Images are optimized and below-fold assets are lazy-loaded.
+SEO: One H1, logical headings, metadata, semantic anchors and alt text are present.
+QA: Test Chrome, Edge, Firefox and Safari where available; test common mobile widths.
+Production rule: no fake case-study data, fake logos, fake testimonials or unapproved claims.
+36. Recommended Page Flow
+Header → Hero → Trust/Certification → Business Problems → Services → Why DictoX → How We Work → Results/Case Studies → Industries → Client Logos → Testimonials → About/Founder → Meta Ads Course → FAQ → Final CTA → Contact/Map → Footer.
+The flow intentionally alternates emotional/problem-led sections with proof, explanation and conversion moments. This prevents the page from becoming a long list of services.
+37. Implementation Phases
+Phase 1 — Setup: React/Vite/Tailwind, design tokens, fonts, global layout and routing/anchors.
+Phase 2 — Core UI: Header, hero, trust, problems, services, why DictoX, process.
+Phase 3 — Proof: results/case studies, industries, logos, testimonials, founder.
+Phase 4 — Conversion: course, FAQ, final CTA, consultation form, contact/map, footer.
+Phase 5 — Polish: responsive tuning, animations, accessibility, SEO, performance optimization.
+Phase 6 — Client Content: replace all development placeholders with supplied approved assets and verified results.
+Phase 7 — QA & Deployment: cross-browser test, Lighthouse review, production build and deployment.
+38. Design Token Starter (Tailwind)
+brand.dark = #061512
+brand.surface = #0B211D
+brand.border = #1E3A34
+brand.emerald = #18E6A0
+brand.deepEmerald = #0BAA75
+brand.mint = #8CFFE0
+brand.offWhite = #F5F8F7
+brand.text = #0A1714
+brand.muted = #5B6965
+Primary gradient utility: bg-gradient-to-r from-[#18E6A0] to-[#0BAA75].
+Hero glow: use a pseudo-element or absolutely positioned blurred emerald radial gradient with low opacity.
+Border radius: cards 16–24px; buttons 9999px/pill; major visual panels 24–32px.
+39. Important Product Decisions
+The website is a static React frontend in V1. It should not require a CMS unless the client later requests one.
+Case studies and testimonials should be data-driven so new proof can be added without rebuilding UI components.
+The website should prioritize business outcomes and proof over generic agency jargon.
+Every claim that could be interpreted as a ranking, certification, client relationship or performance result must be verified before production.
+The supplied screenshot is a visual reference for structure and visual rhythm, not a source for client facts.
+
+END OF PRD
