@@ -167,7 +167,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Suresh More"
+                    placeholder="Enter your full name..."
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#00b370] transition-colors ${
@@ -185,7 +185,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Landmark Realty"
+                    placeholder="Enter your business or brand name..."
                     value={formData.businessName}
                     onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
                     className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#00b370] transition-colors ${
@@ -203,7 +203,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. +91 9834036821"
+                    placeholder="Enter your phone or WhatsApp number..."
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#00b370] transition-colors ${
@@ -221,7 +221,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   <input
                     type="email"
                     required
-                    placeholder="e.g. owner@business.com"
+                    placeholder="Enter your email address..."
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#00b370] transition-colors ${
@@ -309,7 +309,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 </label>
                 <textarea
                   rows="2"
-                  placeholder="e.g. Current cost per lead is too high, or need verified site visits for Baner project..."
+                  placeholder="Enter your specific advertising challenge or goal (optional)..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#00b370] transition-colors resize-none"

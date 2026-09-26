@@ -69,94 +69,83 @@ export default function FAQSection({ onOpenConsultation }) {
   };
 
   return (
-    <section className="py-20 md:py-24 lg:py-28 bg-white text-slate-900 border-b border-slate-100">
+    <section id="faq" className="py-10 sm:py-14 bg-white text-slate-900 border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#00b370]">
-            Frequently Asked Questions
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display tracking-tight text-slate-900 mt-2">
-            Got Questions? We've Got Answers.
-          </h2>
-        </div>
-
-        {/* 2 Column Accordion Grid: Rounded-2xl Gradient Accordion Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-6xl mx-auto">
+        {/* Responsive Grid: Left Title + Right FAQ Columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           
-          {/* Left Column (01 to 05) */}
-          <div className="space-y-4">
-            {leftFaqs.map((faq, idx) => {
-              const isOpen = openIndex === `l-${idx}`;
-              return (
-                <div
-                  key={faq.num}
-                  className={`border-2 rounded-2xl transition-all duration-300 overflow-hidden shadow-xs ${
-                    isOpen 
-                      ? 'border-[#00b370] bg-gradient-to-b from-white to-emerald-50/20 shadow-md' 
-                      : 'border-slate-200/90 bg-white hover:border-slate-300'
-                  }`}
-                >
-                  <button
-                    onClick={() => toggleLeft(idx)}
-                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-slate-900 hover:text-[#00b370] transition-colors cursor-pointer"
-                  >
-                    <span className="flex items-center gap-3">
-                      <span className="text-xs font-mono font-extrabold text-[#00b370]">{faq.num}.</span>
-                      <span>{faq.q}</span>
-                    </span>
-                    <span className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors shadow-2xs ${
-                      isOpen ? 'bg-[#00f59b] text-slate-950 font-bold' : 'bg-slate-100 text-slate-600'
-                    }`}>
-                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                    </span>
-                  </button>
-                  {isOpen && (
-                    <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+          {/* Left: Heading (4 cols) */}
+          <div className="lg:col-span-4">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+              FREQUENTLY ASKED QUESTIONS
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold font-display tracking-tight text-slate-900">
+              Got Questions? <br className="hidden sm:inline" />
+              We've Got Answers.
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-500 mt-2 font-normal leading-relaxed">
+              Everything you need to know about our performance marketing partnerships and lead generation delivery.
+            </p>
           </div>
 
-          {/* Right Column (06 to 10) */}
-          <div className="space-y-4">
-            {rightFaqs.map((faq, idx) => {
-              const isOpen = openIndex === `r-${idx}`;
-              return (
-                <div
-                  key={faq.num}
-                  className={`border-2 rounded-2xl transition-all duration-300 overflow-hidden shadow-xs ${
-                    isOpen 
-                      ? 'border-[#00b370] bg-gradient-to-b from-white to-emerald-50/20 shadow-md' 
-                      : 'border-slate-200/90 bg-white hover:border-slate-300'
-                  }`}
-                >
-                  <button
-                    onClick={() => toggleRight(idx)}
-                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-slate-900 hover:text-[#00b370] transition-colors cursor-pointer"
+          {/* Right: FAQ Rows in 2 sub-columns (8 cols) */}
+          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+            {/* Column 1 */}
+            <div className="space-y-2.5">
+              {leftFaqs.map((faq, idx) => {
+                const isOpen = openIndex === `l-${idx}`;
+                return (
+                  <div
+                    key={faq.num}
+                    className="border border-slate-200 rounded-xl overflow-hidden bg-slate-50/50 hover:bg-slate-50 transition-colors"
                   >
-                    <span className="flex items-center gap-3">
-                      <span className="text-xs font-mono font-extrabold text-[#00b370]">{faq.num}.</span>
-                      <span>{faq.q}</span>
-                    </span>
-                    <span className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors shadow-2xs ${
-                      isOpen ? 'bg-[#00f59b] text-slate-950 font-bold' : 'bg-slate-100 text-slate-600'
-                    }`}>
-                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                    </span>
-                  </button>
-                  {isOpen && (
-                    <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                    <button
+                      onClick={() => toggleLeft(idx)}
+                      className="w-full p-3 sm:p-3.5 text-left flex items-center justify-between gap-3 text-xs sm:text-sm font-semibold text-slate-900 cursor-pointer"
+                    >
+                      <span className="line-clamp-2">{faq.q}</span>
+                      <span className="text-slate-500 font-bold shrink-0 text-base">
+                        {isOpen ? '−' : '+'}
+                      </span>
+                    </button>
+                    {isOpen && (
+                      <div className="px-3 sm:px-3.5 pb-3 text-xs text-slate-600 leading-relaxed border-t border-slate-200/60 pt-2 bg-white">
+                        {faq.a}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Column 2 */}
+            <div className="space-y-2.5">
+              {rightFaqs.map((faq, idx) => {
+                const isOpen = openIndex === `r-${idx}`;
+                return (
+                  <div
+                    key={faq.num}
+                    className="border border-slate-200 rounded-xl overflow-hidden bg-slate-50/50 hover:bg-slate-50 transition-colors"
+                  >
+                    <button
+                      onClick={() => toggleRight(idx)}
+                      className="w-full p-3 sm:p-3.5 text-left flex items-center justify-between gap-3 text-xs sm:text-sm font-semibold text-slate-900 cursor-pointer"
+                    >
+                      <span className="line-clamp-2">{faq.q}</span>
+                      <span className="text-slate-500 font-bold shrink-0 text-base">
+                        {isOpen ? '−' : '+'}
+                      </span>
+                    </button>
+                    {isOpen && (
+                      <div className="px-3 sm:px-3.5 pb-3 text-xs text-slate-600 leading-relaxed border-t border-slate-200/60 pt-2 bg-white">
+                        {faq.a}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
         </div>
