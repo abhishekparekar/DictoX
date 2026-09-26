@@ -9,15 +9,19 @@ export default function ServicesPage({ onOpenConsultation }) {
   const [activeTab, setActiveTab] = useState('all');
 
   useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace('#', '');
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        setActiveTab(id);
-      }
+    // Always start from the top of the page
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    // Pre-select tab if service parameter is present
+    const params = new URLSearchParams(location.search);
+    const serviceParam = params.get('service');
+    if (serviceParam) {
+      setActiveTab(serviceParam);
+    } else if (location.hash) {
+      const hashId = location.hash.replace('#', '');
+      setActiveTab(hashId);
     }
-  }, [location]);
+  }, [location.pathname, location.search]);
 
   const serviceDetails = [
     {

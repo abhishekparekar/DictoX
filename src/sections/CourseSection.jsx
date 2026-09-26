@@ -28,15 +28,15 @@ export default function CourseSection({ onOpenConsultation }) {
   ];
 
   return (
-    <section id="course" className="py-10 sm:py-14 md:py-16 bg-white text-slate-900 border-b border-slate-200/80">
+    <section id="course" className="py-8 sm:py-12 md:py-16 bg-white text-slate-900 border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
+        <div className="text-center max-w-3xl mx-auto mb-4 sm:mb-6">
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
             META ADS COURSE
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display tracking-tight text-slate-900">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-display tracking-tight text-slate-900">
             Meta Ads For Business Owners
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
@@ -45,8 +45,8 @@ export default function CourseSection({ onOpenConsultation }) {
         </div>
 
         {/* Master Course Showcase Card matching Screenshot 3 */}
-        <div className="max-w-6xl mx-auto bg-[#fafcfb] border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-center">
+        <div className="max-w-6xl mx-auto bg-[#fafcfb] border border-slate-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xs">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-center">
             
             {/* Left: 5 Topics in a Clean Column */}
             <div className="md:col-span-3 grid grid-cols-2 md:grid-cols-1 gap-2.5">

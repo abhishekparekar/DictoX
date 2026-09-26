@@ -1,9 +1,7 @@
-import React, { useRef } from 'react';
-import { ArrowRight, Star, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Star, CheckCircle2 } from 'lucide-react';
 
 export default function TestimonialsSection({ onOpenConsultation }) {
-  const scrollRef = useRef(null);
-
   const testimonials = [
     {
       name: 'Rohit Patil',
@@ -28,18 +26,6 @@ export default function TestimonialsSection({ onOpenConsultation }) {
     },
   ];
 
-  const handleScrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -260, behavior: 'smooth' });
-    }
-  };
-
-  const handleScrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 260, behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="testimonials" className="py-8 sm:py-12 md:py-16 bg-[#f8faf9] text-slate-900 border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
@@ -55,28 +41,10 @@ export default function TestimonialsSection({ onOpenConsultation }) {
             </h2>
           </div>
 
-          <div className="flex items-center gap-2 self-end sm:self-auto">
-            {/* Scroll Navigation Chevrons for Mobile and Tablet */}
-            <div className="flex items-center gap-1.5 md:hidden">
-              <button
-                onClick={handleScrollLeft}
-                aria-label="Scroll left"
-                className="w-8 h-8 rounded-full bg-white border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-slate-50 transition-colors shadow-2xs"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button
-                onClick={handleScrollRight}
-                aria-label="Scroll right"
-                className="w-8 h-8 rounded-full bg-white border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-slate-50 transition-colors shadow-2xs"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
-
+          <div>
             <button
               onClick={onOpenConsultation}
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-900 hover:text-[#00b370] transition-colors cursor-pointer group pb-0.5 ml-2"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-900 hover:text-[#00b370] transition-colors cursor-pointer group pb-0.5"
             >
               <span>View All Testimonials</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -86,7 +54,6 @@ export default function TestimonialsSection({ onOpenConsultation }) {
 
         {/* Mobile Horizontal Scrollable Reviews with visible scrollbar / Desktop 3-Column Grid */}
         <div
-          ref={scrollRef}
           className="flex md:grid overflow-x-auto md:overflow-x-visible md:grid-cols-3 gap-3.5 sm:gap-5 pb-3 md:pb-0 testimonial-scroll snap-x snap-mandatory"
         >
           {testimonials.map((item, idx) => (
