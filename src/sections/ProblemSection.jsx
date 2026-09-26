@@ -47,15 +47,8 @@ export default function ProblemSection({ onOpenConsultation }) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         
-        {/* Header with handwritten note */}
-        <div className="relative text-center max-w-4xl mx-auto mb-14 sm:mb-16">
-          <div className="hidden lg:flex absolute -top-4 right-0 xl:-right-12 items-center gap-2 rotate-6">
-            <span className="font-handwriting text-2xl sm:text-3xl text-[#00f59b] font-bold drop-shadow">
-              Same Problems?<br />Let's Fix This
-            </span>
-            <span className="text-3xl text-[#00f59b]">↗</span>
-          </div>
-
+        {/* Section Header */}
+        <div className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
           <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-[#00f59b] font-bold">
             Is Your Advertising Really Working?
           </span>

@@ -112,13 +112,6 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
 
             </div>
 
-            {/* Handwritten script note on side */}
-            <div className="hidden xl:block absolute -right-28 top-1/2 -translate-y-1/2 w-32 text-left">
-              <span className="font-handwriting text-lg text-[#00f59b] font-bold block leading-snug rotate-6 drop-shadow">
-                "More Customers.<br />More Revenue.<br />A Stronger Business."
-              </span>
-            </div>
-
           </div>
 
         </div>

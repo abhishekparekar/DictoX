@@ -47,7 +47,7 @@ export default function HeroSection({ onOpenConsultation }) {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
               <button
                 onClick={onOpenConsultation}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-none text-sm sm:text-base font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#00f59b]/25 hover:-translate-y-1 cursor-pointer uppercase tracking-wider"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:shadow-[0_8px_30px_rgba(0,245,155,0.4)] active:scale-[0.98] transition-all duration-300 hover:-translate-y-1 cursor-pointer tracking-wide"
               >
                 <span>Get Free Strategy Consultation</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -55,7 +55,7 @@ export default function HeroSection({ onOpenConsultation }) {
               
               <a
                 href="#results"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-none text-sm sm:text-base font-semibold text-slate-200 bg-white/5 border border-white/20 hover:bg-white/10 hover:border-white/30 transition-all duration-300 hover:-translate-y-0.5 uppercase tracking-wider"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-sm sm:text-base font-semibold text-slate-200 bg-white/5 border border-white/20 hover:bg-white/10 hover:border-white/30 transition-all duration-300 hover:-translate-y-0.5 tracking-wide"
               >
                 <span>View Our Results</span>
               </a>
@@ -64,19 +64,19 @@ export default function HeroSection({ onOpenConsultation }) {
             {/* Trust Checks */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-2 text-xs sm:text-sm text-slate-300">
               <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded-none bg-[#00f59b]/20 flex items-center justify-center text-[#00f59b]">
+                <div className="w-5 h-5 rounded-full bg-[#00f59b]/20 flex items-center justify-center text-[#00f59b]">
                   <Check className="w-3.5 h-3.5 stroke-[3]" />
                 </div>
                 <span className="font-medium">No Obligation</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded-none bg-[#00f59b]/20 flex items-center justify-center text-[#00f59b]">
+                <div className="w-5 h-5 rounded-full bg-[#00f59b]/20 flex items-center justify-center text-[#00f59b]">
                   <Check className="w-3.5 h-3.5 stroke-[3]" />
                 </div>
                 <span className="font-medium">Expert Advice</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded-none bg-[#00f59b]/20 flex items-center justify-center text-[#00f59b]">
+                <div className="w-5 h-5 rounded-full bg-[#00f59b]/20 flex items-center justify-center text-[#00f59b]">
                   <Check className="w-3.5 h-3.5 stroke-[3]" />
                 </div>
                 <span className="font-medium">100% Free</span>
@@ -85,29 +85,17 @@ export default function HeroSection({ onOpenConsultation }) {
 
           </div>
 
-          {/* Right Column: Founder Suresh More with handwritten Growth Arrow and Badge */}
+          {/* Right Column: Founder Suresh More Showcase */}
           <div className="lg:col-span-5 relative flex flex-col items-center">
             {/* Visual Container */}
             <div className="relative w-full max-w-[380px] sm:max-w-[440px] md:max-w-[460px]">
               
-              {/* Handwritten Floating Arrow Note */}
-              <div className="absolute -top-4 -right-2 sm:-right-6 z-20 flex items-center gap-2 text-right">
-                <div className="flex flex-col items-end">
-                  <span className="font-handwriting text-2xl sm:text-3xl text-[#00f59b] font-bold leading-none rotate-6 drop-shadow-md">
-                    Turn Ads Into<br />Real Growth
-                  </span>
-                </div>
-                <svg className="w-11 h-11 text-[#00f59b] animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 19V5M5 12l7-7 7 7"/>
-                </svg>
-              </div>
-
-              {/* Main Photo Frame: Sharp Rectangle */}
-              <div className="relative rounded-none overflow-hidden border-2 border-white/15 shadow-2xl bg-gradient-to-b from-[#0a2327] to-[#041012]">
+              {/* Main Photo Frame */}
+              <div className="relative rounded-3xl overflow-hidden border-2 border-white/15 shadow-2xl bg-gradient-to-b from-[#0a2327] to-[#041012]">
                 <img
                   src="/images/founder.jpg"
                   alt="Suresh More - Founder & Performance Marketing Strategist"
-                  className="w-full h-[400px] sm:h-[460px] md:h-[480px] object-cover object-top hover:scale-102 transition-transform duration-500 rounded-none"
+                  className="w-full h-[400px] sm:h-[460px] md:h-[480px] object-cover object-top hover:scale-102 transition-transform duration-500 rounded-3xl"
                 />
                 
                 {/* Gradient overlay at bottom of photo */}
@@ -124,8 +112,8 @@ export default function HeroSection({ onOpenConsultation }) {
                 </div>
               </div>
 
-              {/* Floating Bottom Card: Sharp Rectangle */}
-              <div className="absolute -bottom-8 inset-x-2 sm:-inset-x-2 bg-[#06181b]/95 border-2 border-[#00f59b] rounded-none p-4 shadow-2xl backdrop-blur-md z-20">
+              {/* Floating Bottom Card */}
+              <div className="absolute -bottom-8 inset-x-2 sm:-inset-x-2 bg-[#06181b]/95 border-2 border-[#00f59b] rounded-2xl p-4 shadow-2xl backdrop-blur-md z-20">
                 <div className="flex items-center justify-between pb-2.5 border-b border-white/10">
                   <span className="text-xs sm:text-sm text-slate-200 font-semibold flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-none bg-[#00f59b] animate-pulse" />
