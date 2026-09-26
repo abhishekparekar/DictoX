@@ -20,47 +20,50 @@ export default function Footer({ onOpenConsultation }) {
               <span className="font-display font-extrabold text-xl tracking-tight text-white">
                 Dicto<span className="text-[#00d084]">X</span>
               </span>
-              <span className="text-[9px] font-semibold text-slate-500 ml-0.5">®</span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#00d084] font-semibold ml-1.5">
                 Marketing
               </span>
             </div>
-            <p className="text-[11px] text-slate-500 mt-0.5">
+            <p className="text-[11px] text-slate-400 mt-0.5">
               Performance Marketing & Customer Acquisition Agency
             </p>
           </div>
 
           {/* Nav Links */}
           <div className="flex flex-col items-center gap-2">
-            <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-slate-300">
-              <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="hover:text-white transition-colors">Home</a>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-slate-200">
               <a href="#services" onClick={(e) => handleLinkClick(e, '#services')} className="hover:text-white transition-colors">Services</a>
-              <a href="#results" onClick={(e) => handleLinkClick(e, '#results')} className="hover:text-white transition-colors">Results</a>
-              <a href="#industries" onClick={(e) => handleLinkClick(e, '#industries')} className="hover:text-white transition-colors">Industries</a>
+              <span>•</span>
               <a href="#about" onClick={(e) => handleLinkClick(e, '#about')} className="hover:text-white transition-colors">About</a>
+              <span>•</span>
+              <a href="#industries" onClick={(e) => handleLinkClick(e, '#industries')} className="hover:text-white transition-colors">Industries</a>
+              <span>•</span>
+              <a href="#results" onClick={(e) => handleLinkClick(e, '#results')} className="hover:text-white transition-colors">Results</a>
+              <span>•</span>
               <a href="#course" onClick={(e) => handleLinkClick(e, '#course')} className="hover:text-white transition-colors">Course</a>
+              <span>•</span>
               <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')} className="hover:text-white transition-colors">Contact</a>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-3 text-[11px] text-slate-500">
-              <span className="hover:text-slate-400 cursor-pointer" onClick={onOpenConsultation}>Meta Ads</span>
+            <div className="flex flex-wrap items-center justify-center gap-3 text-[11px] text-slate-400">
+              <span className="hover:text-slate-200 cursor-pointer" onClick={onOpenConsultation}>Meta Ads</span>
               <span>•</span>
-              <span className="hover:text-slate-400 cursor-pointer" onClick={onOpenConsultation}>Google Ads</span>
+              <span className="hover:text-slate-200 cursor-pointer" onClick={onOpenConsultation}>Google Ads</span>
               <span>•</span>
-              <span className="hover:text-slate-400 cursor-pointer" onClick={onOpenConsultation}>YouTube Ads</span>
+              <span className="hover:text-slate-200 cursor-pointer" onClick={onOpenConsultation}>YouTube Ads</span>
               <span>•</span>
-              <span className="hover:text-slate-400 cursor-pointer" onClick={onOpenConsultation}>WhatsApp API</span>
+              <span className="hover:text-slate-200 cursor-pointer" onClick={onOpenConsultation}>WhatsApp API</span>
               <span>•</span>
-              <span className="hover:text-slate-400 cursor-pointer" onClick={onOpenConsultation}>Automation</span>
+              <span className="hover:text-slate-200 cursor-pointer" onClick={onOpenConsultation}>Automation</span>
             </div>
           </div>
 
           {/* Legal & Copyright */}
           <div className="text-center md:text-right space-y-1">
             <div className="flex items-center justify-center md:justify-end gap-3 text-[11px]">
-              <a href="#privacy" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
+              <a href="#privacy" className="hover:text-slate-200 transition-colors">Privacy Policy</a>
               <span>•</span>
-              <a href="#terms" className="hover:text-slate-300 transition-colors">Terms & Conditions</a>
+              <a href="#terms" className="hover:text-slate-200 transition-colors">Terms & Conditions</a>
             </div>
             <div className="text-[10px] text-slate-500">
               © {new Date().getFullYear()} DictoX Marketing. All rights reserved.
@@ -69,9 +72,9 @@ export default function Footer({ onOpenConsultation }) {
 
         </div>
 
-        {/* Small Bottom Line */}
+        {/* Bottom Line */}
         <div className="pt-4 text-center text-[10px] text-slate-600">
-          Designed for maximum ROI, predictable pipelines & ambitious Indian businesses.
+          Performance Marketing & Customer Acquisition Agency helping ambitious businesses scale profitably.
         </div>
       </div>
     </footer>

@@ -5,33 +5,33 @@ export default function ProblemSection({ onOpenConsultation }) {
   const problems = [
     {
       num: '01',
-      icon: UserX,
       title: 'No New Customers',
       desc: 'Ads are running, but new customers are not coming consistently.',
+      icon: UserX,
     },
     {
       num: '02',
-      icon: HelpCircle,
       title: 'Low-Quality Leads',
-      desc: "You're getting enquiries, but most are not the right customers.",
+      desc: "You’re getting enquiries, but most of them are not the right customers for your business.",
+      icon: HelpCircle,
     },
     {
       num: '03',
-      icon: TrendingDown,
       title: 'Low Sales',
       desc: 'Leads are coming in, but they are not converting into enough sales.',
+      icon: TrendingDown,
     },
     {
       num: '04',
-      icon: DollarSign,
       title: 'High Cost, Low Return',
-      desc: "You're spending more on advertising, but the returns are not matching your investment.",
+      desc: "You’re spending more on advertising, but the returns are not matching your investment.",
+      icon: DollarSign,
     },
     {
       num: '05',
-      icon: Shuffle,
       title: 'Inconsistent Customer Flow',
-      desc: "Some months are great, some are not — there's no consistent flow of customers and sales.",
+      desc: "Some months are good, some are not — there’s no consistent flow of customers and sales.",
+      icon: Shuffle,
     },
   ];
 
@@ -62,6 +62,10 @@ export default function ProblemSection({ onOpenConsultation }) {
               You Need Customers, Sales & Consistent Growth.
             </span>
           </h2>
+
+          <p className="text-xs sm:text-sm text-slate-400 mt-2">
+            You’re spending on advertising — but is it actually helping your business grow?
+          </p>
         </div>
 
         {/* 5 Problem Cards in 1 Row */}
@@ -95,10 +99,10 @@ export default function ProblemSection({ onOpenConsultation }) {
           })}
         </div>
 
-        {/* Bottom CTA Bar */}
+        {/* Bottom Callout & CTA */}
         <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
           <span className="text-sm font-medium text-slate-300">
-            Your Advertising Should Do More Than Generate Leads.
+            It Should Help You Get Customers, Generate Sales & Grow Your Business.
           </span>
           <button
             onClick={onOpenConsultation}

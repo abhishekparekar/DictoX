@@ -4,7 +4,7 @@ import { ArrowRight, Check, X } from 'lucide-react';
 export default function WhyDictoxSection({ onOpenConsultation }) {
   const typicalAgency = [
     'Ads are the main focus',
-    'Campaigns are simply managed',
+    'Campaigns are launched and managed',
     'Focus on clicks, reach & impressions',
     'Generic strategy',
     'Ad performance can feel unclear',
@@ -18,7 +18,7 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
     'Focus on potential leads & customers',
     'Strategy built around your business',
     'Clear tracking of spend, leads & results',
-    'WhatsApp integration for faster follow-up',
+    'WhatsApp integration for faster lead follow-up',
     'What works is optimized & scaled',
   ];
 
@@ -37,7 +37,7 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
             </span>
             
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display tracking-tight text-white leading-tight">
-              A Different Approach<br />To Your Advertising.
+              A Different Approach<br />To Your Advertising
             </h2>
 
             <p className="text-sm sm:text-base font-semibold text-[#00f59b]">
@@ -49,7 +49,7 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
                 onClick={onOpenConsultation}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] hover:from-[#15f8a3] hover:to-[#02df8f] transition-all duration-200 shadow-md hover:shadow-lg"
               >
-                <span>Get Free Strategy Consultation</span>
+                <span>Get A Free Strategy Consultation</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

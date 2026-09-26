@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Check, Sparkles, TrendingUp, Award, Building2 } from 'lucide-react';
+import { ArrowRight, Check, Award, Users, IndianRupee } from 'lucide-react';
 
 export default function HeroSection({ onOpenConsultation }) {
   return (
@@ -23,12 +23,21 @@ export default function HeroSection({ onOpenConsultation }) {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold font-display tracking-tight text-white leading-[1.12]">
               Optimize Your Ads <br />
               For{' '}
-              <span className="text-[#00f59b] underline decoration-[#00f59b]/30 decoration-wavy underline-offset-8">
+              <span className="text-[#00f59b]">
                 More Profit.
               </span>
             </h1>
 
-            {/* Subtitle */}
+            {/* Verifiable Track Record Sub-badge */}
+            <div className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2.5 px-3.5 py-1.5 rounded-full bg-[#00f59b]/10 border border-[#00f59b]/25 text-xs font-semibold text-[#00f59b]">
+              <span>5+ Years Experience</span>
+              <span className="text-white/30">•</span>
+              <span>500+ Brands</span>
+              <span className="text-white/30">•</span>
+              <span>₹10+ Crore Ad Spend Managed</span>
+            </div>
+
+            {/* Supporting Copy */}
             <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
               A dedicated team of performance marketing specialists helping businesses across India generate better results and acquire more customers through online advertising.
             </p>
@@ -132,7 +141,7 @@ export default function HeroSection({ onOpenConsultation }) {
                   </div>
                   <div>
                     <div className="text-xs sm:text-sm font-bold font-display text-[#00f59b]">₹10+ Cr</div>
-                    <div className="text-[9px] text-slate-400">Ad Spend</div>
+                    <div className="text-[9px] text-slate-400">Ad Spend Managed</div>
                   </div>
                 </div>
               </div>

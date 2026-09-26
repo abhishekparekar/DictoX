@@ -6,39 +6,57 @@ export default function FAQSection({ onOpenConsultation }) {
 
   const leftFaqs = [
     {
+      num: '01',
       q: 'What does DictoX Marketing do?',
-      a: 'DictoX Marketing is a performance marketing agency specializing in qualified customer acquisition through Meta Ads, Google & YouTube Ads, WhatsApp API automation, and high-converting funnel design.',
+      a: 'DictoX Marketing is a performance marketing agency helping businesses generate potential leads and customers through online advertising and marketing solutions.',
     },
     {
+      num: '02',
       q: 'Which services does DictoX provide?',
-      a: 'We offer full-service performance marketing: Meta Ads (FB & IG), Google Search & YouTube Ads, WhatsApp Business API automation, creative ad design, copywriting, and CRM integration.',
+      a: 'We provide Meta Ads, Google Ads, YouTube Ads, WhatsApp API and Marketing Automation services.',
     },
     {
+      num: '03',
       q: 'Do you work with businesses across India?',
-      a: 'Yes, we manage advertising campaigns for ambitious brands across India in real estate, education, healthcare, ecommerce, restaurants, salons, and franchise businesses.',
+      a: 'Yes. We work with businesses across India and help them reach customers in their target locations.',
     },
     {
+      num: '04',
+      q: 'How do you decide which advertising platform is right for my business?',
+      a: 'We consider your business, target audience, goals, location and budget to determine the right advertising approach.',
+    },
+    {
+      num: '05',
       q: 'Is the advertising budget separate from your service fees?',
-      a: 'Yes. Ad spend is paid directly to advertising platforms (Meta/Google) from your dedicated ad account for 100% transparency. Our fee covers strategy, execution, creative production, and daily optimization.',
+      a: 'Yes. Our service fees and advertising budget are separate. The advertising budget is used to run campaigns on the respective advertising platforms.',
     },
   ];
 
   const rightFaqs = [
     {
+      num: '06',
       q: 'How much should I spend on advertising?',
-      a: 'We recommend starting with an ad budget of ₹20,000 to ₹50,000 per month depending on your industry and market size to test, gather data, and validate cost per acquisition.',
+      a: 'The ideal budget depends on your business, industry, location, competition and goals. We recommend a suitable starting budget based on your requirements.',
     },
     {
+      num: '07',
       q: 'Do you provide ad creatives and copywriting?',
-      a: 'Yes! We create all high-converting ad visuals, carousel graphics, reel scripts, and conversion copy tailored specifically to your target demographic.',
+      a: 'Yes. Our team can handle the creative and copy requirements for your advertising campaigns.',
     },
     {
+      num: '08',
+      q: 'How do you track leads and campaign performance?',
+      a: 'We track key metrics such as ad spend, leads, cost per lead and campaign performance to identify opportunities for improvement.',
+    },
+    {
+      num: '09',
       q: 'How quickly can we start?',
-      a: 'Once we complete your strategy consultation and audit, our team builds the campaign structure, creatives, and tracking setup to launch within 4 to 7 business days.',
+      a: 'Once we understand your business and receive the required information, access and creative requirements, we can begin the campaign setup process.',
     },
     {
-      q: 'Do you provide a money-back guarantee?',
-      a: 'While ad platforms charge for ad impressions, we work on performance milestones and transparent daily dashboards so you have complete control over spend and results.',
+      num: '10',
+      q: 'How do I get started with DictoX?',
+      a: 'Contact our team for a consultation. We’ll understand your business and goals and discuss the right advertising approach for you.',
     },
   ];
 
@@ -64,23 +82,26 @@ export default function FAQSection({ onOpenConsultation }) {
           </h2>
         </div>
 
-        {/* 2 Column Accordion Grid */}
+        {/* 2 Column Accordion Grid (5 left, 5 right = 10 FAQs) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto">
           
-          {/* Left Column */}
+          {/* Left Column (01 to 05) */}
           <div className="space-y-3">
             {leftFaqs.map((faq, idx) => {
               const isOpen = openIndex === `l-${idx}`;
               return (
                 <div
-                  key={idx}
+                  key={faq.num}
                   className="border border-slate-200 rounded-xl bg-slate-50/60 overflow-hidden transition-all"
                 >
                   <button
                     onClick={() => toggleLeft(idx)}
                     className="w-full p-4 text-left flex items-center justify-between gap-3 font-semibold text-xs sm:text-sm text-slate-900 hover:text-[#00d084] transition-colors"
                   >
-                    <span>{faq.q}</span>
+                    <span className="flex items-center gap-2">
+                      <span className="text-[11px] font-mono font-bold text-slate-400">{faq.num}.</span>
+                      <span>{faq.q}</span>
+                    </span>
                     <span className="w-6 h-6 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 text-slate-600">
                       {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
                     </span>
@@ -95,20 +116,23 @@ export default function FAQSection({ onOpenConsultation }) {
             })}
           </div>
 
-          {/* Right Column */}
+          {/* Right Column (06 to 10) */}
           <div className="space-y-3">
             {rightFaqs.map((faq, idx) => {
               const isOpen = openIndex === `r-${idx}`;
               return (
                 <div
-                  key={idx}
+                  key={faq.num}
                   className="border border-slate-200 rounded-xl bg-slate-50/60 overflow-hidden transition-all"
                 >
                   <button
                     onClick={() => toggleRight(idx)}
                     className="w-full p-4 text-left flex items-center justify-between gap-3 font-semibold text-xs sm:text-sm text-slate-900 hover:text-[#00d084] transition-colors"
                   >
-                    <span>{faq.q}</span>
+                    <span className="flex items-center gap-2">
+                      <span className="text-[11px] font-mono font-bold text-slate-400">{faq.num}.</span>
+                      <span>{faq.q}</span>
+                    </span>
                     <span className="w-6 h-6 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 text-slate-600">
                       {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
                     </span>

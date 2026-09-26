@@ -1,14 +1,13 @@
 import React from 'react';
-import { ArrowRight, MessageSquare, Bot, Search, Share2 } from 'lucide-react';
+import { ArrowRight, MessageSquare, Bot } from 'lucide-react';
 
 export default function ServicesSection({ onOpenConsultation }) {
   const services = [
     {
       id: 'meta',
       title: 'Meta Ads',
-      subtitle: 'Facebook & Instagram',
-      desc: 'Reach the right audience and generate potential leads and customers.',
-      iconBg: 'bg-blue-50 text-blue-600',
+      subtitle: 'Facebook & Instagram Ads',
+      desc: 'Facebook & Instagram advertising focused on reaching your target audience and generating potential leads and customers.',
       badge: 'High Intent Targeting',
       visual: (
         <div className="w-full h-24 bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-lg p-2.5 border border-blue-100 flex items-center justify-between">
@@ -32,9 +31,8 @@ export default function ServicesSection({ onOpenConsultation }) {
     {
       id: 'google',
       title: 'Google & YouTube Ads',
-      subtitle: 'Search + Video',
-      desc: 'Reach people actively looking for your products or services.',
-      iconBg: 'bg-red-50 text-red-600',
+      subtitle: 'Search + Video Ads',
+      desc: 'Reach potential customers when they are actively searching for your products or services.',
       badge: 'Intent Driven',
       visual: (
         <div className="w-full h-24 bg-gradient-to-br from-red-50 to-amber-50/50 rounded-lg p-2.5 border border-red-100 flex items-center justify-between">
@@ -57,8 +55,7 @@ export default function ServicesSection({ onOpenConsultation }) {
       id: 'whatsapp',
       title: 'WhatsApp API',
       subtitle: 'Connect → Follow Up → Convert',
-      desc: 'Automate lead communication and follow-ups for faster conversions.',
-      iconBg: 'bg-emerald-50 text-emerald-600',
+      desc: 'Connect your advertising campaigns with WhatsApp for faster lead communication, follow-ups and customer engagement.',
       badge: '< 90s Response',
       visual: (
         <div className="w-full h-24 bg-gradient-to-br from-emerald-50 to-teal-50/50 rounded-lg p-2.5 border border-emerald-100 flex items-center justify-between">
@@ -81,8 +78,7 @@ export default function ServicesSection({ onOpenConsultation }) {
       id: 'automation',
       title: 'Automation Services',
       subtitle: 'Save Time, Grow Faster',
-      desc: 'Automate repetitive tasks and improve response time and efficiency.',
-      iconBg: 'bg-purple-50 text-purple-600',
+      desc: 'Automate repetitive marketing and lead-management processes to improve efficiency and response time.',
       badge: 'Zero Manual Work',
       visual: (
         <div className="w-full h-24 bg-gradient-to-br from-purple-50 to-violet-50/50 rounded-lg p-2.5 border border-purple-100 flex items-center justify-between">
@@ -107,7 +103,7 @@ export default function ServicesSection({ onOpenConsultation }) {
     <section id="services" className="py-14 sm:py-16 bg-white text-slate-900 border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header with Explore All link */}
+        {/* Section Header with Explore Our Services link */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#00d084]">
@@ -122,7 +118,7 @@ export default function ServicesSection({ onOpenConsultation }) {
             onClick={onOpenConsultation}
             className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#00d084] transition-colors"
           >
-            <span>Explore All Services</span>
+            <span>Explore Our Services</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
@@ -159,7 +155,7 @@ export default function ServicesSection({ onOpenConsultation }) {
                   onClick={onOpenConsultation}
                   className="inline-flex items-center gap-1 text-xs font-semibold text-slate-900 group-hover:text-[#00d084] transition-colors"
                 >
-                  <span>Learn More</span>
+                  <span>Explore Service</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                 </button>
                 <span className="text-[10px] text-slate-400 font-mono">

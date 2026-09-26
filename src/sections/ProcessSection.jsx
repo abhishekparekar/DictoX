@@ -6,13 +6,13 @@ export default function ProcessSection({ onOpenConsultation }) {
     {
       num: '01',
       title: 'Understand',
-      desc: 'Your business, goals & target audience.',
+      desc: 'Understand your business, goals & target audience.',
       icon: Search,
     },
     {
       num: '02',
       title: 'Strategize',
-      desc: 'Build the right advertising strategy.',
+      desc: 'Build the right advertising strategy based on your business objectives.',
       icon: Lightbulb,
     },
     {
@@ -24,19 +24,19 @@ export default function ProcessSection({ onOpenConsultation }) {
     {
       num: '04',
       title: 'Launch',
-      desc: 'Launch campaigns across the right platforms.',
+      desc: 'Launch campaigns across the right advertising platforms.',
       icon: Rocket,
     },
     {
       num: '05',
       title: 'Optimize',
-      desc: 'Monitor performance and continually optimize.',
+      desc: 'Monitor performance and continuously optimize campaigns.',
       icon: Sliders,
     },
     {
       num: '06',
       title: 'Scale',
-      desc: 'Identify opportunities to scale what works.',
+      desc: 'Identify opportunities to improve performance and scale what works.',
       icon: TrendingUp,
     },
   ];
@@ -57,7 +57,7 @@ export default function ProcessSection({ onOpenConsultation }) {
 
         {/* 6 Steps in 1 Row */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 relative">
-          {steps.map((step, idx) => {
+          {steps.map((step) => {
             const Icon = step.icon;
             return (
               <div
