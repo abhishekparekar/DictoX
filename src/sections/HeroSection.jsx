@@ -16,7 +16,7 @@ export default function HeroSection({ onOpenConsultation }) {
 
       {/* Radiant Emerald Nebula Glow behind Founder */}
       <div 
-        className="absolute top-1/2 left-[58%] -translate-x-1/2 -translate-y-1/2 w-[500px] sm:w-[650px] lg:w-[750px] h-[350px] sm:h-[450px] pointer-events-none rounded-full blur-[100px] sm:blur-[120px] opacity-45"
+        className="absolute top-1/2 left-[58%] -translate-x-1/2 -translate-y-1/2 w-[500px] sm:w-[650px] lg:w-[750px] h-[350px] sm:h-[450px] pointer-events-none rounded-full blur-[100px] sm:blur-[120px] opacity-45 animate-ambient-pulse"
         style={{
           background: 'radial-gradient(circle, #00f59b 0%, #026d4c 45%, transparent 75%)'
         }}
@@ -24,7 +24,7 @@ export default function HeroSection({ onOpenConsultation }) {
 
       {/* Secondary Emerald Light Plume behind Growth Chart */}
       <div 
-        className="absolute top-1/4 right-[2%] w-[380px] lg:w-[480px] h-[340px] pointer-events-none rounded-full blur-[110px] opacity-30"
+        className="absolute top-1/4 right-[2%] w-[380px] lg:w-[480px] h-[340px] pointer-events-none rounded-full blur-[110px] opacity-30 animate-pulse"
         style={{
           background: 'radial-gradient(circle, #10e998 0%, #014732 55%, transparent 75%)'
         }}
@@ -54,12 +54,29 @@ export default function HeroSection({ onOpenConsultation }) {
               <span>Maharashtra's No.1 Lead Generation Ad Agency</span>
             </div>
 
-            {/* Main H1 Title */}
+            {/* Main H1 Title with Adymize-Style Gradient & Animated SVG Brush Underline */}
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.2rem] xl:text-[3.8rem] font-bold font-display tracking-tight text-white leading-[1.12] sm:leading-[1.08]">
               Optimize Your Ads <br />
               For{' '}
-              <span className="text-[#00f59b]">
-                More Profit.
+              <span className="relative inline-block mt-1">
+                <span className="bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#25f4a7] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(0,245,155,0.3)]">
+                  More Profit.
+                </span>
+                {/* Adymize Signature Hand-Drawn Animated SVG Brush Underline */}
+                <svg
+                  className="absolute -bottom-2 sm:-bottom-2.5 left-0 w-full h-3 sm:h-3.5 text-[#00f59b] overflow-visible pointer-events-none"
+                  viewBox="0 0 160 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3 14C35 4 80 18 157 6"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    className="animate-draw-brush"
+                  />
+                </svg>
               </span>
             </h1>
 
@@ -72,7 +89,7 @@ export default function HeroSection({ onOpenConsultation }) {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-3 pt-1">
               <button
                 onClick={onOpenConsultation}
-                className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] shadow-[0_4px_20px_rgba(0,245,155,0.35)] hover:shadow-[0_6px_25px_rgba(0,245,155,0.5)] active:scale-[0.98] transition-all duration-200 hover:-translate-y-0.5 cursor-pointer tracking-wide"
+                className="btn-shimmer group inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] shadow-[0_4px_20px_rgba(0,245,155,0.4)] hover:shadow-[0_6px_30px_rgba(0,245,155,0.6)] active:scale-[0.98] transition-all duration-200 hover:-translate-y-0.5 cursor-pointer tracking-wide"
               >
                 <span>Get Free Strategy Consultation</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

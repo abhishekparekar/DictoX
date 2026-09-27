@@ -160,11 +160,14 @@ export default function ServicesSection() {
             <Link
               key={item.id}
               to={`/services?service=${item.id}`}
-              className="bg-white border border-slate-200/90 rounded-2xl p-3.5 sm:p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 group cursor-pointer"
+              className="relative bg-white border border-slate-200/90 rounded-2xl p-3.5 sm:p-5 flex flex-col justify-between shadow-xs hover:shadow-[0_12px_28px_rgba(0,245,155,0.12)] hover:border-[#00f59b]/60 transition-all duration-300 hover:-translate-y-1.5 group cursor-pointer overflow-hidden"
             >
+              {/* Subtle top-right ambient hover highlight */}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#00f59b]/0 group-hover:bg-[#00f59b]/10 rounded-full blur-xl transition-all duration-500 pointer-events-none" />
+
               <div>
                 {/* Top Brand Icon */}
-                <div className="mb-2.5 sm:mb-3">
+                <div className="mb-2.5 sm:mb-3 transition-transform duration-300 group-hover:scale-110">
                   {item.topIcon}
                 </div>
 

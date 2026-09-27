@@ -121,3 +121,72 @@
   background: #00b370;
   border-radius: 9999px;
 }
+
+/* Adymize SVG Brush Underline Animation */
+@keyframes drawBrush {
+  0% {
+    stroke-dashoffset: 140;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.animate-draw-brush {
+  stroke-dasharray: 140;
+  animation: drawBrush 1.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Pulsing Ambient Orbs */
+@keyframes ambientPulse {
+  0%, 100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.08) translate(8px, -8px);
+    opacity: 0.5;
+  }
+}
+
+.animate-ambient-pulse {
+  animation: ambientPulse 8s ease-in-out infinite;
+}
+
+/* Button Shimmer / High-Impact Glow */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  animation: buttonShimmer 4s infinite;
+}
+
+@keyframes buttonShimmer {
+  0%, 60% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+

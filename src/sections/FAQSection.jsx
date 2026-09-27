@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Plus, Minus } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function FAQSection({ onOpenConsultation }) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -98,22 +99,44 @@ export default function FAQSection({ onOpenConsultation }) {
                 return (
                   <div
                     key={faq.num}
-                    className="border border-slate-200 rounded-xl overflow-hidden bg-slate-50/50 hover:bg-slate-50 transition-colors"
+                    className={`border rounded-xl overflow-hidden transition-all duration-300 ${
+                      isOpen
+                        ? 'border-[#00f59b]/80 shadow-[0_4px_20px_rgba(0,245,155,0.12)] bg-white'
+                        : 'border-slate-200 bg-slate-50/60 hover:bg-slate-50 hover:border-slate-300'
+                    }`}
                   >
                     <button
                       onClick={() => toggleLeft(idx)}
                       className="w-full p-3 sm:p-3.5 text-left flex items-center justify-between gap-3 text-xs sm:text-sm font-semibold text-slate-900 cursor-pointer"
                     >
                       <span className="line-clamp-2">{faq.q}</span>
-                      <span className="text-slate-500 font-bold shrink-0 text-base">
-                        {isOpen ? '−' : '+'}
+                      <span
+                        className={`w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 shrink-0 ${
+                          isOpen
+                            ? 'bg-[#00f59b] text-slate-950 rotate-180 shadow-xs'
+                            : 'bg-slate-200/80 text-slate-600 rotate-0'
+                        }`}
+                      >
+                        <ChevronDown className="w-3.5 h-3.5" />
                       </span>
                     </button>
-                    {isOpen && (
-                      <div className="px-3 sm:px-3.5 pb-3 text-xs text-slate-600 leading-relaxed border-t border-slate-200/60 pt-2 bg-white">
-                        {faq.a}
-                      </div>
-                    )}
+                    
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          key="content"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-3 sm:px-3.5 pb-3.5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-2.5 bg-white">
+                            {faq.a}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 );
               })}
@@ -126,22 +149,44 @@ export default function FAQSection({ onOpenConsultation }) {
                 return (
                   <div
                     key={faq.num}
-                    className="border border-slate-200 rounded-xl overflow-hidden bg-slate-50/50 hover:bg-slate-50 transition-colors"
+                    className={`border rounded-xl overflow-hidden transition-all duration-300 ${
+                      isOpen
+                        ? 'border-[#00f59b]/80 shadow-[0_4px_20px_rgba(0,245,155,0.12)] bg-white'
+                        : 'border-slate-200 bg-slate-50/60 hover:bg-slate-50 hover:border-slate-300'
+                    }`}
                   >
                     <button
                       onClick={() => toggleRight(idx)}
                       className="w-full p-3 sm:p-3.5 text-left flex items-center justify-between gap-3 text-xs sm:text-sm font-semibold text-slate-900 cursor-pointer"
                     >
                       <span className="line-clamp-2">{faq.q}</span>
-                      <span className="text-slate-500 font-bold shrink-0 text-base">
-                        {isOpen ? '−' : '+'}
+                      <span
+                        className={`w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 shrink-0 ${
+                          isOpen
+                            ? 'bg-[#00f59b] text-slate-950 rotate-180 shadow-xs'
+                            : 'bg-slate-200/80 text-slate-600 rotate-0'
+                        }`}
+                      >
+                        <ChevronDown className="w-3.5 h-3.5" />
                       </span>
                     </button>
-                    {isOpen && (
-                      <div className="px-3 sm:px-3.5 pb-3 text-xs text-slate-600 leading-relaxed border-t border-slate-200/60 pt-2 bg-white">
-                        {faq.a}
-                      </div>
-                    )}
+                    
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          key="content"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-3 sm:px-3.5 pb-3.5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-2.5 bg-white">
+                            {faq.a}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 );
               })}

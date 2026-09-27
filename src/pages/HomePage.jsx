@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroSection from '../sections/HeroSection';
 import TrustBar from '../sections/TrustBar';
+import MarqueeRibbon from '../components/MarqueeRibbon';
 import ProblemSection from '../sections/ProblemSection';
 import ServicesSection from '../sections/ServicesSection';
 import WhyDictoxSection from '../sections/WhyDictoxSection';
@@ -20,6 +21,7 @@ export default function HomePage({ onOpenConsultation }) {
     <>
       <HeroSection onOpenConsultation={onOpenConsultation} />
       <TrustBar />
+      <MarqueeRibbon />
       <ProblemSection onOpenConsultation={onOpenConsultation} />
       <ServicesSection onOpenConsultation={onOpenConsultation} />
       <WhyDictoxSection onOpenConsultation={onOpenConsultation} />

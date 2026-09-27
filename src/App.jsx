@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import ConsultationModal from './components/ConsultationModal';
 import FloatingActions from './components/FloatingActions';
+import SideDotNav from './components/SideDotNav';
+import ScrollProgressBar from './components/ScrollProgressBar';
 
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
@@ -27,6 +29,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <ScrollProgressBar />
       <ScrollToTop />
       <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-brand-emerald selection:text-brand-dark overflow-x-hidden">
         {/* Navigation / Sticky Header */}
@@ -81,6 +84,9 @@ export default function App() {
 
         {/* Floating WhatsApp and Back to Top Actions */}
         <FloatingActions />
+
+        {/* Adymize-Style Floating Vertical Side Dot Navigation */}
+        <SideDotNav />
       </div>
     </BrowserRouter>
   );

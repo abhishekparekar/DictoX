@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, 
   X, 
@@ -89,21 +90,34 @@ export default function Navbar({ onOpenConsultation }) {
             />
           </Link>
 
-          {/* Desktop Navigation Links (Multi-Page Navigation) */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          {/* Desktop Navigation Links (Multi-Page Navigation) with Smooth Sliding Pill */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 p-1 bg-slate-50/80 rounded-full border border-slate-200/60 shadow-xs">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
                 to={link.path}
-                className={({ isActive }) =>
-                  `px-3.5 py-1.5 rounded-lg text-sm font-semibold transition-all duration-200 relative ${
-                    isActive 
-                      ? 'text-[#00a868] bg-[#00f59b]/10 font-bold' 
-                      : 'text-slate-700 hover:text-slate-950 hover:bg-slate-50'
-                  }`
-                }
+                className="relative px-4 py-1.5 rounded-full text-xs xl:text-sm font-semibold transition-colors duration-200 select-none group"
               >
-                <span>{link.name}</span>
+                {({ isActive }) => (
+                  <>
+                    {isActive && (
+                      <motion.div
+                        layoutId="navbar-active-pill"
+                        className="absolute inset-0 bg-[#00f59b]/20 border border-[#00f59b]/50 rounded-full shadow-[0_2px_10px_rgba(0,245,155,0.2)] -z-0"
+                        transition={{ type: 'spring', stiffness: 420, damping: 32 }}
+                      />
+                    )}
+                    <span
+                      className={`relative z-10 transition-colors ${
+                        isActive
+                          ? 'text-[#00874e] font-bold'
+                          : 'text-slate-700 group-hover:text-slate-950'
+                      }`}
+                    >
+                      {link.name}
+                    </span>
+                  </>
+                )}
               </NavLink>
             ))}
           </nav>
@@ -112,7 +126,7 @@ export default function Navbar({ onOpenConsultation }) {
           <div className="hidden md:flex items-center">
             <button
               onClick={onOpenConsultation}
-              className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:shadow-[0_4px_20px_rgba(0,245,155,0.4)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 cursor-pointer tracking-wide"
+              className="btn-shimmer inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:shadow-[0_4px_22px_rgba(0,245,155,0.45)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 cursor-pointer tracking-wide"
             >
               <span>Get Free Strategy Consultation</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -123,7 +137,7 @@ export default function Navbar({ onOpenConsultation }) {
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={onOpenConsultation}
-              className="px-3 py-1.5 rounded-full text-[11px] font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] shadow-xs cursor-pointer hover:opacity-95"
+              className="btn-shimmer px-3.5 py-1.5 rounded-full text-[11px] font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] shadow-xs cursor-pointer hover:opacity-95"
             >
               <span>Consult</span>
             </button>
@@ -131,7 +145,7 @@ export default function Navbar({ onOpenConsultation }) {
             {/* Hamburger Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2 rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 active:scale-95 transition-all focus:outline-none"
+              className="p-2 rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 active:scale-95 transition-all focus:outline-none cursor-pointer"
               aria-label="Open mobile navigation sidebar"
             >
               <Menu className="w-5 h-5" />
@@ -141,23 +155,30 @@ export default function Navbar({ onOpenConsultation }) {
         </div>
       </header>
 
-      {/* Mobile Sidebar Drawer & Backdrop */}
-      {/* 1. Backdrop Overlay */}
-      <div
-        className={`fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-xs transition-opacity duration-300 lg:hidden ${
-          mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-        onClick={() => setMobileMenuOpen(false)}
-        aria-hidden="true"
-      />
+      {/* Mobile Sidebar Drawer & Backdrop with AnimatePresence */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <>
+            {/* 1. Backdrop Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-xs lg:hidden"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-hidden="true"
+            />
 
-      {/* 2. Slide-out Sidebar Panel */}
-      <aside
-        className={`fixed top-0 right-0 bottom-0 z-50 w-[290px] sm:w-[330px] bg-white shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out lg:hidden ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-        aria-label="Mobile Navigation Sidebar"
-      >
+            {/* 2. Slide-out Sidebar Panel */}
+            <motion.aside
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 28, stiffness: 280 }}
+              className="fixed top-0 right-0 bottom-0 z-50 w-[290px] sm:w-[330px] bg-white shadow-2xl flex flex-col justify-between lg:hidden"
+              aria-label="Mobile Navigation Sidebar"
+            >
         {/* Sidebar Header */}
         <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
           <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
@@ -272,7 +293,10 @@ export default function Navbar({ onOpenConsultation }) {
           </div>
         </div>
 
-      </aside>
+        </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }

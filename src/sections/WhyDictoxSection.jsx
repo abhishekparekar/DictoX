@@ -82,7 +82,7 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
               </div>
 
               {/* DICTOX Approach Column */}
-              <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border-2 border-[#00f59b] flex flex-col">
+              <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-[0_4px_30px_rgba(0,245,155,0.22)] hover:shadow-[0_8px_40px_rgba(0,245,155,0.35)] border-2 border-[#00f59b] flex flex-col transition-all duration-300 hover:-translate-y-1">
                 {/* Header: Glowing Emerald Band */}
                 <div className="bg-[#00f59b] py-2 sm:py-2.5 px-3 sm:px-4 text-center">
                   <h3 className="text-xs sm:text-sm font-black text-slate-950 font-display tracking-wide uppercase">

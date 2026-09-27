@@ -1,5 +1,6 @@
 import React from 'react';
 import { Clock, Users, IndianRupee } from 'lucide-react';
+import CounterAnimation from '../components/CounterAnimation';
 
 export default function TrustBar() {
   return (
@@ -15,7 +16,7 @@ export default function TrustBar() {
 
             <div className="flex items-center justify-center gap-5 sm:gap-7 pt-0.5">
               {/* Meta Business Partner */}
-              <div className="flex items-center gap-2 group">
+              <div className="flex items-center gap-2 group cursor-default">
                 <svg
                   className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-[#0081FB] shrink-0 transition-transform duration-200 group-hover:scale-105"
                   viewBox="0 0 24 24"
@@ -35,7 +36,7 @@ export default function TrustBar() {
               </div>
 
               {/* Google Partner Badge */}
-              <div className="flex items-center gap-2 group">
+              <div className="flex items-center gap-2 group cursor-default">
                 {/* Official Google Partner Bookmark Ribbon */}
                 <div className="w-2.5 sm:w-3 lg:w-3.5 h-7 sm:h-8 lg:h-9 bg-gradient-to-b from-[#EA4335] to-[#D93025] rounded-t-xs shadow-xs relative flex flex-col justify-end overflow-hidden shrink-0 transition-transform duration-200 group-hover:scale-105">
                   <div className="w-0 h-0 border-l-[5px] sm:border-l-[6px] lg:border-l-[7px] border-l-transparent border-r-[5px] sm:border-r-[6px] lg:border-r-[7px] border-r-transparent border-b-[4px] sm:border-b-[5px] border-b-white" />
@@ -60,7 +61,7 @@ export default function TrustBar() {
           {/* Divider between left & right (desktop only) */}
           <div className="hidden lg:block h-10 w-px bg-slate-200" />
 
-          {/* Right: 3 Milestone Stats (Responsive 3 Columns) */}
+          {/* Right: 3 Milestone Stats (Responsive 3 Columns) with Animated Numbers */}
           <div className="grid grid-cols-3 gap-2 sm:gap-5 lg:gap-8 xl:gap-10 w-full lg:w-auto pt-2 lg:pt-0 border-t lg:border-t-0 border-slate-100">
             
             {/* Stat 1: 5+ Years Experience */}
@@ -70,7 +71,7 @@ export default function TrustBar() {
               </div>
               <div>
                 <div className="text-sm sm:text-lg lg:text-xl font-black text-slate-950 font-display leading-tight">
-                  5+
+                  <CounterAnimation end={5} suffix="+" />
                 </div>
                 <div className="text-[9px] sm:text-xs text-slate-500 font-medium leading-tight">
                   <span className="sm:hidden">Years Exp.</span>
@@ -86,7 +87,7 @@ export default function TrustBar() {
               </div>
               <div>
                 <div className="text-sm sm:text-lg lg:text-xl font-black text-slate-950 font-display leading-tight">
-                  500+
+                  <CounterAnimation end={500} suffix="+" />
                 </div>
                 <div className="text-[9px] sm:text-xs text-slate-500 font-medium leading-tight">
                   Brands
@@ -101,8 +102,8 @@ export default function TrustBar() {
               </div>
               <div>
                 <div className="text-sm sm:text-lg lg:text-xl font-black text-slate-950 font-display leading-tight whitespace-nowrap">
-                  <span className="sm:hidden">₹10+ Cr</span>
-                  <span className="hidden sm:inline">₹10+ Crore</span>
+                  <span className="sm:hidden">₹<CounterAnimation end={10} suffix="+ Cr" /></span>
+                  <span className="hidden sm:inline">₹<CounterAnimation end={10} suffix="+ Crore" /></span>
                 </div>
                 <div className="text-[9px] sm:text-xs text-slate-500 font-medium leading-tight whitespace-nowrap">
                   <span className="sm:hidden">Ad Spend</span>

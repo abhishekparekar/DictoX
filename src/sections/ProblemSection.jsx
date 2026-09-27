@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, UserX, HelpCircle, TrendingDown, DollarSign, Shuffle } from 'lucide-react';
+import AnimatedSection from '../components/AnimatedSection';
 
 export default function ProblemSection({ onOpenConsultation }) {
   const problems = [
@@ -43,7 +44,7 @@ export default function ProblemSection({ onOpenConsultation }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-4 sm:mb-6">
+        <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-4 sm:mb-6">
           <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-[#00f59b] font-bold">
             IS YOUR ADVERTISING REALLY WORKING?
           </span>
@@ -58,7 +59,7 @@ export default function ProblemSection({ onOpenConsultation }) {
           <p className="text-xs sm:text-sm md:text-base text-slate-300 mt-2 max-w-xl mx-auto leading-relaxed font-normal">
             You’re spending on advertising — but is it actually helping your business grow?
           </p>
-        </div>
+        </AnimatedSection>
 
         {/* Top Handwritten Annotation right above the cards */}
         <div className="flex justify-end mb-1.5 pr-2 sm:pr-8">
@@ -76,49 +77,53 @@ export default function ProblemSection({ onOpenConsultation }) {
             const Icon = item.icon;
             const isLast = idx === problems.length - 1;
             return (
-              <div
+              <AnimatedSection
                 key={item.num}
-                className={`relative bg-[#09221d]/85 border border-white/10 hover:border-[#00f59b]/50 rounded-xl sm:rounded-2xl p-3 sm:p-4.5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#00f59b]/10 group ${
-                  isLast ? 'col-span-2 sm:col-span-1' : ''
-                }`}
+                direction="up"
+                delay={idx * 0.08}
+                className={isLast ? 'col-span-2 sm:col-span-1 h-full' : 'h-full'}
               >
-                <div>
-                  {/* Top Number */}
-                  <span className="text-[10px] sm:text-xs font-mono font-bold text-slate-400 block mb-1.5 sm:mb-2">
-                    {item.num}
-                  </span>
+                <div
+                  className="h-full relative bg-[#09221d]/85 border border-white/10 hover:border-[#00f59b]/50 rounded-xl sm:rounded-2xl p-3 sm:p-4.5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-[#00f59b]/15 group cursor-pointer"
+                >
+                  <div>
+                    {/* Top Number */}
+                    <span className="text-[10px] sm:text-xs font-mono font-bold text-slate-400 block mb-1.5 sm:mb-2">
+                      {item.num}
+                    </span>
 
-                  {/* Centered Green Icon */}
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#00f59b]/10 text-[#00f59b] flex items-center justify-center mb-2 sm:mb-3 mx-auto group-hover:scale-105 transition-transform">
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]" />
+                    {/* Centered Green Icon */}
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#00f59b]/10 text-[#00f59b] flex items-center justify-center mb-2 sm:mb-3 mx-auto group-hover:scale-110 group-hover:bg-[#00f59b] group-hover:text-slate-950 transition-all duration-300">
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]" />
+                    </div>
+
+                    {/* Card Title & Desc */}
+                    <h3 className="text-xs sm:text-sm md:text-base font-bold font-display text-white text-center mb-1 leading-snug group-hover:text-[#00f59b] transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-[11px] sm:text-xs text-slate-300 leading-snug font-normal text-center">
+                      {item.desc}
+                    </p>
                   </div>
-
-                  {/* Card Title & Desc */}
-                  <h3 className="text-xs sm:text-sm md:text-base font-bold font-display text-white text-center mb-1 leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-[11px] sm:text-xs text-slate-300 leading-snug font-normal text-center">
-                    {item.desc}
-                  </p>
                 </div>
-              </div>
+              </AnimatedSection>
             );
           })}
         </div>
 
         {/* Bottom Callout & CTA Button */}
-        <div className="mt-6 sm:mt-10 pt-4 sm:pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 text-center">
+        <AnimatedSection direction="up" delay={0.3} className="mt-6 sm:mt-10 pt-4 sm:pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 text-center">
           <span className="text-xs sm:text-sm md:text-base font-semibold text-slate-200">
             Your Advertising Should Do More Than Generate Leads.
           </span>
           <button
             onClick={onOpenConsultation}
-            className="inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:shadow-[0_6px_25px_rgba(0,245,155,0.4)] transition-all duration-300 cursor-pointer shadow-md"
+            className="btn-shimmer inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:shadow-[0_6px_25px_rgba(0,245,155,0.4)] transition-all duration-300 cursor-pointer shadow-md hover:-translate-y-0.5"
           >
             <span>Get A Free Strategy Consultation</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
-        </div>
+        </AnimatedSection>
 
       </div>
     </section>
