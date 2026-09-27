@@ -3,7 +3,7 @@ import { ArrowRight, Check, TrendingUp } from 'lucide-react';
 
 export default function HeroSection({ onOpenConsultation }) {
   return (
-    <section id="home" className="relative pt-20 pb-4 sm:pt-24 sm:pb-6 lg:pt-24 lg:pb-0 bg-[#031310] text-white overflow-hidden">
+    <section id="home" className="relative pt-28 pb-4 sm:pt-32 sm:pb-6 lg:pt-36 lg:pb-0 bg-[#031310] text-white overflow-hidden">
       
       {/* 1. Atmospheric Emerald Background Layers */}
       {/* Base Deep Forest Green Gradient */}
@@ -62,7 +62,7 @@ export default function HeroSection({ onOpenConsultation }) {
                 <span className="bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#25f4a7] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(0,245,155,0.3)]">
                   More Profit.
                 </span>
-                {/* Adymize Signature Hand-Drawn Animated SVG Brush Underline */}
+                {/* Adymize Signature Hand-Drawn Animated SVG Brush Underline with Pencil Accent */}
                 <svg
                   className="absolute -bottom-2 sm:-bottom-2.5 left-0 w-full h-3 sm:h-3.5 text-[#00f59b] overflow-visible pointer-events-none"
                   viewBox="0 0 160 20"
@@ -70,13 +70,17 @@ export default function HeroSection({ onOpenConsultation }) {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M3 14C35 4 80 18 157 6"
+                    d="M3 14C35 4 80 18 150 7"
                     stroke="currentColor"
                     strokeWidth="4"
                     strokeLinecap="round"
                     className="animate-draw-brush"
                   />
                 </svg>
+                {/* Pencil Accent Icon matching screenshot */}
+                <span className="absolute -bottom-3 -right-4.5 text-xs text-[#00f59b] transform -rotate-12 select-none pointer-events-none">
+                  ✏️
+                </span>
               </span>
             </h1>
 

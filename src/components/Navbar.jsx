@@ -72,64 +72,45 @@ export default function Navbar({ onOpenConsultation }) {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/90 py-2.5 sm:py-3'
-            : 'bg-white border-b border-slate-100 py-3 sm:py-3.5'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between">
+      {/* Adymize-Style Floating Island Pill Navbar */}
+      <header className="fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 w-[94%] max-w-5xl z-50 transition-all duration-300">
+        <div className="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-full px-5 sm:px-6 py-2.5 sm:py-3 border border-slate-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.06)] flex items-center justify-between">
           
           {/* Brand Official Logo */}
           <Link to="/" className="flex items-center gap-2 focus:outline-none shrink-0 group">
             <img
               src="/images/logo1.png"
               alt="DictoX Marketing - Performance Marketing Agency"
-              className="h-9 sm:h-11 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+              className="h-8 sm:h-9 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             />
           </Link>
 
-          {/* Desktop Navigation Links (Multi-Page Navigation) with Smooth Sliding Pill */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 p-1 bg-slate-50/80 rounded-full border border-slate-200/60 shadow-xs">
+          {/* Desktop Navigation Links (Airy & Clean Adymize Style) */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
                 to={link.path}
-                className="relative px-4 py-1.5 rounded-full text-xs xl:text-sm font-semibold transition-colors duration-200 select-none group"
+                className={({ isActive }) =>
+                  `px-3.5 py-1.5 rounded-full text-[13px] sm:text-[13.5px] font-medium transition-all duration-200 relative select-none ${
+                    isActive
+                      ? 'text-slate-950 font-bold bg-slate-100/80'
+                      : 'text-slate-600 hover:text-slate-950 hover:bg-slate-50'
+                  }`
+                }
               >
-                {({ isActive }) => (
-                  <>
-                    {isActive && (
-                      <motion.div
-                        layoutId="navbar-active-pill"
-                        className="absolute inset-0 bg-[#00f59b]/20 border border-[#00f59b]/50 rounded-full shadow-[0_2px_10px_rgba(0,245,155,0.2)] -z-0"
-                        transition={{ type: 'spring', stiffness: 420, damping: 32 }}
-                      />
-                    )}
-                    <span
-                      className={`relative z-10 transition-colors ${
-                        isActive
-                          ? 'text-[#00874e] font-bold'
-                          : 'text-slate-700 group-hover:text-slate-950'
-                      }`}
-                    >
-                      {link.name}
-                    </span>
-                  </>
-                )}
+                <span>{link.name}</span>
               </NavLink>
             ))}
           </nav>
 
-          {/* Desktop Primary CTA Button */}
+          {/* Desktop Primary CTA Button: Adymize Sleek Dark Pill Button */}
           <div className="hidden md:flex items-center">
             <button
               onClick={onOpenConsultation}
-              className="btn-shimmer inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:shadow-[0_4px_22px_rgba(0,245,155,0.45)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 cursor-pointer tracking-wide"
+              className="bg-[#1c1d2e] hover:bg-[#2c2e44] text-white text-xs sm:text-[13px] font-semibold px-5 sm:px-6 py-2 sm:py-2.5 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md active:scale-98 cursor-pointer flex items-center gap-1.5"
             >
-              <span>Get Free Strategy Consultation</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <span>Chat Now</span>
             </button>
           </div>
 
@@ -137,9 +118,9 @@ export default function Navbar({ onOpenConsultation }) {
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={onOpenConsultation}
-              className="btn-shimmer px-3.5 py-1.5 rounded-full text-[11px] font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] shadow-xs cursor-pointer hover:opacity-95"
+              className="bg-[#1c1d2e] hover:bg-[#2c2e44] text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-xl shadow-xs cursor-pointer active:scale-95 transition-all"
             >
-              <span>Consult</span>
+              <span>Chat Now</span>
             </button>
             
             {/* Hamburger Toggle Button */}

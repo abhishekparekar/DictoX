@@ -57,7 +57,7 @@ export default function SideDotNav() {
   return (
     <aside
       aria-label="Section Navigation"
-      className="fixed right-4 sm:right-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-3 bg-slate-950/60 backdrop-blur-md p-2.5 rounded-full border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:bg-slate-950/80 hover:border-[#00f59b]/30"
+      className="fixed right-4 sm:right-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-3.5 bg-white/95 backdrop-blur-md py-3.5 px-2 rounded-full border border-slate-200/80 shadow-[0_4px_25px_rgba(0,0,0,0.08)] transition-all duration-300"
     >
       {navItems.map(({ id, label }) => {
         const isActive = activeId === id;
@@ -66,22 +66,22 @@ export default function SideDotNav() {
             key={id}
             href={`#${id}`}
             onClick={(e) => scrollToSection(e, id)}
-            className="group relative flex items-center justify-center p-1 cursor-pointer focus:outline-none"
+            className="group relative flex items-center justify-center w-5 h-5 cursor-pointer focus:outline-none"
             aria-label={`Jump to ${label}`}
           >
             {/* Hover Tooltip Pill */}
-            <span className="pointer-events-none absolute right-8 px-2.5 py-1 rounded-md bg-slate-900/95 text-white text-[11px] font-semibold tracking-wide whitespace-nowrap opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 border border-white/10 shadow-lg">
+            <span className="pointer-events-none absolute right-8 px-2.5 py-1 rounded-md bg-slate-900 text-white text-[11px] font-semibold tracking-wide whitespace-nowrap opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 shadow-md">
               {label}
             </span>
 
-            {/* Indicator Dot */}
-            <div
-              className={`rounded-full transition-all duration-300 ${
-                isActive
-                  ? 'w-3 h-3 bg-[#00f59b] scale-125 shadow-[0_0_12px_#00f59b]'
-                  : 'w-2 h-2 bg-slate-400/60 group-hover:bg-slate-200 group-hover:scale-110'
-              }`}
-            />
+            {/* Indicator Dot matching Screenshot */}
+            {isActive ? (
+              <div className="w-4.5 h-4.5 rounded-full border border-slate-900 flex items-center justify-center transition-all duration-300">
+                <div className="w-1.5 h-1.5 rounded-full bg-slate-900" />
+              </div>
+            ) : (
+              <div className="w-1.5 h-1.5 rounded-full bg-slate-800/80 group-hover:scale-150 transition-all duration-200" />
+            )}
           </a>
         );
       })}
