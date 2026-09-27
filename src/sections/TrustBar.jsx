@@ -1,93 +1,112 @@
 import React from 'react';
-import { Clock, Users, IndianRupee, ShieldCheck } from 'lucide-react';
+import { Clock, Users, IndianRupee } from 'lucide-react';
 
 export default function TrustBar() {
   return (
-    <section className="bg-white border-b border-slate-200/90 py-4 sm:py-5 lg:py-6 relative z-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 lg:gap-8">
+    <section className="bg-white border-y border-slate-200/80 py-3 sm:py-4 lg:py-5 relative z-20 shadow-xs">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 xl:px-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-3 sm:gap-4 lg:gap-8">
           
           {/* Left: Certifications Container */}
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-5 text-center sm:text-left w-full lg:w-auto">
-            <span className="text-[11px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider block lg:max-w-[190px]">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-1.5 sm:gap-2">
+            <span className="text-[10px] sm:text-xs font-semibold text-slate-600 tracking-wide uppercase sm:normal-case">
               Our Performance Marketing Services Are Certified By
             </span>
 
-            <div className="inline-flex items-center justify-center gap-4 sm:gap-5 px-3.5 py-1.5 sm:py-1 rounded-full bg-slate-50 sm:bg-transparent border sm:border-0 border-slate-200/80 shrink-0">
+            <div className="flex items-center justify-center gap-5 sm:gap-7 pt-0.5">
               {/* Meta Business Partner */}
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#0081FB] shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/>
+              <div className="flex items-center gap-2 group">
+                <svg
+                  className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-[#0081FB] shrink-0 transition-transform duration-200 group-hover:scale-105"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-label="Meta Business Partner"
+                >
+                  <path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z" />
                 </svg>
-                <div className="text-left">
-                  <div className="text-xs sm:text-sm font-black text-slate-900 leading-none">Meta</div>
-                  <div className="text-[9px] sm:text-[10px] text-slate-500 font-semibold tracking-tight mt-0.5">Business Partner</div>
+                <div className="flex flex-col text-left leading-none">
+                  <span className="text-sm sm:text-base lg:text-lg font-black tracking-tight text-slate-900 font-sans">
+                    Meta
+                  </span>
+                  <span className="text-[9px] sm:text-[10px] lg:text-[11px] font-semibold text-slate-600 tracking-tight mt-0.5">
+                    Business Partner
+                  </span>
                 </div>
               </div>
 
-              {/* Vertical divider */}
-              <div className="h-6 sm:h-8 w-px bg-slate-200" />
-
-              {/* Google Partner */}
-              <div className="flex items-center gap-2">
-                <span className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center font-black text-sm sm:text-base text-[#EA4335] shrink-0">
-                  G
-                </span>
-                <div className="text-left">
-                  <div className="text-xs sm:text-sm font-black text-slate-900 leading-none">Google</div>
-                  <div className="text-[9px] sm:text-[10px] text-slate-500 font-semibold tracking-tight mt-0.5">Partner</div>
+              {/* Google Partner Badge */}
+              <div className="flex items-center gap-2 group">
+                {/* Official Google Partner Bookmark Ribbon */}
+                <div className="w-2.5 sm:w-3 lg:w-3.5 h-7 sm:h-8 lg:h-9 bg-gradient-to-b from-[#EA4335] to-[#D93025] rounded-t-xs shadow-xs relative flex flex-col justify-end overflow-hidden shrink-0 transition-transform duration-200 group-hover:scale-105">
+                  <div className="w-0 h-0 border-l-[5px] sm:border-l-[6px] lg:border-l-[7px] border-l-transparent border-r-[5px] sm:border-r-[6px] lg:border-r-[7px] border-r-transparent border-b-[4px] sm:border-b-[5px] border-b-white" />
+                </div>
+                <div className="flex flex-col text-left leading-none">
+                  <div className="text-sm sm:text-base lg:text-lg font-black tracking-tight font-sans">
+                    <span className="text-[#4285F4]">G</span>
+                    <span className="text-[#EA4335]">o</span>
+                    <span className="text-[#FBBC05]">o</span>
+                    <span className="text-[#4285F4]">g</span>
+                    <span className="text-[#34A853]">l</span>
+                    <span className="text-[#EA4335]">e</span>
+                  </div>
+                  <span className="text-[9px] sm:text-[10px] lg:text-[11px] font-semibold text-slate-600 tracking-tight mt-0.5">
+                    Partner
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Vertical divider between left & right (desktop only) */}
-          <div className="h-10 w-px bg-slate-200 hidden lg:block" />
+          {/* Divider between left & right (desktop only) */}
+          <div className="hidden lg:block h-10 w-px bg-slate-200" />
 
-          {/* Right: 3 Milestone Stats - Balanced 3-column grid on mobile, row on tablet/desktop */}
-          <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-8 w-full lg:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
+          {/* Right: 3 Milestone Stats (Responsive 3 Columns) */}
+          <div className="grid grid-cols-3 gap-2 sm:gap-5 lg:gap-8 xl:gap-10 w-full lg:w-auto pt-2 lg:pt-0 border-t lg:border-t-0 border-slate-100">
             
-            {/* Stat 1 */}
-            <div className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-1.5 sm:gap-3 p-2 sm:p-0 rounded-xl bg-slate-50/70 sm:bg-transparent border sm:border-0 border-slate-200/60">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#09221d] text-[#00f59b] flex items-center justify-center shrink-0 shadow-xs border border-[#00f59b]/30">
-                <Clock className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]" />
+            {/* Stat 1: 5+ Years Experience */}
+            <div className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-1 sm:gap-2.5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#0c1f1b] text-[#00f59b] flex items-center justify-center shrink-0 border border-[#00f59b]/30 shadow-xs">
+                <Clock className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 stroke-[2.2]" />
               </div>
               <div>
-                <div className="text-xs sm:text-base font-black text-slate-950 font-display leading-tight">
+                <div className="text-sm sm:text-lg lg:text-xl font-black text-slate-950 font-display leading-tight">
                   5+
                 </div>
-                <div className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">
-                  <span className="hidden sm:inline">Years </span>Experience
+                <div className="text-[9px] sm:text-xs text-slate-500 font-medium leading-tight">
+                  <span className="sm:hidden">Years Exp.</span>
+                  <span className="hidden sm:inline">Years Experience</span>
                 </div>
               </div>
             </div>
 
-            {/* Stat 2 */}
-            <div className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-1.5 sm:gap-3 p-2 sm:p-0 rounded-xl bg-slate-50/70 sm:bg-transparent border sm:border-0 border-slate-200/60">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#09221d] text-[#00f59b] flex items-center justify-center shrink-0 shadow-xs border border-[#00f59b]/30">
-                <Users className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]" />
+            {/* Stat 2: 500+ Brands */}
+            <div className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-1 sm:gap-2.5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#0c1f1b] text-[#00f59b] flex items-center justify-center shrink-0 border border-[#00f59b]/30 shadow-xs">
+                <Users className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 stroke-[2.2]" />
               </div>
               <div>
-                <div className="text-xs sm:text-base font-black text-slate-950 font-display leading-tight">
+                <div className="text-sm sm:text-lg lg:text-xl font-black text-slate-950 font-display leading-tight">
                   500+
                 </div>
-                <div className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">
+                <div className="text-[9px] sm:text-xs text-slate-500 font-medium leading-tight">
                   Brands
                 </div>
               </div>
             </div>
 
-            {/* Stat 3 */}
-            <div className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-1.5 sm:gap-3 p-2 sm:p-0 rounded-xl bg-slate-50/70 sm:bg-transparent border sm:border-0 border-slate-200/60">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#09221d] text-[#00f59b] flex items-center justify-center shrink-0 shadow-xs border border-[#00f59b]/30">
-                <IndianRupee className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]" />
+            {/* Stat 3: ₹10+ Crore Ad Spend Managed */}
+            <div className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-1 sm:gap-2.5">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#0c1f1b] text-[#00f59b] flex items-center justify-center shrink-0 border border-[#00f59b]/30 shadow-xs">
+                <IndianRupee className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 stroke-[2.2]" />
               </div>
               <div>
-                <div className="text-xs sm:text-base font-black text-slate-950 font-display leading-tight whitespace-nowrap">
-                  ₹10+ Cr<span className="hidden sm:inline">ore</span>
+                <div className="text-sm sm:text-lg lg:text-xl font-black text-slate-950 font-display leading-tight whitespace-nowrap">
+                  <span className="sm:hidden">₹10+ Cr</span>
+                  <span className="hidden sm:inline">₹10+ Crore</span>
                 </div>
-                <div className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">
-                  Ad Spend<span className="hidden sm:inline"> Managed</span>
+                <div className="text-[9px] sm:text-xs text-slate-500 font-medium leading-tight whitespace-nowrap">
+                  <span className="sm:hidden">Ad Spend</span>
+                  <span className="hidden sm:inline">Ad Spend Managed</span>
                 </div>
               </div>
             </div>
@@ -99,6 +118,3 @@ export default function TrustBar() {
     </section>
   );
 }
-
-
-

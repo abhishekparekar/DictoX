@@ -111,9 +111,9 @@ export default function ServicesPage({ onOpenConsultation }) {
     : serviceDetails.filter(s => s.id === activeTab);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 pt-20 sm:pt-24">
+    <div className="min-h-screen bg-white text-slate-900">
       {/* Compact Hero Header */}
-      <section className="bg-[#041412] text-white py-12 sm:py-16 relative overflow-hidden border-b border-emerald-950/60">
+      <section className="bg-[#041412] text-white pt-20 pb-12 sm:pt-24 sm:pb-16 relative overflow-hidden border-b border-emerald-950/60">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-[#00f59b]/10 rounded-full blur-[120px] pointer-events-none" />
         
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 text-center">

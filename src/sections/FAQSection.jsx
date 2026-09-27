@@ -69,7 +69,7 @@ export default function FAQSection({ onOpenConsultation }) {
   };
 
   return (
-    <section id="faq" className="py-10 sm:py-14 bg-white text-slate-900 border-b border-slate-200/80">
+    <section id="faq" className="py-7 sm:py-10 lg:py-12 bg-white text-slate-900 border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Responsive Grid: Left Title + Right FAQ Columns */}

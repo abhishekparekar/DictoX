@@ -1,7 +1,7 @@
 import React from 'react';
-import { Search, Lightbulb, Pencil, Rocket, BarChart3, Trophy } from 'lucide-react';
+import { Search, Lightbulb, Pencil, Rocket, BarChart3, Trophy, ArrowRight } from 'lucide-react';
 
-export default function ProcessSection({ onOpenConsultation }) {
+export default function ProcessSection() {
   const steps = [
     {
       num: '01',
@@ -42,49 +42,54 @@ export default function ProcessSection({ onOpenConsultation }) {
   ];
 
   return (
-    <section className="py-10 sm:py-14 md:py-16 bg-white text-slate-900 border-b border-slate-200/80">
+    <section id="process" className="py-6 sm:py-8 lg:py-10 bg-white text-slate-900 border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
+        {/* Header matching screenshot exactly */}
+        <div className="mb-4 sm:mb-6 text-left">
+          <span className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-widest text-slate-400 block mb-1">
             HOW WE WORK
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display tracking-tight text-slate-900">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[1.85rem] font-bold font-display tracking-tight text-slate-900">
             From Strategy To Customers — We Handle It All.
           </h2>
         </div>
 
-        {/* 6 Connected Steps Grid matching Screenshot 2 */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 relative">
+        {/* 6 Connected Steps Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3.5 lg:gap-4 relative">
           {steps.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <div key={item.num} className="relative flex flex-col">
-                <div className="bg-[#f8faf9] border border-slate-200/80 rounded-2xl p-4 flex flex-col items-center text-center h-full hover:bg-white hover:border-[#00b370]/50 hover:shadow-md transition-all">
-                  {/* Icon */}
-                  <div className="w-10 h-10 rounded-xl bg-white border border-slate-200/80 flex items-center justify-center text-slate-700 mb-3 shadow-2xs">
-                    <Icon className="w-5 h-5 text-[#00b370]" />
+              <div key={item.num} className="relative flex flex-col h-full">
+                
+                {/* Process Card */}
+                <div className="bg-[#f8fbf9] border border-slate-200/70 rounded-2xl p-3 sm:p-4 lg:p-4.5 flex flex-col items-center text-center h-full shadow-[0_1px_3px_rgba(0,0,0,0.02)] hover:bg-white hover:border-[#00b370]/50 hover:shadow-md transition-all duration-200 group">
+                  
+                  {/* Top White Squircle Icon Container */}
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white border border-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex items-center justify-center text-[#00b370] mb-2.5 sm:mb-3 group-hover:scale-105 transition-transform">
+                    <Icon className="w-5 h-5 stroke-[2.2]" />
                   </div>
 
-                  {/* Step Number & Title */}
-                  <div className="text-xs font-mono font-bold text-slate-400">
+                  {/* Step Number */}
+                  <div className="text-[11px] sm:text-xs font-mono font-bold text-slate-400 mb-0.5">
                     {item.num}
                   </div>
-                  <h3 className="text-sm font-bold font-display text-slate-900 mt-0.5 mb-1.5">
+
+                  {/* Card Title */}
+                  <h3 className="text-sm sm:text-[15px] font-bold font-display text-slate-900 mb-1 leading-snug">
                     {item.title}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-[11px] text-slate-500 leading-snug font-normal">
+                  {/* Description Copy */}
+                  <p className="text-[11px] sm:text-[12px] text-slate-500 leading-relaxed font-normal">
                     {item.desc}
                   </p>
                 </div>
 
                 {/* Connecting Arrow for Desktop (Except last step) */}
                 {idx < steps.length - 1 && (
-                  <div className="hidden lg:flex absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 text-[#00b370] font-bold text-xs pointer-events-none">
-                    →
+                  <div className="hidden lg:flex absolute -right-2.5 xl:-right-3 top-1/2 -translate-y-1/2 z-10 text-[#00b370] font-bold text-xs pointer-events-none">
+                    <ArrowRight className="w-3.5 h-3.5 text-[#00b370] stroke-[2.5]" />
                   </div>
                 )}
               </div>
@@ -96,4 +101,3 @@ export default function ProcessSection({ onOpenConsultation }) {
     </section>
   );
 }
-

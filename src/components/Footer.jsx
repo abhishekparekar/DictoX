@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Footer({ onOpenConsultation }) {
-  const navLinks = [
+export default function Footer() {
+  const mainNavLinks = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'Results', path: '/results' },
@@ -21,76 +21,80 @@ export default function Footer({ onOpenConsultation }) {
   ];
 
   return (
-    <footer className="bg-[#030d0b] text-slate-400 text-xs pt-8 sm:pt-10 pb-24 sm:pb-10 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-5 sm:space-y-6">
-        
-        {/* Top Section */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-6 pb-5 sm:pb-6 border-b border-white/10 text-center lg:text-left">
+    <footer className="bg-[#031310] text-slate-400 py-4 sm:py-5 lg:py-6 border-t border-white/10 text-xs">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-5 text-center lg:text-left">
           
-          {/* Logo & Tagline */}
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
-            <Link to="/" className="inline-block focus:outline-none">
+          {/* Left Column: Transparent Brand Logo & Agency Subtitle */}
+          <div className="shrink-0 flex items-center">
+            <Link to="/" className="inline-flex items-center gap-2.5 sm:gap-3 group focus:outline-none text-left">
               <img
                 src="/images/logo1.png"
-                alt="DictoX Marketing"
-                className="h-8 sm:h-9 w-auto object-contain brightness-0 invert"
+                alt="DictoX Marketing - Performance Marketing Agency"
+                className="h-7 sm:h-8 md:h-9 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
               />
+              <div className="hidden sm:block border-l border-white/15 pl-2.5 sm:pl-3">
+                <span className="text-[10.5px] sm:text-[11px] text-slate-300 font-medium block leading-tight">
+                  Performance Marketing &amp; Customer Acquisition Agency
+                </span>
+              </div>
             </Link>
-            <div className="border-t sm:border-t-0 sm:border-l border-white/15 pt-1.5 sm:pt-0 sm:pl-3 text-center sm:text-left">
-              <span className="text-[10px] sm:text-[11px] text-slate-400 block font-medium">
-                Performance Marketing & Customer Acquisition Agency
-              </span>
+          </div>
+
+          {/* Center Column: Two-tier Navigation Links */}
+          <div className="space-y-1 flex flex-col items-center">
+            {/* Primary Page Navigation Links */}
+            <nav className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-5 gap-y-1 text-xs font-semibold text-slate-300">
+              {mainNavLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className="hover:text-[#00f59b] transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Services Links */}
+            <div className="flex flex-wrap items-center justify-center gap-x-3 sm:gap-x-4 gap-y-0.5 text-[10.5px] sm:text-[11px] text-slate-400 font-normal">
+              {serviceLinks.map((service, idx) => (
+                <React.Fragment key={service.name}>
+                  <Link
+                    to={service.path}
+                    className="hover:text-[#00f59b] transition-colors"
+                  >
+                    {service.name}
+                  </Link>
+                  {idx < serviceLinks.length - 1 && (
+                    <span className="text-white/20 hidden sm:inline">•</span>
+                  )}
+                </React.Fragment>
+              ))}
             </div>
           </div>
 
-          {/* Navigation Links - Balanced flex on all screens */}
-          <nav className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-2 text-xs sm:text-sm font-semibold text-slate-300">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className="hover:text-[#00f59b] transition-colors"
-              >
-                {link.name}
+          {/* Right Column: Legal Links + Copyright */}
+          <div className="space-y-1 flex flex-col items-center lg:items-end text-[10.5px] sm:text-[11px] text-slate-400 shrink-0">
+            {/* Legal Links */}
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              <Link to="/contact" className="hover:text-white transition-colors">
+                Privacy Policy
               </Link>
-            ))}
-          </nav>
+              <span className="text-slate-600">•</span>
+              <Link to="/contact" className="hover:text-white transition-colors">
+                Terms &amp; Conditions
+              </Link>
+            </div>
 
-          {/* Legal Links */}
-          <div className="flex items-center gap-3 sm:gap-4 text-xs text-slate-400">
-            <a href="#privacy" className="hover:text-white transition-colors">Privacy Policy</a>
-            <span>•</span>
-            <a href="#terms" className="hover:text-white transition-colors">Terms & Conditions</a>
+            {/* Copyright */}
+            <div className="text-slate-500">
+              © {new Date().getFullYear()} DictoX Marketing. All rights reserved.
+            </div>
           </div>
 
         </div>
-
-        {/* Bottom Section */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-xs text-slate-500 text-center sm:text-left">
-          
-          {/* Services Links */}
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 sm:gap-x-4 gap-y-1 text-slate-400">
-            {serviceLinks.map((s, idx) => (
-              <React.Fragment key={s.name}>
-                <Link to={s.path} className="hover:text-[#00f59b] transition-colors">
-                  {s.name}
-                </Link>
-                {idx < serviceLinks.length - 1 && (
-                  <span className="text-white/20 hidden sm:inline">•</span>
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-
-          {/* Copyright */}
-          <div className="text-[11px] sm:text-xs text-slate-400">
-            © 2024 DictoX Marketing. All rights reserved.
-          </div>
-
-        </div>
-
       </div>
     </footer>
   );
 }
-
