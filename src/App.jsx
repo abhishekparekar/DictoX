@@ -31,7 +31,7 @@ export default function App() {
     <BrowserRouter>
       <ScrollProgressBar />
       <ScrollToTop />
-      <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-brand-emerald selection:text-brand-dark overflow-x-hidden">
+      <div className="min-h-screen bg-[#f7f8fe] adymize-aura-bg text-slate-900 flex flex-col selection:bg-blue-100 selection:text-[#0011a8] overflow-x-hidden">
         {/* Navigation / Sticky Header */}
         <Navbar onOpenConsultation={handleOpenConsultation} />
 

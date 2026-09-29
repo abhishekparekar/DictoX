@@ -1,62 +1,62 @@
 import React from 'react';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export default function FinalCTA({ onOpenConsultation }) {
   return (
-    <section className="py-6 sm:py-8 lg:py-10 bg-[#031310] text-white border-y border-[#00f59b]/25 relative overflow-hidden">
-      {/* Radiant atmospheric emerald glow */}
-      <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] lg:w-[850px] h-[250px] pointer-events-none rounded-full blur-[130px] opacity-40"
-        style={{
-          background: 'radial-gradient(circle, #00f59b 0%, #026d4c 45%, transparent 75%)'
-        }}
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-center">
+    <section className="py-6 sm:py-9 md:py-12 relative w-full">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+        
+        {/* Compact Floating White Card */}
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-4 sm:p-6 lg:p-8 relative overflow-hidden text-center">
           
-          {/* Left Column: Eyebrow + 2-Line Heading (Never overlaps) */}
-          <div className="lg:col-span-6 xl:col-span-6 text-center lg:text-left space-y-1">
-            <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.2em] text-slate-400 font-bold block">
-              READY TO GET MORE FROM YOUR ADS?
+          {/* Soft Center Aura */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[400px] h-[280px] sm:h-[400px] bg-gradient-to-r from-blue-300/10 to-emerald-300/10 rounded-full blur-[70px] pointer-events-none" />
+
+          <div className="relative z-10 max-w-3xl mx-auto space-y-2.5 sm:space-y-3.5">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#0011a8] block">
+              Ready To Get More From Your Advertising?
             </span>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold font-display tracking-tight text-white leading-tight">
-              Let's Build A Performance Marketing Strategy <br className="hidden sm:inline" />
-              <span className="text-[#00f59b]">
+
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-slate-950 leading-tight">
+              Let's Build A High-ROAS Growth Strategy <br />
+              <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
                 For Your Business.
               </span>
             </h2>
-          </div>
 
-          {/* Right Column: CTA Button + 3 Trust Checkmarks (Adaptive Wrap) */}
-          <div className="lg:col-span-6 xl:col-span-6 flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center justify-center lg:justify-end gap-3.5 sm:gap-4 xl:gap-5 w-full">
-            {/* Primary Action Button */}
-            <button
-              onClick={onOpenConsultation}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:shadow-[0_6px_25px_rgba(0,245,155,0.45)] active:scale-[0.98] transition-all duration-200 hover:-translate-y-0.5 cursor-pointer shadow-md tracking-wide whitespace-nowrap shrink-0"
-            >
-              <span>Get Free Strategy Consultation</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+            <p className="text-xs sm:text-sm md:text-base text-slate-700 leading-relaxed font-normal max-w-2xl mx-auto">
+              Get an actionable audit of your target market, ad creative opportunities, and customer acquisition roadmap with Suresh More and our performance team.
+            </p>
 
-            {/* 3 Trust Checks in a row */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-[11px] sm:text-xs text-slate-300 shrink-0">
-              <span className="flex items-center gap-1 font-medium whitespace-nowrap">
-                <Check className="w-3.5 h-3.5 text-[#00f59b] stroke-[3]" />
-                <span>No Obligation</span>
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button
+                onClick={onOpenConsultation}
+                className="bg-[#090d16] hover:bg-[#0011a8] active:scale-[0.98] text-white px-7 sm:px-8 py-3 rounded-xl font-semibold text-xs sm:text-sm md:text-base shadow-md transition-all cursor-pointer flex items-center justify-center gap-2"
+              >
+                <span>Book Free Strategy Consultation</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-[11px] sm:text-xs text-slate-600 font-medium">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00a63e] shrink-0" />
+                <span>Zero Obligation</span>
               </span>
-              <span className="flex items-center gap-1 font-medium whitespace-nowrap">
-                <Check className="w-3.5 h-3.5 text-[#00f59b] stroke-[3]" />
-                <span>Expert Advice</span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0011a8] shrink-0" />
+                <span>Direct Expert Feedback</span>
               </span>
-              <span className="flex items-center gap-1 font-medium whitespace-nowrap">
-                <Check className="w-3.5 h-3.5 text-[#00f59b] stroke-[3]" />
-                <span>100% Free</span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00a63e] shrink-0" />
+                <span>100% Free Strategy Session</span>
               </span>
             </div>
+
           </div>
 
         </div>
+
       </div>
     </section>
   );

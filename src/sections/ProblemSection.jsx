@@ -13,7 +13,7 @@ export default function ProblemSection({ onOpenConsultation }) {
     {
       num: '02',
       title: 'Low-Quality Leads',
-      desc: "You’re getting enquiries, but most of them are not the right customers.",
+      desc: "You're getting enquiries, but most of them are not the right customers.",
       icon: HelpCircle,
     },
     {
@@ -25,108 +25,98 @@ export default function ProblemSection({ onOpenConsultation }) {
     {
       num: '04',
       title: 'High Cost, Low Return',
-      desc: "You’re spending more on advertising, but the returns are not matching your investment.",
+      desc: "You're spending more on advertising, but the returns are not matching your investment.",
       icon: DollarSign,
     },
     {
       num: '05',
-      title: 'Inconsistent Customer Flow',
-      desc: "Some months are good, some are not — there’s no consistent flow of customers and sales.",
+      title: 'Inconsistent Flow',
+      desc: "Some months are good, some are not — there's no steady flow of qualified customers.",
       icon: Shuffle,
     },
   ];
 
   return (
-    <section className="relative py-8 sm:py-12 md:py-16 bg-[#051714] text-white overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#00f59b]/8 rounded-full blur-[160px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
+    <section className="relative py-6 sm:py-9 md:py-12 w-full">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         
         {/* Section Header */}
-        <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-4 sm:mb-6">
-          <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-[#00f59b] font-bold">
-            IS YOUR ADVERTISING REALLY WORKING?
+        <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-5 sm:mb-8">
+          <span className="inline-block text-xs font-bold tracking-widest text-[#0011a8] uppercase mb-1">
+            Is Your Advertising Really Working?
           </span>
 
-          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white mt-1.5 leading-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
             Getting Leads Is Not Enough.<br />
-            <span className="text-[#00f59b]">
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
               You Need Customers, Sales & Consistent Growth.
             </span>
           </h2>
 
-          <p className="text-xs sm:text-sm md:text-base text-slate-300 mt-2 max-w-xl mx-auto leading-relaxed font-normal">
-            You’re spending on advertising — but is it actually helping your business grow?
+          <p className="text-xs sm:text-sm md:text-base text-slate-700 mt-2 max-w-xl mx-auto leading-relaxed font-medium">
+            You are spending money on advertising every month — but is it actually translating into predictable revenue?
           </p>
         </AnimatedSection>
 
-        {/* Top Handwritten Annotation right above the cards */}
-        <div className="flex justify-end mb-1.5 pr-2 sm:pr-8">
-          <div className="text-right">
-            <span className="text-[11px] sm:text-xs font-serif italic text-slate-300">
-              Same Problems? Let's Fix This.
-            </span>
-            <span className="text-[#00f59b] text-xs sm:text-sm ml-1">⤷</span>
-          </div>
-        </div>
-
-        {/* 5 Problem Cards in compact 2-column on mobile, 5-col on desktop */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3.5">
-          {problems.map((item, idx) => {
-            const Icon = item.icon;
-            const isLast = idx === problems.length - 1;
-            return (
-              <AnimatedSection
-                key={item.num}
-                direction="up"
-                delay={idx * 0.08}
-                className={isLast ? 'col-span-2 sm:col-span-1 h-full' : 'h-full'}
-              >
-                <div
-                  className="h-full relative bg-[#09221d]/85 border border-white/10 hover:border-[#00f59b]/50 rounded-xl sm:rounded-2xl p-3 sm:p-4.5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-[#00f59b]/15 group cursor-pointer"
+        {/* Compact Floating White Card Container */}
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-3.5 sm:p-6 lg:p-7 relative overflow-hidden">
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-3.5">
+            {problems.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <AnimatedSection
+                  key={item.num}
+                  direction="up"
+                  delay={idx * 0.05}
+                  className="h-full"
                 >
-                  <div>
-                    {/* Top Number */}
-                    <span className="text-[10px] sm:text-xs font-mono font-bold text-slate-400 block mb-1.5 sm:mb-2">
-                      {item.num}
-                    </span>
+                  <div className="h-full bg-slate-50/80 hover:bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-slate-200/70 hover:border-blue-300 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 group flex flex-col justify-between text-center">
+                    <div>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-[11px] font-mono font-bold text-slate-400">
+                          {item.num}
+                        </span>
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-blue-50 text-[#0011a8] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#0011a8] group-hover:text-white transition-all">
+                          <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2]" />
+                        </div>
+                      </div>
 
-                    {/* Centered Green Icon */}
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#00f59b]/10 text-[#00f59b] flex items-center justify-center mb-2 sm:mb-3 mx-auto group-hover:scale-110 group-hover:bg-[#00f59b] group-hover:text-slate-950 transition-all duration-300">
-                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]" />
+                      <h3 className="text-xs sm:text-sm md:text-base font-bold text-slate-950 mb-1 group-hover:text-[#0011a8] transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-normal">
+                        {item.desc}
+                      </p>
                     </div>
-
-                    {/* Card Title & Desc */}
-                    <h3 className="text-xs sm:text-sm md:text-base font-bold font-display text-white text-center mb-1 leading-snug group-hover:text-[#00f59b] transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-[11px] sm:text-xs text-slate-300 leading-snug font-normal text-center">
-                      {item.desc}
-                    </p>
                   </div>
-                </div>
-              </AnimatedSection>
-            );
-          })}
-        </div>
+                </AnimatedSection>
+              );
+            })}
+          </div>
 
-        {/* Bottom Callout & CTA Button */}
-        <AnimatedSection direction="up" delay={0.3} className="mt-6 sm:mt-10 pt-4 sm:pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 text-center">
-          <span className="text-xs sm:text-sm md:text-base font-semibold text-slate-200">
-            Your Advertising Should Do More Than Generate Leads.
-          </span>
-          <button
-            onClick={onOpenConsultation}
-            className="btn-shimmer inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:shadow-[0_6px_25px_rgba(0,245,155,0.4)] transition-all duration-300 cursor-pointer shadow-md hover:-translate-y-0.5"
-          >
-            <span>Get A Free Strategy Consultation</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
-        </AnimatedSection>
+          {/* Bottom Callout & CTA */}
+          <div className="mt-4 sm:mt-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+            <div>
+              <h4 className="text-sm sm:text-base font-bold text-slate-950">
+                Stop Burning Ad Spend on Unqualified Clicks
+              </h4>
+              <p className="text-xs text-slate-600 mt-0.5 font-medium">
+                Let our team audit your funnel and build an acquisition roadmap that actually delivers.
+              </p>
+            </div>
+            <button
+              onClick={onOpenConsultation}
+              className="bg-[#090d16] hover:bg-[#0011a8] active:scale-[0.98] text-white px-6 py-2.5 rounded-xl font-semibold text-xs sm:text-sm shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 shrink-0"
+            >
+              <span>Get A Free Strategy Audit</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+        </div>
 
       </div>
     </section>
   );
 }
-

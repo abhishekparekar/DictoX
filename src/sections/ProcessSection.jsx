@@ -4,102 +4,78 @@ import AnimatedSection from '../components/AnimatedSection';
 
 export default function ProcessSection() {
   const steps = [
-    {
-      num: '01',
-      title: 'Understand',
-      desc: 'Your business, goals & target audience.',
-      icon: Search,
-    },
-    {
-      num: '02',
-      title: 'Strategize',
-      desc: 'Build the right advertising strategy.',
-      icon: Lightbulb,
-    },
-    {
-      num: '03',
-      title: 'Create',
-      desc: 'Develop creatives, copy & campaign structure.',
-      icon: Pencil,
-    },
-    {
-      num: '04',
-      title: 'Launch',
-      desc: 'Launch campaigns across the right platforms.',
-      icon: Rocket,
-    },
-    {
-      num: '05',
-      title: 'Optimize',
-      desc: 'Monitor performance and continuously optimize.',
-      icon: BarChart3,
-    },
-    {
-      num: '06',
-      title: 'Scale',
-      desc: 'Identify opportunities to scale what works.',
-      icon: Trophy,
-    },
+    { num: '01', title: 'Understand', desc: 'Your business, unit economics & target market.', icon: Search },
+    { num: '02', title: 'Strategize', desc: 'Formulate high-intent ad angles & audience hooks.', icon: Lightbulb },
+    { num: '03', title: 'Create', desc: 'Craft high-converting creatives, copy & landers.', icon: Pencil },
+    { num: '04', title: 'Launch', desc: 'Deploy optimized Meta, Google & WhatsApp funnels.', icon: Rocket },
+    { num: '05', title: 'Optimize', desc: 'Relentlessly prune bad ads and lower cost-per-lead.', icon: BarChart3 },
+    { num: '06', title: 'Scale', desc: 'Aggressively multiply budget into winning funnels.', icon: Trophy },
   ];
 
   return (
-    <section id="process" className="py-6 sm:py-8 lg:py-10 bg-white text-slate-900 border-b border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+    <section id="process" className="py-6 sm:py-9 md:py-12 relative w-full">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         
-        {/* Header matching screenshot exactly */}
-        <AnimatedSection direction="up" className="mb-4 sm:mb-6 text-left">
-          <span className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-widest text-slate-400 block mb-1">
-            HOW WE WORK
+        {/* Section Header */}
+        <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-5 sm:mb-8">
+          <span className="inline-block text-xs font-bold tracking-widest text-[#0011a8] uppercase mb-1">
+            How We Work
           </span>
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[1.85rem] font-bold font-display tracking-tight text-slate-900">
-            From Strategy To Customers — We Handle It All.
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
+            From Strategy To Customers —{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              We Handle It All.
+            </span>
           </h2>
+          <p className="mt-1.5 text-xs sm:text-sm md:text-base text-slate-700 font-medium">
+            A battle-tested 6-step framework designed to take the guesswork out of digital advertising.
+          </p>
         </AnimatedSection>
 
-        {/* 6 Connected Steps Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3.5 lg:gap-4 relative">
-          {steps.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <AnimatedSection
-                key={item.num}
-                direction="up"
-                delay={idx * 0.08}
-                className="relative flex flex-col h-full"
-              >
-                {/* Process Card */}
-                <div className="bg-[#f8fbf9] border border-slate-200/70 rounded-2xl p-3 sm:p-4 lg:p-4.5 flex flex-col items-center text-center h-full shadow-[0_1px_3px_rgba(0,0,0,0.02)] hover:bg-white hover:border-[#00b370]/50 hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 group cursor-pointer">
-                  
-                  {/* Top White Squircle Icon Container */}
-                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white border border-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex items-center justify-center text-[#00b370] mb-2.5 sm:mb-3 group-hover:scale-110 group-hover:bg-[#00f59b] group-hover:text-slate-950 transition-all duration-300">
-                    <Icon className="w-5 h-5 stroke-[2.2]" />
+        {/* 6 Connected Steps Grid in Compact White Card */}
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-3.5 sm:p-5 relative overflow-hidden">
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 relative z-10">
+            {steps.map((item, idx) => {
+              const Icon = item.icon;
+              const isEven = idx % 2 === 0;
+              return (
+                <AnimatedSection
+                  key={item.num}
+                  direction="up"
+                  delay={idx * 0.04}
+                  className="h-full"
+                >
+                  <div className="h-full bg-slate-50/80 hover:bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3.5 border border-slate-200/80 hover:border-blue-300 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 group flex flex-col items-center text-center justify-between">
+                    
+                    <div>
+                      {/* Step Number Badge */}
+                      <span className={`inline-block text-[10px] sm:text-[11px] font-mono font-bold px-2 py-0.5 rounded-full mb-2 ${
+                        isEven ? 'text-[#0011a8] bg-blue-50' : 'text-[#00a63e] bg-emerald-50'
+                      }`}>
+                        STEP {item.num}
+                      </span>
+
+                      {/* Icon */}
+                      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white shadow-2xs border border-slate-200/80 text-[#0011a8] flex items-center justify-center mb-2 mx-auto group-hover:scale-105 group-hover:bg-[#0011a8] group-hover:text-white transition-all">
+                        <Icon className="w-4 h-4 stroke-[2]" />
+                      </div>
+
+                      {/* Title & Desc */}
+                      <h3 className="text-xs sm:text-sm font-bold text-slate-950 mb-0.5 group-hover:text-[#0011a8] transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-normal">
+                        {item.desc}
+                      </p>
+                    </div>
+
                   </div>
+                </AnimatedSection>
+              );
+            })}
+          </div>
 
-                  {/* Step Number */}
-                  <div className="text-[11px] sm:text-xs font-mono font-bold text-slate-400 mb-0.5">
-                    {item.num}
-                  </div>
-
-                  {/* Card Title */}
-                  <h3 className="text-sm sm:text-[15px] font-bold font-display text-slate-900 mb-1 leading-snug group-hover:text-[#00874e] transition-colors">
-                    {item.title}
-                  </h3>
-
-                  {/* Description Copy */}
-                  <p className="text-[11px] sm:text-[12px] text-slate-500 leading-relaxed font-normal">
-                    {item.desc}
-                  </p>
-                </div>
-
-                {/* Connecting Arrow for Desktop (Except last step) */}
-                {idx < steps.length - 1 && (
-                  <div className="hidden lg:flex absolute -right-2.5 xl:-right-3 top-1/2 -translate-y-1/2 z-10 text-[#00b370] font-bold text-xs pointer-events-none">
-                    <ArrowRight className="w-3.5 h-3.5 text-[#00b370] stroke-[2.5]" />
-                  </div>
-                )}
-              </AnimatedSection>
-            );
-          })}
         </div>
 
       </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, CheckCircle, ShieldCheck, ArrowRight, Loader2, Sparkles, Phone, Mail, Building, Target } from 'lucide-react';
+import { X, CheckCircle, ShieldCheck, ArrowRight, Loader2, Sparkles } from 'lucide-react';
 
 export default function ConsultationModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
@@ -86,40 +86,40 @@ export default function ConsultationModal({ isOpen, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
     >
-      <div className="relative w-full max-w-2xl bg-white border border-slate-200/90 rounded-3xl shadow-2xl overflow-hidden my-6 my-auto animate-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-2xl bg-white border border-slate-100 rounded-2xl sm:rounded-[32px] shadow-[0_25px_60px_rgba(0,0,0,0.2)] overflow-hidden my-3 sm:my-6 my-auto animate-in zoom-in-95 duration-200">
         
-        {/* Top green accent border */}
-        <div className="h-1.5 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084]" />
+        {/* Top brand logo gradient accent bar */}
+        <div className="h-1.5 bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e]" />
 
         {/* Header */}
-        <div className="relative px-6 py-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <div className="relative px-4 sm:px-6 py-3.5 sm:py-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
           <div>
-            <span className="text-[11px] font-mono tracking-widest text-[#00b370] uppercase font-bold">
+            <span className="text-[10px] sm:text-[11px] font-mono tracking-widest text-[#0011a8] uppercase font-bold">
               Performance Strategy Call
             </span>
-            <h3 id="modal-title" className="text-xl sm:text-2xl font-bold font-display text-slate-900 mt-0.5">
+            <h3 id="modal-title" className="text-base sm:text-xl md:text-2xl font-bold font-display text-slate-900 mt-0.5">
               Get Your Free Strategy Consultation
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-slate-500 hover:text-slate-950 rounded-full bg-white border border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer"
+            className="p-1.5 sm:p-2 text-slate-400 hover:text-slate-700 rounded-full bg-white border border-slate-200 hover:bg-slate-50 transition-colors cursor-pointer shrink-0 ml-2"
             aria-label="Close modal"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>
 
         {/* Content Body */}
-        <div className="p-6 sm:p-8 max-h-[82vh] overflow-y-auto">
+        <div className="p-4 sm:p-6 md:p-8 max-h-[85vh] overflow-y-auto">
           {isSuccess ? (
             <div className="py-8 text-center space-y-5 animate-in fade-in duration-300">
-              <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto text-[#00b370] border-2 border-[#00b370]">
+              <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto text-[#00a63e] border-2 border-[#00a63e]">
                 <CheckCircle className="w-10 h-10" />
               </div>
               <div className="space-y-2">
@@ -142,12 +142,15 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 </div>
                 <div className="flex justify-between py-1">
                   <span className="text-slate-500">Monthly Budget:</span>
-                  <span className="text-[#00b370] font-bold">{formData.monthlyBudget}</span>
+                  <span className="text-[#0011a8] font-bold">{formData.monthlyBudget}</span>
                 </div>
               </div>
 
               <div className="pt-3">
-                <button onClick={handleReset} className="inline-flex items-center gap-2 px-7 py-3 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] to-[#00d084] uppercase tracking-wider cursor-pointer shadow-sm hover:shadow-md">
+                <button 
+                  onClick={handleReset} 
+                  className="inline-flex items-center gap-2 px-7 py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-[#090d16] hover:bg-[#0011a8] uppercase tracking-wider cursor-pointer shadow-md transition-all"
+                >
                   <span>Done & Back to Website</span>
                 </button>
               </div>
@@ -170,7 +173,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     placeholder="Enter your full name..."
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#00b370] transition-colors ${
+                    className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-600 transition-colors ${
                       errors.name ? 'border-red-500' : 'border-slate-300'
                     }`}
                   />
@@ -188,7 +191,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     placeholder="Enter your business or brand name..."
                     value={formData.businessName}
                     onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
-                    className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#00b370] transition-colors ${
+                    className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-600 transition-colors ${
                       errors.businessName ? 'border-red-500' : 'border-slate-300'
                     }`}
                   />
@@ -206,7 +209,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     placeholder="Enter your phone or WhatsApp number..."
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#00b370] transition-colors ${
+                    className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-600 transition-colors ${
                       errors.phone ? 'border-red-500' : 'border-slate-300'
                     }`}
                   />
@@ -224,7 +227,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     placeholder="Enter your email address..."
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#00b370] transition-colors ${
+                    className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-600 transition-colors ${
                       errors.email ? 'border-red-500' : 'border-slate-300'
                     }`}
                   />
@@ -239,7 +242,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   <select
                     value={formData.industry}
                     onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-[#00b370] transition-colors cursor-pointer"
+                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-indigo-600 transition-colors cursor-pointer"
                   >
                     <option value="Real Estate">Real Estate & Developers</option>
                     <option value="Healthcare & Clinics">Healthcare, Hospitals & Dental</option>
@@ -263,7 +266,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   <select
                     value={formData.monthlyBudget}
                     onChange={(e) => setFormData({ ...formData, monthlyBudget: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-[#00b370] transition-colors cursor-pointer"
+                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-indigo-600 transition-colors cursor-pointer"
                   >
                     <option value="Under ₹30,000">Under ₹30,000 / month</option>
                     <option value="₹30,000 - ₹50,000">₹30,000 - ₹50,000 / month</option>
@@ -292,7 +295,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                       onClick={() => setFormData({ ...formData, adPlatform: platform })}
                       className={`text-xs py-2.5 px-3 rounded-xl border text-center transition-all cursor-pointer ${
                         formData.adPlatform === platform
-                          ? 'bg-[#00f59b]/20 border-[#00b370] text-slate-950 font-bold shadow-2xs'
+                          ? 'bg-blue-50 border-[#0011a8] text-[#0011a8] font-bold shadow-2xs'
                           : 'bg-slate-50 border-slate-200 text-slate-600 hover:border-slate-400'
                       }`}
                     >
@@ -312,13 +315,13 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   placeholder="Enter your specific advertising challenge or goal (optional)..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#00b370] transition-colors resize-none"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#0011a8] transition-colors resize-none"
                 />
               </div>
 
               {/* Trust disclaimer */}
               <div className="flex items-center gap-2 text-[11px] text-slate-500 pt-1">
-                <ShieldCheck className="w-4 h-4 text-[#00b370] flex-shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-[#00a63e] flex-shrink-0" />
                 <span>100% Confidential. No high-pressure sales calls. 100% direct consultation.</span>
               </div>
 
@@ -327,7 +330,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#00f59b] via-[#10e998] to-[#00d084] hover:shadow-[0_6px_25px_rgba(0,245,155,0.4)] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer uppercase tracking-wider disabled:opacity-70"
+                  className="w-full py-3.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-[#090d16] hover:bg-[#0011a8] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer uppercase tracking-wider disabled:opacity-70"
                 >
                   {isSubmitting ? (
                     <>
@@ -336,7 +339,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     </>
                   ) : (
                     <>
-                      <Sparkles className="w-4 h-4" />
+                      <Sparkles className="w-4 h-4 text-[#00a63e]" />
                       <span>Book Free Strategy Consultation</span>
                       <ArrowRight className="w-4 h-4" />
                     </>

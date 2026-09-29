@@ -20,7 +20,6 @@ export default function HomePage({ onOpenConsultation }) {
   return (
     <>
       <HeroSection onOpenConsultation={onOpenConsultation} />
-      <TrustBar />
       <MarqueeRibbon />
       <ProblemSection onOpenConsultation={onOpenConsultation} />
       <ServicesSection onOpenConsultation={onOpenConsultation} />

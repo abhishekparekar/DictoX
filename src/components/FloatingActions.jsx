@@ -23,23 +23,23 @@ export default function FloatingActions() {
         href="https://wa.me/917796407424?text=Hi%20Suresh,%20I%20visited%20the%20DictoX%20Marketing%20website%20and%20would%20like%20to%20discuss%20customer%20acquisition%20for%20my%20business."
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative flex items-center justify-center w-13 h-13 p-3.5 bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-[#25D366]/40 hover:scale-105 active:scale-95 transition-all duration-300"
+        className="group relative flex items-center justify-center w-12 h-12 p-3 bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-[#25D366]/40 hover:scale-105 active:scale-95 transition-all duration-300"
         aria-label="Chat on WhatsApp with DictoX Founder"
       >
-        <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-brand-dark/95 border border-brand-border text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap shadow-xl opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200 hidden sm:block">
+        <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap shadow-xl opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200 hidden sm:block">
           Chat with Suresh More on WhatsApp
         </span>
-        <MessageSquare className="w-6 h-6 fill-current" />
+        <MessageSquare className="w-5 h-5 fill-current" />
       </a>
 
       {/* Back to top */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="p-3 bg-brand-surface border border-brand-border text-zinc-300 hover:text-brand-emerald hover:border-brand-emerald rounded-full shadow-lg hover:scale-105 active:scale-95 transition-all duration-300"
+          className="p-3 bg-white border border-slate-200 text-slate-700 hover:text-[#0011a8] hover:border-[#0011a8]/40 rounded-full shadow-md hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
           aria-label="Scroll to top of page"
         >
-          <ArrowUp className="w-5 h-5" />
+          <ArrowUp className="w-4 h-4" />
         </button>
       )}
     </div>

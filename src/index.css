@@ -5,83 +5,178 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    background-color: #ffffff;
-    color: #0f172a;
+    background-color: #f7f8fe;
+    color: #1e293b;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
+    color: #090d16;
   }
 
   ::selection {
-    background: #18E6A0;
-    color: #061512;
+    background: #c7d2fe;
+    color: #312e81;
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar — Adymize clean style */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #061512;
+  background: #f1f3fa;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1E3A34;
+  background: #cbd5e1;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #18E6A0;
+  background: #6366f1;
 }
 
-/* Button & Interactive styles */
-.btn-primary {
-  @apply relative inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-medium text-brand-dark bg-emerald-gradient transition-all duration-300 shadow-glow-sm hover:shadow-glow-md hover:-translate-y-0.5 active:translate-y-0 cursor-pointer overflow-hidden;
-}
+@layer components {
+  /* ===== ADYMIZE-STYLE BUTTONS ===== */
+  /* Signature Adymize dark pill button */
+  .btn-adymize-dark {
+    @apply inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-semibold text-white bg-[#181829] hover:bg-[#25253d] active:scale-[0.98] transition-all duration-200 shadow-[0_6px_20px_rgba(24,24,41,0.25)] hover:shadow-[0_8px_25px_rgba(24,24,41,0.35)] cursor-pointer text-xs sm:text-sm;
+  }
 
-.btn-secondary {
-  @apply relative inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-medium text-white border border-brand-border bg-brand-surface/60 hover:bg-brand-surface hover:border-brand-emerald/50 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer;
-}
+  /* Adymize schedule call outline pill */
+  .btn-adymize-pill {
+    @apply inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl sm:rounded-full font-semibold text-slate-800 bg-white border border-slate-200/90 hover:border-[#0011a8]/40 hover:text-[#0011a8] hover:bg-slate-50 active:scale-[0.98] transition-all duration-200 shadow-xs cursor-pointer text-xs sm:text-sm;
+  }
 
-.btn-light-primary {
-  @apply relative inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-medium text-white bg-brand-dark hover:bg-brand-surface border border-brand-border transition-all duration-300 hover:-translate-y-0.5 cursor-pointer shadow-md;
-}
+  /* Adymize primary gradient pill */
+  .btn-adymize-gradient {
+    @apply inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-[#4f46e5] via-[#6366f1] to-[#3b82f6] hover:shadow-[0_8px_25px_rgba(99,102,241,0.35)] active:scale-[0.98] transition-all cursor-pointer text-xs sm:text-sm;
+  }
 
-/* Card hover glow */
-.card-hover-glow {
-  @apply transition-all duration-300 hover:border-brand-emerald/40 hover:shadow-glow-sm hover:-translate-y-1;
+  /* Adymize/DictoX white floating card - sleek & compact */
+  .adymize-card {
+    @apply bg-white rounded-2xl sm:rounded-3xl border border-slate-150/80 shadow-[0_8px_30px_rgba(0,17,168,0.04)] relative overflow-hidden;
+  }
+
+  /* Card hover effect */
+  .card-hover-clean {
+    @apply transition-all duration-300 hover:border-blue-200 hover:shadow-[0_12px_32px_rgba(0,17,168,0.08)] hover:-translate-y-0.5;
+  }
+
+  /* DictoX Logo-Inspired Brand Gradient Text (Royal Blue to Vibrant Green) */
+  .dictox-brand-gradient {
+    @apply bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent font-black;
+  }
+
+  .adymize-title {
+    @apply bg-gradient-to-r from-[#0011a8] via-[#2563eb] to-[#00a63e] bg-clip-text text-transparent font-extrabold;
+  }
+
+  /* Floating section tab navigation */
+  .section-tab-nav {
+    @apply inline-flex items-center gap-1 p-1 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-xs;
+  }
+
+  .section-tab {
+    @apply px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer;
+  }
+
+  .section-tab-active {
+    @apply bg-[#181829] text-white shadow-xs;
+  }
+
+  .section-tab-inactive {
+    @apply text-slate-600 hover:text-slate-900;
+  }
 }
 
 /* Subtle decorative grid */
-.bg-grid-pattern {
-  background-size: 40px 40px;
+.bg-grid-clean {
+  background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(30, 58, 52, 0.25) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(30, 58, 52, 0.25) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 17, 168, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 17, 168, 0.03) 1px, transparent 1px);
 }
 
-.bg-dot-pattern {
-  background-size: 24px 24px;
-  background-image: radial-gradient(rgba(24, 230, 160, 0.15) 1px, transparent 1px);
+/* Adymize/DictoX ambient aura mesh background (Royal blue, fresh green & soft sky) */
+.adymize-aura-bg {
+  background: 
+    radial-gradient(circle at 10% 12%, rgba(0, 17, 168, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 88% 18%, rgba(0, 166, 62, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 50% 45%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 82% 85%, rgba(0, 166, 62, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 12% 80%, rgba(0, 17, 168, 0.06) 0%, transparent 45%),
+    #ffffff;
 }
 
-/* Radial Glow utility */
-.radial-glow {
-  background: radial-gradient(circle at 50% 20%, rgba(24, 230, 160, 0.16), transparent 60%);
+/* Central glowing aura inside cards */
+.card-center-aura {
+  background: radial-gradient(circle at center, rgba(0, 17, 168, 0.08) 0%, rgba(0, 166, 62, 0.06) 40%, transparent 75%);
 }
 
-.radial-glow-corner {
-  background: radial-gradient(circle at top right, rgba(24, 230, 160, 0.14), transparent 50%);
+/* Smooth floating animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
-/* Continuous infinite marquee for logo wall */
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+/* Subtle glowing pulse */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Adymize brush stroke curve animation */
+@keyframes drawBrushStroke {
+  0% {
+    stroke-dashoffset: 160;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.animate-brush {
+  stroke-dasharray: 160;
+  animation: drawBrushStroke 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Continuous infinite marquee */
 @keyframes marquee-scroll {
   0% {
     transform: translateX(0);
@@ -94,99 +189,9 @@
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 22s linear infinite;
+  animation: marquee-scroll 24s linear infinite;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
 }
-
-/* Horizontal scrollbar for mobile testimonials */
-.testimonial-scroll {
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: #00b370 #e2e8f0;
-}
-
-.testimonial-scroll::-webkit-scrollbar {
-  height: 6px;
-}
-
-.testimonial-scroll::-webkit-scrollbar-track {
-  background: #e2e8f0;
-  border-radius: 9999px;
-}
-
-.testimonial-scroll::-webkit-scrollbar-thumb {
-  background: #00b370;
-  border-radius: 9999px;
-}
-
-/* Adymize SVG Brush Underline Animation */
-@keyframes drawBrush {
-  0% {
-    stroke-dashoffset: 140;
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-}
-
-.animate-draw-brush {
-  stroke-dasharray: 140;
-  animation: drawBrush 1.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-}
-
-/* Pulsing Ambient Orbs */
-@keyframes ambientPulse {
-  0%, 100% {
-    transform: scale(1) translate(0, 0);
-    opacity: 0.35;
-  }
-  50% {
-    transform: scale(1.08) translate(8px, -8px);
-    opacity: 0.5;
-  }
-}
-
-.animate-ambient-pulse {
-  animation: ambientPulse 8s ease-in-out infinite;
-}
-
-/* Button Shimmer / High-Impact Glow */
-.btn-shimmer {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-shimmer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.45) 50%,
-    transparent 100%
-  );
-  transform: skewX(-25deg);
-  animation: buttonShimmer 4s infinite;
-}
-
-@keyframes buttonShimmer {
-  0%, 60% {
-    left: -100%;
-  }
-  100% {
-    left: 200%;
-  }
-}
-

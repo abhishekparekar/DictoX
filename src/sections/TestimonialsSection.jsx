@@ -5,105 +5,96 @@ export default function TestimonialsSection({ onOpenConsultation }) {
   const testimonials = [
     {
       name: 'Rohit Patil',
-      role: 'Real Estate',
+      role: 'Real Estate Developer, Pune',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
-      quote: '“Got 3x more enquiries in just 1 month. Highly recommended!”',
-      highlight: '3x More Enquiries',
+      quote: '"We had worked with three agencies before DictoX. Suresh and his team were the only ones who tracked site visits rather than just Facebook form clicks. We closed 12 units in 60 days."',
+      highlight: '3x Verified Enquiries',
     },
     {
       name: 'Sneha Kulkarni',
-      role: 'Salon Owner',
+      role: 'Founder, Aesthetic & Skin Clinic',
       avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
-      quote: '“Professional team, clear communication and real results.”',
-      highlight: 'Real Measurable Results',
+      quote: '"Their WhatsApp integration completely revolutionized our patient bookings. No more leads going cold. Highly professional, responsive, and data-driven team."',
+      highlight: 'Real Measurable Bookings',
     },
     {
       name: 'Amit Deshmukh',
-      role: 'Coaching Institute',
+      role: 'Director, Competitive Coaching Institute',
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
-      quote: '“Our admissions increased significantly. Great support and service!”',
-      highlight: 'Admissions Scaled',
+      quote: '"Our admissions batch filled up 3 weeks before deadline. The cost per acquired student was cut by almost 45% compared to our previous newspaper ads."',
+      highlight: 'Admissions Scaled 45%',
     },
   ];
 
   return (
-    <section id="testimonials" className="py-8 sm:py-12 md:py-16 bg-[#f8faf9] text-slate-900 border-b border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+    <section id="testimonials" className="py-6 sm:py-9 md:py-12 relative w-full">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5 sm:mb-7">
-          <div>
-            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
-              WHAT OUR CLIENTS SAY
+        <div className="text-center mb-5 sm:mb-8">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#0011a8] block mb-1">
+            Client Reviews
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
+            Businesses That Grow With{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              DictoX.
             </span>
-            <h2 className="text-xl sm:text-3xl md:text-4xl font-bold font-display tracking-tight text-slate-900 leading-tight">
-              Businesses That Grow With Us.
-            </h2>
-          </div>
-
-          <div>
-            <button
-              onClick={onOpenConsultation}
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-900 hover:text-[#00b370] transition-colors cursor-pointer group pb-0.5"
-            >
-              <span>View All Testimonials</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
-          </div>
+          </h2>
+          <p className="mt-1.5 text-xs sm:text-sm md:text-base text-slate-700 font-medium">
+            Real feedback from business owners and founders scaling with DictoX.
+          </p>
         </div>
 
-        {/* Mobile Horizontal Scrollable Reviews with visible scrollbar / Desktop 3-Column Grid */}
-        <div
-          className="flex md:grid overflow-x-auto md:overflow-x-visible md:grid-cols-3 gap-3.5 sm:gap-5 pb-3 md:pb-0 testimonial-scroll snap-x snap-mandatory"
-        >
+        {/* 3 Review Cards in Compact White */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {testimonials.map((item, idx) => (
             <div
               key={idx}
-              className="w-[82vw] max-w-[310px] md:w-auto shrink-0 snap-start bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 group"
+              className={`bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-[0_8px_30px_rgba(0,17,168,0.04)] flex flex-col justify-between hover:shadow-[0_12px_36px_rgba(0,17,168,0.08)] hover:-translate-y-0.5 transition-all duration-300 group ${
+                idx === 2 ? 'md:col-span-2 lg:col-span-1' : ''
+              }`}
             >
               <div>
-                {/* 5 Rating Stars */}
+                {/* 5 Stars */}
                 <div className="flex items-center gap-1 text-amber-400 mb-2.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
                   ))}
-                  <span className="text-[10px] font-bold text-slate-400 ml-1">5.0</span>
                 </div>
 
-                {/* Quote */}
-                <p className="text-xs sm:text-[13px] text-slate-800 font-medium leading-relaxed mb-4">
+                <div className={`inline-block text-[11px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full mb-2 ${
+                  idx % 2 === 0 ? 'bg-blue-50 text-[#0011a8]' : 'bg-emerald-50 text-[#00a63e]'
+                }`}>
+                  {item.highlight}
+                </div>
+
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic font-normal">
                   {item.quote}
                 </p>
               </div>
 
               {/* Author Info */}
-              <div className="flex items-center gap-3 pt-3 border-t border-slate-100">
+              <div className="flex items-center gap-3 pt-4 sm:pt-5 mt-4 sm:mt-5 border-t border-slate-100">
                 <img
                   src={item.avatar}
                   alt={item.name}
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-slate-200 shrink-0"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover shadow-xs border border-slate-200 shrink-0"
                 />
-                <div className="min-w-0">
-                  <div className="text-xs sm:text-sm font-bold text-slate-900 truncate flex items-center gap-1">
-                    <span>{item.name}</span>
-                    <CheckCircle2 className="w-3 h-3 text-[#00b370] shrink-0" />
-                  </div>
-                  <div className="text-[11px] text-slate-500 font-medium truncate">
+                <div>
+                  <h4 className="text-xs sm:text-sm font-bold text-slate-900">
+                    {item.name}
+                  </h4>
+                  <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium">
                     {item.role}
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Mobile Swipe Hint */}
-        <div className="flex md:hidden items-center justify-center gap-1.5 text-[11px] text-slate-400 font-medium mt-2">
-          <span>← Scroll to see more reviews →</span>
-        </div>
-
       </div>
     </section>
   );
 }
-

@@ -1,213 +1,131 @@
 import React from 'react';
-import { ArrowRight, MessageSquare, Bot, Instagram, Facebook, Cog, CheckCheck } from 'lucide-react';
+import { 
+  TrendingUp, 
+  Palette, 
+  Share2, 
+  Cpu, 
+  Search, 
+  Zap, 
+  ArrowRight,
+  Sparkles
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export default function ServicesSection() {
+export default function ServicesSection({ onOpenConsultation }) {
   const services = [
     {
       id: 'meta-ads',
-      title: 'Meta Ads',
-      subtitle: 'Facebook & Instagram',
-      desc: 'Reach the right audience and generate potential leads and customers.',
-      topIcon: (
-        <div className="w-8 h-8 flex items-center justify-center">
-          {/* Meta Infinity Logo */}
-          <svg className="w-7 h-7 text-[#0081FB]" viewBox="0 0 32 32" fill="currentColor">
-            <path d="M29.5 13.9c-.3-3.6-2.5-6.4-5.8-6.4-2.8 0-4.9 1.7-6.2 3.6-1.3-1.9-3.4-3.6-6.2-3.6-3.3 0-5.5 2.8-5.8 6.4-.3 3.9 1.3 7.4 3.9 9.8 1.8 1.7 4.1 2.7 6.6 2.7 1.8 0 3.5-.6 4.9-1.6 1.4 1 3.1 1.6 4.9 1.6 2.5 0 4.8-1 6.6-2.7 2.6-2.4 4.2-5.9 3.9-9.8zm-13.5 6.6c-1.3 1.1-3 1.7-4.8 1.7-2 0-3.8-.8-5.2-2.2-2.1-2-3.4-4.8-3.1-8 .3-2.8 1.9-4.9 4.4-4.9 2.2 0 3.9 1.5 4.9 3.1.2.3.6.4.9.4s.7-.1.9-.4c1-1.6 2.7-3.1 4.9-3.1 2.5 0 4.1 2.1 4.4 4.9.3 3.2-1 6-3.1 8-1.4 1.4-3.2 2.2-5.2 2.2-1.8 0-3.5-.6-4.8-1.7z" />
-          </svg>
-        </div>
-      ),
-      illustration: (
-        <div className="w-14 sm:w-16 h-24 sm:h-28 bg-slate-900 rounded-xl p-1.5 border border-slate-700/80 shadow-md flex flex-col justify-between shrink-0">
-          {/* Smartphone Speaker notch */}
-          <div className="w-4 h-0.5 bg-white/40 rounded-full mx-auto" />
-          
-          {/* IG & FB App Badges inside Phone */}
-          <div className="space-y-1.5 my-auto flex flex-col items-center">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white shadow-xs">
-              <Instagram className="w-3.5 h-3.5" />
-            </div>
-            <div className="w-7 h-7 rounded-lg bg-[#1877F2] flex items-center justify-center text-white shadow-xs">
-              <Facebook className="w-3.5 h-3.5 fill-white" />
-            </div>
-          </div>
-
-          {/* Home indicator bar */}
-          <div className="w-5 h-0.5 bg-white/30 rounded-full mx-auto" />
-        </div>
-      ),
+      icon: TrendingUp,
+      title: 'Strategic Marketing',
+      desc: 'Catapult your brand into the spotlight with our data-backed Meta & Google ad strategies — precision targeting engineered for predictable customer acquisition.',
     },
     {
-      id: 'google-ads',
-      title: 'Google & YouTube Ads',
-      subtitle: 'Search + Video',
-      desc: 'Reach people actively looking for your products or services.',
-      topIcon: (
-        <div className="w-8 h-8 flex items-center justify-center">
-          {/* Authentic Google 4-Color 'G' Logo */}
-          <svg className="w-7 h-7" viewBox="0 0 24 24">
-            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3h3.88c2.27-2.09 3.665-5.17 3.665-9.09z"/>
-            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.1C3.26 21.36 7.33 24 12 24z"/>
-            <path fill="#FBBC05" d="M5.28 14.32c-.25-.72-.38-1.49-.38-2.32s.13-1.6.38-2.32V6.57H1.25C.45 8.16 0 9.97 0 12s.45 3.84 1.25 5.43l4.03-3.11z"/>
-            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.57l4.03 3.11c.95-2.83 3.6-4.93 6.72-4.93z"/>
-          </svg>
-        </div>
-      ),
-      illustration: (
-        <div className="w-14 sm:w-16 h-24 sm:h-28 bg-slate-50/90 rounded-xl p-1.5 border border-slate-200 flex flex-col items-center justify-center gap-2 shrink-0 shadow-xs">
-          {/* Google G Icon */}
-          <div className="w-7 h-7 rounded-full bg-white shadow-xs border border-slate-200/80 flex items-center justify-center">
-            <svg className="w-4 h-4" viewBox="0 0 24 24">
-              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3h3.88c2.27-2.09 3.665-5.17 3.665-9.09z"/>
-              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.1C3.26 21.36 7.33 24 12 24z"/>
-              <path fill="#FBBC05" d="M5.28 14.32c-.25-.72-.38-1.49-.38-2.32s.13-1.6.38-2.32V6.57H1.25C.45 8.16 0 9.97 0 12s.45 3.84 1.25 5.43l4.03-3.11z"/>
-              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.57l4.03 3.11c.95-2.83 3.6-4.93 6.72-4.93z"/>
-            </svg>
-          </div>
-          {/* YouTube Red Play Badge */}
-          <div className="w-10 h-6 rounded-md bg-[#FF0000] flex items-center justify-center text-white shadow-xs">
-            <span className="text-white text-[10px] font-black leading-none ml-0.5">▶</span>
-          </div>
-        </div>
-      ),
+      id: 'creative-design',
+      icon: Palette,
+      title: 'Creative Design',
+      desc: 'High-converting ad creatives, scroll-stopping video hooks, and graphics — we make your audience stop, engage, and take immediate action.',
     },
     {
-      id: 'whatsapp-api',
-      title: 'WhatsApp API',
-      subtitle: 'Connect → Follow Up → Convert',
-      desc: 'Automate lead communication and follow-ups for faster conversions.',
-      topIcon: (
-        <div className="w-8 h-8 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-xs">
-          <MessageSquare className="w-4 h-4 fill-white" />
-        </div>
-      ),
-      illustration: (
-        <div className="w-14 sm:w-16 h-24 sm:h-28 bg-emerald-50/80 rounded-xl p-1.5 border border-emerald-200/80 flex flex-col justify-between shrink-0 shadow-xs">
-          {/* Top WhatsApp icon */}
-          <div className="w-6 h-6 rounded-full bg-[#25D366] text-white flex items-center justify-center mx-auto shadow-2xs">
-            <MessageSquare className="w-3 h-3 fill-white" />
-          </div>
-          {/* Chat notification bubble */}
-          <div className="bg-white rounded-lg p-1.5 border border-emerald-200/90 shadow-2xs">
-            <span className="inline-block px-1 py-0.2 rounded bg-emerald-100 text-[7px] font-bold text-emerald-800 leading-tight">
-              New Lead
-            </span>
-            <div className="text-[7.5px] text-slate-500 font-medium truncate mt-0.5 leading-tight">Hi, interested!</div>
-            <div className="flex items-center justify-end gap-0.5 mt-0.5">
-              <span className="text-[6.5px] text-slate-400">09:41</span>
-              <CheckCheck className="w-2.5 h-2.5 text-[#25D366]" />
-            </div>
-          </div>
-        </div>
-      ),
+      id: 'social-media',
+      icon: Share2,
+      title: 'Social Media Management',
+      desc: 'Hands-free social growth! While you focus on running your business, we make sure your brand identity shines across Facebook, Instagram, and LinkedIn.',
+    },
+    {
+      id: 'technical-solutions',
+      icon: Cpu,
+      title: 'Technical Solutions',
+      desc: 'From custom landing pages to seamless Conversions API & Meta Pixel tracking, we eliminate digital drop-offs and optimize your conversion funnel.',
+    },
+    {
+      id: 'google-seo',
+      icon: Search,
+      title: 'Search Engine Optimization (SEO)',
+      desc: 'Boost your digital visibility! We spruce up your organic rankings and Google Search Ads so high-intent customers find you first.',
     },
     {
       id: 'automation',
+      icon: Zap,
       title: 'Automation Services',
-      subtitle: 'Save Time. Grow Faster.',
-      desc: 'Automate repetitive tasks and improve response time and efficiency.',
-      topIcon: (
-        <div className="w-8 h-8 rounded-full bg-[#0081FB] flex items-center justify-center text-white shadow-xs">
-          <Cog className="w-4.5 h-4.5" />
-        </div>
-      ),
-      illustration: (
-        <div className="w-14 sm:w-16 h-24 sm:h-28 bg-blue-50/80 rounded-xl p-1.5 border border-blue-200/80 flex flex-col items-center justify-between shrink-0 shadow-xs">
-          {/* Top Gear / Automation Node */}
-          <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-2xs">
-            <Bot className="w-3.5 h-3.5" />
-          </div>
-          {/* Vertical connecting line with pulse */}
-          <div className="w-0.5 h-3 bg-blue-300 relative">
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-500 absolute -left-0.5 top-1" />
-          </div>
-          {/* Bottom CRM Sync Chip */}
-          <div className="w-11 h-6 rounded-md bg-white border border-blue-200 flex items-center justify-center shadow-2xs text-[8px] font-bold text-blue-700">
-            CRM⇄
-          </div>
-        </div>
-      ),
+      desc: 'Automagically enhance efficiency! Our WhatsApp API & CRM lead routing tricks make your lead-to-close process smoother and faster than ever.',
     },
   ];
 
   return (
-    <section id="services" className="py-8 sm:py-12 md:py-16 bg-white text-slate-900 border-b border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+    <section id="services" className="py-6 sm:py-9 md:py-12 relative w-full">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5 sm:mb-7">
-          <div>
-            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
-              OUR SERVICES
+        {/* Section Heading — Signature Style with Brand Colors */}
+        <div className="text-center mb-5 sm:mb-8">
+          <span className="inline-block text-xs font-bold tracking-widest text-[#0011a8] uppercase mb-1">
+            Full-Funnel Capabilities
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
+            Our Performance{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              Services
             </span>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold font-display tracking-tight text-slate-900 leading-tight">
-              Performance Marketing Services
-            </h2>
-          </div>
-
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-900 hover:text-[#00b370] transition-colors group cursor-pointer self-start sm:self-auto shrink-0 pb-1"
-          >
-            <span>Explore All Services</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-          </Link>
+          </h2>
+          <p className="text-xs sm:text-sm md:text-base text-slate-700 mt-1.5 max-w-xl mx-auto leading-relaxed font-medium">
+            Engineered from creative to conversion for maximum return on advertising spend.
+          </p>
         </div>
 
-        {/* 4 Cards matching 2nd Mockup Image exactly */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4.5 items-stretch">
-          {services.map((item) => (
-            <Link
-              key={item.id}
-              to={`/services?service=${item.id}`}
-              className="relative bg-white border border-slate-200/90 rounded-2xl p-3.5 sm:p-5 flex flex-col justify-between shadow-xs hover:shadow-[0_12px_28px_rgba(0,245,155,0.12)] hover:border-[#00f59b]/60 transition-all duration-300 hover:-translate-y-1.5 group cursor-pointer overflow-hidden"
-            >
-              {/* Subtle top-right ambient hover highlight */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#00f59b]/0 group-hover:bg-[#00f59b]/10 rounded-full blur-xl transition-all duration-500 pointer-events-none" />
+        {/* Compact Floating White Card Container (No giant empty space) */}
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-4 sm:p-6 lg:p-8 relative overflow-hidden">
+          
+          {/* Subtle Center Aura */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[450px] h-[320px] sm:h-[450px] bg-gradient-to-r from-blue-300/10 to-emerald-300/10 rounded-full blur-[80px] pointer-events-none" />
 
-              <div>
-                {/* Top Brand Icon */}
-                <div className="mb-2.5 sm:mb-3 transition-transform duration-300 group-hover:scale-110">
-                  {item.topIcon}
-                </div>
+          {/* 2-Column Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-10 lg:gap-x-12 gap-y-4 sm:gap-y-6 relative z-10">
+            {services.map((service, sIdx) => {
+              const Icon = service.icon;
+              const isEven = sIdx % 2 === 0;
+              return (
+                <div key={service.id} className="flex items-start gap-3 sm:gap-3.5 group p-2.5 rounded-xl hover:bg-slate-50/70 transition-all">
+                  {/* Brand Accent Icon (Alternating royal blue & growth green) */}
+                  <div className={`shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-2xs ${
+                    isEven ? 'bg-blue-50 text-[#0011a8] border border-blue-100' : 'bg-emerald-50 text-[#00a63e] border border-emerald-100'
+                  }`}>
+                    <Icon className="w-5 h-5" />
+                  </div>
 
-                {/* Content Area with Left Illustration & Right Text matching Image 2 */}
-                <div className="flex items-start gap-3 sm:gap-3.5 mb-2.5 sm:mb-3">
-                  {/* Left Illustration Mockup */}
-                  {item.illustration}
-
-                  {/* Right Text */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-sm sm:text-base font-bold font-display text-slate-900 leading-snug group-hover:text-[#00b370] transition-colors">
-                      {item.title}
+                  {/* Title & Description */}
+                  <div>
+                    <h3 className="text-sm sm:text-base font-bold text-slate-950 group-hover:text-[#0011a8] transition-colors">
+                      {service.title}
                     </h3>
-                    <div className="text-[11px] font-semibold text-slate-500 mt-0.5 mb-1.5 leading-tight">
-                      {item.subtitle}
-                    </div>
-                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-normal">
-                      {item.desc}
+                    <p className="mt-0.5 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                      {service.desc}
                     </p>
                   </div>
                 </div>
-              </div>
+              );
+            })}
+          </div>
 
-              {/* Bottom Learn More link */}
-              <div className="pt-2 mt-auto border-t border-slate-100 flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-900 group-hover:text-[#00b370] transition-colors">
-                  <span>Learn More</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 text-slate-400 group-hover:text-[#00b370]" />
-                </span>
-              </div>
-
+          {/* Bottom Action Pill */}
+          <div className="mt-5 sm:mt-7 pt-4 border-t border-slate-100 text-center relative z-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <button
+              onClick={onOpenConsultation}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm text-slate-800 bg-white border border-slate-200/90 hover:border-[#0011a8] hover:text-[#0011a8] shadow-2xs hover:shadow-xs transition-all cursor-pointer"
+            >
+              <span>Want to discuss?</span>
+              <strong className="underline text-slate-950 hover:text-[#0011a8]">Let's Schedule a Call</strong>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+            <Link
+              to="/services"
+              className="text-xs font-bold text-[#0011a8] hover:text-blue-700 py-1.5 px-3"
+            >
+              Explore Detailed Service Breakdown →
             </Link>
-          ))}
-        </div>
+          </div>
 
+        </div>
 
       </div>
     </section>
   );
 }
-
-
-
