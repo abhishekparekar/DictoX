@@ -14,22 +14,28 @@ export default function ProcessSection() {
 
   return (
     <section id="process" className="relative py-5 sm:py-7 md:py-8 w-full overflow-hidden">
+      {/* Subtle top aura */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/30 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
+
       <div className="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">
         
-        {/* Compact, Punchy Header */}
-        <AnimatedSection direction="up" className="text-center max-w-2xl mx-auto mb-3.5 sm:mb-5">
-          <span className="inline-block text-[11px] sm:text-xs font-bold tracking-widest text-[#0011a8] uppercase mb-0.5">
-            How We Work
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-slate-950 leading-tight">
-            From Strategy To{' '}
-            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-              Paying Customers.
+        {/* Header — Left-Aligned Signature Style */}
+        <AnimatedSection direction="up" className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 mb-3.5 sm:mb-6 text-left">
+          <div>
+            <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#0011a8] block mb-1">
+              HOW WE WORK
             </span>
-          </h2>
-          <p className="mt-1 text-xs sm:text-sm text-slate-600 font-medium">
-            Our battle-tested 6-step performance framework:
-          </p>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
+              From Strategy To{' '}
+              <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+                Paying Customers.
+              </span>
+            </h2>
+          </div>
+
+          <span className="text-xs sm:text-sm font-semibold text-slate-500 self-start sm:self-auto shrink-0">
+            6-Step Proven System →
+          </span>
         </AnimatedSection>
 
         {/* Full-Width 6 Connected Steps Grid */}

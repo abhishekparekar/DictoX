@@ -13,6 +13,7 @@ import {
   deleteDoc,
   query,
   orderBy,
+  onSnapshot,
   serverTimestamp 
 } from "firebase/firestore";
 
@@ -266,6 +267,31 @@ export async function fetchTenantBrands() {
 }
 
 /**
+ * Real-time listener for tenant brand logos
+ */
+export function subscribeTenantBrands(callback) {
+  try {
+    const brandsCol = collection(db, "tenants", TENANT_ID, "brands");
+    const q = query(brandsCol, orderBy("createdAt", "desc"));
+    return onSnapshot(
+      q,
+      (snap) => {
+        const items = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+        callback(items);
+      },
+      (err) => {
+        console.warn("subscribeTenantBrands fallback to one-time fetch:", err);
+        fetchTenantBrands().then(callback);
+      }
+    );
+  } catch (err) {
+    console.warn("subscribeTenantBrands init error:", err);
+    fetchTenantBrands().then(callback);
+    return () => {};
+  }
+}
+
+/**
  * Deletes a brand logo
  */
 export async function deleteTenantBrand(docId) {
@@ -284,6 +310,7 @@ export async function deleteTenantBrand(docId) {
 // =========================================================================
 
 export const DEFAULT_SETTINGS = {
+  logoUrl: '/images/logo1.png',
   phone1: '+91 7796407424',
   phone2: '+91 9834036821',
   whatsapp: '917796407424',

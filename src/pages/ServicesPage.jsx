@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, CheckCircle2, MessageSquare, Bot, Sparkles, ShieldCheck, Zap, Target, TrendingUp } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import FinalCTA from '../sections/FinalCTA';
+import AnimatedSection from '../components/AnimatedSection';
 
 export default function ServicesPage({ onOpenConsultation }) {
   const location = useLocation();
@@ -107,56 +108,72 @@ export default function ServicesPage({ onOpenConsultation }) {
     ? serviceDetails 
     : serviceDetails.filter(s => s.id === activeTab);
 
+  const filterTabs = [
+    { id: 'all', label: 'All Services (4)' },
+    { id: 'meta-ads', label: 'Meta Ads' },
+    { id: 'google-ads', label: 'Google Search & PMax' },
+    { id: 'whatsapp-funnels', label: 'WhatsApp Funnels' },
+    { id: 'marketing-automation', label: 'CRM Automation' },
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <section className="pt-16 pb-4 sm:pt-20 sm:pb-6 text-center w-full">
+      {/* Header — Left-Aligned Signature Style */}
+      <section className="pt-16 pb-3 sm:pt-20 sm:pb-5 text-left w-full relative overflow-hidden">
+        {/* Subtle top aura */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/30 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
+
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 relative z-10">
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#0011a8] mb-1">
-            Performance Solutions
-          </span>
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 max-w-3xl mx-auto leading-tight">
-            Performance Marketing Engineered For{' '}
-            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-              Measurable Revenue
-            </span>
-          </h1>
-          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto mt-1.5 font-medium leading-relaxed">
-            Every campaign is designed, monitored, and scaled to acquire paying customers at profitable margins.
-          </p>
+          <AnimatedSection direction="up" className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 text-left">
+            <div>
+              <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#0011a8] block mb-1">
+                PERFORMANCE SOLUTIONS
+              </span>
+
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
+                Performance Marketing Engineered For{' '}
+                <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent inline-block">
+                  Measurable Revenue.
+                </span>
+              </h1>
+            </div>
+
+            <button
+              onClick={onOpenConsultation}
+              className="bg-[#090d16] hover:bg-[#0011a8] text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full shadow-md transition-all self-start sm:self-auto shrink-0 cursor-pointer flex items-center gap-1.5"
+            >
+              <span>Book Strategy Call</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Filter Tabs */}
       <div className="sticky top-14 sm:top-18 z-20 bg-white/95 backdrop-blur-md border-y border-slate-200/80 py-2 sm:py-2.5 shadow-2xs">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-start sm:justify-center gap-2 overflow-x-auto no-scrollbar py-0.5">
-          <button
-            onClick={() => setActiveTab('all')}
-            className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold transition-all shrink-0 cursor-pointer ${
-              activeTab === 'all'
-                ? 'bg-[#0011a8] text-white shadow-xs'
-                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-            }`}
-          >
-            All Services (4)
-          </button>
-          {serviceDetails.map((s) => (
-            <button
-              key={s.id}
-              onClick={() => {
-                setActiveTab(s.id);
-                const el = document.getElementById(s.id);
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold transition-all shrink-0 cursor-pointer ${
-                activeTab === s.id
-                  ? 'bg-[#0011a8] text-white shadow-xs'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-              }`}
-            >
-              {s.title.split(' ')[0]} {s.title.includes('WhatsApp') ? 'WhatsApp' : ''}
-            </button>
-          ))}
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5">
+          {filterTabs.map((tab) => {
+            const isActive = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => {
+                  setActiveTab(tab.id);
+                  if (tab.id !== 'all') {
+                    const el = document.getElementById(tab.id);
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+                className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold transition-all shrink-0 cursor-pointer ${
+                  isActive
+                    ? 'bg-[#0011a8] text-white shadow-xs'
+                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                }`}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
         </div>
       </div>
 

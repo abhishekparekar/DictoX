@@ -38,24 +38,30 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
 
   return (
     <section id="why-dictox" className="relative py-4 sm:py-7 md:py-9 w-full overflow-hidden">
+      {/* Subtle top aura */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/30 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
+
       <div className="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-3.5 sm:mb-5">
-          <span className="inline-block text-[10.5px] sm:text-xs font-bold tracking-widest text-[#0011a8] uppercase mb-0.5">
-            Why DictoX Marketing?
-          </span>
-
-          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-[2.6rem] font-black tracking-tight text-slate-950 leading-tight">
-            A Clear Difference in{' '}
-            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-              How We Acquire Customers.
+        {/* Section Header — Left-Aligned Signature Style */}
+        <AnimatedSection direction="up" className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 mb-3.5 sm:mb-6 text-left">
+          <div>
+            <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#0011a8] block mb-1">
+              WHY DICTOX MARKETING?
             </span>
-          </h2>
 
-          <p className="text-[11px] sm:text-xs md:text-sm text-slate-600 mt-1 max-w-xl mx-auto leading-relaxed font-medium">
-            Your advertising budget shouldn't be an expense — it should be an engine that brings predictable revenue back into your business.
-          </p>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
+              A Clear Difference in{' '}
+              <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+                How We Acquire Customers.
+              </span>
+            </h2>
+          </div>
+
+          <div className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200 self-start sm:self-auto shrink-0">
+            <span className="w-2 h-2 rounded-full bg-[#00a63e]" />
+            <span>Predictable ROI Model</span>
+          </div>
         </AnimatedSection>
 
         {/* Comparison Container */}
@@ -151,14 +157,11 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
           </div>
 
           {/* Bottom Action Strip */}
-          <div className="p-4 sm:p-5 bg-gradient-to-r from-slate-50 via-blue-50/40 to-emerald-50/30 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <div className="p-3.5 sm:p-4 bg-gradient-to-r from-slate-50 via-blue-50/40 to-emerald-50/30 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
             <div>
-              <h4 className="text-sm font-bold text-slate-950 leading-tight">
+              <h4 className="text-xs sm:text-sm font-bold text-slate-950 leading-tight">
                 Want ads engineered directly around your profit margins?
               </h4>
-              <p className="text-xs text-slate-600 font-medium mt-0.5">
-                Schedule a 1-on-1 strategy call to discover how DictoX can scale your acquisition pipeline.
-              </p>
             </div>
             <button
               onClick={onOpenConsultation}

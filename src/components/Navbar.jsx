@@ -17,20 +17,59 @@ import {
   MapPin,
   MessageCircle
 } from 'lucide-react';
+import { fetchTenantSettings } from '../firebase';
 
 export default function Navbar({ onOpenConsultation }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [logoUrl, setLogoUrl] = useState('/images/logo1.png');
   const location = useLocation();
 
-  // Scroll detection for floating header shadow
+  // Load dynamic tenant logo if available
+  useEffect(() => {
+    async function loadLogo() {
+      try {
+        const settings = await fetchTenantSettings();
+        if (settings?.logoUrl) {
+          setLogoUrl(settings.logoUrl);
+        }
+      } catch (err) {
+        console.warn('Failed to load logo:', err);
+      }
+    }
+    loadLogo();
+  }, []);
+
+  // Smart Hide on Scroll Down / Reveal on Scroll Up
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 15);
+      const currentScrollY = window.scrollY;
+
+      // 1. Detect if scrolled past top threshold for styling
+      setIsScrolled(currentScrollY > 15);
+
+      // 2. Hide on scroll down, show on scroll up
+      if (currentScrollY > 70) {
+        if (currentScrollY > lastScrollY + 6) {
+          // Scrolling DOWN -> smoothly hide navbar
+          setIsVisible(false);
+        } else if (currentScrollY < lastScrollY - 6) {
+          // Scrolling UP -> smoothly reveal navbar
+          setIsVisible(true);
+        }
+      } else {
+        // At the very top -> always visible
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   // Close sidebar on route change
   useEffect(() => {
@@ -71,20 +110,27 @@ export default function Navbar({ onOpenConsultation }) {
 
   return (
     <>
-      {/* DictoX Floating Island Navbar - Full Screen Width */}
-      <header className="fixed top-2 sm:top-3.5 left-1/2 -translate-x-1/2 w-[96%] sm:w-[94%] max-w-7xl z-50 transition-all duration-300">
-        <div className={`bg-white/95 backdrop-blur-md rounded-2xl px-4 sm:px-6 py-2 sm:py-2.5 border border-slate-200/80 transition-all duration-300 flex items-center justify-between ${
+      {/* DictoX Floating Island Navbar - Smart Hide on Scroll Down & Reveal on Scroll Up */}
+      <header
+        className={`fixed top-2 sm:top-3.5 left-1/2 -translate-x-1/2 w-[96%] sm:w-[94%] max-w-7xl z-50 transition-all duration-300 transform ${
+          isVisible ? 'translate-y-0 opacity-100' : '-translate-y-28 opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className={`bg-white/95 backdrop-blur-md rounded-2xl px-3.5 sm:px-6 py-1.5 sm:py-2 border border-slate-200/80 transition-all duration-300 flex items-center justify-between ${
           isScrolled 
-            ? 'shadow-[0_8px_30px_rgba(0,17,168,0.08)] border-blue-100' 
+            ? 'shadow-[0_8px_30px_rgba(0,17,168,0.09)] border-blue-100' 
             : 'shadow-[0_6px_25px_rgba(0,0,0,0.04)]'
         }`}>
           
-          {/* Brand Official Logo */}
-          <Link to="/" className="flex items-center gap-2 focus:outline-none shrink-0 group">
+          {/* Brand Official Transparent Big Logo */}
+          <Link to="/" className="flex items-center focus:outline-none shrink-0 group py-0.5">
             <img
-              src="/images/logo1.png"
+              src={logoUrl || '/images/logo1.png'}
               alt="DictoX Marketing - Performance Marketing Agency"
-              className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+              className="h-9 sm:h-11 md:h-12 w-auto max-w-[155px] sm:max-w-[195px] md:max-w-[225px] object-contain transition-transform duration-200 group-hover:scale-[1.03]"
+              onError={(e) => {
+                e.target.src = '/images/logo1.png';
+              }}
             />
           </Link>
 
@@ -95,7 +141,7 @@ export default function Navbar({ onOpenConsultation }) {
               className={({ isActive }) =>
                 `px-3.5 py-1.5 rounded-full text-[13.5px] font-semibold transition-all duration-200 relative select-none ${
                   isActive
-                    ? 'text-[#0011a8] font-bold bg-blue-50'
+                    ? 'text-[#0011a8] font-bold bg-blue-50/90 shadow-2xs'
                     : 'text-slate-800 hover:text-[#0011a8] hover:bg-slate-50'
                 }`
               }
@@ -109,7 +155,7 @@ export default function Navbar({ onOpenConsultation }) {
                 className={({ isActive }) =>
                   `px-3.5 py-1.5 rounded-full text-[13.5px] font-semibold transition-all duration-200 relative select-none ${
                     isActive
-                      ? 'text-[#0011a8] font-bold bg-blue-50'
+                      ? 'text-[#0011a8] font-bold bg-blue-50/90 shadow-2xs'
                       : 'text-slate-800 hover:text-[#0011a8] hover:bg-slate-50'
                   }`
                 }
@@ -119,11 +165,11 @@ export default function Navbar({ onOpenConsultation }) {
             ))}
           </nav>
 
-          {/* Desktop Primary CTA Button — Signature Dark Pill with Green/Blue Accent */}
+          {/* Desktop Primary CTA Button */}
           <div className="hidden lg:flex items-center">
             <button
               onClick={onOpenConsultation}
-              className="bg-[#090d16] hover:bg-[#0011a8] active:scale-[0.98] text-white text-xs sm:text-[13px] font-semibold px-5 sm:px-6 py-2.5 rounded-xl transition-all duration-200 shadow-[0_4px_14px_rgba(0,17,168,0.2)] hover:shadow-[0_6px_20px_rgba(0,17,168,0.35)] cursor-pointer flex items-center gap-1.5"
+              className="bg-[#090d16] hover:bg-[#0011a8] active:scale-[0.98] text-white text-xs sm:text-[13px] font-bold px-5 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-200 shadow-[0_4px_14px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,17,168,0.35)] cursor-pointer flex items-center gap-1.5"
             >
               <span>Chat Now</span>
             </button>
@@ -133,7 +179,7 @@ export default function Navbar({ onOpenConsultation }) {
           <div className="flex lg:hidden items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               onClick={onOpenConsultation}
-              className="bg-[#181829] text-white text-[11px] sm:text-xs font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl shadow-xs cursor-pointer active:scale-95 transition-all"
+              className="bg-[#090d16] hover:bg-[#0011a8] text-white text-[11px] sm:text-xs font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-xs cursor-pointer active:scale-95 transition-all"
             >
               <span>Chat Now</span>
             </button>
@@ -179,9 +225,12 @@ export default function Navbar({ onOpenConsultation }) {
               <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
                 <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
                   <img
-                    src="/images/logo1.png"
+                    src={logoUrl || '/images/logo1.png'}
                     alt="DictoX Marketing Logo"
-                    className="h-8 sm:h-9 w-auto object-contain"
+                    className="h-10 sm:h-11 w-auto max-w-[175px] object-contain"
+                    onError={(e) => {
+                      e.target.src = '/images/logo1.png';
+                    }}
                   />
                 </Link>
                 

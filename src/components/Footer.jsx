@@ -17,6 +17,7 @@ import { fetchTenantSettings, DEFAULT_SETTINGS } from '../firebase';
 
 export default function Footer({ onOpenConsultation }) {
   const [settings, setSettings] = useState(DEFAULT_SETTINGS);
+  const [darkBgLogo, setDarkBgLogo] = useState(null);
 
   useEffect(() => {
     async function loadSettings() {
@@ -31,6 +32,45 @@ export default function Footer({ onOpenConsultation }) {
     }
     loadSettings();
   }, []);
+
+  // Generate crisp white/green transparent logo for dark background
+  useEffect(() => {
+    const rawLogo = settings?.logoUrl || '/images/logo1.png';
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.src = rawLogo;
+    img.onload = () => {
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = img.naturalWidth || img.width;
+        canvas.height = img.naturalHeight || img.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const d = imgData.data;
+        for (let i = 0; i < d.length; i += 4) {
+          const alpha = d[i + 3];
+          if (alpha > 15) {
+            const r = d[i];
+            const g = d[i + 1];
+            const b = d[i + 2];
+            // Detect green pixels in 'Marketing' and arch curve
+            const isGreen = g > 105 && g > r * 1.15 && g > b * 1.05;
+            if (!isGreen) {
+              // Convert dark navy/blue text to radiant pure white!
+              d[i] = 255;
+              d[i + 1] = 255;
+              d[i + 2] = 255;
+            }
+          }
+        }
+        ctx.putImageData(imgData, 0, 0);
+        setDarkBgLogo(canvas.toDataURL('image/png'));
+      } catch (err) {
+        console.warn('Canvas logo generation fallback:', err);
+      }
+    };
+  }, [settings?.logoUrl]);
 
   const serviceLinks = [
     { name: 'Meta Ads (Facebook & Instagram)', path: '/services#meta-ads' },
@@ -57,17 +97,125 @@ export default function Footer({ onOpenConsultation }) {
 
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Main 4-Column Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-10 sm:pb-12 border-b border-slate-800/80">
+        {/* 1. Mobile Compact Footer Layout (md:hidden) — No excessive vertical scrolling */}
+        <div className="block md:hidden pb-8 border-b border-slate-800/80 space-y-5">
+          {/* Transparent Big Logo & Brief Tagline */}
+          <div className="flex flex-col items-start gap-2.5">
+            <Link to="/" className="inline-block focus:outline-none">
+              <img
+                src={darkBgLogo || settings?.logoUrl || '/images/logo1.png'}
+                alt="DictoX Marketing"
+                className={`h-9 sm:h-10 w-auto max-w-[165px] object-contain transition-opacity duration-300 ${
+                  !darkBgLogo ? 'filter brightness-0 invert' : ''
+                }`}
+                onError={(e) => {
+                  e.target.src = '/images/logo1.png';
+                }}
+              />
+            </Link>
+            <p className="text-[11.5px] text-slate-400 leading-snug">
+              India's premier performance marketing & customer acquisition agency.
+            </p>
+
+            {/* Micro Partner Badges */}
+            <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-300 pt-0.5">
+              <span className="bg-slate-900 border border-slate-800 px-2 py-0.5 rounded-md flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#0081FB]" />
+                Meta Partner
+              </span>
+              <span className="bg-slate-900 border border-slate-800 px-2 py-0.5 rounded-md flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#EA4335]" />
+                Google Ads
+              </span>
+              <span className="bg-slate-900 border border-slate-800 px-2 py-0.5 rounded-md flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00a63e]" />
+                WhatsApp API
+              </span>
+            </div>
+          </div>
+
+          {/* 2-Column Side-by-Side Links Grid for Compact Mobile Display */}
+          <div className="grid grid-cols-2 gap-4 pt-1 border-t border-slate-850">
+            {/* Services */}
+            <div>
+              <h5 className="text-[11px] font-bold uppercase tracking-wider text-white mb-2">
+                Services
+              </h5>
+              <ul className="space-y-1.5 text-[11.5px] text-slate-400">
+                {serviceLinks.slice(0, 4).map((s, idx) => (
+                  <li key={idx}>
+                    <Link to={s.path} className="hover:text-white transition-colors block truncate">
+                      {s.name.split('(')[0]}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h5 className="text-[11px] font-bold uppercase tracking-wider text-white mb-2">
+                Company
+              </h5>
+              <ul className="space-y-1.5 text-[11.5px] text-slate-400">
+                {quickLinks.slice(0, 4).map((q, idx) => (
+                  <li key={idx}>
+                    <Link to={q.path} className="hover:text-white transition-colors block truncate">
+                      {q.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Mobile Tap-to-Connect Action Buttons */}
+          <div className="pt-2 border-t border-slate-850 space-y-2">
+            <div className="grid grid-cols-2 gap-2">
+              <a
+                href={`tel:${settings.phone1 || '+917796407424'}`}
+                className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs font-semibold active:scale-95 transition-all"
+              >
+                <Phone className="w-3.5 h-3.5 text-[#38bdf8]" />
+                <span>Call Directly</span>
+              </a>
+              <a
+                href={`https://wa.me/${(settings.whatsapp || '917796407424').replace(/\D/g, '')}?text=Hi%20DictoX%20Marketing%2C%20I%20would%20like%20to%20schedule%20a%20strategy%20consultation`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-[#00a63e] text-white text-xs font-bold active:scale-95 transition-all"
+              >
+                <MessageSquare className="w-3.5 h-3.5 fill-white" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
+
+            <div className="text-[10.5px] text-slate-400 flex items-center justify-between px-1 pt-1">
+              <span className="flex items-center gap-1">
+                <MapPin className="w-3 h-3 text-[#00a63e]" />
+                <span>Navale Icon, Narhe, Pune</span>
+              </span>
+              <span>Mon–Sat 9:30–6:30</span>
+            </div>
+          </div>
+        </div>
+
+        {/* 2. Desktop & Tablet 4-Column Footer Grid (hidden md:grid) */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-10 sm:pb-12 border-b border-slate-800/80">
           
           {/* Column 1: Brand & Positioning (lg:col-span-4) */}
           <div className="lg:col-span-4 space-y-4">
-            {/* Logo in Clean White Badge so colors pop on dark */}
-            <Link to="/" className="inline-block bg-white p-2.5 rounded-xl shadow-sm border border-white/20 group">
+            {/* Transparent Big Logo — No white box */}
+            <Link to="/" className="inline-block focus:outline-none group">
               <img
-                src="/images/logo1.png"
+                src={darkBgLogo || settings?.logoUrl || '/images/logo1.png'}
                 alt="DictoX Marketing - Performance Marketing Agency"
-                className="h-8 sm:h-9 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+                className={`h-11 sm:h-12 md:h-14 w-auto max-w-[200px] sm:max-w-[240px] md:max-w-[260px] object-contain transition-transform duration-200 group-hover:scale-105 ${
+                  !darkBgLogo ? 'filter brightness-0 invert' : ''
+                }`}
+                onError={(e) => {
+                  e.target.src = '/images/logo1.png';
+                }}
               />
             </Link>
 

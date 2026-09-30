@@ -11,6 +11,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import AnimatedSection from '../components/AnimatedSection';
 
 export default function CourseSection({ onOpenConsultation }) {
   const topics = [
@@ -29,24 +30,34 @@ export default function CourseSection({ onOpenConsultation }) {
   ];
 
   return (
-    <section id="course" className="py-6 sm:py-9 md:py-12 relative w-full">
+    <section id="course" className="py-4 sm:py-7 md:py-9 relative w-full overflow-hidden">
+      {/* Subtle top aura */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/30 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
+
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-5 sm:mb-8">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#0011a8] block mb-1">
-            Practical Meta Ads Training
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
-            Meta Ads For{' '}
-            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-              Business Owners
+        {/* Header — Left-Aligned Signature Style */}
+        <AnimatedSection direction="up" className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 mb-3.5 sm:mb-6 text-left">
+          <div>
+            <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#0011a8] block mb-1">
+              PRACTICAL META ADS TRAINING
             </span>
-          </h2>
-          <p className="mt-1.5 text-xs sm:text-sm md:text-base text-slate-700 font-medium">
-            Learn step-by-step how to launch, optimize, and scale profitable Facebook & Instagram ads for your own business.
-          </p>
-        </div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
+              Meta Ads Mastery For{' '}
+              <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+                Business Owners.
+              </span>
+            </h2>
+          </div>
+
+          <Link
+            to="/course"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0011a8] hover:text-blue-800 transition-colors cursor-pointer group self-start sm:self-auto shrink-0"
+          >
+            <span>Explore Masterclass</span>
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </AnimatedSection>
 
         {/* Compact White Card */}
         <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-4 sm:p-6 lg:p-8 relative overflow-hidden">

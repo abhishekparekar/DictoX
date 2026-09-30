@@ -1,14 +1,18 @@
 import React from 'react';
 import { ArrowRight, Check, Award, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import AnimatedSection from '../components/AnimatedSection';
 
 export default function AboutFounderSection({ onOpenConsultation }) {
   return (
-    <section id="about" className="py-6 sm:py-9 md:py-12 relative w-full">
+    <section id="about" className="py-4 sm:py-7 md:py-9 relative w-full overflow-hidden">
+      {/* Subtle top aura */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/30 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
+
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         
         {/* Compact Floating White Card */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-4 sm:p-6 lg:p-8 relative overflow-hidden">
+        <AnimatedSection direction="up" className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-4 sm:p-6 lg:p-8 relative overflow-hidden">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             
@@ -30,20 +34,17 @@ export default function AboutFounderSection({ onOpenConsultation }) {
 
               <div className="mt-3.5 sm:mt-4">
                 <h3 className="text-xl sm:text-2xl font-black text-slate-950">Suresh More</h3>
-                <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#0011a8] mt-0.5">
+                <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.16em] text-[#0011a8] mt-0.5 block">
                   Founder & Performance Marketing Strategist
-                </p>
-                <p className="text-xs sm:text-sm text-slate-700 mt-2 leading-relaxed font-medium">
-                  "At DictoX, we align every campaign directly with business profitability. If the ad spend isn't returning net new customers and positive unit margins, we aren't satisfied."
-                </p>
+                </span>
               </div>
             </div>
 
             {/* Right Column: About Agency Story & Bullet Points */}
             <div className="lg:col-span-7 space-y-3.5 sm:space-y-4">
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[#0011a8] block mb-1">
-                  Our Mission & Ethos
+                <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#0011a8] block mb-1">
+                  OUR MISSION & ETHOS
                 </span>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-slate-950 leading-tight">
                   We Help Businesses Turn Advertising <br />
@@ -51,9 +52,6 @@ export default function AboutFounderSection({ onOpenConsultation }) {
                     Into Predictable Revenue.
                   </span>
                 </h2>
-                <p className="mt-2 text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
-                  DictoX Marketing was founded with a clear thesis: digital ads shouldn't be complicated or opaque. We operate with radical transparency, real-time reporting dashboards, and conversion-first creative frameworks that generate verified leads and customer site visits across India.
-                </p>
               </div>
 
               {/* 3 Pillars */}
@@ -93,7 +91,7 @@ export default function AboutFounderSection({ onOpenConsultation }) {
 
           </div>
 
-        </div>
+        </AnimatedSection>
 
       </div>
     </section>

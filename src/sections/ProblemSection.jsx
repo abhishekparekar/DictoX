@@ -43,24 +43,33 @@ export default function ProblemSection({ onOpenConsultation }) {
 
   return (
     <section className="relative py-4 sm:py-7 md:py-9 w-full overflow-hidden">
+      {/* Subtle top aura */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/30 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
+
       <div className="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">
         
-        {/* Crisp, Punchy Header — No Excess Bloat */}
-        <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-3 sm:mb-5">
-          <span className="inline-block text-[10.5px] sm:text-xs font-bold tracking-widest text-[#0011a8] uppercase mb-0.5">
-            Common Advertising Bottlenecks
-          </span>
-
-          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-[2.6rem] font-black tracking-tight text-slate-950 leading-tight">
-            Getting Leads Is Not Enough.{' '}
-            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-              You Need Customers.
+        {/* Header — Left-Aligned Signature Style */}
+        <AnimatedSection direction="up" className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 mb-3.5 sm:mb-6 text-left">
+          <div>
+            <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#0011a8] block mb-1">
+              COMMON ADVERTISING BOTTLENECKS
             </span>
-          </h2>
 
-          <p className="text-[11px] sm:text-xs md:text-sm text-slate-600 mt-1 max-w-lg mx-auto leading-relaxed font-medium">
-            Stop burning ad spend on unverified clicks. Here are the 5 bottlenecks holding businesses back:
-          </p>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
+              Getting Leads Is Not Enough.{' '}
+              <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+                You Need Customers.
+              </span>
+            </h2>
+          </div>
+
+          <a
+            href="#why-dictox"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0011a8] hover:text-blue-800 transition-colors cursor-pointer group self-start sm:self-auto shrink-0"
+          >
+            <span>See How We Fix This</span>
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+          </a>
         </AnimatedSection>
 
         {/* Full-Width Sleek Problem Cards Container */}
@@ -107,11 +116,8 @@ export default function ProblemSection({ onOpenConsultation }) {
           <div className="mt-3 sm:mt-5 pt-3 sm:pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
             <div>
               <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
-                Ready to fix your acquisition funnel?
+                Ready to fix your customer acquisition funnel?
               </h4>
-              <p className="text-[11px] sm:text-xs text-slate-500 font-medium mt-0.5">
-                We diagnose your ad leaks and build an acquisition roadmap that converts.
-              </p>
             </div>
             <button
               onClick={onOpenConsultation}

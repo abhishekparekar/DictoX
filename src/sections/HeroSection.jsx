@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2, TrendingUp } from 'lucide-react';
+import AnimatedSection from '../components/AnimatedSection';
 
 export default function HeroSection({ onOpenConsultation }) {
   return (
@@ -18,7 +19,7 @@ export default function HeroSection({ onOpenConsultation }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 xl:gap-12 items-center">
           
           {/* Left Column: Heading, Subheading, CTAs & Value Assurances */}
-          <div className="lg:col-span-7 text-center lg:text-left space-y-3 sm:space-y-4">
+          <AnimatedSection direction="up" className="lg:col-span-7 text-center lg:text-left space-y-3 sm:space-y-4">
             
             {/* Top Announcement Pill */}
             <div className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white border border-blue-100 shadow-2xs animate-float-slow">
@@ -62,11 +63,6 @@ export default function HeroSection({ onOpenConsultation }) {
               </span>
             </h1>
 
-            {/* Subheading Copy */}
-            <p className="text-xs sm:text-base md:text-lg text-slate-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              A dedicated team of performance marketing specialists helping businesses across India generate better results and acquire more customers through online advertising.
-            </p>
-
             {/* Signature Action Buttons */}
             <div className="pt-0.5 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2.5 sm:gap-3 max-w-md sm:max-w-none mx-auto lg:mx-0">
               <button
@@ -100,10 +96,10 @@ export default function HeroSection({ onOpenConsultation }) {
               </span>
             </div>
 
-          </div>
+          </AnimatedSection>
 
           {/* Right Column: Founder Suresh More Image & Growth Badge */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end relative pt-2 lg:pt-0">
+          <AnimatedSection direction="up" delay={0.15} className="lg:col-span-5 flex justify-center lg:justify-end relative pt-2 lg:pt-0">
             <div className="relative w-full max-w-[260px] sm:max-w-[340px] lg:max-w-[420px]">
               
               {/* Subtle decorative brand aura behind founder */}
@@ -155,7 +151,7 @@ export default function HeroSection({ onOpenConsultation }) {
               </div>
 
             </div>
-          </div>
+          </AnimatedSection>
 
         </div>
 

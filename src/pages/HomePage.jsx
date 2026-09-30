@@ -30,9 +30,7 @@ export default function HomePage({ onOpenConsultation }) {
       <ProcessSection onOpenConsultation={onOpenConsultation} />
       <ResultsSection onOpenConsultation={onOpenConsultation} />
       <IndustriesSection onOpenConsultation={onOpenConsultation} />
-      <div className="hidden md:block">
-        <LogoWall />
-      </div>
+      <LogoWall />
       <TestimonialsSection onOpenConsultation={onOpenConsultation} />
       <div className="hidden md:block">
         <AboutFounderSection onOpenConsultation={onOpenConsultation} />

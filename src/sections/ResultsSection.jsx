@@ -60,13 +60,16 @@ export default function ResultsSection({ onOpenConsultation }) {
 
   return (
     <section id="results" className="py-4 sm:py-7 md:py-9 relative w-full overflow-hidden">
+      {/* Subtle Ambient Aura */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[260px] bg-gradient-to-b from-blue-100/35 via-emerald-50/20 to-transparent blur-[70px] pointer-events-none -z-10" />
+
       <div className="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">
         
-        {/* Header */}
+        {/* Header — Exact Match to Signature Design */}
         <AnimatedSection direction="up" className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 mb-3.5 sm:mb-6">
           <div>
-            <span className="text-[10.5px] sm:text-xs font-bold uppercase tracking-widest text-[#0011a8] block mb-0.5">
-              Proof of Performance
+            <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#0011a8] block mb-1">
+              PROOF OF PERFORMANCE
             </span>
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
               Real Campaigns.{' '}

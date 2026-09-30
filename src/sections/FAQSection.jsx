@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import AnimatedSection from '../components/AnimatedSection';
 
 export default function FAQSection({ onOpenConsultation }) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -69,24 +70,34 @@ export default function FAQSection({ onOpenConsultation }) {
   };
 
   return (
-    <section id="faq" className="py-4 sm:py-7 md:py-9 relative w-full">
+    <section id="faq" className="py-4 sm:py-7 md:py-9 relative w-full overflow-hidden">
+      {/* Subtle top aura */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/30 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
+
       <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-3.5 sm:mb-6">
-          <span className="text-[10.5px] sm:text-xs font-bold uppercase tracking-widest text-[#0011a8] block mb-0.5">
-            Frequently Asked Questions
-          </span>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
-            Got Questions?{' '}
-            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-              We've Got Answers.
+        {/* Header — Left-Aligned Signature Style */}
+        <AnimatedSection direction="up" className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 mb-3.5 sm:mb-6 text-left">
+          <div>
+            <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#0011a8] block mb-1">
+              FREQUENTLY ASKED QUESTIONS
             </span>
-          </h2>
-          <p className="mt-1 text-[11px] sm:text-xs md:text-base text-slate-700 font-medium">
-            Clear, honest answers to everything you need to know about partnering with DictoX.
-          </p>
-        </div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
+              Got Questions?{' '}
+              <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+                We've Got Answers.
+              </span>
+            </h2>
+          </div>
+
+          <button
+            onClick={onOpenConsultation}
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0011a8] hover:text-blue-800 transition-colors cursor-pointer group self-start sm:self-auto shrink-0"
+          >
+            <span>Have A Question? Ask Direct</span>
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+          </button>
+        </AnimatedSection>
 
         {/* Mobile View: Top 4 FAQs with Expand Toggle (md:hidden) */}
         <div className="block md:hidden space-y-2">

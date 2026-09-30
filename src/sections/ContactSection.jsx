@@ -93,22 +93,29 @@ export default function ContactSection({ onOpenConsultation }) {
 
   return (
     <section id="contact" className="relative py-4 sm:py-7 md:py-9 w-full overflow-hidden">
+      {/* Subtle top aura */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/30 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
+
       <div className="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <AnimatedSection direction="up" className="text-center max-w-2xl mx-auto mb-3.5 sm:mb-6">
-          <span className="inline-block text-[10.5px] sm:text-xs font-bold tracking-widest text-[#0011a8] uppercase mb-0.5">
-            Get In Touch
-          </span>
-          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-[2.6rem] font-black tracking-tight text-slate-950 leading-tight">
-            Let's Talk About{' '}
-            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-              Scaling Your Business.
+        {/* Section Header — Left-Aligned Signature Style */}
+        <AnimatedSection direction="up" className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 mb-3.5 sm:mb-6 text-left">
+          <div>
+            <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#0011a8] block mb-1">
+              GET IN TOUCH
             </span>
-          </h2>
-          <p className="mt-1 text-[11px] sm:text-xs md:text-sm text-slate-600 font-medium">
-            Fill out the form on the left or reach out directly to our core team in Pune.
-          </p>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
+              Let's Talk About{' '}
+              <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+                Scaling Your Business.
+              </span>
+            </h2>
+          </div>
+
+          <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-emerald-700 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 self-start sm:self-auto shrink-0">
+            <span className="w-2 h-2 rounded-full bg-[#00a63e] animate-ping" />
+            <span>Direct Strategist Reply In 15 Mins</span>
+          </div>
         </AnimatedSection>
 
         {/* 2-Column Contact Container: Form on LEFT, Direct Info & Map on RIGHT */}
@@ -345,49 +352,56 @@ export default function ContactSection({ onOpenConsultation }) {
           </div>
 
           {/* RIGHT Column: Direct Info, WhatsApp Action & Location Map (lg:col-span-5) */}
-          <div className="lg:col-span-5 space-y-4">
+          <div className="lg:col-span-5 space-y-3 sm:space-y-4">
             
             {/* Quick Contact Card */}
-            <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-4 sm:p-6 space-y-4">
-              <div className="border-b border-slate-100 pb-3">
-                <span className="text-[10.5px] font-bold uppercase tracking-wider text-slate-400">
-                  Direct Contact Channels
-                </span>
-                <h3 className="text-base sm:text-lg font-bold text-slate-950 mt-0.5">
-                  Reach Our Core Team
-                </h3>
+            <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-3.5 sm:p-6 space-y-3 sm:space-y-4">
+              <div className="border-b border-slate-100 pb-2.5 sm:pb-3 flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider text-slate-400">
+                    Direct Contact Channels
+                  </span>
+                  <h3 className="text-sm sm:text-lg font-bold text-slate-950 mt-0.5">
+                    Reach Our Core Team
+                  </h3>
+                </div>
+                <div className="flex items-center gap-1.5 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00a63e] animate-pulse" />
+                  <span>Online Now</span>
+                </div>
               </div>
 
-              <div className="space-y-3 text-xs sm:text-sm">
-                {/* Phone */}
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#0011a8] flex items-center justify-center shrink-0 shadow-2xs">
-                    <Phone className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="text-[11px] text-slate-400 font-medium">Direct Call / Helpline</div>
-                    <div className="font-bold text-slate-900">
-                      <a href="tel:+917796407424" className="hover:text-[#0011a8] transition-colors">
-                        +91 7796407424
-                      </a>
-                      <span className="mx-1.5 text-slate-300">|</span>
-                      <a href="tel:+919834036821" className="hover:text-[#0011a8] transition-colors">
-                        +91 9834036821
-                      </a>
-                    </div>
-                  </div>
-                </div>
+              {/* Direct Tap Action Buttons for Fast Mobile Access */}
+              <div className="grid grid-cols-2 gap-2 pt-0.5">
+                <a
+                  href="tel:+917796407424"
+                  className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-[#0011a8] text-white text-xs font-semibold shadow-xs active:scale-95 transition-all"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#38bdf8]" />
+                  <span>Call Us</span>
+                </a>
+                <a
+                  href="https://wa.me/917796407424?text=Hi%20DictoX%20Marketing%2C%20I%20would%20like%20to%20schedule%20a%20strategy%20consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-[#00a63e] hover:bg-[#008f35] text-white text-xs font-bold shadow-xs active:scale-95 transition-all"
+                >
+                  <MessageSquare className="w-3.5 h-3.5 fill-white" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
 
+              <div className="space-y-2.5 text-xs sm:text-sm pt-1">
                 {/* Email */}
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#0011a8] flex items-center justify-center shrink-0 shadow-2xs">
-                    <Mail className="w-4 h-4" />
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-blue-50 text-[#0011a8] flex items-center justify-center shrink-0 shadow-2xs">
+                    <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
-                  <div>
-                    <div className="text-[11px] text-slate-400 font-medium">Official Inquiry Email</div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[10px] sm:text-[11px] text-slate-400 font-medium">Official Inquiry Email</div>
                     <a
                       href="mailto:dictoxmarketing@gmail.com"
-                      className="font-bold text-slate-900 hover:text-[#0011a8] transition-colors"
+                      className="font-bold text-slate-900 hover:text-[#0011a8] transition-colors truncate block"
                     >
                       dictoxmarketing@gmail.com
                     </a>
@@ -395,12 +409,12 @@ export default function ContactSection({ onOpenConsultation }) {
                 </div>
 
                 {/* Office Location */}
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#0011a8] flex items-center justify-center shrink-0 shadow-2xs mt-0.5">
-                    <MapPin className="w-4 h-4" />
+                <div className="flex items-start gap-2.5">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-blue-50 text-[#0011a8] flex items-center justify-center shrink-0 shadow-2xs mt-0.5">
+                    <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   <div>
-                    <div className="text-[11px] text-slate-400 font-medium">Headquarters</div>
+                    <div className="text-[10px] sm:text-[11px] text-slate-400 font-medium">Headquarters</div>
                     <div className="font-semibold text-slate-800 leading-snug">
                       Office No. 603, Navale Icon, Narhe, Pune, MH 411041
                     </div>
@@ -408,37 +422,24 @@ export default function ContactSection({ onOpenConsultation }) {
                 </div>
 
                 {/* Hours */}
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-emerald-50 text-[#00a63e] flex items-center justify-center shrink-0 shadow-2xs">
-                    <Clock className="w-4 h-4" />
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-emerald-50 text-[#00a63e] flex items-center justify-center shrink-0 shadow-2xs">
+                    <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   <div>
-                    <div className="text-[11px] text-slate-400 font-medium">Working Hours</div>
+                    <div className="text-[10px] sm:text-[11px] text-slate-400 font-medium">Working Hours</div>
                     <div className="font-semibold text-slate-800">
-                      Monday to Saturday: 9:30 AM – 6:30 PM IST
+                      Mon – Sat: 9:30 AM – 6:30 PM IST
                     </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Direct WhatsApp CTA Button */}
-              <div className="pt-2 border-t border-slate-100">
-                <a
-                  href="https://wa.me/917796407424?text=Hi%20DictoX%20Marketing%2C%20I%20would%20like%20to%20schedule%20a%20strategy%20consultation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#00a63e] hover:bg-[#008f35] text-white text-xs sm:text-sm font-bold shadow-md transition-all active:scale-[0.98] cursor-pointer"
-                >
-                  <MessageSquare className="w-4 h-4 fill-white" />
-                  <span>Chat on WhatsApp Directly</span>
-                </a>
               </div>
             </div>
 
             {/* Embedded Google Map Preview */}
             <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-3 sm:p-4">
               <div className="flex items-center justify-between mb-2 px-1">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                <span className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-500">
                   Pune Office Location
                 </span>
                 <a
@@ -451,7 +452,7 @@ export default function ContactSection({ onOpenConsultation }) {
                   <ArrowRight className="w-3 h-3" />
                 </a>
               </div>
-              <div className="w-full h-36 sm:h-44 rounded-xl overflow-hidden border border-slate-150 relative bg-slate-100">
+              <div className="w-full h-32 sm:h-44 rounded-xl overflow-hidden border border-slate-150 relative bg-slate-100">
                 <iframe
                   title="DictoX Office Map Location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.582845661649!2d73.8183!3d18.4485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2953da5049db3%3A0xc3952f4a5fef4aa!2sNavale%20Icon!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"

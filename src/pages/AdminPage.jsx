@@ -415,9 +415,6 @@ export default function AdminPage() {
             <h1 className="text-xl sm:text-2xl font-black text-white mt-1">
               Sign In to DictoX CRM
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Active Tenant: <code className="text-blue-400 font-bold bg-slate-800 px-1.5 py-0.5 rounded">tenants/{TENANT_ID}</code>
-            </p>
           </div>
 
           {loginError && (
@@ -477,11 +474,6 @@ export default function AdminPage() {
               {isLoggingIn ? <span>Authenticating...</span> : <><Lock className="w-4 h-4" /><span>Access Admin Panel</span></>}
             </button>
           </form>
-
-          <div className="mt-5 p-3 rounded-xl bg-slate-800/50 border border-slate-800 text-[11px] text-slate-400 text-center">
-            <span className="font-semibold text-slate-300">Tenant-Isolated CRM</span>
-            <div className="text-slate-500 mt-0.5">tenants/{TENANT_ID}</div>
-          </div>
         </div>
       </div>
     );
@@ -522,8 +514,9 @@ export default function AdminPage() {
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-700 px-2 py-0.5 rounded-md font-bold">
-            {TENANT_ID}
+          <span className="text-[10px] text-emerald-400 font-semibold bg-emerald-950/80 border border-emerald-700/80 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Live
           </span>
           <button
             onClick={handleLogout}
@@ -566,8 +559,9 @@ export default function AdminPage() {
                 <div className="text-xs font-black uppercase tracking-wider text-white">
                   Admin Control
                 </div>
-                <span className="text-[10px] font-mono text-emerald-400 font-bold bg-emerald-950/60 border border-emerald-800 px-1.5 py-0.2 rounded">
-                  tenant: {TENANT_ID}
+                <span className="text-[10px] text-emerald-400 font-semibold bg-emerald-950/60 border border-emerald-800 px-2 py-0.5 rounded-full flex items-center gap-1 w-fit mt-0.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  Portal Active
                 </span>
               </div>
             </div>
@@ -966,7 +960,7 @@ export default function AdminPage() {
                         <tr>
                           <td colSpan={7} className="py-12 text-center text-slate-400">
                             <RefreshCw className="w-5 h-5 animate-spin mx-auto text-blue-400 mb-2" />
-                            <span>Fetching inquiries from Firestore (tenants/{TENANT_ID})...</span>
+                            <span>Fetching inquiries from database...</span>
                           </td>
                         </tr>
                       ) : filteredInquiries.length === 0 ? (
@@ -1095,7 +1089,7 @@ export default function AdminPage() {
                 <div>
                   <h3 className="text-sm font-bold text-white">Live Campaign Results</h3>
                   <p className="text-xs text-slate-400 mt-0.5">
-                    Any result added here is saved under <code className="text-emerald-400">tenants/{TENANT_ID}/results</code> and immediately displays on the homepage & /results page!
+                    Any result added here is saved to the database and immediately displays on the homepage &amp; /results page!
                   </p>
                 </div>
                 <button
@@ -1397,11 +1391,67 @@ export default function AdminPage() {
                 <div className="border-b border-slate-800 pb-3 mb-4">
                   <h3 className="text-base font-bold text-white">Live Footer & Contact Details</h3>
                   <p className="text-xs text-slate-400 mt-0.5">
-                    Update phone, address, and social links. Saved directly to <code className="text-emerald-400">tenants/{TENANT_ID}/settings/global</code>.
+                    Update phone, address, and social links. Changes are reflected live across the entire website.
                   </p>
                 </div>
 
                 <form onSubmit={handleSaveSettings} className="space-y-4 text-left">
+                  {/* Agency Brand Logo Upload & URL Box */}
+                  <div className="bg-slate-800/80 p-3 sm:p-4 rounded-xl border border-slate-700/80 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <label className="block text-xs font-bold text-white uppercase tracking-wider">
+                        Main Agency Logo (Navbar & Footer)
+                      </label>
+                      <span className="text-[10px] text-blue-400 font-semibold">Updates Live Website Logo</span>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
+                      <div>
+                        <input
+                          type="text"
+                          value={settings.logoUrl || ''}
+                          onChange={(e) => setSettings({ ...settings, logoUrl: e.target.value })}
+                          placeholder="Enter logo image URL (e.g. /images/logo1.png)"
+                          className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-xs sm:text-sm text-white focus:outline-none focus:border-blue-500"
+                        />
+                        <label className="mt-2 block cursor-pointer bg-slate-700/60 hover:bg-slate-700 text-slate-300 text-xs py-1.5 px-3 rounded-lg border border-slate-600 text-center transition-colors">
+                          <span>Upload Logo Image from PC</span>
+                          <input
+                            type="file"
+                            accept="image/*"
+                            className="hidden"
+                            onChange={(e) => {
+                              const file = e.target.files?.[0];
+                              if (file) {
+                                const reader = new FileReader();
+                                reader.onload = () => {
+                                  setSettings({ ...settings, logoUrl: reader.result });
+                                };
+                                reader.readAsDataURL(file);
+                              }
+                            }}
+                          />
+                        </label>
+                      </div>
+
+                      {/* Live Preview Box */}
+                      <div className="flex items-center gap-3 bg-slate-900/80 p-2.5 rounded-xl border border-slate-700/60">
+                        <div className="bg-white p-2 rounded-lg shrink-0 flex items-center justify-center">
+                          <img
+                            src={settings.logoUrl || '/images/logo1.png'}
+                            alt="Agency Logo Preview"
+                            className="h-8 max-w-[120px] object-contain"
+                            onError={(e) => { e.target.src = '/images/logo1.png'; }}
+                          />
+                        </div>
+                        <div className="text-[11px] text-slate-400 leading-tight">
+                          <span className="text-white font-semibold block">Live Preview</span>
+                          Shown in Navbar and Footer across all devices.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 mb-1">
