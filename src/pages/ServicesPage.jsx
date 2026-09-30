@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, CheckCircle2, MessageSquare, Bot, Sparkles, ShieldCheck, Zap, Target, TrendingUp } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
-import TrustBar from '../sections/TrustBar';
 import FinalCTA from '../sections/FinalCTA';
 
 export default function ServicesPage({ onOpenConsultation }) {
@@ -111,35 +110,22 @@ export default function ServicesPage({ onOpenConsultation }) {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="pt-20 pb-6 sm:pt-24 sm:pb-10 lg:pt-28 lg:pb-12 relative overflow-hidden text-center w-full">
+      <section className="pt-16 pb-4 sm:pt-20 sm:pb-6 text-center w-full">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 relative z-10">
           <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#0011a8] mb-1">
-            Comprehensive Growth Services
+            Performance Solutions
           </span>
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-950 max-w-4xl mx-auto leading-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 max-w-3xl mx-auto leading-tight">
             Performance Marketing Engineered For{' '}
             <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
               Measurable Revenue
             </span>
           </h1>
-          <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto mt-2 font-medium leading-relaxed">
-            We don't sell vanity impressions or empty clicks. Every campaign is designed, monitored, and scaled to acquire paying customers at profitable margins.
+          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto mt-1.5 font-medium leading-relaxed">
+            Every campaign is designed, monitored, and scaled to acquire paying customers at profitable margins.
           </p>
-          
-          <div className="mt-4 sm:mt-5 flex justify-center">
-            <button
-              onClick={onOpenConsultation}
-              className="bg-[#090d16] hover:bg-[#0011a8] active:scale-[0.98] text-white px-7 py-3 rounded-xl font-semibold text-xs sm:text-sm shadow-md transition-all cursor-pointer flex items-center gap-2"
-            >
-              <span>Get Free Strategy Consultation</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
         </div>
       </section>
-
-      {/* Trust & Certification strip */}
-      <TrustBar />
 
       {/* Filter Tabs */}
       <div className="sticky top-14 sm:top-18 z-20 bg-white/95 backdrop-blur-md border-y border-slate-200/80 py-2 sm:py-2.5 shadow-2xs">

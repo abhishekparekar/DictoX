@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, CheckCircle, ShieldCheck, ArrowRight, Loader2, Sparkles } from 'lucide-react';
+import { saveTenantInquiry } from '../firebase';
 
 export default function ConsultationModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
@@ -56,15 +57,23 @@ export default function ConsultationModal({ isOpen, onClose }) {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      await saveTenantInquiry({
+        ...formData,
+        source: 'modal_consultation_form',
+      });
       setIsSuccess(true);
-    }, 800);
+    } catch (err) {
+      console.error('Error saving consultation inquiry:', err);
+      setIsSuccess(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
@@ -100,10 +109,10 @@ export default function ConsultationModal({ isOpen, onClose }) {
         <div className="relative px-4 sm:px-6 py-3.5 sm:py-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
           <div>
             <span className="text-[10px] sm:text-[11px] font-mono tracking-widest text-[#0011a8] uppercase font-bold">
-              Performance Strategy Call
+              Chat Now • Direct Contact Form
             </span>
             <h3 id="modal-title" className="text-base sm:text-xl md:text-2xl font-bold font-display text-slate-900 mt-0.5">
-              Get Your Free Strategy Consultation
+              Chat Now & Strategy Inquiry
             </h3>
           </div>
           <button
@@ -124,10 +133,10 @@ export default function ConsultationModal({ isOpen, onClose }) {
               </div>
               <div className="space-y-2">
                 <h4 className="text-2xl font-bold font-display text-slate-900">
-                  Consultation Request Received!
+                  Inquiry Received Successfully!
                 </h4>
                 <p className="text-slate-600 text-sm sm:text-base max-w-md mx-auto leading-relaxed">
-                  Thank you, <strong className="text-slate-900">{formData.name}</strong>. Suresh More and the DictoX strategy team will review your business requirements and contact you via WhatsApp & Call within business hours.
+                  Thank you, <strong className="text-slate-900">{formData.name}</strong>. Suresh More and the DictoX strategy team will review your business requirements and connect with you via WhatsApp & Call shortly.
                 </p>
               </div>
 
@@ -158,19 +167,19 @@ export default function ConsultationModal({ isOpen, onClose }) {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4 text-left">
               <p className="text-xs sm:text-sm text-slate-600">
-                Share details about your business. We will audit your unit economics and present an actionable customer acquisition strategy with zero obligation.
+                Fill out the quick contact form below. Suresh More and our performance team will analyze your requirements and reach out via WhatsApp & Call.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Full Name */}
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                    Your Full Name <span className="text-red-500">*</span>
+                    Your Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="Enter your full name..."
+                    placeholder="Enter your name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-600 transition-colors ${
@@ -188,7 +197,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   <input
                     type="text"
                     required
-                    placeholder="Enter your business or brand name..."
+                    placeholder="Enter your business / brand name"
                     value={formData.businessName}
                     onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
                     className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-600 transition-colors ${
@@ -206,7 +215,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   <input
                     type="tel"
                     required
-                    placeholder="Enter your phone or WhatsApp number..."
+                    placeholder="Enter your phone or WhatsApp number"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-600 transition-colors ${
@@ -224,7 +233,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   <input
                     type="email"
                     required
-                    placeholder="Enter your email address..."
+                    placeholder="Enter your email address"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className={`w-full bg-slate-50 border rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-600 transition-colors ${
@@ -312,7 +321,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 </label>
                 <textarea
                   rows="2"
-                  placeholder="Enter your specific advertising challenge or goal (optional)..."
+                  placeholder="Enter your specific advertising challenge or requirement (optional)..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#0011a8] transition-colors resize-none"
@@ -322,7 +331,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
               {/* Trust disclaimer */}
               <div className="flex items-center gap-2 text-[11px] text-slate-500 pt-1">
                 <ShieldCheck className="w-4 h-4 text-[#00a63e] flex-shrink-0" />
-                <span>100% Confidential. No high-pressure sales calls. 100% direct consultation.</span>
+                <span>100% Confidential. Instant notification to Suresh More & DictoX team.</span>
               </div>
 
               {/* Submit CTA */}
@@ -335,12 +344,12 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Submitting Strategy Request...</span>
+                      <span>Submitting Inquiry...</span>
                     </>
                   ) : (
                     <>
                       <Sparkles className="w-4 h-4 text-[#00a63e]" />
-                      <span>Book Free Strategy Consultation</span>
+                      <span>Chat Now & Submit Inquiry</span>
                       <ArrowRight className="w-4 h-4" />
                     </>
                   )}

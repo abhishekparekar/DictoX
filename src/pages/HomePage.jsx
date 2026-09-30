@@ -20,19 +20,30 @@ export default function HomePage({ onOpenConsultation }) {
   return (
     <>
       <HeroSection onOpenConsultation={onOpenConsultation} />
-      <MarqueeRibbon />
+      <TrustBar />
+      <div className="hidden sm:block">
+        <MarqueeRibbon />
+      </div>
       <ProblemSection onOpenConsultation={onOpenConsultation} />
       <ServicesSection onOpenConsultation={onOpenConsultation} />
       <WhyDictoxSection onOpenConsultation={onOpenConsultation} />
       <ProcessSection onOpenConsultation={onOpenConsultation} />
       <ResultsSection onOpenConsultation={onOpenConsultation} />
       <IndustriesSection onOpenConsultation={onOpenConsultation} />
-      <LogoWall />
+      <div className="hidden md:block">
+        <LogoWall />
+      </div>
       <TestimonialsSection onOpenConsultation={onOpenConsultation} />
-      <AboutFounderSection onOpenConsultation={onOpenConsultation} />
-      <CourseSection onOpenConsultation={onOpenConsultation} />
+      <div className="hidden md:block">
+        <AboutFounderSection onOpenConsultation={onOpenConsultation} />
+      </div>
+      <div className="hidden md:block">
+        <CourseSection onOpenConsultation={onOpenConsultation} />
+      </div>
       <FAQSection onOpenConsultation={onOpenConsultation} />
-      <FinalCTA onOpenConsultation={onOpenConsultation} />
+      <div className="hidden md:block">
+        <FinalCTA onOpenConsultation={onOpenConsultation} />
+      </div>
       <ContactSection onOpenConsultation={onOpenConsultation} />
     </>
   );

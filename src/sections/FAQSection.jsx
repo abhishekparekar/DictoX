@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function FAQSection({ onOpenConsultation }) {
   const [openIndex, setOpenIndex] = useState(null);
+  const [showAllMobile, setShowAllMobile] = useState(false);
 
   const leftFaqs = [
     {
@@ -61,36 +62,90 @@ export default function FAQSection({ onOpenConsultation }) {
     },
   ];
 
-  const toggleLeft = (idx) => {
-    setOpenIndex(openIndex === `l-${idx}` ? null : `l-${idx}`);
-  };
+  const allFaqs = [...leftFaqs, ...rightFaqs];
 
-  const toggleRight = (idx) => {
-    setOpenIndex(openIndex === `r-${idx}` ? null : `r-${idx}`);
+  const toggleIndex = (id) => {
+    setOpenIndex(openIndex === id ? null : id);
   };
 
   return (
-    <section id="faq" className="py-6 sm:py-9 md:py-12 relative w-full">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+    <section id="faq" className="py-4 sm:py-7 md:py-9 relative w-full">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-5 sm:mb-8">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#0011a8] block mb-1">
+        <div className="text-center max-w-3xl mx-auto mb-3.5 sm:mb-6">
+          <span className="text-[10.5px] sm:text-xs font-bold uppercase tracking-widest text-[#0011a8] block mb-0.5">
             Frequently Asked Questions
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
             Got Questions?{' '}
             <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
               We've Got Answers.
             </span>
           </h2>
-          <p className="mt-1.5 text-xs sm:text-sm md:text-base text-slate-700 font-medium">
+          <p className="mt-1 text-[11px] sm:text-xs md:text-base text-slate-700 font-medium">
             Clear, honest answers to everything you need to know about partnering with DictoX.
           </p>
         </div>
 
-        {/* FAQ Accordion Grid in Compact White Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+        {/* Mobile View: Top 4 FAQs with Expand Toggle (md:hidden) */}
+        <div className="block md:hidden space-y-2">
+          {(showAllMobile ? allFaqs : allFaqs.slice(0, 4)).map((faq) => {
+            const isOpen = openIndex === `m-${faq.num}`;
+            return (
+              <div
+                key={faq.num}
+                className={`bg-white rounded-xl border transition-all duration-200 overflow-hidden ${
+                  isOpen
+                    ? 'border-blue-300 shadow-sm ring-1 ring-blue-50'
+                    : 'border-slate-200/80 shadow-2xs'
+                }`}
+              >
+                <button
+                  onClick={() => toggleIndex(`m-${faq.num}`)}
+                  className="w-full p-3 text-left flex items-center justify-between gap-2.5 text-xs font-bold text-slate-900 cursor-pointer"
+                >
+                  <span className="leading-snug">{faq.q}</span>
+                  <span
+                    className={`w-5 h-5 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 ${
+                      isOpen
+                        ? 'bg-[#0011a8] text-white rotate-180'
+                        : 'bg-slate-100 text-slate-500 rotate-0'
+                    }`}
+                  >
+                    <ChevronDown className="w-3 h-3" />
+                  </span>
+                </button>
+
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.15 }}
+                    >
+                      <div className="px-3 pb-3 pt-0.5 text-[11px] text-slate-600 leading-relaxed border-t border-slate-50">
+                        {faq.a}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+
+          <button
+            onClick={() => setShowAllMobile(!showAllMobile)}
+            className="w-full py-2.5 px-4 rounded-xl text-xs font-bold text-[#0011a8] bg-white hover:bg-blue-50/50 border border-slate-200 flex items-center justify-center gap-1.5 shadow-2xs transition-all mt-2 cursor-pointer"
+          >
+            <span>{showAllMobile ? 'Show Fewer Questions' : `View All FAQs (${allFaqs.length})`}</span>
+            <ChevronDown className={`w-3.5 h-3.5 transition-transform ${showAllMobile ? 'rotate-180' : ''}`} />
+          </button>
+        </div>
+
+        {/* Desktop FAQ Accordion Grid in Compact White Cards (hidden md:grid) */}
+        <div className="hidden md:grid md:grid-cols-2 gap-3 sm:gap-4">
           
           {/* Column 1 */}
           <div className="space-y-2.5">
@@ -106,7 +161,7 @@ export default function FAQSection({ onOpenConsultation }) {
                   }`}
                 >
                   <button
-                    onClick={() => toggleLeft(idx)}
+                    onClick={() => toggleIndex(`l-${idx}`)}
                     className="w-full p-3.5 sm:p-4 text-left flex items-center justify-between gap-3 text-xs sm:text-sm font-bold text-slate-900 cursor-pointer"
                   >
                     <span>{faq.q}</span>
@@ -154,7 +209,7 @@ export default function FAQSection({ onOpenConsultation }) {
                   }`}
                 >
                   <button
-                    onClick={() => toggleRight(idx)}
+                    onClick={() => toggleIndex(`r-${idx}`)}
                     className="w-full p-3.5 sm:p-4 text-left flex items-center justify-between gap-3 text-xs sm:text-sm font-bold text-slate-900 cursor-pointer"
                   >
                     <span>{faq.q}</span>

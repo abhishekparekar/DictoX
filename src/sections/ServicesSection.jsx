@@ -52,51 +52,51 @@ export default function ServicesSection({ onOpenConsultation }) {
   ];
 
   return (
-    <section id="services" className="py-6 sm:py-9 md:py-12 relative w-full">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+    <section id="services" className="py-4 sm:py-7 md:py-9 relative w-full">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
         
         {/* Section Heading — Signature Style with Brand Colors */}
-        <div className="text-center mb-5 sm:mb-8">
-          <span className="inline-block text-xs font-bold tracking-widest text-[#0011a8] uppercase mb-1">
+        <div className="text-center mb-3.5 sm:mb-6">
+          <span className="inline-block text-[10.5px] sm:text-xs font-bold tracking-widest text-[#0011a8] uppercase mb-0.5">
             Full-Funnel Capabilities
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
             Our Performance{' '}
             <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
               Services
             </span>
           </h2>
-          <p className="text-xs sm:text-sm md:text-base text-slate-700 mt-1.5 max-w-xl mx-auto leading-relaxed font-medium">
+          <p className="text-[11px] sm:text-xs md:text-base text-slate-700 mt-1 max-w-xl mx-auto leading-relaxed font-medium">
             Engineered from creative to conversion for maximum return on advertising spend.
           </p>
         </div>
 
         {/* Compact Floating White Card Container (No giant empty space) */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-4 sm:p-6 lg:p-8 relative overflow-hidden">
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-3 sm:p-5 lg:p-7 relative overflow-hidden">
           
           {/* Subtle Center Aura */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[450px] h-[320px] sm:h-[450px] bg-gradient-to-r from-blue-300/10 to-emerald-300/10 rounded-full blur-[80px] pointer-events-none" />
 
           {/* 2-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-10 lg:gap-x-12 gap-y-4 sm:gap-y-6 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 sm:gap-x-10 lg:gap-x-12 gap-y-2.5 sm:gap-y-5 relative z-10">
             {services.map((service, sIdx) => {
               const Icon = service.icon;
               const isEven = sIdx % 2 === 0;
               return (
-                <div key={service.id} className="flex items-start gap-3 sm:gap-3.5 group p-2.5 rounded-xl hover:bg-slate-50/70 transition-all">
+                <div key={service.id} className="flex items-start gap-2.5 sm:gap-3.5 group p-1.5 sm:p-2.5 rounded-xl hover:bg-slate-50/70 transition-all">
                   {/* Brand Accent Icon (Alternating royal blue & growth green) */}
-                  <div className={`shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-2xs ${
+                  <div className={`shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-2xs ${
                     isEven ? 'bg-blue-50 text-[#0011a8] border border-blue-100' : 'bg-emerald-50 text-[#00a63e] border border-emerald-100'
                   }`}>
-                    <Icon className="w-5 h-5" />
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
 
                   {/* Title & Description */}
                   <div>
-                    <h3 className="text-sm sm:text-base font-bold text-slate-950 group-hover:text-[#0011a8] transition-colors">
+                    <h3 className="text-xs sm:text-base font-bold text-slate-950 group-hover:text-[#0011a8] transition-colors leading-snug">
                       {service.title}
                     </h3>
-                    <p className="mt-0.5 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="mt-0.5 text-[11px] sm:text-xs md:text-sm text-slate-600 leading-snug sm:leading-relaxed font-normal">
                       {service.desc}
                     </p>
                   </div>

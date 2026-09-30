@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -15,8 +15,11 @@ import IndustriesPage from './pages/IndustriesPage';
 import AboutPage from './pages/AboutPage';
 import CoursePage from './pages/CoursePage';
 import ContactPage from './pages/ContactPage';
+import AdminPage from './pages/AdminPage';
 
-export default function App() {
+function AppContent() {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith('/admin');
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
 
   const handleOpenConsultation = () => {
@@ -27,8 +30,19 @@ export default function App() {
     setIsConsultationOpen(false);
   };
 
+  // Dedicated Admin layout when route is /admin
+  if (isAdminRoute) {
+    return (
+      <Routes>
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin/*" element={<AdminPage />} />
+      </Routes>
+    );
+  }
+
+  // Public Website layout
   return (
-    <BrowserRouter>
+    <>
       <ScrollProgressBar />
       <ScrollToTop />
       <div className="min-h-screen bg-[#f7f8fe] adymize-aura-bg text-slate-900 flex flex-col selection:bg-blue-100 selection:text-[#0011a8] overflow-x-hidden">
@@ -88,7 +102,14 @@ export default function App() {
         {/* Adymize-Style Floating Vertical Side Dot Navigation */}
         <SideDotNav />
       </div>
-    </BrowserRouter>
+    </>
   );
 }
 
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
+  );
+}
