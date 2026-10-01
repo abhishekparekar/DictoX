@@ -32,16 +32,10 @@ export default function HomePage({ onOpenConsultation }) {
       <IndustriesSection onOpenConsultation={onOpenConsultation} />
       <LogoWall />
       <TestimonialsSection onOpenConsultation={onOpenConsultation} />
-      <div className="hidden md:block">
-        <AboutFounderSection onOpenConsultation={onOpenConsultation} />
-      </div>
-      <div className="hidden md:block">
-        <CourseSection onOpenConsultation={onOpenConsultation} />
-      </div>
+      <AboutFounderSection onOpenConsultation={onOpenConsultation} />
+      <CourseSection onOpenConsultation={onOpenConsultation} />
       <FAQSection onOpenConsultation={onOpenConsultation} />
-      <div className="hidden md:block">
-        <FinalCTA onOpenConsultation={onOpenConsultation} />
-      </div>
+      <FinalCTA onOpenConsultation={onOpenConsultation} />
       <ContactSection onOpenConsultation={onOpenConsultation} />
     </>
   );

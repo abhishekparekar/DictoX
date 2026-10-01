@@ -102,6 +102,26 @@ export default function ServicesPage({ onOpenConsultation }) {
       channels: ['Zapier & Pabbly Connect', 'Zoho CRM & LeadSquared', 'Custom Webhooks', 'Google Sheets Auto-Sync'],
       bestFor: 'Growing sales teams wanting zero manual data entry and instant response time.',
     },
+    {
+      id: 'personal-branding',
+      badge: 'Authority & Visibility',
+      badgeColor: 'bg-amber-50 text-amber-700 border-amber-200',
+      title: 'Personal Branding & Executive Presence',
+      tagline: 'Build Trust, Authority & High-Value Industry Influence',
+      icon: (
+        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-amber-700 flex items-center justify-center text-white shadow-sm">
+          <Sparkles className="w-6 h-6" />
+        </div>
+      ),
+      highlights: [
+        'Strategic content pillars and brand positioning for founders & leaders',
+        'High-production short-form video reels, carousels & thought leadership posts',
+        'LinkedIn & Instagram organic growth paired with amplified distribution',
+        'Inbound inbound lead generation driven by industry credibility and trust',
+      ],
+      channels: ['LinkedIn Thought Leadership', 'Instagram Reels & Stories', 'YouTube Podcast & Clips', 'PR & Media'],
+      bestFor: 'Founders, coaches, consultants, doctors & executives looking to establish unmatched authority.',
+    },
   ];
 
   const displayedServices = activeTab === 'all' 
@@ -109,11 +129,12 @@ export default function ServicesPage({ onOpenConsultation }) {
     : serviceDetails.filter(s => s.id === activeTab);
 
   const filterTabs = [
-    { id: 'all', label: 'All Services (4)' },
+    { id: 'all', label: 'All Services (5)' },
     { id: 'meta-ads', label: 'Meta Ads' },
-    { id: 'google-ads', label: 'Google Search & PMax' },
-    { id: 'whatsapp-funnels', label: 'WhatsApp Funnels' },
-    { id: 'marketing-automation', label: 'CRM Automation' },
+    { id: 'google-ads', label: 'Google & YouTube' },
+    { id: 'whatsapp-api', label: 'WhatsApp API' },
+    { id: 'automation', label: 'Marketing Automation' },
+    { id: 'personal-branding', label: 'Personal Branding' },
   ];
 
   return (

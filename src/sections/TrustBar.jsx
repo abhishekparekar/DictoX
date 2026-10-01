@@ -1,5 +1,5 @@
 import React from 'react';
-import { History, Users, IndianRupee } from 'lucide-react';
+import { Award, Building2, TrendingUp } from 'lucide-react';
 import CounterAnimation from '../components/CounterAnimation';
 
 export default function TrustBar() {
@@ -61,18 +61,18 @@ export default function TrustBar() {
           <div className="hidden lg:block h-10 w-px bg-slate-200" aria-hidden="true" />
 
           {/* Right Column: 3 Metric Counters with Circular Dark Badges */}
-          <div className="grid grid-cols-3 gap-1.5 sm:gap-6 md:gap-8 items-center w-full lg:w-auto border-t lg:border-t-0 border-slate-100 pt-2.5 sm:pt-3 lg:pt-0">
+          <div className="grid grid-cols-3 gap-2 sm:gap-6 md:gap-8 items-center w-full lg:w-auto border-t lg:border-t-0 border-slate-100 pt-2.5 sm:pt-3 lg:pt-0">
             
             {/* Metric 1: Years Experience */}
-            <div className="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-3 group">
-              <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-[#111827] text-white flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
-                <History className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
+            <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3 group">
+              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-slate-950 text-white flex items-center justify-center shrink-0 shadow-xs border border-slate-800/80 group-hover:scale-105 group-hover:border-[#0011a8] transition-all">
+                <Award className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 group-hover:text-emerald-300 transition-colors" />
               </div>
               <div className="flex flex-col text-left min-w-0">
-                <div className="text-sm sm:text-xl md:text-2xl font-black text-slate-950 font-display leading-tight truncate">
+                <div className="text-sm sm:text-lg md:text-xl font-extrabold text-slate-950 tracking-tight leading-tight">
                   <CounterAnimation end={5} suffix="+" />
                 </div>
-                <span className="text-[9px] sm:text-xs text-slate-500 font-semibold leading-tight whitespace-nowrap">
+                <span className="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-normal whitespace-nowrap">
                   <span className="hidden sm:inline">Years Experience</span>
                   <span className="sm:hidden">Years Exp</span>
                 </span>
@@ -80,31 +80,31 @@ export default function TrustBar() {
             </div>
 
             {/* Metric 2: Brands */}
-            <div className="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-3 group">
-              <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-[#111827] text-white flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
-                <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-400" />
+            <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3 group">
+              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-slate-950 text-white flex items-center justify-center shrink-0 shadow-xs border border-slate-800/80 group-hover:scale-105 group-hover:border-[#0011a8] transition-all">
+                <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 group-hover:text-blue-300 transition-colors" />
               </div>
               <div className="flex flex-col text-left min-w-0">
-                <div className="text-sm sm:text-xl md:text-2xl font-black text-slate-950 font-display leading-tight truncate">
+                <div className="text-sm sm:text-lg md:text-xl font-extrabold text-slate-950 tracking-tight leading-tight">
                   <CounterAnimation end={500} suffix="+" />
                 </div>
-                <span className="text-[9px] sm:text-xs text-slate-500 font-semibold leading-tight whitespace-nowrap">
+                <span className="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-normal whitespace-nowrap">
                   Brands
                 </span>
               </div>
             </div>
 
             {/* Metric 3: Ad Spend Managed */}
-            <div className="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-3 group">
-              <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-[#111827] text-white flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
-                <IndianRupee className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
+            <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3 group">
+              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-slate-950 text-white flex items-center justify-center shrink-0 shadow-xs border border-slate-800/80 group-hover:scale-105 group-hover:border-[#0011a8] transition-all">
+                <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 group-hover:text-emerald-300 transition-colors" />
               </div>
               <div className="flex flex-col text-left min-w-0">
-                <div className="text-sm sm:text-xl md:text-2xl font-black text-slate-950 font-display leading-tight whitespace-nowrap">
+                <div className="text-sm sm:text-lg md:text-xl font-extrabold text-slate-950 tracking-tight leading-tight whitespace-nowrap">
                   <span className="hidden sm:inline">₹<CounterAnimation end={10} suffix="+ Crore" /></span>
                   <span className="sm:hidden">₹<CounterAnimation end={10} suffix="Cr+" /></span>
                 </div>
-                <span className="text-[9px] sm:text-xs text-slate-500 font-semibold leading-tight whitespace-nowrap">
+                <span className="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-normal whitespace-nowrap">
                   <span className="hidden sm:inline">Ad Spend Managed</span>
                   <span className="sm:hidden">Ad Spend</span>
                 </span>

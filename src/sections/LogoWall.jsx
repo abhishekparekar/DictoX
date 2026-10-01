@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import AnimatedSection from '../components/AnimatedSection';
 import { fetchTenantBrands, subscribeTenantBrands } from '../firebase';
 
-// Verified Client Partners with crisp SVG Logos (Real visual logos, NO demo text)
+// Verified Client Partners with crisp SVG Logos
 const initialClientLogos = [
   {
     id: 'c1',
@@ -33,18 +34,26 @@ const initialClientLogos = [
     name: 'Alpha Fitness',
     logoUrl: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" fill="%2318181b"/><path d="M26 42H34V58H26V42Z" fill="%23ef4444"/><path d="M66 42H74V58H66V42Z" fill="%23ef4444"/><rect x="34" y="46" width="32" height="8" rx="2" fill="%23ffffff"/><circle cx="50" cy="50" r="7" fill="%23dc2626"/></svg>',
   },
+  {
+    id: 'c7',
+    name: 'Goyal Landmarks',
+    logoUrl: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" fill="%231e293b"/><path d="M30 65V35L50 20L70 35V65H30Z" stroke="%2310b981" stroke-width="5"/><circle cx="50" cy="45" r="8" fill="%2338bdf8"/></svg>',
+  },
+  {
+    id: 'c8',
+    name: 'EcoDrive EV',
+    logoUrl: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" fill="%23022c22"/><path d="M35 60L45 40H65L55 60H35Z" fill="%2334d399"/><circle cx="45" cy="50" r="4" fill="%23ffffff"/></svg>',
+  }
 ];
 
 export default function LogoWall() {
   const [brands, setBrands] = useState(initialClientLogos);
 
   useEffect(() => {
-    // 1. Initial load from Firestore
     async function loadBrands() {
       try {
         const dynamicBrands = await fetchTenantBrands();
         if (dynamicBrands && dynamicBrands.length > 0) {
-          // If admin added brands, prioritize them
           setBrands(dynamicBrands);
         }
       } catch (err) {
@@ -53,7 +62,6 @@ export default function LogoWall() {
     }
     loadBrands();
 
-    // 2. Real-time subscription so admin additions appear instantly!
     const unsubscribe = subscribeTenantBrands((updatedBrands) => {
       if (updatedBrands && updatedBrands.length > 0) {
         setBrands(updatedBrands);
@@ -65,47 +73,68 @@ export default function LogoWall() {
     };
   }, []);
 
-  // Multiplied array to ensure a 100% seamless, uninterrupted infinite loop
+  // Multiplied array for seamless continuous infinite marquee
   const infiniteBrands = [...brands, ...brands, ...brands, ...brands];
 
   return (
-    <section className="py-3 sm:py-4 bg-white border-y border-slate-200/90 relative w-full overflow-hidden shadow-2xs">
+    <section className="py-8 sm:py-10 bg-white border-y border-slate-200/90 relative w-full overflow-hidden shadow-2xs">
+      
+      {/* Header Container */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 sm:mb-6 text-center">
+        <AnimatedSection direction="up">
+          <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#0011a8] block mb-1">
+            CLIENT LOGOS
+          </span>
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-slate-950 tracking-tight">
+            Trusted By{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              500+ Brands
+            </span>
+          </h3>
+        </AnimatedSection>
+      </div>
+
       <div className="w-full mx-auto relative select-none">
         
         {/* Left Edge Gradient Fade Mask */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 sm:w-20 md:w-28 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-24 md:w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
 
-        {/* Continuous Left-Scrolling Marquee Track — ONLY Logos in Circle Cards */}
-        <div className="flex w-max animate-marquee items-center gap-3.5 sm:gap-5 md:gap-7 py-0.5">
+        {/* Continuous Left-Scrolling Marquee Track */}
+        <div className="flex w-max animate-marquee items-center gap-4 sm:gap-6 md:gap-8 py-1">
           {infiniteBrands.map((b, idx) => (
             <div
               key={`${b.id || b.name}-${idx}`}
               className="shrink-0 group cursor-default select-none transition-transform duration-300"
               title={b.name}
             >
-              {/* Circle Card for Client Logo — Rock-solid standard responsive Tailwind sizing */}
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 shrink-0 rounded-full bg-white border border-slate-200/90 shadow-2xs group-hover:border-[#0011a8] group-hover:shadow-[0_6px_22px_rgba(0,17,168,0.14)] flex items-center justify-center p-2 sm:p-2.5 overflow-hidden transition-all duration-300 group-hover:scale-105 relative">
-                {b.logoUrl ? (
-                  <img
-                    src={b.logoUrl}
-                    alt={b.name}
-                    className="w-full h-full object-contain rounded-full filter group-hover:scale-105 transition-transform duration-300"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                    }}
-                  />
-                ) : (
-                  <div className="w-full h-full rounded-full bg-blue-50 text-[#0011a8] flex items-center justify-center text-xs sm:text-sm font-black uppercase">
-                    {b.name?.slice(0, 2) || 'CX'}
-                  </div>
-                )}
+              {/* Card for Client Logo */}
+              <div className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs group-hover:border-[#0011a8] group-hover:shadow-[0_6px_22px_rgba(0,17,168,0.12)] flex items-center gap-2.5 sm:gap-3 transition-all duration-300 group-hover:scale-105">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-full overflow-hidden p-1 flex items-center justify-center">
+                  {b.logoUrl ? (
+                    <img
+                      src={b.logoUrl}
+                      alt={b.name}
+                      className="w-full h-full object-contain rounded-full"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                      }}
+                    />
+                  ) : (
+                    <div className="w-full h-full rounded-full bg-blue-50 text-[#0011a8] flex items-center justify-center text-xs font-black uppercase">
+                      {b.name?.slice(0, 2) || 'CX'}
+                    </div>
+                  )}
+                </div>
+                <span className="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-[#0011a8] transition-colors whitespace-nowrap">
+                  {b.name}
+                </span>
               </div>
             </div>
           ))}
         </div>
 
         {/* Right Edge Gradient Fade Mask */}
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 sm:w-20 md:w-28 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-24 md:w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
 
       </div>
     </section>

@@ -15,8 +15,9 @@ import {
   PhoneCall, 
   Phone, 
   MapPin,
-  MessageCircle
+  Mail
 } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { fetchTenantSettings } from '../firebase';
 
 export default function Navbar({ onOpenConsultation }) {
@@ -101,9 +102,10 @@ export default function Navbar({ onOpenConsultation }) {
 
   const navLinks = [
     { name: 'Services', path: '/services', icon: Layers },
-    { name: 'Clients', path: '/results', icon: TrendingUp },
-    { name: 'Why DictoX?', path: '/about', icon: User },
+    { name: 'Results', path: '/results', icon: TrendingUp },
     { name: 'Industries', path: '/industries', icon: Building2 },
+    { name: 'Why DictoX?', path: '/#why-dictox', icon: Sparkles },
+    { name: 'About Us', path: '/about', icon: User },
     { name: 'Course', path: '/course', icon: GraduationCap },
     { name: 'Contact', path: '/contact', icon: PhoneCall },
   ];
@@ -218,16 +220,16 @@ export default function Navbar({ onOpenConsultation }) {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 280 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-[280px] sm:w-[320px] max-w-[85vw] bg-white shadow-2xl flex flex-col justify-between lg:hidden border-l border-slate-100"
+              className="fixed top-0 right-0 bottom-0 z-50 w-[300px] sm:w-[340px] max-w-[88vw] bg-white shadow-2xl flex flex-col justify-between lg:hidden border-l border-slate-200/90 text-left font-sans"
               aria-label="Mobile Navigation Sidebar"
             >
               {/* Sidebar Header */}
-              <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
-                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
+              <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/80">
+                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2">
                   <img
                     src={logoUrl || '/images/logo1.png'}
                     alt="DictoX Marketing Logo"
-                    className="h-10 sm:h-11 w-auto max-w-[175px] object-contain"
+                    className="h-9 sm:h-10 w-auto max-w-[170px] object-contain"
                     onError={(e) => {
                       e.target.src = '/images/logo1.png';
                     }}
@@ -236,7 +238,7 @@ export default function Navbar({ onOpenConsultation }) {
                 
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 flex items-center justify-center transition-colors focus:outline-none active:scale-95 border border-slate-200"
+                  className="w-8 h-8 rounded-full bg-white hover:bg-slate-100 text-slate-500 hover:text-slate-900 flex items-center justify-center transition-colors focus:outline-none active:scale-95 border border-slate-200 cursor-pointer shadow-2xs"
                   aria-label="Close sidebar"
                 >
                   <X className="w-4 h-4" />
@@ -245,18 +247,21 @@ export default function Navbar({ onOpenConsultation }) {
 
               {/* Sidebar Navigation Links List */}
               <div className="flex-1 overflow-y-auto px-3 py-3 space-y-1">
-                <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-3 py-1">
-                  Navigation
+                <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-3 py-1 flex items-center justify-between">
+                  <span>Navigation</span>
+                  <span className="text-[9.5px] font-semibold text-[#00a63e] bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">
+                    DictoX Growth
+                  </span>
                 </div>
 
                 <NavLink
                   to="/"
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) =>
-                    `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+                    `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                       isActive
                         ? 'bg-blue-50 text-[#0011a8] font-bold border-l-4 border-[#0011a8]'
-                        : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                        : 'text-slate-700 hover:bg-slate-50 hover:text-slate-950'
                     }`
                   }
                 >
@@ -271,16 +276,37 @@ export default function Navbar({ onOpenConsultation }) {
 
                 {navLinks.map((link) => {
                   const Icon = link.icon;
+                  const isAnchor = link.path.startsWith('/#');
+
+                  if (isAnchor) {
+                    return (
+                      <a
+                        key={link.name}
+                        href={link.path}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-950 transition-all"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-7 h-7 rounded-lg flex items-center justify-center bg-slate-100 text-slate-600">
+                            <Icon className="w-4 h-4" />
+                          </div>
+                          <span>{link.name}</span>
+                        </div>
+                        <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+                      </a>
+                    );
+                  }
+
                   return (
                     <NavLink
                       key={link.name}
                       to={link.path}
                       onClick={() => setMobileMenuOpen(false)}
                       className={({ isActive }) =>
-                        `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+                        `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                           isActive
                             ? 'bg-blue-50 text-[#0011a8] font-bold border-l-4 border-[#0011a8]'
-                            : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                            : 'text-slate-700 hover:bg-slate-50 hover:text-slate-950'
                         }`
                       }
                     >
@@ -289,7 +315,7 @@ export default function Navbar({ onOpenConsultation }) {
                           <div className="flex items-center gap-3">
                             <div
                               className={`w-7 h-7 rounded-lg flex items-center justify-center ${
-                                isActive ? 'bg-[#0011a8] text-white shadow-xs' : 'bg-slate-100 text-slate-500'
+                                isActive ? 'bg-[#0011a8] text-white shadow-xs' : 'bg-slate-100 text-slate-600'
                               }`}
                             >
                               <Icon className="w-4 h-4" />
@@ -309,52 +335,63 @@ export default function Navbar({ onOpenConsultation }) {
               </div>
 
               {/* Sidebar Footer Actions */}
-              <div className="p-4 border-t border-slate-100 bg-slate-50/50 space-y-3">
-                {/* Main CTA Button */}
+              <div className="p-3.5 sm:p-4 border-t border-slate-100 bg-slate-50/70 space-y-2.5">
+                {/* Main CTA Button: Opens Contact Form directly */}
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
                     onOpenConsultation();
                   }}
-                  className="w-full py-3 px-4 rounded-xl text-xs font-bold text-white bg-[#090d16] hover:bg-[#0011a8] shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98 transition-all tracking-wide"
+                  className="w-full py-2.5 sm:py-3 px-4 rounded-xl text-xs font-bold text-white bg-[#090d16] hover:bg-[#0011a8] shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98 transition-all tracking-wide"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-[#00a63e]" />
-                  <span>Book a Strategy Call</span>
+                  <span>Get Free Strategy Consultation</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
 
                 {/* Quick Contact & Info Card */}
-                <div className="bg-white rounded-xl p-3 border border-slate-200/80 space-y-2 text-xs">
-                  <a
-                    href="tel:+917796407424"
-                    className="flex items-center gap-2 text-slate-600 hover:text-[#0011a8] transition-colors font-medium"
-                  >
+                <div className="bg-white rounded-xl p-2.5 sm:p-3 border border-slate-200/90 space-y-1.5 text-xs shadow-2xs">
+                  <div className="flex items-center gap-2 text-slate-700 font-medium">
                     <div className="w-6 h-6 rounded-md bg-blue-50 text-[#0011a8] flex items-center justify-center shrink-0">
                       <Phone className="w-3.5 h-3.5" />
                     </div>
-                    <span>+91 7796407424</span>
-                  </a>
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <a href="tel:+917796407424" className="hover:text-[#0011a8] font-bold">7796407424</a>
+                      <span className="text-slate-300">/</span>
+                      <a href="tel:+919834036821" className="hover:text-[#0011a8] font-bold">9834036821</a>
+                    </div>
+                  </div>
 
                   <a
                     href="https://wa.me/917796407424?text=Hi%20DictoX%20Marketing%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20services"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-slate-600 hover:text-[#25D366] transition-colors font-medium"
+                    className="flex items-center gap-2 text-slate-700 hover:text-[#00a63e] transition-colors font-medium"
                   >
-                    <div className="w-6 h-6 rounded-md bg-[#25D366]/10 text-[#25D366] flex items-center justify-center shrink-0">
-                      <MessageCircle className="w-3.5 h-3.5" />
+                    <div className="w-6 h-6 rounded-md bg-emerald-50 text-[#00a63e] flex items-center justify-center shrink-0">
+                      <WhatsAppIcon className="w-3.5 h-3.5 fill-[#00a63e]" />
                     </div>
-                    <span>WhatsApp Strategy Chat</span>
+                    <span className="font-bold text-[#00a63e]">Chat With Us On WhatsApp</span>
                   </a>
 
-                  <div className="flex items-center gap-2 text-slate-400 text-[11px] pt-1 border-t border-slate-100">
+                  <a
+                    href="mailto:dictoxmarketing@gmail.com"
+                    className="flex items-center gap-2 text-slate-600 hover:text-[#0011a8] transition-colors font-normal truncate"
+                  >
+                    <div className="w-6 h-6 rounded-md bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+                      <Mail className="w-3.5 h-3.5" />
+                    </div>
+                    <span className="truncate">dictoxmarketing@gmail.com</span>
+                  </a>
+
+                  <div className="flex items-center gap-2 text-slate-400 text-[10.5px] pt-1 border-t border-slate-100">
                     <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                     <span className="truncate">Navale Icon, Narhe, Pune</span>
                   </div>
                 </div>
 
                 <div className="text-center text-[10px] text-slate-400 font-medium">
-                  © {new Date().getFullYear()} DictoX Marketing. All rights reserved.
+                  © 2026 DictoX Marketing. All rights reserved.
                 </div>
               </div>
 

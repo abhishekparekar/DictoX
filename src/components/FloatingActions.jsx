@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUp, MessageSquare } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function FloatingActions() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -17,19 +18,19 @@ export default function FloatingActions() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-center gap-3">
+    <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex flex-col items-center gap-2.5">
       {/* WhatsApp Quick Connect */}
       <a
         href="https://wa.me/917796407424?text=Hi%20Suresh,%20I%20visited%20the%20DictoX%20Marketing%20website%20and%20would%20like%20to%20discuss%20customer%20acquisition%20for%20my%20business."
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative flex items-center justify-center w-12 h-12 p-3 bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-[#25D366]/40 hover:scale-105 active:scale-95 transition-all duration-300"
+        className="group relative flex items-center justify-center w-12 h-12 bg-[#25D366] text-white rounded-full shadow-lg shadow-[#25D366]/30 hover:shadow-[#25D366]/50 hover:scale-110 active:scale-95 transition-all duration-300"
         aria-label="Chat on WhatsApp with DictoX Founder"
       >
         <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap shadow-xl opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200 hidden sm:block">
           Chat with Suresh More on WhatsApp
         </span>
-        <MessageSquare className="w-5 h-5 fill-current" />
+        <WhatsAppIcon className="w-6 h-6 fill-white" />
       </a>
 
       {/* Back to top */}

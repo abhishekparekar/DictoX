@@ -1,97 +1,154 @@
 import React from 'react';
-import { ArrowRight, Check, Award, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Quote, Award, ShieldCheck, TrendingUp, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
 
 export default function AboutFounderSection({ onOpenConsultation }) {
   return (
-    <section id="about" className="py-4 sm:py-7 md:py-9 relative w-full overflow-hidden">
-      {/* Subtle top aura */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/30 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
+    <section id="about" className="py-10 sm:py-14 md:py-18 relative w-full overflow-hidden bg-slate-50/50 border-t border-slate-200/80">
+      {/* Subtle top ambient aura */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/35 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Compact Floating White Card */}
-        <AnimatedSection direction="up" className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-4 sm:p-6 lg:p-8 relative overflow-hidden">
+        {/* Top Agency Overview Box */}
+        <AnimatedSection direction="up" className="max-w-4xl mx-auto text-center mb-10 sm:mb-14">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3">
+            ABOUT US
+          </div>
+
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
+            We Help Businesses Turn{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              Advertising Into Growth.
+            </span>
+          </h2>
+
+          <div className="mt-4 space-y-2.5 max-w-3xl mx-auto text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed font-normal">
+            <p>
+              DictoX Marketing is a performance marketing agency helping businesses across India acquire potential customers through Meta Ads, Google Ads, WhatsApp and marketing automation.
+            </p>
+            <p className="text-slate-700 font-medium">
+              Our team combines strategy, creative, targeting, technology and continuous optimization to build advertising campaigns focused on generating potential leads and helping businesses grow.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        {/* 2-Column Responsive Layout: Founder Visual Left + Story Right */}
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-5 sm:p-7 lg:p-10 relative overflow-hidden">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            {/* Left Column: Founder Photo & Bio Card */}
-            <div className="lg:col-span-5 flex flex-col items-center sm:items-start text-center sm:text-left">
-              <div className="relative">
-                <div className="w-36 h-44 sm:w-44 sm:h-52 md:w-52 md:h-56 rounded-2xl overflow-hidden shadow-sm border-2 border-white ring-4 ring-blue-50 bg-slate-100">
+            {/* Left Column: Founder Visual & Credibility Badge (lg:col-span-5) */}
+            <AnimatedSection direction="up" className="lg:col-span-5 flex flex-col items-center">
+              <div className="relative w-full max-w-[280px] sm:max-w-[340px]">
+                
+                {/* Brand Ambient Glow */}
+                <div className="absolute -inset-2 bg-gradient-to-tr from-[#0011a8]/15 via-emerald-400/20 to-blue-400/15 rounded-3xl blur-xl -z-10" />
+
+                {/* Founder Image Card Container */}
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-white shadow-[0_16px_40px_rgba(0,17,168,0.1)] bg-slate-100 aspect-[3.8/4.6] group">
                   <img
-                    src="/images/founder.jpg"
-                    alt="Suresh More - Founder of DictoX Marketing"
-                    className="w-full h-full object-cover object-top"
+                    src="/images/founder1.jpeg"
+                    alt="Suresh More - Founder & Performance Marketing Strategist at DictoX Marketing"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      e.target.src = '/images/founder.jpg';
+                    }}
                   />
-                </div>
-                <div className="absolute -bottom-2 -right-1.5 bg-white px-2.5 py-0.5 rounded-full shadow-md border border-slate-100 flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-slate-800">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#00a63e] shrink-0" />
-                  <span>5+ Years Record</span>
-                </div>
-              </div>
+                  
+                  {/* Subtle dark gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
 
-              <div className="mt-3.5 sm:mt-4">
-                <h3 className="text-xl sm:text-2xl font-black text-slate-950">Suresh More</h3>
-                <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.16em] text-[#0011a8] mt-0.5 block">
-                  Founder & Performance Marketing Strategist
-                </span>
-              </div>
-            </div>
+                  {/* Founder Visual Bottom Overlay Card */}
+                  <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-3 sm:p-3.5 rounded-xl bg-white/95 backdrop-blur-md border border-white/60 shadow-lg text-left">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-950 font-display leading-tight flex items-center gap-1.5">
+                      <span>Suresh More</span>
+                      <span className="inline-block w-2 h-2 rounded-full bg-[#00a63e]" />
+                    </h3>
+                    <p className="text-[11px] sm:text-xs text-[#0011a8] font-bold mt-0.5">
+                      Founder & Performance Marketing Strategist
+                    </p>
+                  </div>
+                </div>
 
-            {/* Right Column: About Agency Story & Bullet Points */}
-            <div className="lg:col-span-7 space-y-3.5 sm:space-y-4">
+                {/* Founder Stats Ribbon: 5+ Years | 500+ Brands | ₹10+ Crore */}
+                <div className="mt-3.5 p-2.5 sm:p-3 rounded-xl bg-slate-50 border border-slate-200/90 text-center shadow-2xs">
+                  <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 text-[10.5px] sm:text-xs font-bold text-slate-800">
+                    <span className="text-[#0011a8]">5+ Years Exp</span>
+                    <span className="text-slate-300">•</span>
+                    <span className="text-slate-900">500+ Brands</span>
+                    <span className="text-slate-300">•</span>
+                    <span className="text-[#00a63e]">₹10+ Cr Ad Spend</span>
+                  </div>
+                </div>
+
+              </div>
+            </AnimatedSection>
+
+            {/* Right Column: Meet The Founder Story & Quotes (lg:col-span-7) */}
+            <AnimatedSection direction="up" delay={0.1} className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
+              
               <div>
-                <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#0011a8] block mb-1">
-                  OUR MISSION & ETHOS
+                <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-[#0011a8] block mb-1">
+                  MEET THE FOUNDER
                 </span>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-slate-950 leading-tight">
-                  We Help Businesses Turn Advertising <br />
-                  <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-                    Into Predictable Revenue.
-                  </span>
-                </h2>
+                <h3 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight leading-tight">
+                  Suresh More
+                </h3>
+                <p className="text-xs sm:text-sm font-bold text-slate-500 mt-0.5">
+                  Founder & Performance Marketing Strategist — DictoX Marketing
+                </p>
               </div>
 
-              {/* 3 Pillars */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 pt-1">
-                <div className="bg-slate-50/90 rounded-xl sm:rounded-2xl p-3 border border-slate-150">
-                  <div className="text-sm font-bold text-[#0011a8]">01. Strategy</div>
-                  <p className="text-[11px] sm:text-xs text-slate-600 mt-0.5 leading-snug">Deep analysis of customer pain points & market positioning.</p>
-                </div>
-                <div className="bg-slate-50/90 rounded-xl sm:rounded-2xl p-3 border border-slate-150">
-                  <div className="text-sm font-bold text-[#00a63e]">02. Execution</div>
-                  <p className="text-[11px] sm:text-xs text-slate-600 mt-0.5 leading-snug">Rapid creative testing, pixel setup & landing page optimization.</p>
-                </div>
-                <div className="bg-slate-50/90 rounded-xl sm:rounded-2xl p-3 border border-slate-150">
-                  <div className="text-sm font-bold text-[#0011a8]">03. Scale</div>
-                  <p className="text-[11px] sm:text-xs text-slate-600 mt-0.5 leading-snug">Aggressive budget scaling on top-performing campaigns.</p>
-                </div>
+              {/* Founder Opening Quote */}
+              <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-blue-50/70 border border-blue-100/90 relative">
+                <Quote className="w-5 h-5 text-[#0011a8]/40 absolute top-3 right-3" />
+                <p className="text-xs sm:text-sm md:text-[14.5px] text-slate-800 font-semibold italic leading-relaxed pr-6">
+                  “I started DictoX with a simple goal — help businesses get more from their advertising and build a clear, performance-focused approach to customer acquisition.”
+                </p>
               </div>
 
-              {/* CTAs */}
+              {/* Founder Narrative Body */}
+              <div className="space-y-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                <p>
+                  With 5+ years of experience in digital advertising, Suresh More leads DictoX with a focus on strategy, campaign management, creative execution and lead-generation systems.
+                </p>
+                <p>
+                  Today, DictoX works with businesses across different industries, helping them use digital advertising to reach potential customers, generate leads and improve their customer acquisition process.
+                </p>
+              </div>
+
+              {/* Closing Mission Quote */}
+              <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-100/90">
+                <p className="text-xs sm:text-sm font-bold text-[#00a63e] leading-snug">
+                  “Our goal is simple — help businesses get more from every advertising opportunity.”
+                </p>
+              </div>
+
+              {/* Action Buttons / CTA */}
               <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
-                <button
-                  onClick={onOpenConsultation}
-                  className="bg-[#090d16] hover:bg-[#0011a8] active:scale-[0.98] text-white px-6 py-2.5 rounded-xl font-semibold text-xs sm:text-sm shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 w-full sm:w-auto"
-                >
-                  <span>Work With Suresh & Team</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
                 <Link
                   to="/about"
-                  className="text-xs font-bold text-[#0011a8] hover:text-blue-700 py-1.5 px-3 text-center"
+                  className="w-full sm:w-auto bg-[#090d16] hover:bg-[#0011a8] active:scale-[0.98] text-white px-6 sm:px-7 py-2.5 sm:py-3 rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer"
                 >
-                  Read Our Full Story →
+                  <span>Know More About DictoX</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
+
+                <button
+                  onClick={onOpenConsultation}
+                  className="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-800 border border-slate-200/90 hover:border-[#0011a8] px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm shadow-2xs transition-all cursor-pointer text-center"
+                >
+                  Schedule A Call With Suresh
+                </button>
               </div>
 
-            </div>
+            </AnimatedSection>
 
           </div>
 
-        </AnimatedSection>
+        </div>
 
       </div>
     </section>

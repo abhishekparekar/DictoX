@@ -1,117 +1,131 @@
 import React from 'react';
-import { ArrowRight, Check, X, Sparkles, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Check, X, Sparkles } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 
 export default function WhyDictoxSection({ onOpenConsultation }) {
   const comparisonRows = [
     {
-      feature: 'Core Objective',
-      typical: 'Focus on clicks, impressions & vanity reach',
-      dictox: 'Focus on net-new paying customers & revenue',
+      feature: 'Primary Focus',
+      traditional: 'Focus on clicks, reach & impressions',
+      dictox: 'Focus on potential leads & customers',
     },
     {
-      feature: 'Campaign Execution',
-      typical: 'Launched once and left running on autopilot',
-      dictox: 'Continuous creative testing & weekly iteration',
+      feature: 'Campaign Management',
+      traditional: 'Campaigns are launched and monitored',
+      dictox: 'Campaigns are continuously monitored & optimized',
     },
     {
-      feature: 'Strategy & Funnels',
-      typical: 'Generic, copy-paste cookie-cutter templates',
-      dictox: 'Custom funnels tailored to your unit economics',
+      feature: 'Strategy',
+      traditional: 'Generic advertising approach',
+      dictox: 'Strategy built around your business',
     },
     {
-      feature: 'Data Transparency',
-      typical: 'Vague monthly reports leaving you guessing',
-      dictox: 'Live real-time dashboard of spend, CPL & ROI',
+      feature: 'Performance Tracking',
+      traditional: 'Basic campaign reporting',
+      dictox: 'Clear tracking of spend, leads & results',
     },
     {
-      feature: 'Speed to Lead',
-      typical: 'Leads sit untouched for hours or days',
-      dictox: 'Instant WhatsApp API & CRM connect in < 60s',
+      feature: 'Lead Follow-Up',
+      traditional: 'Leads and follow-up handled separately',
+      dictox: 'WhatsApp integration for faster follow-up',
     },
     {
       feature: 'Budget Optimization',
-      typical: 'Ad spend wasted equally on non-performing ads',
-      dictox: 'Losing ads cut swiftly; winning ads scaled fast',
+      traditional: 'Campaigns continue as they are',
+      dictox: 'What works is improved and scaled',
     },
   ];
 
   return (
-    <section id="why-dictox" className="relative py-4 sm:py-7 md:py-9 w-full overflow-hidden">
-      {/* Subtle top aura */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/30 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
+    <section id="why-dictox" className="relative py-10 sm:py-14 md:py-18 w-full overflow-hidden bg-slate-50/50 border-t border-slate-200/80">
+      {/* Subtle top ambient aura */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/35 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
 
-      <div className="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         
-        {/* Section Header — Left-Aligned Signature Style */}
-        <AnimatedSection direction="up" className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 mb-3.5 sm:mb-6 text-left">
-          <div>
-            <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#0011a8] block mb-1">
-              WHY DICTOX MARKETING?
+        {/* Section Header & Subheading */}
+        <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
+            WHY DICTOX?
+          </div>
+
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
+            A Clear Difference In{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              How We Acquire Customers.
             </span>
+          </h2>
 
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
-              A Clear Difference in{' '}
-              <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-                How We Acquire Customers.
-              </span>
-            </h2>
-          </div>
-
-          <div className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200 self-start sm:self-auto shrink-0">
-            <span className="w-2 h-2 rounded-full bg-[#00a63e]" />
-            <span>Predictable ROI Model</span>
-          </div>
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
+            We focus on what matters to your business — potential customers, better advertising and continuous improvement.
+          </p>
         </AnimatedSection>
 
         {/* Comparison Container */}
         <div className="w-full bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,17,168,0.04)] overflow-hidden">
           
-          {/* Mobile Cards View (md:hidden) — No awkward horizontal scroll */}
-          <div className="block md:hidden p-3 space-y-2.5">
-            {comparisonRows.slice(0, 4).map((row, idx) => (
-              <div key={idx} className="bg-slate-50/80 rounded-xl p-3 border border-slate-200/90 space-y-2">
-                <div className="text-xs font-bold text-slate-950 flex items-center justify-between">
-                  <span>{row.feature}</span>
-                  <span className="text-[10px] text-[#00a63e] font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">
-                    DictoX Edge
+          {/* Mobile Cards View (md:hidden) — Compact Side-by-Side Comparison */}
+          <div className="block md:hidden p-2.5 sm:p-4 space-y-2.5">
+            {comparisonRows.map((row, idx) => (
+              <div key={idx} className="bg-slate-50/90 rounded-xl p-2.5 border border-slate-200/90 space-y-1.5">
+                <div className="text-[11px] font-bold text-slate-900 flex items-center justify-between">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0011a8]" />
+                    <span className="font-extrabold">{row.feature}</span>
+                  </span>
+                  <span className="text-[9.5px] text-[#00a63e] font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">
+                    DICTOX Standard
                   </span>
                 </div>
-                <div className="grid grid-cols-2 gap-2 text-[11px]">
-                  <div className="p-2 rounded-lg bg-red-50/70 border border-red-100 text-slate-700">
-                    <span className="block font-bold text-[9.5px] text-red-600 uppercase mb-0.5">Other Agencies</span>
-                    <span className="line-clamp-2 leading-tight">{row.typical}</span>
+
+                <div className="grid grid-cols-2 gap-1.5 text-xs">
+                  {/* Traditional */}
+                  <div className="p-2 rounded-lg bg-rose-50/70 border border-rose-100 text-slate-700 flex flex-col justify-between">
+                    <div className="flex items-center gap-1 mb-1">
+                      <div className="w-3.5 h-3.5 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
+                        <X className="w-2.5 h-2.5 stroke-[2.5]" />
+                      </div>
+                      <span className="font-bold text-[9px] text-rose-700 uppercase tracking-tight">Traditional</span>
+                    </div>
+                    <span className="text-[10.5px] text-slate-600 leading-snug">{row.traditional}</span>
                   </div>
-                  <div className="p-2 rounded-lg bg-emerald-50/80 border border-emerald-200 text-slate-950 font-semibold">
-                    <span className="block font-bold text-[9.5px] text-[#00a63e] uppercase mb-0.5">DictoX Standard</span>
-                    <span className="line-clamp-2 leading-tight">{row.dictox}</span>
+
+                  {/* DICTOX */}
+                  <div className="p-2 rounded-lg bg-emerald-50/80 border border-emerald-200 text-slate-950 flex flex-col justify-between">
+                    <div className="flex items-center gap-1 mb-1">
+                      <div className="w-3.5 h-3.5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-2xs">
+                        <Check className="w-2.5 h-2.5 stroke-[3]" />
+                      </div>
+                      <span className="font-bold text-[9px] text-[#00a63e] uppercase tracking-tight">DictoX</span>
+                    </div>
+                    <span className="text-[10.5px] text-slate-950 font-bold leading-snug">{row.dictox}</span>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Desktop Table Container (hidden md:block) */}
+          {/* Desktop & Tablet Table (hidden md:block) */}
           <div className="hidden md:block overflow-x-auto w-full">
-            <table className="w-full text-left border-collapse min-w-[640px]">
+            <table className="w-full text-left border-collapse">
               
               {/* Table Header */}
               <thead>
                 <tr className="border-b border-slate-200 bg-slate-50/90">
-                  <th className="py-3.5 sm:py-4 px-4 sm:px-6 text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-wider w-[26%]">
-                    Strategy Dimension
+                  <th className="py-4 px-6 text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-wider w-[24%]">
+                    Dimension
                   </th>
-                  <th className="py-3.5 sm:py-4 px-4 sm:px-6 text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-wider w-[37%]">
-                    Typical Agency Approach
+                  <th className="py-4 px-6 text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-wider w-[38%]">
+                    Traditional Approach
                   </th>
-                  <th className="py-3.5 sm:py-4 px-4 sm:px-6 text-xs sm:text-sm font-black text-[#0011a8] uppercase tracking-wider bg-blue-50/80 border-l border-r border-blue-200/80 w-[37%]">
+                  <th className="py-4 px-6 text-xs sm:text-sm font-black text-[#0011a8] uppercase tracking-wider bg-blue-50/70 border-l border-r border-blue-200/80 w-[38%]">
                     <div className="flex items-center justify-between gap-2">
                       <span className="flex items-center gap-1.5">
                         <Sparkles className="w-4 h-4 text-[#00a63e]" />
-                        <span>The DictoX Standard</span>
+                        <span>DICTOX Approach</span>
                       </span>
-                      <span className="text-[10px] bg-[#00a63e] text-white font-bold px-2 py-0.5 rounded-full shadow-2xs">
-                        Proven ROI
+                      <span className="text-[10px] bg-[#00a63e] text-white font-bold px-2.5 py-0.5 rounded-full shadow-2xs">
+                        Proven Result
                       </span>
                     </div>
                   </th>
@@ -123,27 +137,27 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
                 {comparisonRows.map((row, idx) => (
                   <tr
                     key={idx}
-                    className="hover:bg-slate-50/70 transition-colors group"
+                    className="hover:bg-slate-50/60 transition-colors group"
                   >
-                    {/* Dimension Label */}
-                    <td className="py-3.5 sm:py-4 px-4 sm:px-6 text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#0011a8] transition-colors">
+                    {/* Feature / Dimension Label */}
+                    <td className="py-4 px-6 text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#0011a8] transition-colors">
                       {row.feature}
                     </td>
 
-                    {/* Typical Agency (Negative/Muted) */}
-                    <td className="py-3.5 sm:py-4 px-4 sm:px-6 text-xs sm:text-[13px] text-slate-500 leading-relaxed">
+                    {/* Traditional Approach (Muted/Cross) */}
+                    <td className="py-4 px-6 text-xs sm:text-sm text-slate-600 leading-relaxed">
                       <div className="flex items-start gap-2.5">
-                        <div className="w-4 h-4 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0 mt-0.5">
+                        <div className="w-4 h-4 rounded-full bg-rose-50 text-rose-500 border border-rose-100 flex items-center justify-center shrink-0 mt-0.5">
                           <X className="w-3 h-3 stroke-[2.5]" />
                         </div>
-                        <span>{row.typical}</span>
+                        <span>{row.traditional}</span>
                       </div>
                     </td>
 
-                    {/* DictoX Approach (Highlight / Proven) */}
-                    <td className="py-3.5 sm:py-4 px-4 sm:px-6 text-xs sm:text-[13px] font-semibold text-slate-900 leading-relaxed bg-blue-50/30 group-hover:bg-blue-50/50 border-l border-r border-blue-200/80 transition-colors">
+                    {/* DICTOX Approach (Highlighted / Check) */}
+                    <td className="py-4 px-6 text-xs sm:text-sm text-slate-900 leading-relaxed bg-blue-50/25 group-hover:bg-blue-50/45 border-l border-r border-blue-200/80 transition-colors">
                       <div className="flex items-start gap-2.5">
-                        <div className="w-4 h-4 rounded-full bg-emerald-100 text-[#00a63e] flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                        <div className="w-4 h-4 rounded-full bg-emerald-100 text-[#00a63e] border border-emerald-200 flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
                           <Check className="w-3 h-3 stroke-[3]" />
                         </div>
                         <span className="text-slate-950 font-bold">{row.dictox}</span>
@@ -156,19 +170,19 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
             </table>
           </div>
 
-          {/* Bottom Action Strip */}
-          <div className="p-3.5 sm:p-4 bg-gradient-to-r from-slate-50 via-blue-50/40 to-emerald-50/30 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          {/* Bottom CTA Strip */}
+          <div className="p-4 sm:p-5 bg-gradient-to-r from-slate-50 via-blue-50/40 to-emerald-50/30 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
             <div>
-              <h4 className="text-xs sm:text-sm font-bold text-slate-950 leading-tight">
-                Want ads engineered directly around your profit margins?
+              <h4 className="text-xs sm:text-sm md:text-base font-bold text-slate-950 leading-tight">
+                Want Your Advertising To Work Better For Your Business?
               </h4>
             </div>
             <button
               onClick={onOpenConsultation}
-              className="bg-[#090d16] hover:bg-[#0011a8] active:scale-[0.98] text-white px-6 py-2.5 rounded-xl font-semibold text-xs sm:text-sm shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 shrink-0 w-full sm:w-auto"
+              className="bg-[#090d16] hover:bg-[#0011a8] active:scale-[0.98] text-white px-6 sm:px-7 py-2.5 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 shrink-0 w-full sm:w-auto group"
             >
-              <span>Book Free Strategy Call</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Get A Free Strategy Consultation</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 

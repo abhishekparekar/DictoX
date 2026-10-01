@@ -1,139 +1,185 @@
 import React from 'react';
 import { 
-  TrendingUp, 
-  Palette, 
-  Share2, 
-  Cpu, 
+  ArrowRight, 
+  Layers, 
   Search, 
   Zap, 
-  ArrowRight,
-  Sparkles
+  Sparkles 
 } from 'lucide-react';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
 
 export default function ServicesSection({ onOpenConsultation }) {
   const services = [
     {
+      num: '01',
       id: 'meta-ads',
-      icon: TrendingUp,
-      title: 'Strategic Marketing',
-      desc: 'Catapult your brand into the spotlight with our data-backed Meta & Google ad strategies — precision targeting engineered for predictable customer acquisition.',
+      title: 'Meta Ads',
+      tagline: 'Reach Potential Customers On Facebook & Instagram',
+      desc: 'Run targeted Meta campaigns designed to generate potential leads and customers for your business.',
+      icon: Layers,
+      color: 'bg-blue-50 text-[#0011a8] border-blue-100',
     },
     {
-      id: 'creative-design',
-      icon: Palette,
-      title: 'Creative Design',
-      desc: 'High-converting ad creatives, scroll-stopping video hooks, and graphics — we make your audience stop, engage, and take immediate action.',
-    },
-    {
-      id: 'social-media',
-      icon: Share2,
-      title: 'Social Media Management',
-      desc: 'Hands-free social growth! While you focus on running your business, we make sure your brand identity shines across Facebook, Instagram, and LinkedIn.',
-    },
-    {
-      id: 'technical-solutions',
-      icon: Cpu,
-      title: 'Technical Solutions',
-      desc: 'From custom landing pages to seamless Conversions API & Meta Pixel tracking, we eliminate digital drop-offs and optimize your conversion funnel.',
-    },
-    {
-      id: 'google-seo',
+      num: '02',
+      id: 'google-youtube-ads',
+      title: 'Google & YouTube Ads',
+      tagline: 'Reach Customers When They’re Searching',
+      desc: 'Connect with people actively searching for your products or services through Google and YouTube Ads.',
       icon: Search,
-      title: 'Search Engine Optimization (SEO)',
-      desc: 'Boost your digital visibility! We spruce up your organic rankings and Google Search Ads so high-intent customers find you first.',
+      color: 'bg-emerald-50 text-[#00a63e] border-emerald-100',
     },
     {
-      id: 'automation',
-      icon: Zap,
+      num: '03',
+      id: 'whatsapp-api',
+      title: 'WhatsApp API',
+      tagline: 'Turn Enquiries Into Faster Conversations',
+      desc: 'Connect your advertising with WhatsApp to respond faster and manage customer conversations more efficiently.',
+      icon: WhatsAppIcon,
+      color: 'bg-green-50 text-emerald-600 border-green-100',
+    },
+    {
+      num: '04',
+      id: 'automation-services',
       title: 'Automation Services',
-      desc: 'Automagically enhance efficiency! Our WhatsApp API & CRM lead routing tricks make your lead-to-close process smoother and faster than ever.',
+      tagline: 'Automate Your Marketing & Lead Management',
+      desc: 'Reduce repetitive work and streamline your lead follow-up with WhatsApp, CRM and marketing automation.',
+      icon: Zap,
+      color: 'bg-amber-50 text-amber-600 border-amber-100',
+    },
+    {
+      num: '05',
+      id: 'personal-branding',
+      title: 'Personal Branding',
+      tagline: 'Build Trust, Authority & Visibility',
+      desc: 'Build your personal brand with strategic content, professional videos and consistent social media presence.',
+      icon: Sparkles,
+      color: 'bg-purple-50 text-purple-600 border-purple-100',
     },
   ];
 
   return (
-    <section id="services" className="py-4 sm:py-7 md:py-9 relative w-full overflow-hidden">
-      {/* Subtle top aura */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/30 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
+    <section id="services" className="py-8 sm:py-12 md:py-16 relative w-full overflow-hidden bg-slate-50/50 border-t border-slate-200/80">
+      {/* Subtle top ambient aura */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/35 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
 
-      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Heading — Left-Aligned Signature Style */}
-        <AnimatedSection direction="up" className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 mb-3.5 sm:mb-6 text-left">
-          <div>
-            <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#0011a8] block mb-1">
-              FULL-FUNNEL CAPABILITIES
-            </span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950">
-              Our Performance{' '}
-              <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-                Services.
-              </span>
-            </h2>
+        {/* Section Heading & Subheading */}
+        <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-6 sm:mb-10">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2">
+           SERVICES
           </div>
 
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0011a8] hover:text-blue-800 transition-colors cursor-pointer group self-start sm:self-auto shrink-0"
-          >
-            <span>Explore All Solutions</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-          </Link>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
+            Our Performance{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              Marketing Services.
+            </span>
+          </h2>
+
+          <p className="mt-2.5 text-xs sm:text-sm md:text-base text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
+            Everything you need to attract potential customers, manage leads and grow through digital advertising.
+          </p>
         </AnimatedSection>
 
-        {/* Compact Floating White Card Container (No giant empty space) */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-3 sm:p-5 lg:p-7 relative overflow-hidden">
-          
-          {/* Subtle Center Aura */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[450px] h-[320px] sm:h-[450px] bg-gradient-to-r from-blue-300/10 to-emerald-300/10 rounded-full blur-[80px] pointer-events-none" />
+        {/* 6-Box Grid: 5 Service Cards + 1 Dedicated High-Conversion CTA Box (2x3 tablet, 3x2 desktop) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5 lg:gap-6">
+          {services.map((service, idx) => {
+            const Icon = service.icon;
+            return (
+              <AnimatedSection
+                key={service.id}
+                direction="up"
+                delay={idx * 0.05}
+                className="h-full"
+              >
+                <div className="h-full bg-white rounded-2xl border border-slate-200/90 hover:border-[#0011a8]/60 p-4 sm:p-6 transition-all duration-300 hover:shadow-[0_10px_25px_rgba(0,17,168,0.08)] hover:-translate-y-1 flex flex-col justify-between group relative overflow-hidden text-left">
+                  
+                  {/* Subtle hover accent light */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-100/30 to-transparent rounded-bl-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
 
-          {/* 2-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 sm:gap-x-10 lg:gap-x-12 gap-y-2.5 sm:gap-y-5 relative z-10">
-            {services.map((service, sIdx) => {
-              const Icon = service.icon;
-              const isEven = sIdx % 2 === 0;
-              return (
-                <div key={service.id} className="flex items-start gap-2.5 sm:gap-3.5 group p-1.5 sm:p-2.5 rounded-xl hover:bg-slate-50/70 transition-all">
-                  {/* Brand Accent Icon (Alternating royal blue & growth green) */}
-                  <div className={`shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-2xs ${
-                    isEven ? 'bg-blue-50 text-[#0011a8] border border-blue-100' : 'bg-emerald-50 text-[#00a63e] border border-emerald-100'
-                  }`}>
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </div>
-
-                  {/* Title & Description */}
                   <div>
-                    <h3 className="text-xs sm:text-base font-bold text-slate-950 group-hover:text-[#0011a8] transition-colors leading-snug">
+                    {/* Top Row: Number & Icon */}
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-xs sm:text-sm font-mono font-bold text-slate-400 group-hover:text-[#0011a8] transition-colors">
+                        {service.num} —
+                      </span>
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center border transition-transform duration-300 group-hover:scale-110 shadow-2xs ${service.color}`}>
+                        <Icon className="w-5 h-5" />
+                      </div>
+                    </div>
+
+                    {/* Service Title */}
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-950 group-hover:text-[#0011a8] transition-colors leading-tight mb-1.5">
                       {service.title}
                     </h3>
-                    <p className="mt-0.5 text-[11px] sm:text-xs md:text-sm text-slate-600 leading-snug sm:leading-relaxed font-normal">
+
+                    {/* Tagline */}
+                    <p className="text-xs sm:text-sm font-semibold text-[#0011a8] mb-2.5 leading-snug">
+                      {service.tagline}
+                    </p>
+
+                    {/* Description */}
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                       {service.desc}
                     </p>
                   </div>
+
+                  {/* Micro Link */}
+                  <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-bold text-slate-700 group-hover:text-[#0011a8] transition-colors">
+                    <span>Learn More</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+
                 </div>
-              );
-            })}
-          </div>
+              </AnimatedSection>
+            );
+          })}
 
-          {/* Bottom Action Pill */}
-          <div className="mt-5 sm:mt-7 pt-4 border-t border-slate-100 text-center relative z-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <button
-              onClick={onOpenConsultation}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm text-slate-800 bg-white border border-slate-200/90 hover:border-[#0011a8] hover:text-[#0011a8] shadow-2xs hover:shadow-xs transition-all cursor-pointer"
-            >
-              <span>Want to discuss?</span>
-              <strong className="underline text-slate-950 hover:text-[#0011a8]">Let's Schedule a Call</strong>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-            <Link
-              to="/services"
-              className="text-xs font-bold text-[#0011a8] hover:text-blue-700 py-1.5 px-3"
-            >
-              Explore Detailed Service Breakdown →
-            </Link>
-          </div>
+          {/* 6th Card: Dedicated High-Conversion CTA Box */}
+          <AnimatedSection direction="up" delay={0.25} className="h-full">
+            <div className="h-full bg-gradient-to-br from-[#090d16] via-[#0d163f] to-[#090d16] text-white rounded-2xl border border-blue-900/40 p-5 sm:p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group text-left">
+              
+              {/* Glowing ambient background glow */}
+              <div className="absolute top-0 right-0 w-44 h-44 bg-blue-600/20 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-44 h-44 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none" />
 
+              <div className="relative z-10">
+                <span className="inline-block px-2.5 py-1 rounded-full bg-white/10 border border-white/15 text-emerald-400 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-3">
+                  Custom Strategy
+                </span>
+
+                <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white leading-tight mb-2">
+                  Want To Grow Your Business With Better Advertising?
+                </h3>
+
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal mb-5">
+                  Let's audit your current ad spend, diagnose conversion leaks, and build a predictable client acquisition roadmap.
+                </p>
+              </div>
+
+              <div className="relative z-10 space-y-2.5 pt-2">
+                <button
+                  onClick={onOpenConsultation}
+                  className="w-full bg-[#00a63e] hover:bg-[#008f35] active:scale-[0.98] text-white px-4 py-2.5 sm:py-3 rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 group/btn"
+                >
+                  <span>Get Free Strategy Consultation</span>
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </button>
+
+                <Link
+                  to="/services"
+                  className="w-full inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white py-1.5 transition-colors"
+                >
+                  <span>Explore Our Services</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+
+            </div>
+          </AnimatedSection>
         </div>
 
       </div>
