@@ -8,52 +8,52 @@ export default function TestimonialsSection({ onOpenConsultation }) {
 
   const testimonials = [
     {
-      name: 'Rohit Patil',
-      role: 'Managing Director, Landmark Properties, Pune',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
-      quote: 'We had worked with three agencies before DictoX. Suresh and his team were the only ones who focused on actual site visits rather than just Facebook form clicks. We closed 12 units in 60 days.',
-      highlight: '12 Units Closed in 60 Days',
-      industry: 'Real Estate',
+      name: 'Mr. Shivhari Yadav',
+      initials: 'SY',
+      role: 'Bada Business PVT LTD · EdTech · Chh. Sambhajinagar Branch',
+      quote: 'In the beginning, I was not sure whether online advertising would work for our business, so we decided to start with DictoX with a very small budget and test it first. As we started seeing the potential of the campaigns, we gradually increased our advertising budget. Today, we are spending around ₹20,000–₹30,000 per day across Meta and Google Ads. Suresh and the DictoX team have supported us throughout this journey and helped us scale step by step. It has been a great experience working with them.',
+      highlight: '₹30L+ Advertising Spend Managed',
+      industry: 'EdTech',
     },
     {
-      name: 'Dr. Anjali Deshmukh',
-      role: 'Founder & Chief Orthodontist, Aura Dental Clinics',
-      avatar: 'https://images.unsplash.com/photo-1594824813589-b883017a6526?auto=format&fit=crop&w=200&q=80',
-      quote: 'DictoX helped us crack Google Search and targeted ads for high-ticket dental implants. Their strategy stopped casual inquiries and brought genuine patients ready for consultations. In-clinic consultations jumped by 180%.',
-      highlight: '+180% Patient Consultations',
-      industry: 'Healthcare & Clinics',
+      name: 'Mr. Devchand Bidgar',
+      initials: 'DB',
+      role: 'Founder, Ahilya Agro · Ayurvedic Products · Nashik',
+      quote: 'We started working with Suresh and DictoX with a daily advertising budget of just ₹100. Over time, with the right strategy, testing and optimization, we were able to scale our advertising to ₹10,000 per day. The DictoX team supported us throughout this journey and helped us understand how to scale our campaigns step by step. It has been a great experience working with Suresh and the team.',
+      highlight: '₹20L+ Advertising Spend Managed',
+      industry: 'Ayurvedic Products',
     },
     {
-      name: 'Vikram Joshi',
-      role: 'Director of Admissions, NextGen Tech Academy',
-      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
-      quote: 'The webinar funnel they built for our professional tech programs was phenomenal. We enrolled 185 professionals and both cohorts were completely filled 2 weeks before the launch date.',
-      highlight: '100% Cohort Batch Filled',
-      industry: 'Education & EdTech',
+      name: 'Mr. Sujay Joshi',
+      initials: 'SJ',
+      role: 'Cofounder, Forstu Pvt Ltd · Scholarship Provider · Pune',
+      quote: 'We have worked with Suresh and the DictoX team for different aspects of our digital marketing, including Meta Ads, WhatsApp API, automation and video creation. What I really appreciate is that the team is attentive and helpful with every requirement. They respond on time, understand what we need and make sure the work is handled properly. Overall, it has been a very good experience working with Suresh and the DictoX team.',
+      highlight: '₹10L+ Advertising Spend Managed',
+      industry: 'Scholarship Provider',
     },
     {
-      name: 'Prashant Mehta',
-      role: 'Co-Founder, FitPulse Centers',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
-      quote: 'DictoX gave us a transparent setup showing which ad brought paying gym members. Our cost per verified trial membership dropped from ₹850 to ₹290, and monthly signups doubled.',
-      highlight: 'Cost Per Member Cut 65%',
-      industry: 'Gyms & Fitness',
+      name: 'Mr. Vijay Waghmare',
+      initials: 'VW',
+      role: 'Founder, Golden Event · Event Management · Chh. Sambhajinagar',
+      quote: 'For an event business, timing and quick response are very important. The DictoX team has been helpful in managing our online advertising and responding whenever we have a requirement. They understand our requirements quickly and help us make the necessary changes in our campaigns. We have had a good experience working with Suresh and the team.',
+      highlight: '₹5L+ Advertising Spend Managed',
+      industry: 'Event Management',
     },
     {
-      name: 'Kavita Rathi',
-      role: 'Brand Head, Organic D2C Skincare',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
-      quote: 'Their creative ad hooks and catalog scaling took our monthly direct orders from 600 to over 3,200 orders at a stable 4.1x ROAS. Best performance marketing team we have partnered with.',
-      highlight: '4.1x Blended E-Com ROAS',
-      industry: 'E-commerce & D2C',
+      name: 'Mr. Chetan Oswal',
+      initials: 'CO',
+      role: 'Founder, Premium Plus Cream · Skin Care · Kolhapur',
+      quote: 'We started working with DictoX for the online promotion of our skincare business. The team has been easy to work with and understands the requirements of our business. They manage our Meta and Google Ads and are available whenever we need support. We appreciate their involvement and the way they handle our advertising.',
+      highlight: '₹4–5L+ Advertising Spend Managed',
+      industry: 'Skin Care',
     },
     {
-      name: 'Siddharth Nair',
-      role: 'Operations Head, Urban Gourmet Bistro',
-      avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80',
-      quote: 'Our weekend table reservations and private banquet event bookings surged within the first 30 days of running their geo-targeted local campaigns. Highly recommended.',
-      highlight: '3.4x Table Bookings Growth',
-      industry: 'Restaurants & Cafés',
+      name: 'Mr. Milind Bibve',
+      initials: 'MB',
+      role: 'Director, Royal Sales Corporation · Fertiliser Manufacturing',
+      quote: 'We come from a manufacturing business, so digital advertising was a new area for us. DictoX helped us understand how Meta Ads, Google Ads, WhatsApp and automation could be used for our business. The team has been patient in explaining things and has supported us throughout the process. We are happy with the way they handle our digital advertising.',
+      highlight: '₹7L+ Advertising Spend Managed',
+      industry: 'Manufacturing',
     },
   ];
 
@@ -88,20 +88,17 @@ export default function TestimonialsSection({ onOpenConsultation }) {
         
         {/* Header & Subheading */}
         <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
             <span>TESTIMONIALS</span>
-            <span className="text-slate-300">•</span>
-            <span className="text-emerald-700">CLIENT REVIEWS & FEEDBACK</span>
+            <span className="text-slate-400">•</span>
+            <span className="text-black">CLIENT REVIEWS & FEEDBACK</span>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
-            Businesses That Grow With{' '}
-            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-              DictoX.
-            </span>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-tight">
+            Businesses That Grow With DictoX.
           </h2>
 
-          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-900 font-medium max-w-2xl mx-auto leading-relaxed">
             Real experiences from businesses that have worked with our team.
           </p>
 
@@ -144,22 +141,20 @@ export default function TestimonialsSection({ onOpenConsultation }) {
                     {item.highlight}
                   </div>
 
-                  <p className="text-xs text-slate-700 leading-relaxed italic font-normal">
+                  <p className="text-xs text-slate-900 leading-relaxed italic font-medium">
                     "{item.quote}"
                   </p>
                 </div>
 
                 <div className="flex items-center gap-3 pt-3.5 mt-3.5 border-t border-slate-100">
-                  <img
-                    src={item.avatar}
-                    alt={item.name}
-                    className="w-9 h-9 rounded-full object-cover shadow-xs border border-slate-200 shrink-0"
-                  />
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900 leading-tight">
+                  <div className="w-9 h-9 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs shadow-xs border border-slate-700 shrink-0 select-none">
+                    {item.initials}
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="text-xs font-bold text-black leading-tight truncate">
                       {item.name}
                     </h4>
-                    <p className="text-[10px] text-slate-500 font-medium">
+                    <p className="text-[10px] sm:text-[10.5px] text-slate-900 font-medium truncate mt-0.5" title={item.role}>
                       {item.role}
                     </p>
                   </div>
@@ -222,7 +217,7 @@ export default function TestimonialsSection({ onOpenConsultation }) {
                         <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                       ))}
                     </div>
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wide">
+                    <span className="text-[10px] font-bold text-slate-900 uppercase tracking-wide">
                       {item.industry}
                     </span>
                   </div>
@@ -233,23 +228,21 @@ export default function TestimonialsSection({ onOpenConsultation }) {
                   </div>
 
                   {/* Quote */}
-                  <p className="text-xs sm:text-[13px] text-slate-700 leading-relaxed italic font-normal">
+                  <p className="text-xs sm:text-[13px] text-slate-900 leading-relaxed italic font-medium">
                     "{item.quote}"
                   </p>
                 </div>
 
                 {/* Author Info */}
                 <div className="flex items-center gap-3 pt-4 sm:pt-5 mt-4 sm:mt-5 border-t border-slate-100">
-                  <img
-                    src={item.avatar}
-                    alt={item.name}
-                    className="w-10 h-10 rounded-full object-cover shadow-xs border border-slate-200 shrink-0"
-                  />
+                  <div className="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs shadow-xs border border-slate-700 shrink-0 select-none">
+                    {item.initials}
+                  </div>
                   <div className="min-w-0">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-900 leading-tight truncate">
+                    <h4 className="text-xs sm:text-sm font-bold text-black leading-tight truncate">
                       {item.name}
                     </h4>
-                    <p className="text-[10.5px] sm:text-[11px] text-slate-500 font-medium truncate mt-0.5">
+                    <p className="text-[10.5px] sm:text-[11px] text-slate-900 font-medium truncate mt-0.5" title={item.role}>
                       {item.role}
                     </p>
                   </div>

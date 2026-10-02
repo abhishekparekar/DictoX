@@ -98,18 +98,15 @@ export default function ContactSection({ onOpenConsultation }) {
         
         {/* Section Header */}
         <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
-            14. CONTACT / LOCATION
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
+           CONTACT US
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
-            Let’s Talk About{' '}
-            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-              Your Business.
-            </span>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-tight">
+            Let’s Talk About Your Business.
           </h2>
 
-          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-600 font-semibold max-w-xl mx-auto leading-relaxed">
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-900 font-semibold max-w-xl mx-auto leading-relaxed">
             DictoX Marketing — Performance Marketing & Customer Acquisition
           </p>
         </AnimatedSection>
@@ -119,16 +116,16 @@ export default function ContactSection({ onOpenConsultation }) {
           
           {/* LEFT Column: Consultation Inquiry Form (lg:col-span-7) */}
           <div className="lg:col-span-7">
-            <div className="bg-slate-50/70 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-5 sm:p-7 md:p-8">
+            <div className="bg-slate-50/70 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,0,0,0.04)] p-5 sm:p-7 md:p-8">
               
               <div className="border-b border-slate-200/80 pb-4 mb-5 text-left">
-                <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-wider text-[#0011a8] block mb-1">
+                <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-wider text-black block mb-1">
                   FREE STRATEGY INQUIRY
                 </span>
-                <h3 className="text-lg sm:text-xl font-bold text-slate-950 leading-tight">
+                <h3 className="text-lg sm:text-xl font-bold text-black leading-tight">
                   Request Your Custom Performance Plan
                 </h3>
-                <p className="text-xs text-slate-500 mt-1">
+                <p className="text-xs text-slate-900 mt-1 font-medium">
                   Fill in your details below and our performance marketing team will get back to you within 2 hours.
                 </p>
               </div>

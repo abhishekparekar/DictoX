@@ -77,64 +77,68 @@ export default function LogoWall() {
   const infiniteBrands = [...brands, ...brands, ...brands, ...brands];
 
   return (
-    <section className="py-8 sm:py-10 bg-white border-y border-slate-200/90 relative w-full overflow-hidden shadow-2xs">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white via-slate-50/70 to-white border-y border-slate-200/90 relative w-full overflow-hidden">
       
       {/* Header Container */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 sm:mb-6 text-center">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10 text-center">
         <AnimatedSection direction="up">
-          <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#0011a8] block mb-1">
-            CLIENT LOGOS
-          </span>
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-slate-950 tracking-tight">
-            Trusted By{' '}
-            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-              500+ Brands
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 mb-3 shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
+            <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.2em] text-black">
+              Client Logos
             </span>
+          </div>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-black tracking-tight">
+            Trusted By 500+ Brands
           </h3>
+          <p className="mt-2 text-xs sm:text-sm md:text-base text-slate-900 max-w-xl mx-auto font-medium">
+            Helping ambitious businesses across real estate, healthcare, education, retail, and manufacturing scale with measurable ROI.
+          </p>
         </AnimatedSection>
       </div>
 
       <div className="w-full mx-auto relative select-none">
         
         {/* Left Edge Gradient Fade Mask */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-24 md:w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-r from-white via-white/95 to-transparent z-10" />
 
         {/* Continuous Left-Scrolling Marquee Track */}
-        <div className="flex w-max animate-marquee items-center gap-4 sm:gap-6 md:gap-8 py-1">
+        <div className="flex w-max animate-marquee items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 py-4">
           {infiniteBrands.map((b, idx) => (
             <div
               key={`${b.id || b.name}-${idx}`}
-              className="shrink-0 group cursor-default select-none transition-transform duration-300"
-              title={b.name}
+              className="shrink-0 group cursor-pointer select-none transition-transform duration-300"
+              title={b.name || 'Client Partner'}
             >
-              {/* Card for Client Logo */}
-              <div className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs group-hover:border-[#0011a8] group-hover:shadow-[0_6px_22px_rgba(0,17,168,0.12)] flex items-center gap-2.5 sm:gap-3 transition-all duration-300 group-hover:scale-105">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-full overflow-hidden p-1 flex items-center justify-center">
-                  {b.logoUrl ? (
-                    <img
-                      src={b.logoUrl}
-                      alt={b.name}
-                      className="w-full h-full object-contain rounded-full"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                      }}
-                    />
-                  ) : (
-                    <div className="w-full h-full rounded-full bg-blue-50 text-[#0011a8] flex items-center justify-center text-xs font-black uppercase">
-                      {b.name?.slice(0, 2) || 'CX'}
-                    </div>
-                  )}
-                </div>
-                <span className="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-[#0011a8] transition-colors whitespace-nowrap">
-                  {b.name}
-                </span>
+              {/* Circular Big Badge for Client Logo */}
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-white border-2 border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.06)] group-hover:border-[#0011a8] group-hover:shadow-[0_12px_36px_rgba(0,17,168,0.22)] flex items-center justify-center p-3 sm:p-4 md:p-5 transition-all duration-300 transform group-hover:scale-110 group-hover:-translate-y-1.5 overflow-hidden">
+                
+                {/* Subtle Hover Radial Aura */}
+                <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,_rgba(0,17,168,0.08)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                {b.logoUrl ? (
+                  <img
+                    src={b.logoUrl}
+                    alt={b.name || 'Client Logo'}
+                    className="w-full h-full object-contain filter transition-all duration-300 group-hover:brightness-105"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                ) : (
+                  <div className="w-full h-full rounded-full bg-slate-50 flex items-center justify-center p-2 text-center">
+                    <span className="text-[11px] sm:text-xs md:text-sm font-extrabold text-slate-800 group-hover:text-[#0011a8] transition-colors leading-tight line-clamp-2">
+                      {b.name}
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
           ))}
         </div>
 
         {/* Right Edge Gradient Fade Mask */}
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-24 md:w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-l from-white via-white/95 to-transparent z-10" />
 
       </div>
     </section>

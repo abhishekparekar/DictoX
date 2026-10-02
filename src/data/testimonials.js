@@ -1,51 +1,62 @@
 export const testimonialsData = [
   {
-    id: 'feat-1',
-    featured: true,
-    clientName: 'Rajesh Kulkarni',
-    designation: 'Managing Director',
-    businessName: 'Kulkarni Builders & Developers, Pune',
+    id: 'test-1',
+    name: 'Mr. Shivhari Yadav',
+    initials: 'SY',
+    role: 'Bada Business PVT LTD · EdTech · Chh. Sambhajinagar Branch',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
-    quote: 'Before working with Suresh and the DictoX team, we were spending ₹2 Lakhs every month on digital ads with very little to show for it. DictoX overhauled our entire funnel. Instead of useless raw leads, we started receiving verified site visit appointments on our sales team’s WhatsApp within 2 minutes of the ad click. We closed 14 apartment units in 60 days.',
-    metricsBadge: '14 Units Closed | ₹16.8 Cr Revenue',
-    serviceUsed: 'Meta Ads + WhatsApp Automation'
+    quote: 'In the beginning, I was not sure whether online advertising would work for our business, so we decided to start with DictoX with a very small budget and test it first. As we started seeing the potential of the campaigns, we gradually increased our advertising budget. Today, we are spending around ₹20,000–₹30,000 per day across Meta and Google Ads. Suresh and the DictoX team have supported us throughout this journey and helped us scale step by step. It has been a great experience working with them.',
+    highlight: '₹30L+ Advertising Spend Managed',
+    industry: 'EdTech'
   },
   {
     id: 'test-2',
-    featured: false,
-    clientName: 'Dr. Anjali Deshmukh',
-    designation: 'Founder & Chief Orthodontist',
-    businessName: 'Deshmukh Dental Specialists',
+    name: 'Mr. Devchand Bidgar',
+    initials: 'DB',
+    role: 'Founder, Ahilya Agro · Ayurvedic Products · Nashik',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1594824813589-b883017a6526?w=150&auto=format&fit=crop&q=80',
-    quote: 'DictoX helped us crack Google Search and YouTube ads for dental implants. Their strategy stopped low-intent callers and brought genuine patients who were ready to get consultations. Our monthly implant patient count increased by 180% within 3 months.',
-    metricsBadge: '+180% Patient Appointments',
-    serviceUsed: 'Google Ads & Video Ads'
+    quote: 'We started working with Suresh and DictoX with a daily advertising budget of just ₹100. Over time, with the right strategy, testing and optimization, we were able to scale our advertising to ₹10,000 per day. The DictoX team supported us throughout this journey and helped us understand how to scale our campaigns step by step. It has been a great experience working with Suresh and the team.',
+    highlight: '₹20L+ Advertising Spend Managed',
+    industry: 'Ayurvedic Products'
   },
   {
     id: 'test-3',
-    featured: false,
-    clientName: 'Vikram Joshi',
-    designation: 'Director of Admissions',
-    businessName: 'SkillForge Career Institute',
+    name: 'Mr. Sujay Joshi',
+    initials: 'SJ',
+    role: 'Cofounder, Forstu Pvt Ltd · Scholarship Provider · Pune',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
-    quote: 'The webinar funnel they built for our IT certification programs was phenomenal. We registered 2,800+ professionals with an ad cost of barely ₹110 per lead. Both batches were fully booked 10 days before orientation.',
-    metricsBadge: '100% Cohort Batch Filled',
-    serviceUsed: 'Meta Ads & Funnel Optimization'
+    quote: 'We have worked with Suresh and the DictoX team for different aspects of our digital marketing, including Meta Ads, WhatsApp API, automation and video creation. What I really appreciate is that the team is attentive and helpful with every requirement. They respond on time, understand what we need and make sure the work is handled properly. Overall, it has been a very good experience working with Suresh and the DictoX team.',
+    highlight: '₹10L+ Advertising Spend Managed',
+    industry: 'Scholarship Provider'
   },
   {
-    id: 'video-1',
-    isVideo: true,
-    clientName: 'Prashant Mehta',
-    designation: 'Partner & Co-Founder',
-    businessName: 'FitPulse Fitness Centers',
+    id: 'test-4',
+    name: 'Mr. Vijay Waghmare',
+    initials: 'VW',
+    role: 'Founder, Golden Event · Event Management · Chh. Sambhajinagar',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
-    videoDuration: '1:45 Min Video Review',
-    videoThumbnail: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&auto=format&fit=crop&q=80',
-    quote: '“DictoX didn’t just give us leads; they gave us a live dashboard showing which ad brought paying gym members. We saw our cost per trial membership drop from ₹850 to ₹290.”',
-    serviceUsed: 'Lead Gen & WhatsApp CRM'
+    quote: 'For an event business, timing and quick response are very important. The DictoX team has been helpful in managing our online advertising and responding whenever we have a requirement. They understand our requirements quickly and help us make the necessary changes in our campaigns. We have had a good experience working with Suresh and the team.',
+    highlight: '₹5L+ Advertising Spend Managed',
+    industry: 'Event Management'
+  },
+  {
+    id: 'test-5',
+    name: 'Mr. Chetan Oswal',
+    initials: 'CO',
+    role: 'Founder, Premium Plus Cream · Skin Care · Kolhapur',
+    rating: 5,
+    quote: 'We started working with DictoX for the online promotion of our skincare business. The team has been easy to work with and understands the requirements of our business. They manage our Meta and Google Ads and are available whenever we need support. We appreciate their involvement and the way they handle our advertising.',
+    highlight: '₹4–5L+ Advertising Spend Managed',
+    industry: 'Skin Care'
+  },
+  {
+    id: 'test-6',
+    name: 'Mr. Milind Bibve',
+    initials: 'MB',
+    role: 'Director, Royal Sales Corporation · Fertiliser Manufacturing',
+    rating: 5,
+    quote: 'We come from a manufacturing business, so digital advertising was a new area for us. DictoX helped us understand how Meta Ads, Google Ads, WhatsApp and automation could be used for our business. The team has been patient in explaining things and has supported us throughout the process. We are happy with the way they handle our digital advertising.',
+    highlight: '₹7L+ Advertising Spend Managed',
+    industry: 'Manufacturing'
   }
 ];

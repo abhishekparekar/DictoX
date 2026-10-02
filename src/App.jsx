@@ -15,6 +15,7 @@ import IndustriesPage from './pages/IndustriesPage';
 import AboutPage from './pages/AboutPage';
 import CoursePage from './pages/CoursePage';
 import ContactPage from './pages/ContactPage';
+import WhyDictoxPage from './pages/WhyDictoxPage';
 import AdminPage from './pages/AdminPage';
 
 function AppContent() {
@@ -78,6 +79,10 @@ function AppContent() {
             <Route
               path="/contact"
               element={<ContactPage onOpenConsultation={handleOpenConsultation} />}
+            />
+            <Route
+              path="/why-dictox"
+              element={<WhyDictoxPage onOpenConsultation={handleOpenConsultation} />}
             />
             {/* Catch-all fallback */}
             <Route

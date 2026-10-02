@@ -10,8 +10,8 @@ export default function TrustBar() {
           
           {/* Left Column: Certifications with Heading */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-1.5 sm:gap-2 shrink-0">
-            <span className="text-[10.5px] sm:text-xs font-semibold text-slate-500 tracking-normal">
-              <span className="hidden sm:inline">Our Performance Marketing Services Are Certified By</span>
+            <span className="text-[10.5px] sm:text-xs font-bold text-slate-900 tracking-normal">
+              <span className="hidden sm:inline">Trusted Partnerships With Leading Advertising Platforms</span>
               <span className="sm:hidden">Official Certified Partner</span>
             </span>
 
@@ -26,10 +26,10 @@ export default function TrustBar() {
                   <path d="M16.98 6.5C15.11 6.5 13.62 7.42 12 9.06C10.38 7.42 8.89 6.5 7.02 6.5C3.76 6.5 1.5 9.08 1.5 12.35C1.5 15.62 3.76 18.2 7.02 18.2C9.07 18.2 10.66 17.15 12 15.35C13.34 17.15 14.93 18.2 16.98 18.2C20.24 18.2 22.5 15.62 22.5 12.35C22.5 9.08 20.24 6.5 16.98 6.5ZM7.02 15.82C5.07 15.82 3.86 14.24 3.86 12.35C3.86 10.46 5.07 8.88 7.02 8.88C8.5 8.88 9.77 9.85 10.87 11.39C9.72 14.73 8.35 15.82 7.02 15.82ZM16.98 15.82C15.65 15.82 14.28 14.73 13.13 11.39C14.23 9.85 15.5 8.88 16.98 8.88C18.93 8.88 20.14 10.46 20.14 12.35C20.14 14.24 18.93 15.82 16.98 15.82Z" />
                 </svg>
                 <div className="flex flex-col text-left leading-none">
-                  <span className="text-xs sm:text-base font-bold text-slate-900 tracking-tight">
+                  <span className="text-xs sm:text-base font-bold text-black tracking-tight">
                     Meta
                   </span>
-                  <span className="text-[9.5px] sm:text-[11px] font-semibold text-slate-500 tracking-tight mt-0.5">
+                  <span className="text-[9.5px] sm:text-[11px] font-bold text-slate-800 tracking-tight mt-0.5">
                     Business Partner
                   </span>
                 </div>
@@ -46,10 +46,10 @@ export default function TrustBar() {
                   </svg>
                 </div>
                 <div className="flex flex-col text-left leading-none">
-                  <span className="text-xs sm:text-base font-bold text-slate-900 tracking-tight">
+                  <span className="text-xs sm:text-base font-bold text-black tracking-tight">
                     Google
                   </span>
-                  <span className="text-[9.5px] sm:text-[11px] font-semibold text-slate-500 tracking-tight mt-0.5">
+                  <span className="text-[9.5px] sm:text-[11px] font-bold text-slate-800 tracking-tight mt-0.5">
                     Partner
                   </span>
                 </div>
@@ -65,14 +65,14 @@ export default function TrustBar() {
             
             {/* Metric 1: Years Experience */}
             <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3 group">
-              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-slate-950 text-white flex items-center justify-center shrink-0 shadow-xs border border-slate-800/80 group-hover:scale-105 group-hover:border-[#0011a8] transition-all">
+              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black text-white flex items-center justify-center shrink-0 shadow-xs border border-slate-800 group-hover:scale-105 transition-all">
                 <Award className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 group-hover:text-emerald-300 transition-colors" />
               </div>
               <div className="flex flex-col text-left min-w-0">
-                <div className="text-sm sm:text-lg md:text-xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                <div className="text-sm sm:text-lg md:text-xl font-black text-black tracking-tight leading-tight">
                   <CounterAnimation end={5} suffix="+" />
                 </div>
-                <span className="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-normal whitespace-nowrap">
+                <span className="text-[10px] sm:text-xs text-slate-900 font-bold tracking-normal whitespace-nowrap">
                   <span className="hidden sm:inline">Years Experience</span>
                   <span className="sm:hidden">Years Exp</span>
                 </span>
@@ -81,14 +81,14 @@ export default function TrustBar() {
 
             {/* Metric 2: Brands */}
             <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3 group">
-              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-slate-950 text-white flex items-center justify-center shrink-0 shadow-xs border border-slate-800/80 group-hover:scale-105 group-hover:border-[#0011a8] transition-all">
+              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black text-white flex items-center justify-center shrink-0 shadow-xs border border-slate-800 group-hover:scale-105 transition-all">
                 <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 group-hover:text-blue-300 transition-colors" />
               </div>
               <div className="flex flex-col text-left min-w-0">
-                <div className="text-sm sm:text-lg md:text-xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                <div className="text-sm sm:text-lg md:text-xl font-black text-black tracking-tight leading-tight">
                   <CounterAnimation end={500} suffix="+" />
                 </div>
-                <span className="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-normal whitespace-nowrap">
+                <span className="text-[10px] sm:text-xs text-slate-900 font-bold tracking-normal whitespace-nowrap">
                   Brands
                 </span>
               </div>
@@ -96,15 +96,15 @@ export default function TrustBar() {
 
             {/* Metric 3: Ad Spend Managed */}
             <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3 group">
-              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-slate-950 text-white flex items-center justify-center shrink-0 shadow-xs border border-slate-800/80 group-hover:scale-105 group-hover:border-[#0011a8] transition-all">
+              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black text-white flex items-center justify-center shrink-0 shadow-xs border border-slate-800 group-hover:scale-105 transition-all">
                 <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 group-hover:text-emerald-300 transition-colors" />
               </div>
               <div className="flex flex-col text-left min-w-0">
-                <div className="text-sm sm:text-lg md:text-xl font-extrabold text-slate-950 tracking-tight leading-tight whitespace-nowrap">
+                <div className="text-sm sm:text-lg md:text-xl font-black text-black tracking-tight leading-tight whitespace-nowrap">
                   <span className="hidden sm:inline">₹<CounterAnimation end={10} suffix="+ Crore" /></span>
                   <span className="sm:hidden">₹<CounterAnimation end={10} suffix="Cr+" /></span>
                 </div>
-                <span className="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-normal whitespace-nowrap">
+                <span className="text-[10px] sm:text-xs text-slate-900 font-bold tracking-normal whitespace-nowrap">
                   <span className="hidden sm:inline">Ad Spend Managed</span>
                   <span className="sm:hidden">Ad Spend</span>
                 </span>

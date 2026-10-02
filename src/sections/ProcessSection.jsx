@@ -72,18 +72,15 @@ export default function ProcessSection() {
         
         {/* Header & Subheading */}
         <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
             HOW WE WORK
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
-            From Strategy To{' '}
-            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-              Customer Acquisition.
-            </span>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-tight">
+            From Strategy To Customer Acquisition.
           </h2>
 
-          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-900 font-medium max-w-2xl mx-auto leading-relaxed">
             A simple, structured process designed to help your business get more from its advertising.
           </p>
         </AnimatedSection>
@@ -92,7 +89,7 @@ export default function ProcessSection() {
         <div className="relative">
           
           {/* Desktop Behind Connecting Track */}
-          <div className="hidden lg:block absolute top-[68px] left-[6%] right-[6%] h-[2px] bg-gradient-to-r from-blue-200 via-emerald-200 to-blue-200 z-0 pointer-events-none" />
+          <div className="hidden lg:block absolute top-[68px] left-[6%] right-[6%] h-[2px] bg-slate-200 z-0 pointer-events-none" />
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-4 lg:gap-3 relative z-10">
             {steps.map((item, idx) => {
@@ -106,7 +103,7 @@ export default function ProcessSection() {
                   delay={idx * 0.04}
                   className="h-full relative"
                 >
-                  <div className="h-full bg-slate-50/80 hover:bg-white rounded-2xl p-3 sm:p-5 border border-slate-200/90 hover:border-[#0011a8]/60 transition-all duration-300 hover:shadow-[0_12px_28px_rgba(0,17,168,0.08)] hover:-translate-y-1 group flex flex-col justify-between text-left relative cursor-default">
+                  <div className="h-full bg-slate-50/80 hover:bg-white rounded-2xl p-3 sm:p-5 border border-slate-200/90 hover:border-slate-400 transition-all duration-300 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)] hover:-translate-y-1 group flex flex-col justify-between text-left relative cursor-default">
                     
                     <div>
                       {/* Top Row: Step Badge & Icon */}
@@ -115,17 +112,17 @@ export default function ProcessSection() {
                           {item.num}
                         </span>
 
-                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white shadow-xs border border-slate-200/80 text-[#0011a8] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#0011a8] group-hover:text-white transition-all duration-300">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white shadow-xs border border-slate-200/80 text-black flex items-center justify-center group-hover:scale-110 group-hover:bg-black group-hover:text-white transition-all duration-300">
                           <Icon className="w-3.5 h-3.5 sm:w-5 sm:h-5 stroke-[2]" />
                         </div>
                       </div>
 
                       {/* Title & Description */}
-                      <h3 className="text-xs sm:text-base font-bold text-slate-950 group-hover:text-[#0011a8] transition-colors leading-tight mb-1 sm:mb-1.5">
+                      <h3 className="text-xs sm:text-base font-bold text-black leading-tight mb-1 sm:mb-1.5">
                         {item.title}
                       </h3>
 
-                      <p className="text-[11px] sm:text-xs text-slate-600 leading-snug sm:leading-relaxed font-normal">
+                      <p className="text-[11px] sm:text-xs text-slate-900 leading-snug sm:leading-relaxed font-medium">
                         {item.desc}
                       </p>
                     </div>

@@ -104,7 +104,7 @@ export default function Navbar({ onOpenConsultation }) {
     { name: 'Services', path: '/services', icon: Layers },
     { name: 'Results', path: '/results', icon: TrendingUp },
     { name: 'Industries', path: '/industries', icon: Building2 },
-    { name: 'Why DictoX?', path: '/#why-dictox', icon: Sparkles },
+    { name: 'Why DictoX?', path: '/why-dictox', icon: Sparkles },
     { name: 'About Us', path: '/about', icon: User },
     { name: 'Course', path: '/course', icon: GraduationCap },
     { name: 'Contact', path: '/contact', icon: PhoneCall },

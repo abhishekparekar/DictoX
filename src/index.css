@@ -12,7 +12,7 @@
 
   body {
     background-color: #f7f8fe;
-    color: #1e293b;
+    color: #090d16;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -24,7 +24,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     letter-spacing: -0.025em;
-    color: #090d16;
+    color: #000000;
   }
 
   ::selection {
@@ -75,13 +75,13 @@
     @apply transition-all duration-300 hover:border-blue-200 hover:shadow-[0_12px_32px_rgba(0,17,168,0.08)] hover:-translate-y-0.5;
   }
 
-  /* DictoX Logo-Inspired Brand Gradient Text (Royal Blue to Vibrant Green) */
+  /* Brand Heading Styles - Solid Proper Black */
   .dictox-brand-gradient {
-    @apply bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent font-black;
+    @apply text-black font-black;
   }
 
   .adymize-title {
-    @apply bg-gradient-to-r from-[#0011a8] via-[#2563eb] to-[#00a63e] bg-clip-text text-transparent font-extrabold;
+    @apply text-black font-extrabold;
   }
 
   /* Floating section tab navigation */

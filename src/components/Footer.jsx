@@ -84,7 +84,7 @@ export default function Footer({ onOpenConsultation }) {
     { name: 'Services', path: '/services' },
     { name: 'Results', path: '/results' },
     { name: 'Industries', path: '/industries' },
-    { name: 'Why DictoX?', path: '/#why-dictox' },
+    { name: 'Why DictoX?', path: '/why-dictox' },
     { name: 'About Us', path: '/about' },
     { name: 'Course', path: '/course' },
     { name: 'Contact', path: '/contact' },

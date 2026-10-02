@@ -45,86 +45,53 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
         
         {/* Section Header & Subheading */}
         <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
             WHY DICTOX?
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
-            A Clear Difference In{' '}
-            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-              How We Acquire Customers.
-            </span>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-tight">
+            A Clear Difference In How We Acquire Customers.
           </h2>
 
-          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-900 font-medium max-w-2xl mx-auto leading-relaxed">
             We focus on what matters to your business — potential customers, better advertising and continuous improvement.
           </p>
         </AnimatedSection>
 
         {/* Comparison Container */}
-        <div className="w-full bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,17,168,0.04)] overflow-hidden">
+        <div className="w-full bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,0,0,0.04)] overflow-hidden">
           
-          {/* Mobile Cards View (md:hidden) — Compact Side-by-Side Comparison */}
-          <div className="block md:hidden p-2.5 sm:p-4 space-y-2.5">
-            {comparisonRows.map((row, idx) => (
-              <div key={idx} className="bg-slate-50/90 rounded-xl p-2.5 border border-slate-200/90 space-y-1.5">
-                <div className="text-[11px] font-bold text-slate-900 flex items-center justify-between">
-                  <span className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#0011a8]" />
-                    <span className="font-extrabold">{row.feature}</span>
-                  </span>
-                  <span className="text-[9.5px] text-[#00a63e] font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">
-                    DICTOX Standard
-                  </span>
-                </div>
+          {/* Responsive Table Container (Unified across Mobile, Tablet, Laptop, and PC) */}
+          <div className="overflow-x-auto w-full">
+            {/* Mobile swipe indicator banner */}
+            <div className="md:hidden flex items-center justify-between px-4 py-2 bg-slate-100/90 border-b border-slate-200 text-[11px] text-slate-900 font-medium">
+              <span className="flex items-center gap-1.5 font-bold text-black">
+                <Sparkles className="w-3.5 h-3.5 text-slate-900" />
+                Comparison Table
+              </span>
+              <span className="text-black font-bold flex items-center gap-1 animate-pulse text-[10.5px]">
+                Swipe to compare <span>→</span>
+              </span>
+            </div>
 
-                <div className="grid grid-cols-2 gap-1.5 text-xs">
-                  {/* Traditional */}
-                  <div className="p-2 rounded-lg bg-rose-50/70 border border-rose-100 text-slate-700 flex flex-col justify-between">
-                    <div className="flex items-center gap-1 mb-1">
-                      <div className="w-3.5 h-3.5 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
-                        <X className="w-2.5 h-2.5 stroke-[2.5]" />
-                      </div>
-                      <span className="font-bold text-[9px] text-rose-700 uppercase tracking-tight">Traditional</span>
-                    </div>
-                    <span className="text-[10.5px] text-slate-600 leading-snug">{row.traditional}</span>
-                  </div>
-
-                  {/* DICTOX */}
-                  <div className="p-2 rounded-lg bg-emerald-50/80 border border-emerald-200 text-slate-950 flex flex-col justify-between">
-                    <div className="flex items-center gap-1 mb-1">
-                      <div className="w-3.5 h-3.5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-2xs">
-                        <Check className="w-2.5 h-2.5 stroke-[3]" />
-                      </div>
-                      <span className="font-bold text-[9px] text-[#00a63e] uppercase tracking-tight">DictoX</span>
-                    </div>
-                    <span className="text-[10.5px] text-slate-950 font-bold leading-snug">{row.dictox}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Desktop & Tablet Table (hidden md:block) */}
-          <div className="hidden md:block overflow-x-auto w-full">
-            <table className="w-full text-left border-collapse">
+            <table className="w-full text-left border-collapse min-w-[540px] md:min-w-full">
               
               {/* Table Header */}
               <thead>
                 <tr className="border-b border-slate-200 bg-slate-50/90">
-                  <th className="py-4 px-6 text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-wider w-[24%]">
+                  <th className="py-3.5 sm:py-4 px-4 sm:px-6 text-[11px] sm:text-xs md:text-sm font-bold text-slate-900 uppercase tracking-wider w-[24%]">
                     Dimension
                   </th>
-                  <th className="py-4 px-6 text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-wider w-[38%]">
+                  <th className="py-3.5 sm:py-4 px-4 sm:px-6 text-[11px] sm:text-xs md:text-sm font-bold text-slate-900 uppercase tracking-wider w-[38%]">
                     Traditional Approach
                   </th>
-                  <th className="py-4 px-6 text-xs sm:text-sm font-black text-[#0011a8] uppercase tracking-wider bg-blue-50/70 border-l border-r border-blue-200/80 w-[38%]">
+                  <th className="py-3.5 sm:py-4 px-4 sm:px-6 text-[11px] sm:text-xs md:text-sm font-black text-black uppercase tracking-wider bg-slate-100/80 border-l border-r border-slate-200 w-[38%]">
                     <div className="flex items-center justify-between gap-2">
                       <span className="flex items-center gap-1.5">
-                        <Sparkles className="w-4 h-4 text-[#00a63e]" />
+                        <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600" />
                         <span>DICTOX Approach</span>
                       </span>
-                      <span className="text-[10px] bg-[#00a63e] text-white font-bold px-2.5 py-0.5 rounded-full shadow-2xs">
+                      <span className="text-[9px] sm:text-[10px] bg-slate-950 text-white font-bold px-2 sm:px-2.5 py-0.5 rounded-full shadow-2xs whitespace-nowrap">
                         Proven Result
                       </span>
                     </div>
@@ -140,27 +107,27 @@ export default function WhyDictoxSection({ onOpenConsultation }) {
                     className="hover:bg-slate-50/60 transition-colors group"
                   >
                     {/* Feature / Dimension Label */}
-                    <td className="py-4 px-6 text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#0011a8] transition-colors">
+                    <td className="py-3.5 sm:py-4 px-4 sm:px-6 text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#0011a8] transition-colors whitespace-nowrap sm:whitespace-normal">
                       {row.feature}
                     </td>
 
                     {/* Traditional Approach (Muted/Cross) */}
-                    <td className="py-4 px-6 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                      <div className="flex items-start gap-2.5">
-                        <div className="w-4 h-4 rounded-full bg-rose-50 text-rose-500 border border-rose-100 flex items-center justify-center shrink-0 mt-0.5">
-                          <X className="w-3 h-3 stroke-[2.5]" />
+                    <td className="py-3.5 sm:py-4 px-4 sm:px-6 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      <div className="flex items-start gap-2 sm:gap-2.5">
+                        <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-rose-50 text-rose-500 border border-rose-100 flex items-center justify-center shrink-0 mt-0.5">
+                          <X className="w-2.5 h-2.5 sm:w-3 sm:h-3 stroke-[2.5]" />
                         </div>
-                        <span>{row.traditional}</span>
+                        <span className="leading-snug sm:leading-relaxed">{row.traditional}</span>
                       </div>
                     </td>
 
                     {/* DICTOX Approach (Highlighted / Check) */}
-                    <td className="py-4 px-6 text-xs sm:text-sm text-slate-900 leading-relaxed bg-blue-50/25 group-hover:bg-blue-50/45 border-l border-r border-blue-200/80 transition-colors">
-                      <div className="flex items-start gap-2.5">
-                        <div className="w-4 h-4 rounded-full bg-emerald-100 text-[#00a63e] border border-emerald-200 flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
-                          <Check className="w-3 h-3 stroke-[3]" />
+                    <td className="py-3.5 sm:py-4 px-4 sm:px-6 text-xs sm:text-sm text-slate-900 leading-relaxed bg-blue-50/25 group-hover:bg-blue-50/45 border-l border-r border-blue-200/80 transition-colors">
+                      <div className="flex items-start gap-2 sm:gap-2.5">
+                        <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-emerald-100 text-[#00a63e] border border-emerald-200 flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                          <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 stroke-[3]" />
                         </div>
-                        <span className="text-slate-950 font-bold">{row.dictox}</span>
+                        <span className="text-slate-950 font-bold leading-snug sm:leading-relaxed">{row.dictox}</span>
                       </div>
                     </td>
                   </tr>

@@ -108,18 +108,15 @@ export default function IndustriesSection({ onOpenConsultation }) {
         
         {/* Header & Subheading */}
         <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
             INDUSTRIES WE WORK WITH
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
-            Industries We{' '}
-            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-              Work With.
-            </span>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-tight">
+            Industries We Work With.
           </h2>
 
-          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-900 font-medium max-w-2xl mx-auto leading-relaxed">
             We help businesses across different industries reach potential customers and grow through performance marketing.
           </p>
         </AnimatedSection>
@@ -137,7 +134,7 @@ export default function IndustriesSection({ onOpenConsultation }) {
               >
                 <div
                   onClick={onOpenConsultation}
-                  className="h-full p-2.5 sm:p-4 rounded-2xl border border-slate-200/90 bg-white hover:bg-blue-50/50 hover:border-[#0011a8]/60 transition-all duration-300 cursor-pointer flex flex-col justify-between group text-left shadow-2xs hover:shadow-md hover:-translate-y-0.5"
+                  className="h-full p-2.5 sm:p-4 rounded-2xl border border-slate-200/90 bg-white hover:bg-slate-50/70 hover:border-slate-400 transition-all duration-300 cursor-pointer flex flex-col justify-between group text-left shadow-2xs hover:shadow-md hover:-translate-y-0.5"
                 >
                   <div>
                     {/* Top Row: Icon & Number */}
@@ -145,24 +142,24 @@ export default function IndustriesSection({ onOpenConsultation }) {
                       <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 border transition-transform duration-300 group-hover:scale-110 shadow-2xs ${item.color}`}>
                         <Icon className="w-4 h-4 stroke-[2]" />
                       </div>
-                      <span className="text-[10px] sm:text-[11px] font-mono font-bold text-slate-400 group-hover:text-[#0011a8] transition-colors">
+                      <span className="text-[10px] sm:text-[11px] font-mono font-bold text-slate-900">
                         {item.num}
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xs sm:text-sm font-bold text-slate-950 group-hover:text-[#0011a8] transition-colors leading-tight mb-1">
+                    <h3 className="text-xs sm:text-sm font-bold text-black leading-tight mb-1">
                       {item.title}
                     </h3>
 
                     {/* Outcome */}
-                    <p className="text-[11px] text-slate-500 leading-snug line-clamp-2">
+                    <p className="text-[11px] text-slate-900 font-medium leading-snug line-clamp-2">
                       {item.outcome}
                     </p>
                   </div>
 
                   {/* Micro action prompt */}
-                  <div className="pt-2.5 mt-2.5 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold text-slate-400 group-hover:text-[#0011a8] transition-colors">
+                  <div className="pt-2.5 mt-2.5 border-t border-slate-150 flex items-center justify-between text-[10px] font-bold text-black transition-colors">
                     <span>Explore Strategy</span>
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                   </div>

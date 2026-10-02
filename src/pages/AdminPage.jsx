@@ -287,16 +287,20 @@ export default function AdminPage() {
   // Handle Add Brand
   const handleAddBrand = async (e) => {
     e.preventDefault();
-    if (!newBrandName.trim()) return;
     const finalLogo = brandLogoPreview || brandLogoUrl.trim() || null;
+    if (!finalLogo && !newBrandName.trim()) {
+      showToast('Please upload a brand logo image or enter a brand name.', 'error');
+      return;
+    }
+    const brandName = newBrandName.trim() || 'Client Logo';
     const res = await saveTenantBrand({
-      name: newBrandName.trim(),
+      name: brandName,
       logoUrl: finalLogo,
       color: newBrandColor,
       font: 'font-black tracking-wider text-xs sm:text-sm uppercase'
     });
     if (res.success) {
-      showToast(`Brand "${newBrandName}" added to public logo marquee!`);
+      showToast('Brand logo added to public logo marquee!');
       setNewBrandName('');
       setBrandLogoPreview('');
       setBrandLogoUrl('');
@@ -1191,17 +1195,16 @@ export default function AdminPage() {
 
                 <form onSubmit={handleAddBrand} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {/* Brand Name */}
+                    {/* Brand Name (Optional) */}
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-                        Brand / Client Name *
+                        Brand / Client Name (Optional)
                       </label>
                       <input
                         type="text"
-                        required
                         value={newBrandName}
                         onChange={(e) => setNewBrandName(e.target.value)}
-                        placeholder="e.g. Tata Motors, Godrej, Kalyan Jewellers..."
+                        placeholder="Optional internal label (e.g. Tata, Godrej...)"
                         className="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"
                       />
                     </div>
@@ -1280,18 +1283,18 @@ export default function AdminPage() {
                       <div className="p-3.5 rounded-xl bg-slate-800 border border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-3 animate-in fade-in">
                         <div className="flex items-center gap-3 w-full sm:w-auto">
                           <span className="text-xs text-slate-400 shrink-0">Marquee Preview:</span>
-                          <div className="bg-white px-3 py-1.5 rounded-xl shadow-md border border-slate-200 shrink-0">
+                          <div className="bg-white px-4 py-2 rounded-xl shadow-md border border-slate-200 shrink-0 flex items-center justify-center">
                             <img
                               src={brandLogoPreview || brandLogoUrl}
                               alt="Brand Preview"
-                              className="h-7 w-auto max-w-[130px] object-contain"
+                              className="h-7 sm:h-8 w-auto max-w-[130px] object-contain"
                               onError={(e) => {
                                 e.target.style.display = 'none';
                               }}
                             />
                           </div>
-                          <span className="text-xs font-bold text-white truncate">
-                            {newBrandName || 'Your Brand Name'}
+                          <span className="text-[11px] text-slate-400">
+                            (Logo only displays on public marquee — no name text)
                           </span>
                         </div>
                         <button

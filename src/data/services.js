@@ -1,61 +1,165 @@
 export const servicesData = [
   {
     id: 'meta-ads',
-    title: 'Meta Ads (Facebook & Instagram)',
-    tagline: 'High-Converting Paid Social Campaigns',
-    description: 'Facebook & Instagram advertising focused on reaching your target audience and generating potential leads and customers.',
-    features: [
-      'Pinpoint demographic & interest targeting',
-      'High-CTR visual creatives & persuasive ad copy',
-      'Native instant lead forms & landing page funnels',
-      'Dynamic retargeting for warm prospects'
+    category: 'META ADS',
+    title: 'Facebook & Instagram Advertising',
+    tagline: 'Reach Potential Customers, Generate Leads & Drive Sales',
+    description: 'We help businesses use Meta Ads to reach the right audience, generate potential leads, drive sales and grow their customer base.',
+    whatYouGet: [
+      {
+        num: '01',
+        title: 'Audience Research & Targeting',
+        desc: 'Reach people who are more likely to need your product or service.'
+      },
+      {
+        num: '02',
+        title: 'Campaign Setup & Management',
+        desc: 'We build, launch and manage campaigns around your business goals.'
+      },
+      {
+        num: '03',
+        title: 'Ad Creatives & Copywriting',
+        desc: 'Create engaging ads designed to attract your target audience.'
+      },
+      {
+        num: '04',
+        title: 'Leads, Sales & WhatsApp Integration',
+        desc: 'Generate enquiries, drive sales and connect campaigns with WhatsApp.'
+      }
     ],
-    metrics: '3.8x Avg. ROAS across consumer & B2B brands',
+    campaignObjectives: [
+      'Generate Potential Leads',
+      'Drive Online Sales',
+      'Get WhatsApp Enquiries',
+      'Reach Local Customers',
+      'Drive Website Traffic',
+      'Scale Winning Campaigns'
+    ],
+    bestFor: 'Real Estate · Education · Healthcare · Restaurants · Gyms · Salons · E-commerce · Local Businesses',
+    cta: 'Get Started With Meta Ads →',
     badge: 'Core Service',
     icon: 'Layers'
   },
   {
-    id: 'google-youtube-ads',
-    title: 'Google & YouTube Ads',
-    tagline: 'High-Intent Search & Video Discovery',
-    description: 'Reach potential customers when they are actively searching for your products or services online with intent to buy.',
-    features: [
-      'High-intent keyword search campaigns',
-      'Performance Max (PMax) multi-channel reach',
-      'Targeted YouTube in-stream & discovery ads',
-      'Granular negative keywords & bid optimization'
+    id: 'google-ads',
+    category: 'GOOGLE & YOUTUBE ADS',
+    title: 'Google & YouTube Advertising',
+    tagline: 'Reach Potential Customers When They’re Searching & Watching',
+    description: 'We help businesses reach potential customers on Google and YouTube, generate enquiries, drive website traffic and increase online sales.',
+    whatYouGet: [
+      {
+        num: '01',
+        title: 'Keyword & Audience Research',
+        desc: 'Identify the searches and audiences most relevant to your business.'
+      },
+      {
+        num: '02',
+        title: 'Campaign Setup & Management',
+        desc: 'We build, launch and manage Google & YouTube campaigns around your business goals.'
+      },
+      {
+        num: '03',
+        title: 'Ad Copy & Creative Strategy',
+        desc: 'Create compelling ad messaging and video strategies designed to attract potential customers.'
+      },
+      {
+        num: '04',
+        title: 'Conversion Tracking & Optimization',
+        desc: 'Track campaign performance and continuously optimize your ads for better results.'
+      }
     ],
-    metrics: 'High intent traffic with optimized CPL',
+    campaignObjectives: [
+      'Generate Potential Leads',
+      'Drive Online Sales',
+      'Get Calls & Enquiries',
+      'Reach Local Customers',
+      'Drive Website Traffic',
+      'Build YouTube Brand Awareness'
+    ],
+    bestFor: 'Real Estate · Education · Healthcare · Local Services · E-commerce · Professional Services · Automobile · Coaching',
+    cta: 'Get Started With Google & YouTube Ads →',
     badge: 'Intent Driven',
     icon: 'Search'
   },
   {
     id: 'whatsapp-api',
-    title: 'WhatsApp Business API Integration',
-    tagline: 'Instant Lead Connect & Fast Follow-up',
-    description: 'Connect advertising campaigns directly with WhatsApp for faster lead communication, instant follow-ups and higher customer engagement.',
-    features: [
-      'Direct Click-to-WhatsApp (CTWA) ad setups',
-      'Automated greeting & qualification workflows',
-      'Instant sales notification on lead arrival',
-      'Broadcast sequences for warm re-engagement'
+    category: 'WHATSAPP API',
+    title: 'Official WhatsApp API Solutions',
+    tagline: 'Turn Customer Enquiries Into Faster Conversations & Better Follow-Ups',
+    description: 'We help businesses use the official WhatsApp Business API to automate communication, respond faster and manage customer conversations at scale.',
+    whatYouGet: [
+      {
+        num: '01',
+        title: 'Official WhatsApp API Setup',
+        desc: 'Set up WhatsApp Business API for professional business communication.'
+      },
+      {
+        num: '02',
+        title: 'Automated Lead Responses',
+        desc: 'Respond instantly to new enquiries with automated WhatsApp messages.'
+      },
+      {
+        num: '03',
+        title: 'Lead Follow-Up Automation',
+        desc: 'Automate follow-ups so potential customers don’t get missed.'
+      },
+      {
+        num: '04',
+        title: 'Campaign & CRM Integration',
+        desc: 'Connect your advertising, WhatsApp and CRM workflows for smoother lead management.'
+      }
     ],
-    metrics: '< 2 min average lead response time',
+    campaignObjectives: [
+      'Instant Lead Notifications',
+      'Automated Welcome Messages',
+      'Follow-Up Automation',
+      'WhatsApp Campaigns',
+      'Customer Support Workflows',
+      'CRM & Lead Integration'
+    ],
+    bestFor: 'Real Estate · Education · Healthcare · E-commerce · Restaurants · Automobile · Local Businesses · Professional Services',
+    cta: 'Get Started With WhatsApp API →',
     badge: 'High Conversion',
     icon: 'MessageCircle'
   },
   {
-    id: 'automation-services',
-    title: 'Marketing Automation Services',
-    tagline: 'End-to-End Lead Pipeline & CRM Sync',
-    description: 'Automate repetitive marketing and lead-management processes to eliminate lead leaks, improve response speed and scale revenue.',
-    features: [
-      'Seamless CRM integration (HubSpot, LeadSquared, Sheets)',
-      'Automated multi-step SMS & email nurturing',
-      'Lead scoring & sales team auto-assignment',
-      'Real-time conversion tracking & attribution dashboards'
+    id: 'automation',
+    category: 'MARKETING AUTOMATION',
+    title: 'Marketing Automation & CRM Funnels',
+    tagline: 'Automate Your Lead Follow-Up & Turn More Enquiries Into Customers',
+    description: 'We help businesses automate lead management, follow-ups and customer communication so your team can respond faster and manage every enquiry more efficiently.',
+    whatYouGet: [
+      {
+        num: '01',
+        title: 'Lead Management & Routing',
+        desc: 'Automatically capture, organize and assign new leads to the right team member.'
+      },
+      {
+        num: '02',
+        title: 'Automated Follow-Ups',
+        desc: 'Send timely follow-up messages and reminders without relying entirely on manual work.'
+      },
+      {
+        num: '03',
+        title: 'CRM & WhatsApp Integration',
+        desc: 'Connect your CRM, WhatsApp and marketing campaigns into one smoother workflow.'
+      },
+      {
+        num: '04',
+        title: 'Customer Journey Automation',
+        desc: 'Build automated workflows that guide leads from first enquiry to follow-up and conversion.'
+      }
     ],
-    metrics: 'Zero lead leaks & complete pipeline visibility',
+    campaignObjectives: [
+      'Lead Capture & Routing',
+      'Automated WhatsApp Follow-Ups',
+      'CRM Integration',
+      'Lead Status & Tracking',
+      'Reminder & Notification Workflows',
+      'Customer Communication Automation'
+    ],
+    bestFor: 'Real Estate · Education · Healthcare · E-commerce · Automobile · Coaching · Local Businesses · Professional Services',
+    cta: 'Get Started With Marketing Automation →',
     badge: 'Scale Ready',
     icon: 'Cpu'
   }

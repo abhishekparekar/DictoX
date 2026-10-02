@@ -5,7 +5,7 @@ import FinalCTA from '../sections/FinalCTA';
 
 export default function AboutPage({ onOpenConsultation }) {
   return (
-    <div className="min-h-screen pt-14 sm:pt-16">
+    <div className="min-h-screen pt-12 sm:pt-14">
       <AboutFounderSection onOpenConsultation={onOpenConsultation} />
       <WhyDictoxSection onOpenConsultation={onOpenConsultation} />
       <FinalCTA onOpenConsultation={onOpenConsultation} />

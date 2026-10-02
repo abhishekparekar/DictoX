@@ -4,7 +4,7 @@ import AnimatedSection from '../components/AnimatedSection';
 
 export default function HeroSection({ onOpenConsultation }) {
   return (
-    <section id="home" className="relative pt-14 sm:pt-24 md:pt-32 pb-8 sm:pb-16 overflow-hidden w-full">
+    <section id="home" className="relative pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-16 overflow-hidden w-full">
       
       {/* Brand Ambient Aura Mesh Background (Royal Blue & Growth Green) */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1400px] h-[580px] pointer-events-none overflow-hidden -z-10">
@@ -24,24 +24,22 @@ export default function HeroSection({ onOpenConsultation }) {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00a63e]"></span>
             </span>
             <span className="text-[11px] sm:text-xs font-bold text-slate-800 tracking-wide">
-              India's Leading Performance Marketing Agency
+              Performance Marketing & Customer Acquisition Agency
             </span>
           </div>
 
-          {/* Main H1 Title — Bold Black with Brand Blue & Green Accents */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black tracking-tight leading-[1.1] sm:leading-[1.08] text-slate-950 max-w-4xl">
-            <span className="block text-slate-950">
+          {/* Main H1 Title — Bold Black */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black tracking-tight leading-[1.1] sm:leading-[1.08] text-black max-w-4xl">
+            <span className="block text-black">
               Optimize Your Ads
             </span>
-            <span className="block mt-1 sm:mt-2 text-slate-950">
+            <span className="block mt-1 sm:mt-2 text-black">
               <span>For More </span>
-              <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
-                  Profit.
-                </span>
-                {/* Royal Blue Brush Underline specifically under Profit */}
+              <span className="relative inline-block text-black">
+                Profit.
+                {/* Subtle dark brush underline */}
                 <svg
-                  className="absolute -bottom-1.5 sm:-bottom-2.5 left-0 w-full h-2.5 sm:h-3.5 text-[#0011a8] overflow-visible pointer-events-none"
+                  className="absolute -bottom-1.5 sm:-bottom-2.5 left-0 w-full h-2.5 sm:h-3.5 text-slate-900 overflow-visible pointer-events-none"
                   viewBox="0 0 160 20"
                   preserveAspectRatio="none"
                   fill="none"
@@ -60,16 +58,16 @@ export default function HeroSection({ onOpenConsultation }) {
           </h1>
 
           {/* 5+ Years | 500+ Brands | ₹10+ Crore Ad Spend Managed Stat Pill Bar */}
-          <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 px-4 sm:px-6 py-2 rounded-2xl bg-white/80 backdrop-blur-md border border-slate-200/80 shadow-2xs text-xs sm:text-sm font-bold text-slate-800">
-            <span className="text-slate-900 font-extrabold">5+ Years</span>
-            <span className="text-slate-300 hidden sm:inline">|</span>
-            <span className="text-slate-900 font-extrabold">500+ Brands</span>
-            <span className="text-slate-300 hidden sm:inline">|</span>
-            <span className="text-[#0011a8] font-black">₹10+ Crore Ad Spend Managed</span>
+          <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 px-4 sm:px-6 py-2 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200/90 shadow-2xs text-xs sm:text-sm font-bold text-slate-900">
+            <span className="text-black font-extrabold">5+ Years</span>
+            <span className="text-slate-400 hidden sm:inline">|</span>
+            <span className="text-black font-extrabold">500+ Brands</span>
+            <span className="text-slate-400 hidden sm:inline">|</span>
+            <span className="text-black font-black">₹ 10+ Crore Ad Spend </span>
           </div>
 
-          {/* Subheading text */}
-          <p className="max-w-2xl sm:max-w-3xl text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed font-normal">
+          {/* Subheading text — Crisp Proper Black */}
+          <p className="max-w-2xl sm:max-w-3xl text-sm sm:text-base md:text-lg text-slate-900 leading-relaxed font-medium">
             We help businesses generate potential leads, acquire more customers and get more from their advertising budget through Meta Ads, Google Ads and performance marketing.
           </p>
 
@@ -91,14 +89,14 @@ export default function HeroSection({ onOpenConsultation }) {
           </div>
 
           {/* Extra High-Trust Badges */}
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-500 font-medium">
-            <span className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-[#00a63e]" />
-              <span>Certified Meta & Google Partner</span>
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-bold text-black">
+            <span className="flex items-center gap-1.5 text-black">
+              <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span className="text-black font-extrabold" style={{ color: '#000000' }}>Certified Meta & Google Partner</span>
             </span>
-            <span className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-[#0011a8]" />
-              <span>100% Data-Driven ROI</span>
+            <span className="flex items-center gap-1.5 text-black">
+              <ShieldCheck className="w-4 h-4 text-[#0011a8] shrink-0" />
+              <span className="text-black font-extrabold" style={{ color: '#000000' }}>100% Data-Driven ROI</span>
             </span>
           </div>
 

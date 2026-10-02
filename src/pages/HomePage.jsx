@@ -13,7 +13,6 @@ import TestimonialsSection from '../sections/TestimonialsSection';
 import AboutFounderSection from '../sections/AboutFounderSection';
 import CourseSection from '../sections/CourseSection';
 import FAQSection from '../sections/FAQSection';
-import FinalCTA from '../sections/FinalCTA';
 import ContactSection from '../sections/ContactSection';
 
 export default function HomePage({ onOpenConsultation }) {
@@ -35,7 +34,6 @@ export default function HomePage({ onOpenConsultation }) {
       <AboutFounderSection onOpenConsultation={onOpenConsultation} />
       <CourseSection onOpenConsultation={onOpenConsultation} />
       <FAQSection onOpenConsultation={onOpenConsultation} />
-      <FinalCTA onOpenConsultation={onOpenConsultation} />
       <ContactSection onOpenConsultation={onOpenConsultation} />
     </>
   );

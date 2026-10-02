@@ -55,14 +55,14 @@ export default function ProblemSection({ onOpenConsultation }) {
             IS YOUR ADVERTISING REALLY WORKING?
           </div>
 
-          <h2 className="text-xl sm:text-3xl md:text-4xl font-black tracking-tight text-slate-950 leading-tight">
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-black tracking-tight text-black leading-tight">
             Getting Leads Is Not Enough.{' '}
-            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+            <span className="text-black">
               You Need Customers, Sales & Consistent Growth.
             </span>
           </h2>
 
-          <p className="mt-2 text-xs sm:text-sm md:text-base text-slate-600 font-medium">
+          <p className="mt-2 text-xs sm:text-sm md:text-base text-slate-900 font-medium">
             You’re spending on advertising — but is it actually helping your business grow?
           </p>
         </AnimatedSection>
@@ -80,20 +80,20 @@ export default function ProblemSection({ onOpenConsultation }) {
                   direction="up"
                   delay={idx * 0.03}
                 >
-                  <div className="bg-white hover:bg-slate-50/90 rounded-xl p-2.5 sm:p-3 md:p-3.5 border border-slate-200/90 hover:border-blue-400 transition-all duration-200 shadow-2xs hover:shadow-xs flex items-center gap-3 text-left group">
+                  <div className="bg-white hover:bg-slate-50/90 rounded-xl p-2.5 sm:p-3 md:p-3.5 border border-slate-200/90 hover:border-slate-400 transition-all duration-200 shadow-2xs hover:shadow-xs flex items-center gap-3 text-left group">
                     <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center shrink-0 border border-slate-100 bg-slate-50 transition-transform group-hover:scale-105">
                       <Icon className={`w-4 h-4 ${item.color.split(' ')[0]}`} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-baseline gap-2">
-                        <span className="text-[10px] sm:text-[11px] font-mono font-bold text-slate-400 shrink-0">
+                        <span className="text-[10px] sm:text-[11px] font-mono font-bold text-slate-900 shrink-0">
                           {item.num} —
                         </span>
-                        <h3 className="text-xs sm:text-sm font-bold text-slate-950 group-hover:text-[#0011a8] transition-colors leading-tight truncate">
+                        <h3 className="text-xs sm:text-sm font-bold text-black leading-tight truncate">
                           {item.title}
                         </h3>
                       </div>
-                      <p className="text-[11px] sm:text-xs text-slate-600 leading-snug font-normal mt-0.5 line-clamp-2">
+                      <p className="text-[11px] sm:text-xs text-slate-900 leading-snug font-medium mt-0.5 line-clamp-2">
                         {item.desc}
                       </p>
                     </div>

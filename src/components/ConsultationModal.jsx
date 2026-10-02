@@ -105,19 +105,19 @@ export default function ConsultationModal({ isOpen, onClose }) {
     >
       <div className="relative w-full max-w-lg bg-white border border-slate-200/90 rounded-2xl sm:rounded-3xl shadow-[0_25px_60px_rgba(0,17,168,0.18)] overflow-hidden my-auto animate-in zoom-in-95 duration-200 text-left">
         
-        {/* Brand Accent Top Line */}
-        <div className="h-1.5 bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e]" />
+        {/* Solid Black Top Line */}
+        <div className="h-1 bg-black" />
 
         {/* Modal Header */}
         <div className="px-5 sm:px-6 py-3.5 sm:py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/80">
           <div>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#00a63e] animate-pulse" />
-              <h3 id="contact-modal-title" className="text-base sm:text-lg font-black text-slate-950 tracking-tight">
+              <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
+              <h3 id="contact-modal-title" className="text-base sm:text-lg font-black text-black tracking-tight">
                 Let's Talk About Your Business
               </h3>
             </div>
-            <p className="text-xs text-slate-500 font-medium mt-0.5">
+            <p className="text-xs text-slate-900 font-medium mt-0.5">
               Fill out the form below or chat with our team on WhatsApp.
             </p>
           </div>
@@ -302,6 +302,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     <option value="WhatsApp API">WhatsApp API Integration</option>
                     <option value="Automation Services">Marketing Automation Services</option>
                     <option value="Personal Branding">Personal Branding</option>
+                    <option value="Meta Ads Course">Meta Ads Course (For Business Owners)</option>
                   </select>
                 </div>
               </div>

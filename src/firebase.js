@@ -322,10 +322,15 @@ export const DEFAULT_SETTINGS = {
   tagline: 'Performance Marketing & Customer Acquisition Agency based in Pune, helping businesses across India generate predictable revenue through Meta Ads, Google Ads & WhatsApp Automation.',
 };
 
+// In-memory cache for tenant settings
+let cachedSettings = null;
+let cachedSettingsPromise = null;
+
 /**
  * Saves footer / agency settings under tenant "dictox-web"
  */
 export async function saveTenantSettings(settingsData) {
+  cachedSettings = { ...DEFAULT_SETTINGS, ...settingsData };
   const docRef = doc(db, "tenants", TENANT_ID, "settings", "global");
   await setDoc(docRef, {
     ...settingsData,
@@ -337,17 +342,38 @@ export async function saveTenantSettings(settingsData) {
 
 /**
  * Fetches footer / agency settings under tenant "dictox-web"
+ * Includes in-memory caching and a quick 2.5s fallback to prevent offline 10s timeout warnings.
  */
 export async function fetchTenantSettings() {
-  try {
-    const docRef = doc(db, "tenants", TENANT_ID, "settings", "global");
-    const snap = await getDoc(docRef);
-    if (snap.exists()) {
-      return { ...DEFAULT_SETTINGS, ...snap.data() };
-    }
-    return DEFAULT_SETTINGS;
-  } catch (err) {
-    console.warn("fetchTenantSettings fallback:", err);
-    return DEFAULT_SETTINGS;
+  if (cachedSettings) {
+    return cachedSettings;
   }
+  if (cachedSettingsPromise) {
+    return cachedSettingsPromise;
+  }
+
+  cachedSettingsPromise = (async () => {
+    try {
+      const docRef = doc(db, "tenants", TENANT_ID, "settings", "global");
+      
+      // Quick timeout fallback so app never hangs or logs offline warning if network is slow/offline
+      const fetchPromise = getDoc(docRef);
+      const timeoutPromise = new Promise((resolve) => setTimeout(() => resolve(null), 2500));
+      
+      const snap = await Promise.race([fetchPromise, timeoutPromise]);
+      if (snap && snap.exists && snap.exists()) {
+        cachedSettings = { ...DEFAULT_SETTINGS, ...snap.data() };
+        return cachedSettings;
+      }
+      return DEFAULT_SETTINGS;
+    } catch (err) {
+      // Graceful offline fallback to defaults
+      return DEFAULT_SETTINGS;
+    } finally {
+      cachedSettingsPromise = null;
+    }
+  })();
+
+  return cachedSettingsPromise;
 }
+
