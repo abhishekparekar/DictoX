@@ -37,10 +37,8 @@ export const app = initializeApp(firebaseConfig);
 // Initialize Firestore Database
 export const db = getFirestore(app);
 
-// Suppress noisy Firestore offline/connectivity warnings in console.
-// Only real errors will be shown. The "Could not reach Cloud Firestore backend"
-// warning is a normal informational log that fires when offline — not a real error.
-setLogLevel("error");
+// Suppress Firestore offline/connectivity warnings in console completely.
+setLogLevel("silent");
 
 // Enable offline persistence so the app works even without internet
 // (cached data is served from IndexedDB when offline)

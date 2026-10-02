@@ -209,27 +209,30 @@ export default function Navbar({ onOpenConsultation }) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm lg:hidden"
               onClick={() => setMobileMenuOpen(false)}
               aria-hidden="true"
             />
 
-            {/* 2. Slide-out Sidebar Panel */}
+            {/* 2. Slide-out Professional Sidebar Panel */}
             <motion.aside
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 280 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-[300px] sm:w-[340px] max-w-[88vw] bg-white shadow-2xl flex flex-col justify-between lg:hidden border-l border-slate-200/90 text-left font-sans"
+              className="fixed top-0 right-0 bottom-0 z-50 w-[310px] sm:w-[350px] max-w-[88vw] bg-white shadow-[-15px_0_50px_rgba(0,17,168,0.12)] flex flex-col justify-between lg:hidden border-l border-slate-200/90 text-left font-sans overflow-hidden"
               aria-label="Mobile Navigation Sidebar"
             >
+              {/* Top Accent Gradient */}
+              <div className="h-1 w-full bg-gradient-to-r from-[#0011a8] via-[#2563eb] to-[#00a63e] shrink-0" />
+
               {/* Sidebar Header */}
-              <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/80">
+              <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/70 shrink-0">
                 <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2">
                   <img
                     src={logoUrl || '/images/logo1.png'}
                     alt="DictoX Marketing Logo"
-                    className="h-9 sm:h-10 w-auto max-w-[170px] object-contain"
+                    className="h-8 sm:h-9 w-auto max-w-[160px] object-contain"
                     onError={(e) => {
                       e.target.src = '/images/logo1.png';
                     }}
@@ -238,7 +241,7 @@ export default function Navbar({ onOpenConsultation }) {
                 
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-8 h-8 rounded-full bg-white hover:bg-slate-100 text-black hover:text-black flex items-center justify-center transition-colors focus:outline-none active:scale-95 border border-slate-200 cursor-pointer shadow-2xs"
+                  className="w-8 h-8 rounded-full bg-white hover:bg-slate-100 text-slate-500 hover:text-black flex items-center justify-center transition-all focus:outline-none active:scale-95 border border-slate-200 cursor-pointer shadow-2xs hover:rotate-90"
                   aria-label="Close sidebar"
                 >
                   <X className="w-4 h-4" />
@@ -246,34 +249,45 @@ export default function Navbar({ onOpenConsultation }) {
               </div>
 
               {/* Sidebar Navigation Links List */}
-              <div className="flex-1 overflow-y-auto px-3 py-3 space-y-1">
-                <div className="text-[10px] font-bold uppercase tracking-wider text-black px-3 py-1 flex items-center justify-between">
+              <div className="flex-1 overflow-y-auto px-3.5 py-3 space-y-1">
+                <div className="text-[10px] font-black uppercase tracking-wider text-black px-3 py-1 flex items-center justify-between">
                   <span>Navigation</span>
-                  <span className="text-[9.5px] font-semibold text-[#00a63e] bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">
-                    DictoX Growth
+                  <span className="text-[9.5px] font-bold text-[#00a63e] bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00a63e] animate-pulse" />
+                    Growth Partner
                   </span>
                 </div>
 
+                {/* Home Link */}
                 <NavLink
                   to="/"
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) =>
-                    `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                    `group flex items-center justify-between px-3 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ease-in-out ${
                       isActive
-                        ? 'bg-blue-50 text-[#0011a8] font-bold border-l-4 border-[#0011a8]'
-                        : 'text-black hover:bg-slate-50 hover:text-black'
+                        ? 'bg-blue-50/90 text-[#0011a8] font-bold border border-blue-200/70 shadow-xs'
+                        : 'text-black hover:bg-slate-100 hover:text-[#0011a8]'
                     }`
                   }
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-7 h-7 rounded-lg flex items-center justify-center bg-blue-50 text-[#0011a8]">
-                      <Home className="w-4 h-4" />
-                    </div>
-                    <span>Home</span>
-                  </div>
-                  <ArrowRight className="w-3.5 h-3.5 text-black" />
+                  {({ isActive }) => (
+                    <>
+                      <div className="flex items-center gap-3">
+                        <div className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-200 ease-in-out ${
+                          isActive ? 'bg-[#0011a8] text-white shadow-xs' : 'bg-slate-100 text-black group-hover:bg-blue-50 group-hover:text-[#0011a8]'
+                        }`}>
+                          <Home className="w-4 h-4" />
+                        </div>
+                        <span className="text-black font-semibold group-hover:text-[#0011a8] transition-colors duration-200">Home</span>
+                      </div>
+                      <ArrowRight className={`w-3.5 h-3.5 transition-all duration-200 ease-in-out ${
+                        isActive ? 'text-[#0011a8] translate-x-0.5' : 'text-black/60 group-hover:text-[#0011a8] group-hover:translate-x-1'
+                      }`} />
+                    </>
+                  )}
                 </NavLink>
 
+                {/* Dynamic Nav Links */}
                 {navLinks.map((link) => {
                   const Icon = link.icon;
                   const isAnchor = link.path.startsWith('/#');
@@ -284,18 +298,23 @@ export default function Navbar({ onOpenConsultation }) {
                         key={link.name}
                         href={link.path}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-black hover:bg-slate-50 hover:text-black transition-all"
+                        className="group flex items-center justify-between px-3 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-black hover:bg-slate-100 hover:text-[#0011a8] transition-all duration-200 ease-in-out"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-7 h-7 rounded-lg flex items-center justify-center bg-slate-100 text-black">
+                          <div className="w-7 h-7 rounded-lg flex items-center justify-center bg-slate-100 text-black group-hover:bg-blue-50 group-hover:text-[#0011a8] transition-all duration-200 ease-in-out">
                             <Icon className="w-4 h-4" />
                           </div>
-                          <span>{link.name}</span>
+                          <span className="text-black font-semibold group-hover:text-[#0011a8] transition-colors duration-200">{link.name}</span>
                         </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-black" />
+                        <ArrowRight className="w-3.5 h-3.5 text-black/60 group-hover:text-[#0011a8] group-hover:translate-x-1 transition-all duration-200 ease-in-out" />
                       </a>
                     );
                   }
+
+                  // Optional subtle badges for key destinations
+                  let badge = null;
+                  if (link.name === 'Results') badge = '75+ Cr';
+                  if (link.name === 'Course') badge = 'Mentorship';
 
                   return (
                     <NavLink
@@ -303,10 +322,10 @@ export default function Navbar({ onOpenConsultation }) {
                       to={link.path}
                       onClick={() => setMobileMenuOpen(false)}
                       className={({ isActive }) =>
-                        `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                        `group flex items-center justify-between px-3 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ease-in-out ${
                           isActive
-                            ? 'bg-blue-50 text-[#0011a8] font-bold border-l-4 border-[#0011a8]'
-                            : 'text-black hover:bg-slate-50 hover:text-black'
+                            ? 'bg-blue-50/90 text-[#0011a8] font-bold border border-blue-200/70 shadow-xs'
+                            : 'text-black hover:bg-slate-100 hover:text-[#0011a8]'
                         }`
                       }
                     >
@@ -314,19 +333,33 @@ export default function Navbar({ onOpenConsultation }) {
                         <>
                           <div className="flex items-center gap-3">
                             <div
-                              className={`w-7 h-7 rounded-lg flex items-center justify-center ${
-                                isActive ? 'bg-[#0011a8] text-white shadow-xs' : 'bg-slate-100 text-black'
+                              className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-200 ease-in-out ${
+                                isActive ? 'bg-[#0011a8] text-white shadow-xs' : 'bg-slate-100 text-black group-hover:bg-blue-50 group-hover:text-[#0011a8]'
                               }`}
                             >
                               <Icon className="w-4 h-4" />
                             </div>
-                            <span>{link.name}</span>
+                            <span className={`transition-colors duration-200 ${isActive ? 'text-[#0011a8] font-bold' : 'text-black font-semibold group-hover:text-[#0011a8]'}`}>
+                              {link.name}
+                            </span>
                           </div>
-                          <ArrowRight
-                            className={`w-3.5 h-3.5 transition-transform ${
-                              isActive ? 'text-[#0011a8] translate-x-0.5' : 'text-black'
-                            }`}
-                          />
+
+                          <div className="flex items-center gap-2">
+                            {badge && (
+                              <span className={`text-[9.5px] font-bold px-1.5 py-0.5 rounded-md transition-colors duration-200 ${
+                                isActive 
+                                  ? 'bg-[#0011a8] text-white' 
+                                  : 'bg-slate-100 text-black group-hover:bg-blue-50 group-hover:text-[#0011a8]'
+                              }`}>
+                                {badge}
+                              </span>
+                            )}
+                            <ArrowRight
+                              className={`w-3.5 h-3.5 transition-all duration-200 ease-in-out ${
+                                isActive ? 'text-[#0011a8] translate-x-0.5' : 'text-black/60 group-hover:text-[#0011a8] group-hover:translate-x-1'
+                              }`}
+                            />
+                          </div>
                         </>
                       )}
                     </NavLink>
@@ -334,64 +367,65 @@ export default function Navbar({ onOpenConsultation }) {
                 })}
               </div>
 
-              {/* Sidebar Footer Actions */}
-              <div className="p-3.5 sm:p-4 border-t border-slate-100 bg-slate-50/70 space-y-2.5">
-                {/* Main CTA Button: Opens Contact Form directly */}
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenConsultation();
-                  }}
-                  className="w-full py-2.5 sm:py-3 px-4 rounded-xl text-xs font-bold text-white bg-[#090d16] hover:bg-[#0011a8] shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98 transition-all tracking-wide"
-                >
-                  <Sparkles className="w-3.5 h-3.5 text-[#00a63e]" />
-                  <span>Get Free Strategy Consultation</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-
-                {/* Quick Contact & Info Card */}
-                <div className="bg-white rounded-xl p-2.5 sm:p-3 border border-slate-200/90 space-y-1.5 text-xs shadow-2xs">
-                  <div className="flex items-center gap-2 text-black font-medium">
-                    <div className="w-6 h-6 rounded-md bg-blue-50 text-[#0011a8] flex items-center justify-center shrink-0">
-                      <Phone className="w-3.5 h-3.5" />
-                    </div>
-                    <div className="flex items-center gap-1.5 flex-wrap">
-                      <a href="tel:+917796407424" className="hover:text-[#0011a8] font-bold">7796407424</a>
-                      <span className="text-slate-300">/</span>
-                      <a href="tel:+919834036821" className="hover:text-[#0011a8] font-bold">9834036821</a>
-                    </div>
+              {/* Sidebar Footer Professional Action Hub */}
+              <div className="p-3 sm:p-4 border-t border-slate-100 bg-slate-50/80 space-y-2.5 shrink-0">
+                {/* Premium Dark CTA Card */}
+                <div className="bg-gradient-to-br from-[#090d16] via-[#0f172a] to-[#0011a8] text-white p-3 sm:p-3.5 rounded-2xl shadow-md space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      Free Strategy Call
+                    </span>
+                    <span className="text-[9px] text-slate-300 font-semibold bg-white/10 px-1.5 py-0.5 rounded-md">
+                      30 Mins
+                    </span>
                   </div>
-
-                  <a
-                    href="https://wa.me/917796407424?text=Hi%20DictoX%20Marketing%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20services"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-slate-700 hover:text-[#00a63e] transition-colors font-medium"
+                  <p className="text-[11px] sm:text-xs font-semibold text-slate-200 leading-snug">
+                    Get custom ads &amp; funnel roadmap for your business.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      onOpenConsultation();
+                    }}
+                    className="w-full py-2 px-3 rounded-xl bg-white hover:bg-blue-50 text-black font-bold text-xs flex items-center justify-center gap-1.5 transition-all duration-200 shadow-xs active:scale-98 cursor-pointer"
                   >
-                    <div className="w-6 h-6 rounded-md bg-emerald-50 text-[#00a63e] flex items-center justify-center shrink-0">
-                      <WhatsAppIcon className="w-3.5 h-3.5 fill-[#00a63e]" />
-                    </div>
-                    <span className="font-bold text-[#00a63e]">Chat With Us On WhatsApp</span>
-                  </a>
-
-                  <a
-                    href="mailto:dictoxmarketing@gmail.com"
-                    className="flex items-center gap-2 text-black hover:text-[#0011a8] transition-colors font-medium truncate"
-                  >
-                    <div className="w-6 h-6 rounded-md bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
-                      <Mail className="w-3.5 h-3.5" />
-                    </div>
-                    <span className="truncate">dictoxmarketing@gmail.com</span>
-                  </a>
-
-                  <div className="flex items-center gap-2 text-slate-400 text-[10.5px] pt-1 border-t border-slate-100">
-                    <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                    <span className="truncate">Navale Icon, Narhe, Pune</span>
-                  </div>
+                    <Sparkles className="w-3.5 h-3.5 text-[#0011a8]" />
+                    <span>Book Strategy Call</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
                 </div>
 
-                <div className="text-center text-[10px] text-black font-medium">
-                  © 2026 DictoX Marketing. All rights reserved.
+                {/* Quick Tap-To-Connect Row */}
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href="tel:+917796407424"
+                    className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-black text-xs font-bold transition-all duration-200 shadow-2xs hover:border-[#0011a8]"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-[#0011a8]" />
+                    <span>Call Founder</span>
+                  </a>
+
+                  <a
+                    href="https://wa.me/917796407424?text=Hi%20DictoX%20Marketing%2C%20I%20would%20like%20to%20discuss%20growing%20my%20business."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100/90 border border-emerald-200 text-[#00a63e] text-xs font-bold transition-all duration-200 shadow-2xs"
+                  >
+                    <WhatsAppIcon className="w-3.5 h-3.5 fill-[#00a63e]" />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
+
+                {/* Office & Copyright */}
+                <div className="pt-1 border-t border-slate-200/60 text-center space-y-1">
+                  <div className="flex items-center justify-center gap-1.5 text-[10px] text-black/80 font-medium">
+                    <MapPin className="w-3 h-3 text-[#0011a8]" />
+                    <span>Navale Icon, Narhe, Pune</span>
+                  </div>
+                  <div className="text-[9.5px] text-black/60 font-medium">
+                    © 2026 DictoX Marketing. All rights reserved.
+                  </div>
                 </div>
               </div>
 
