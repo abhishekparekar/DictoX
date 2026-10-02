@@ -55,14 +55,14 @@ export default function ProblemSection({ onOpenConsultation }) {
             IS YOUR ADVERTISING REALLY WORKING?
           </div>
 
-          <h2 className="text-xl sm:text-3xl md:text-4xl font-black tracking-tight text-black leading-tight">
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-black tracking-tight text-slate-950 leading-tight">
             Getting Leads Is Not Enough.{' '}
-            <span className="text-black">
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
               You Need Customers, Sales & Consistent Growth.
             </span>
           </h2>
 
-          <p className="mt-2 text-xs sm:text-sm md:text-base text-slate-900 font-medium">
+          <p className="mt-2 text-xs sm:text-sm md:text-base text-slate-600 font-medium">
             You’re spending on advertising — but is it actually helping your business grow?
           </p>
         </AnimatedSection>

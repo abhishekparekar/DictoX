@@ -299,18 +299,21 @@ export default function ServicesPage({ onOpenConsultation }) {
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 relative z-10">
           <AnimatedSection direction="up" className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 text-left">
             <div>
-              <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-black block mb-1">
+              <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#0011a8] block mb-1">
                 PERFORMANCE SOLUTIONS
               </span>
 
-              <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-tight">
-                Performance Marketing Engineered For Measurable Revenue.
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
+                Performance Marketing Engineered For{' '}
+                <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+                  Measurable Revenue.
+                </span>
               </h1>
             </div>
 
             <button
               onClick={onOpenConsultation}
-              className="bg-[#090d16] hover:bg-black text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full shadow-md transition-all self-start sm:self-auto shrink-0 cursor-pointer flex items-center gap-1.5"
+              className="bg-[#0011a8] hover:bg-[#000d80] text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full shadow-md transition-all self-start sm:self-auto shrink-0 cursor-pointer flex items-center gap-1.5"
             >
               <span>Book Strategy Call</span>
               <ArrowRight className="w-4 h-4" />
@@ -336,7 +339,7 @@ export default function ServicesPage({ onOpenConsultation }) {
                 }}
                 className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold transition-all shrink-0 cursor-pointer ${
                   isActive
-                    ? 'bg-black text-white shadow-xs'
+                    ? 'bg-[#0011a8] text-white shadow-xs'
                     : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
                 }`}
               >

@@ -72,15 +72,18 @@ export default function ProcessSection() {
         
         {/* Header & Subheading */}
         <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
             HOW WE WORK
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-tight">
-            From Strategy To Customer Acquisition.
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
+            From Strategy To{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              Customer Acquisition.
+            </span>
           </h2>
 
-          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-900 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-black font-medium max-w-2xl mx-auto leading-relaxed">
             A simple, structured process designed to help your business get more from its advertising.
           </p>
         </AnimatedSection>
@@ -122,7 +125,7 @@ export default function ProcessSection() {
                         {item.title}
                       </h3>
 
-                      <p className="text-[11px] sm:text-xs text-slate-900 leading-snug sm:leading-relaxed font-medium">
+                      <p className="text-[11px] sm:text-xs text-black leading-snug sm:leading-relaxed font-medium">
                         {item.desc}
                       </p>
                     </div>

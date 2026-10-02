@@ -25,13 +25,6 @@ export default function ServicesSection({ onOpenConsultation }) {
       color: 'bg-blue-50 text-[#0011a8] border-blue-100',
       badgeColor: 'bg-blue-50 text-[#0011a8] border-blue-200',
       link: '/services?service=meta-ads',
-      whatYouGet: [
-        'Audience Research & Targeting',
-        'Campaign Setup & Management',
-        'Ad Creatives & Copywriting',
-        'Leads, Sales & WhatsApp Integration'
-      ],
-      bestFor: 'Real Estate · Education · Healthcare · E-commerce · Local Businesses'
     },
     {
       num: '02',
@@ -45,13 +38,6 @@ export default function ServicesSection({ onOpenConsultation }) {
       color: 'bg-emerald-50 text-[#00a63e] border-emerald-100',
       badgeColor: 'bg-red-50 text-red-700 border-red-200',
       link: '/services?service=google-ads',
-      whatYouGet: [
-        'Keyword & Audience Research',
-        'Campaign Setup & Management',
-        'Ad Copy & Creative Strategy',
-        'Conversion Tracking & Optimization'
-      ],
-      bestFor: 'Real Estate · Education · Healthcare · Professional Services · Coaching'
     },
     {
       num: '03',
@@ -65,13 +51,6 @@ export default function ServicesSection({ onOpenConsultation }) {
       color: 'bg-green-50 text-emerald-600 border-green-100',
       badgeColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
       link: '/services?service=whatsapp-api',
-      whatYouGet: [
-        'Official WhatsApp API Setup',
-        'Automated Lead Responses',
-        'Lead Follow-Up Automation',
-        'Campaign & CRM Integration'
-      ],
-      bestFor: 'Real Estate · Healthcare · Automobile · E-commerce · Local Businesses'
     },
     {
       num: '04',
@@ -85,13 +64,6 @@ export default function ServicesSection({ onOpenConsultation }) {
       color: 'bg-amber-50 text-amber-600 border-amber-100',
       badgeColor: 'bg-purple-50 text-purple-700 border-purple-200',
       link: '/services?service=automation',
-      whatYouGet: [
-        'Lead Management & Routing',
-        'Automated Follow-Ups',
-        'CRM & WhatsApp Integration',
-        'Customer Journey Automation'
-      ],
-      bestFor: 'Real Estate · Education · Automobile · Coaching · Professional Services'
     },
     {
       num: '05',
@@ -105,13 +77,6 @@ export default function ServicesSection({ onOpenConsultation }) {
       color: 'bg-purple-50 text-purple-600 border-purple-100',
       badgeColor: 'bg-amber-50 text-amber-700 border-amber-200',
       link: '/services?service=personal-branding',
-      whatYouGet: [
-        'Content Strategy & Positioning',
-        'Video Production & Editing',
-        'Audience Growth & Distribution',
-        'Inbound Inquiries & Authority'
-      ],
-      bestFor: 'Founders · Coaches · Consultants · Doctors · Executives'
     },
   ];
 
@@ -124,15 +89,18 @@ export default function ServicesSection({ onOpenConsultation }) {
         
         {/* Section Heading & Subheading */}
         <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-6 sm:mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2">
            SERVICES
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-tight">
-            Our Performance Marketing Services.
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
+            Our Performance{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              Marketing Services.
+            </span>
           </h2>
 
-          <p className="mt-2.5 text-xs sm:text-sm md:text-base text-slate-900 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-2.5 text-xs sm:text-sm md:text-base text-black font-semibold max-w-2xl mx-auto leading-relaxed">
             Everything you need to attract potential customers, manage leads and grow through digital advertising.
           </p>
         </AnimatedSection>
@@ -150,17 +118,17 @@ export default function ServicesSection({ onOpenConsultation }) {
               >
                 <Link
                   to={service.link}
-                  className="h-full bg-white rounded-2xl border border-slate-200/90 hover:border-slate-400 p-4 sm:p-6 transition-all duration-300 hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 flex flex-col justify-between group relative overflow-hidden text-left block"
+                  className="h-full bg-white rounded-2xl border border-slate-200/90 hover:border-[#0011a8]/60 p-5 sm:p-6 transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,17,168,0.08)] hover:-translate-y-1 flex flex-col justify-between group relative overflow-hidden text-left block"
                 >
                   
                   {/* Subtle hover accent light */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-slate-100/40 rounded-bl-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-100/30 to-transparent rounded-bl-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
 
                   <div>
                     {/* Top Row: Number, Subtitle Badge & Icon */}
                     <div className="flex items-center justify-between mb-3.5">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs sm:text-sm font-mono font-bold text-slate-900">
+                        <span className="text-xs sm:text-sm font-mono font-bold text-black group-hover:text-[#0011a8] transition-colors">
                           {service.num} —
                         </span>
                         <span className={`text-[9.5px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full border ${service.badgeColor} uppercase tracking-wider truncate max-w-[170px]`}>
@@ -172,50 +140,31 @@ export default function ServicesSection({ onOpenConsultation }) {
                       </div>
                     </div>
 
-                    {/* Subtitle / Focus */}
-                    <div className="text-[11px] sm:text-xs font-semibold text-slate-800 mb-1 tracking-tight">
-                      {service.subtitle}
-                    </div>
-
                     {/* Service Title */}
-                    <h3 className="text-lg sm:text-xl font-bold text-black leading-tight mb-1.5">
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-950 group-hover:text-[#0011a8] transition-colors leading-tight mb-1.5">
                       {service.title}
                     </h3>
 
                     {/* Tagline */}
-                    <p className="text-xs sm:text-sm font-bold text-black mb-2 leading-snug">
+                    <p className="text-xs sm:text-sm font-semibold text-[#0011a8] mb-2 leading-snug">
                       {service.tagline}
                     </p>
 
-                    {/* Description */}
-                    <p className="text-xs text-slate-900 leading-relaxed font-medium mb-3 line-clamp-3">
+                    {/* Short Description */}
+                    <p className="text-xs sm:text-sm text-black leading-relaxed font-medium line-clamp-3">
                       {service.desc}
                     </p>
-
-                    {/* WHAT YOU GET Checklist */}
-                    <div className="space-y-1.5 pt-2.5 border-t border-slate-100/90 mb-3">
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-900 flex items-center justify-between">
-                        <span>WHAT YOU GET</span>
-                      </div>
-                      {service.whatYouGet.map((item, i) => (
-                        <div key={i} className="flex items-center gap-2 text-[11px] sm:text-xs text-slate-900 font-semibold">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                          <span className="truncate">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Best For Tag */}
-                    <div className="text-[10.5px] text-slate-900 bg-slate-50 px-2.5 py-1.5 rounded-lg border border-slate-150 mb-2 truncate">
-                      <strong className="text-black font-bold">Best For: </strong>
-                      <span>{service.bestFor}</span>
-                    </div>
                   </div>
 
-                  {/* Micro Link */}
-                  <div className="pt-3 border-t border-slate-150 flex items-center gap-1.5 text-xs font-bold text-black transition-colors">
-                    <span>Learn More</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  {/* Micro Link / CTA to Full Details */}
+                  <div className="pt-3.5 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-black group-hover:text-[#0011a8] transition-colors">
+                    <span className="flex items-center gap-1.5">
+                      <span>Learn More</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                    <span className="text-[11px] font-semibold text-black group-hover:text-[#0011a8] transition-colors">
+                      Full Details →
+                    </span>
                   </div>
 
                 </Link>

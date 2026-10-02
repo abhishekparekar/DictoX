@@ -61,15 +61,18 @@ export default function CourseSection({ onOpenConsultation }) {
         
         {/* Header & Subheading */}
         <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
             META ADS COURSE
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-tight">
-            Meta Ads For Business Owners.
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
+            Meta Ads For{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              Business Owners.
+            </span>
           </h2>
 
-          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-900 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-black font-medium max-w-2xl mx-auto leading-relaxed">
             Learn How To Generate Customers Using Facebook & Instagram Ads
           </p>
         </AnimatedSection>
@@ -111,7 +114,7 @@ export default function CourseSection({ onOpenConsultation }) {
                         <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 border transition-transform duration-300 group-hover:scale-110 shadow-2xs ${t.color}`}>
                           <Icon className="w-4 h-4 stroke-[2]" />
                         </div>
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-900 bg-white border border-slate-200 px-2 py-0.5 rounded-md">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-black bg-white border border-slate-200 px-2 py-0.5 rounded-md">
                           Module {t.num}
                         </span>
                       </div>
@@ -123,12 +126,12 @@ export default function CourseSection({ onOpenConsultation }) {
                       </h4>
 
                       {/* Desc */}
-                      <p className="text-[11.5px] text-slate-900 leading-snug font-medium">
+                      <p className="text-[11.5px] text-black leading-snug font-medium">
                         {t.desc}
                       </p>
                     </div>
 
-                    <div className="pt-2.5 mt-2.5 border-t border-slate-200/80 flex items-center gap-1.5 text-[10.5px] font-bold text-slate-900 transition-colors">
+                    <div className="pt-2.5 mt-2.5 border-t border-slate-200/80 flex items-center gap-1.5 text-[10.5px] font-bold text-black transition-colors">
                       <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                       <span>Hands-on Practical Learning</span>
                     </div>
@@ -144,7 +147,7 @@ export default function CourseSection({ onOpenConsultation }) {
               <h4 className="text-sm sm:text-base font-bold text-black leading-tight">
                 Want To Run Meta Ads For Your Own Business?
               </h4>
-              <p className="text-xs text-slate-900 mt-1 font-medium">
+              <p className="text-xs text-black mt-1 font-medium">
                 Join our practical Meta Ads training and learn the fundamentals of Facebook & Instagram advertising.
               </p>
             </div>

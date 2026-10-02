@@ -108,15 +108,18 @@ export default function IndustriesSection({ onOpenConsultation }) {
         
         {/* Header & Subheading */}
         <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
             INDUSTRIES WE WORK WITH
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-tight">
-            Industries We Work With.
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
+            Targeted Growth For{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              High-Potential Sectors.
+            </span>
           </h2>
 
-          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-900 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-black font-medium max-w-2xl mx-auto leading-relaxed">
             We help businesses across different industries reach potential customers and grow through performance marketing.
           </p>
         </AnimatedSection>
@@ -142,7 +145,7 @@ export default function IndustriesSection({ onOpenConsultation }) {
                       <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 border transition-transform duration-300 group-hover:scale-110 shadow-2xs ${item.color}`}>
                         <Icon className="w-4 h-4 stroke-[2]" />
                       </div>
-                      <span className="text-[10px] sm:text-[11px] font-mono font-bold text-slate-900">
+                      <span className="text-[10px] sm:text-[11px] font-mono font-bold text-black">
                         {item.num}
                       </span>
                     </div>
@@ -153,7 +156,7 @@ export default function IndustriesSection({ onOpenConsultation }) {
                     </h3>
 
                     {/* Outcome */}
-                    <p className="text-[11px] text-slate-900 font-medium leading-snug line-clamp-2">
+                    <p className="text-[11px] text-black font-medium leading-snug line-clamp-2">
                       {item.outcome}
                     </p>
                   </div>

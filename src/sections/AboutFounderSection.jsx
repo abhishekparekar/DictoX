@@ -10,22 +10,25 @@ export default function AboutFounderSection({ onOpenConsultation }) {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[240px] bg-gradient-to-b from-blue-100/35 via-emerald-50/15 to-transparent blur-[70px] pointer-events-none -z-10" />
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Top Agency Overview Box */}
         <AnimatedSection direction="up" className="max-w-4xl mx-auto text-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3">
             ABOUT US
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-tight">
-            We Help Businesses Turn Advertising Into Growth.
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
+            We Help Businesses Turn Advertising Into{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              Growth.
+            </span>
           </h2>
 
-          <div className="mt-4 space-y-2.5 max-w-3xl mx-auto text-xs sm:text-sm md:text-base text-slate-900 leading-relaxed font-medium">
+          <div className="mt-4 space-y-2.5 max-w-3xl mx-auto text-xs sm:text-sm md:text-base text-black leading-relaxed font-semibold">
             <p>
               DictoX Marketing is a performance marketing agency helping businesses across India acquire potential customers through Meta Ads, Google Ads, WhatsApp and marketing automation.
             </p>
-            <p className="text-black font-medium">
+            <p className="text-black font-bold">
               Our team combines strategy, creative, targeting, technology and continuous optimization to build advertising campaigns focused on generating potential leads and helping businesses grow.
             </p>
           </div>
@@ -33,13 +36,13 @@ export default function AboutFounderSection({ onOpenConsultation }) {
 
         {/* 2-Column Responsive Layout: Founder Visual Left + Story Right */}
         <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,0,0,0.04)] p-5 sm:p-7 lg:p-10 relative overflow-hidden">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
+
             {/* Left Column: Founder Visual & Credibility Badge (lg:col-span-5) */}
             <AnimatedSection direction="up" className="lg:col-span-5 flex flex-col items-center">
               <div className="relative w-full max-w-[280px] sm:max-w-[340px]">
-                
+
                 {/* Ambient Glow */}
                 <div className="absolute -inset-2 bg-slate-200/50 rounded-3xl blur-xl -z-10" />
 
@@ -53,7 +56,7 @@ export default function AboutFounderSection({ onOpenConsultation }) {
                       e.target.src = '/images/founder.jpg';
                     }}
                   />
-                  
+
                   {/* Subtle dark gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
 
@@ -75,7 +78,7 @@ export default function AboutFounderSection({ onOpenConsultation }) {
                     <span className="text-slate-300">•</span>
                     <span className="text-black font-extrabold">500+ Brands</span>
                     <span className="text-slate-300">•</span>
-                    <span className="text-black font-extrabold">₹10+ Cr Ad Spend</span>
+                    <span className="text-black font-extrabold">₹10+ Cr Ad Spend </span>
                   </div>
                 </div>
 
@@ -84,7 +87,7 @@ export default function AboutFounderSection({ onOpenConsultation }) {
 
             {/* Right Column: Meet The Founder Story & Quotes (lg:col-span-7) */}
             <AnimatedSection direction="up" delay={0.1} className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
-              
+
               <div>
                 <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-black block mb-1">
                   MEET THE FOUNDER
@@ -92,7 +95,7 @@ export default function AboutFounderSection({ onOpenConsultation }) {
                 <h3 className="text-2xl sm:text-3xl font-black text-black tracking-tight leading-tight">
                   Suresh More
                 </h3>
-                <p className="text-xs sm:text-sm font-bold text-slate-800 mt-0.5">
+                <p className="text-xs sm:text-sm font-extrabold text-black mt-0.5">
                   Founder & Performance Marketing Strategist — DictoX Marketing
                 </p>
               </div>
@@ -106,7 +109,7 @@ export default function AboutFounderSection({ onOpenConsultation }) {
               </div>
 
               {/* Founder Narrative Body */}
-              <div className="space-y-2.5 text-xs sm:text-sm text-slate-900 leading-relaxed font-medium">
+              <div className="space-y-2.5 text-xs sm:text-sm text-black leading-relaxed font-medium">
                 <p>
                   With 5+ years of experience in digital advertising, Suresh More leads DictoX with a focus on strategy, campaign management, creative execution and lead-generation systems.
                 </p>

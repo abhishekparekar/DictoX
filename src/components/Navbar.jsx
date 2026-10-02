@@ -144,7 +144,7 @@ export default function Navbar({ onOpenConsultation }) {
                 `px-3.5 py-1.5 rounded-full text-[13.5px] font-semibold transition-all duration-200 relative select-none ${
                   isActive
                     ? 'text-[#0011a8] font-bold bg-blue-50/90 shadow-2xs'
-                    : 'text-slate-800 hover:text-[#0011a8] hover:bg-slate-50'
+                    : 'text-black hover:text-[#0011a8] hover:bg-slate-50'
                 }`
               }
             >
@@ -158,7 +158,7 @@ export default function Navbar({ onOpenConsultation }) {
                   `px-3.5 py-1.5 rounded-full text-[13.5px] font-semibold transition-all duration-200 relative select-none ${
                     isActive
                       ? 'text-[#0011a8] font-bold bg-blue-50/90 shadow-2xs'
-                      : 'text-slate-800 hover:text-[#0011a8] hover:bg-slate-50'
+                      : 'text-black hover:text-[#0011a8] hover:bg-slate-50'
                   }`
                 }
               >
@@ -189,7 +189,7 @@ export default function Navbar({ onOpenConsultation }) {
             {/* Hamburger Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="p-1.5 sm:p-2 rounded-xl bg-slate-50 text-slate-700 hover:text-slate-900 hover:bg-slate-100 active:scale-95 transition-all focus:outline-none cursor-pointer border border-slate-200"
+              className="p-1.5 sm:p-2 rounded-xl bg-slate-50 text-black hover:text-black hover:bg-slate-100 active:scale-95 transition-all focus:outline-none cursor-pointer border border-slate-200"
               aria-label="Open mobile navigation sidebar"
             >
               <Menu className="w-5 h-5" />
@@ -238,7 +238,7 @@ export default function Navbar({ onOpenConsultation }) {
                 
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-8 h-8 rounded-full bg-white hover:bg-slate-100 text-slate-500 hover:text-slate-900 flex items-center justify-center transition-colors focus:outline-none active:scale-95 border border-slate-200 cursor-pointer shadow-2xs"
+                  className="w-8 h-8 rounded-full bg-white hover:bg-slate-100 text-black hover:text-black flex items-center justify-center transition-colors focus:outline-none active:scale-95 border border-slate-200 cursor-pointer shadow-2xs"
                   aria-label="Close sidebar"
                 >
                   <X className="w-4 h-4" />
@@ -247,7 +247,7 @@ export default function Navbar({ onOpenConsultation }) {
 
               {/* Sidebar Navigation Links List */}
               <div className="flex-1 overflow-y-auto px-3 py-3 space-y-1">
-                <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-3 py-1 flex items-center justify-between">
+                <div className="text-[10px] font-bold uppercase tracking-wider text-black px-3 py-1 flex items-center justify-between">
                   <span>Navigation</span>
                   <span className="text-[9.5px] font-semibold text-[#00a63e] bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">
                     DictoX Growth
@@ -261,7 +261,7 @@ export default function Navbar({ onOpenConsultation }) {
                     `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                       isActive
                         ? 'bg-blue-50 text-[#0011a8] font-bold border-l-4 border-[#0011a8]'
-                        : 'text-slate-700 hover:bg-slate-50 hover:text-slate-950'
+                        : 'text-black hover:bg-slate-50 hover:text-black'
                     }`
                   }
                 >
@@ -271,7 +271,7 @@ export default function Navbar({ onOpenConsultation }) {
                     </div>
                     <span>Home</span>
                   </div>
-                  <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+                  <ArrowRight className="w-3.5 h-3.5 text-black" />
                 </NavLink>
 
                 {navLinks.map((link) => {
@@ -284,15 +284,15 @@ export default function Navbar({ onOpenConsultation }) {
                         key={link.name}
                         href={link.path}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-950 transition-all"
+                        className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-black hover:bg-slate-50 hover:text-black transition-all"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-7 h-7 rounded-lg flex items-center justify-center bg-slate-100 text-slate-600">
+                          <div className="w-7 h-7 rounded-lg flex items-center justify-center bg-slate-100 text-black">
                             <Icon className="w-4 h-4" />
                           </div>
                           <span>{link.name}</span>
                         </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+                        <ArrowRight className="w-3.5 h-3.5 text-black" />
                       </a>
                     );
                   }
@@ -306,7 +306,7 @@ export default function Navbar({ onOpenConsultation }) {
                         `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                           isActive
                             ? 'bg-blue-50 text-[#0011a8] font-bold border-l-4 border-[#0011a8]'
-                            : 'text-slate-700 hover:bg-slate-50 hover:text-slate-950'
+                            : 'text-black hover:bg-slate-50 hover:text-black'
                         }`
                       }
                     >
@@ -315,7 +315,7 @@ export default function Navbar({ onOpenConsultation }) {
                           <div className="flex items-center gap-3">
                             <div
                               className={`w-7 h-7 rounded-lg flex items-center justify-center ${
-                                isActive ? 'bg-[#0011a8] text-white shadow-xs' : 'bg-slate-100 text-slate-600'
+                                isActive ? 'bg-[#0011a8] text-white shadow-xs' : 'bg-slate-100 text-black'
                               }`}
                             >
                               <Icon className="w-4 h-4" />
@@ -324,7 +324,7 @@ export default function Navbar({ onOpenConsultation }) {
                           </div>
                           <ArrowRight
                             className={`w-3.5 h-3.5 transition-transform ${
-                              isActive ? 'text-[#0011a8] translate-x-0.5' : 'text-slate-300'
+                              isActive ? 'text-[#0011a8] translate-x-0.5' : 'text-black'
                             }`}
                           />
                         </>
@@ -351,7 +351,7 @@ export default function Navbar({ onOpenConsultation }) {
 
                 {/* Quick Contact & Info Card */}
                 <div className="bg-white rounded-xl p-2.5 sm:p-3 border border-slate-200/90 space-y-1.5 text-xs shadow-2xs">
-                  <div className="flex items-center gap-2 text-slate-700 font-medium">
+                  <div className="flex items-center gap-2 text-black font-medium">
                     <div className="w-6 h-6 rounded-md bg-blue-50 text-[#0011a8] flex items-center justify-center shrink-0">
                       <Phone className="w-3.5 h-3.5" />
                     </div>
@@ -376,7 +376,7 @@ export default function Navbar({ onOpenConsultation }) {
 
                   <a
                     href="mailto:dictoxmarketing@gmail.com"
-                    className="flex items-center gap-2 text-slate-600 hover:text-[#0011a8] transition-colors font-normal truncate"
+                    className="flex items-center gap-2 text-black hover:text-[#0011a8] transition-colors font-medium truncate"
                   >
                     <div className="w-6 h-6 rounded-md bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
                       <Mail className="w-3.5 h-3.5" />
@@ -390,7 +390,7 @@ export default function Navbar({ onOpenConsultation }) {
                   </div>
                 </div>
 
-                <div className="text-center text-[10px] text-slate-400 font-medium">
+                <div className="text-center text-[10px] text-black font-medium">
                   © 2026 DictoX Marketing. All rights reserved.
                 </div>
               </div>

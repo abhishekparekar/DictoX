@@ -82,16 +82,19 @@ export default function LogoWall() {
       {/* Header Container */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10 text-center">
         <AnimatedSection direction="up">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 mb-3 shadow-2xs">
-            <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
-            <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.2em] text-black">
-              Client Logos
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 mb-3 shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-[#00a63e] animate-pulse" />
+            <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.2em] text-[#0011a8]">
+              OUR CLIENTS
             </span>
           </div>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-black tracking-tight">
-            Trusted By 500+ Brands
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
+            Trusted By{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              500+ Brands
+            </span>
           </h3>
-          <p className="mt-2 text-xs sm:text-sm md:text-base text-slate-900 max-w-xl mx-auto font-medium">
+          <p className="mt-2 text-xs sm:text-sm md:text-base text-black max-w-xl mx-auto font-semibold">
             Helping ambitious businesses across real estate, healthcare, education, retail, and manufacturing scale with measurable ROI.
           </p>
         </AnimatedSection>

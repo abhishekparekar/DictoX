@@ -88,28 +88,31 @@ export default function TestimonialsSection({ onOpenConsultation }) {
         
         {/* Header & Subheading */}
         <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
             <span>TESTIMONIALS</span>
-            <span className="text-slate-400">•</span>
-            <span className="text-black">CLIENT REVIEWS & FEEDBACK</span>
+            <span className="text-blue-300">•</span>
+            <span className="text-[#00a63e]">CLIENT REVIEWS & FEEDBACK</span>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-tight">
-            Businesses That Grow With DictoX.
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
+            Businesses That Grow With{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              DictoX.
+            </span>
           </h2>
 
-          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-900 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-black font-medium max-w-2xl mx-auto leading-relaxed">
             Real experiences from businesses that have worked with our team.
           </p>
 
           {/* 5-Star Social Proof Rating Pill */}
-          <div className="mt-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50/80 border border-amber-200/80 text-xs font-bold text-slate-800 shadow-2xs">
+          <div className="mt-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50/80 border border-amber-200/80 text-xs font-bold text-black shadow-2xs">
             <div className="flex items-center text-amber-500">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
               ))}
             </div>
-            <span className="text-slate-700 font-semibold">5.0 Verified Client Rating</span>
+            <span className="text-black font-semibold">5.0 Verified Client Rating</span>
           </div>
         </AnimatedSection>
 
@@ -146,15 +149,24 @@ export default function TestimonialsSection({ onOpenConsultation }) {
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3 pt-3.5 mt-3.5 border-t border-slate-100">
-                  <div className="w-9 h-9 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs shadow-xs border border-slate-700 shrink-0 select-none">
-                    {item.initials}
+                {/* Author Info Highlighted */}
+                <div className="flex items-center gap-3 pt-3.5 mt-3.5 border-t border-slate-150/90 -mx-4 -mb-4 p-3 bg-slate-50/70 rounded-b-2xl">
+                  {/* Premium Brand Gradient Ring Avatar */}
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#0011a8] via-blue-600 to-[#00a63e] p-[2px] shadow-xs shrink-0">
+                    <div className="w-full h-full rounded-full bg-[#090d16] text-white flex items-center justify-center font-black text-xs tracking-wider select-none">
+                      {item.initials}
+                    </div>
                   </div>
-                  <div className="min-w-0">
-                    <h4 className="text-xs font-bold text-black leading-tight truncate">
-                      {item.name}
-                    </h4>
-                    <p className="text-[10px] sm:text-[10.5px] text-slate-900 font-medium truncate mt-0.5" title={item.role}>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-1.5">
+                      <h4 className="text-xs sm:text-sm font-black text-slate-950 leading-tight truncate">
+                        {item.name}
+                      </h4>
+                      <span className="inline-flex items-center text-[9px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/90 px-1.5 py-0.2 rounded-full shrink-0">
+                        Verified
+                      </span>
+                    </div>
+                    <p className="text-[10px] sm:text-[10.5px] text-black font-semibold truncate mt-0.5" title={item.role}>
                       {item.role}
                     </p>
                   </div>
@@ -233,16 +245,24 @@ export default function TestimonialsSection({ onOpenConsultation }) {
                   </p>
                 </div>
 
-                {/* Author Info */}
-                <div className="flex items-center gap-3 pt-4 sm:pt-5 mt-4 sm:mt-5 border-t border-slate-100">
-                  <div className="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs shadow-xs border border-slate-700 shrink-0 select-none">
-                    {item.initials}
+                {/* Author Info Highlighted */}
+                <div className="flex items-center gap-3.5 pt-4 mt-5 border-t border-slate-150/90 -mx-5 -mb-5 sm:-mx-6 sm:-mb-6 p-4 sm:p-4.5 bg-slate-50/70 rounded-b-2xl">
+                  {/* Premium Brand Gradient Ring Avatar */}
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-tr from-[#0011a8] via-blue-600 to-[#00a63e] p-[2px] shadow-sm shrink-0">
+                    <div className="w-full h-full rounded-full bg-[#090d16] text-white flex items-center justify-center font-black text-sm tracking-wider select-none">
+                      {item.initials}
+                    </div>
                   </div>
-                  <div className="min-w-0">
-                    <h4 className="text-xs sm:text-sm font-bold text-black leading-tight truncate">
-                      {item.name}
-                    </h4>
-                    <p className="text-[10.5px] sm:text-[11px] text-slate-900 font-medium truncate mt-0.5" title={item.role}>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-1.5">
+                      <h4 className="text-sm sm:text-base font-black text-slate-950 leading-tight truncate">
+                        {item.name}
+                      </h4>
+                      <span className="inline-flex items-center text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/90 px-2 py-0.5 rounded-full shrink-0">
+                        Verified Client
+                      </span>
+                    </div>
+                    <p className="text-[11px] sm:text-xs text-black font-semibold truncate mt-0.5" title={item.role}>
                       {item.role}
                     </p>
                   </div>

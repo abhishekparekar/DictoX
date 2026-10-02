@@ -98,15 +98,18 @@ export default function ContactSection({ onOpenConsultation }) {
         
         {/* Section Header */}
         <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
            CONTACT US
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-tight">
-            Let’s Talk About Your Business.
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
+            Let’s Talk About{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              Your Business.
+            </span>
           </h2>
 
-          <p className="mt-3 text-xs sm:text-sm md:text-base text-slate-900 font-semibold max-w-xl mx-auto leading-relaxed">
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-black font-semibold max-w-xl mx-auto leading-relaxed">
             DictoX Marketing — Performance Marketing & Customer Acquisition
           </p>
         </AnimatedSection>
@@ -116,16 +119,16 @@ export default function ContactSection({ onOpenConsultation }) {
           
           {/* LEFT Column: Consultation Inquiry Form (lg:col-span-7) */}
           <div className="lg:col-span-7">
-            <div className="bg-slate-50/70 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,0,0,0.04)] p-5 sm:p-7 md:p-8">
+            <div className="bg-slate-50/70 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-5 sm:p-7 md:p-8">
               
               <div className="border-b border-slate-200/80 pb-4 mb-5 text-left">
-                <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-wider text-black block mb-1">
+                <span className="text-[10.5px] sm:text-xs font-extrabold uppercase tracking-wider text-[#0011a8] block mb-1">
                   FREE STRATEGY INQUIRY
                 </span>
-                <h3 className="text-lg sm:text-xl font-bold text-black leading-tight">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-950 leading-tight">
                   Request Your Custom Performance Plan
                 </h3>
-                <p className="text-xs text-slate-900 mt-1 font-medium">
+                <p className="text-xs text-black mt-1 font-medium">
                   Fill in your details below and our performance marketing team will get back to you within 2 hours.
                 </p>
               </div>
@@ -139,8 +142,8 @@ export default function ContactSection({ onOpenConsultation }) {
                     <h4 className="text-lg sm:text-xl font-bold text-slate-950">
                       Inquiry Received Successfully!
                     </h4>
-                    <p className="text-xs sm:text-sm text-slate-600 mt-1.5 max-w-md mx-auto">
-                      Thank you, <strong className="text-slate-900">{formData.name || 'there'}</strong>. Suresh and our performance strategists will review your business requirements and contact you shortly.
+                    <p className="text-xs sm:text-sm text-black mt-1.5 max-w-md mx-auto">
+                      Thank you, <strong className="text-black">{formData.name || 'there'}</strong>. Suresh and our performance strategists will review your business requirements and contact you shortly.
                     </p>
                   </div>
                   <button
@@ -156,7 +159,7 @@ export default function ContactSection({ onOpenConsultation }) {
                   {/* Name & Phone */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div>
-                      <label className="block text-xs font-bold text-slate-800 mb-1">
+                      <label className="block text-xs font-bold text-black mb-1">
                         Full Name <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -172,7 +175,7 @@ export default function ContactSection({ onOpenConsultation }) {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-800 mb-1">
+                      <label className="block text-xs font-bold text-black mb-1">
                         Phone Number <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -191,7 +194,7 @@ export default function ContactSection({ onOpenConsultation }) {
                   {/* Email & Business Name */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div>
-                      <label className="block text-xs font-bold text-slate-800 mb-1">
+                      <label className="block text-xs font-bold text-black mb-1">
                         Work Email <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -207,7 +210,7 @@ export default function ContactSection({ onOpenConsultation }) {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-800 mb-1">
+                      <label className="block text-xs font-bold text-black mb-1">
                         Business / Brand Name <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -226,7 +229,7 @@ export default function ContactSection({ onOpenConsultation }) {
                   {/* Industry & Service */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div>
-                      <label className="block text-xs font-bold text-slate-800 mb-1">
+                      <label className="block text-xs font-bold text-black mb-1">
                         Your Industry
                       </label>
                       <select
@@ -248,7 +251,7 @@ export default function ContactSection({ onOpenConsultation }) {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-800 mb-1">
+                      <label className="block text-xs font-bold text-black mb-1">
                         Service Needed
                       </label>
                       <select
@@ -294,7 +297,7 @@ export default function ContactSection({ onOpenConsultation }) {
                     )}
                   </button>
 
-                  <p className="text-[10px] text-center text-slate-400">
+                  <p className="text-[10px] text-center text-black">
                     Your information is 100% confidential. No spam or unsolicited calls guaranteed.
                   </p>
 
@@ -325,8 +328,8 @@ export default function ContactSection({ onOpenConsultation }) {
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Office Address</div>
-                  <div className="text-xs sm:text-[13px] font-semibold text-slate-900 leading-snug mt-0.5">
+                  <div className="text-[11px] font-bold text-black uppercase tracking-wide">Office Address</div>
+                  <div className="text-xs sm:text-[13px] font-semibold text-black leading-snug mt-0.5">
                     Office No. 603, 6th Floor, Navale Icon, Bengaluru - Mumbai Hwy, Near Navale Bridge, Wadgaon Budruk, Narhe, Pune, Maharashtra 411041
                   </div>
                 </div>
@@ -338,7 +341,7 @@ export default function ContactSection({ onOpenConsultation }) {
                   <Phone className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Phone</div>
+                  <div className="text-[11px] font-bold text-black uppercase tracking-wide">Phone</div>
                   <div className="flex flex-wrap items-center gap-2 mt-0.5">
                     <a
                       href="tel:+917796407424"
@@ -363,7 +366,7 @@ export default function ContactSection({ onOpenConsultation }) {
                   <Mail className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Email</div>
+                  <div className="text-[11px] font-bold text-black uppercase tracking-wide">Email</div>
                   <a
                     href="mailto:dictoxmarketing@gmail.com"
                     className="text-xs sm:text-[13px] font-bold text-slate-950 hover:text-[#0011a8] transition-colors block mt-0.5"
@@ -379,7 +382,7 @@ export default function ContactSection({ onOpenConsultation }) {
                   <WhatsAppIcon className="w-4 h-4 fill-[#00a63e]" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">WhatsApp</div>
+                  <div className="text-[11px] font-bold text-black uppercase tracking-wide">WhatsApp</div>
                   <a
                     href="https://wa.me/917796407424?text=Hi%20DictoX%20Marketing%2C%20I%20would%20like%20to%20talk%20about%20advertising%20for%20my%20business."
                     target="_blank"
@@ -397,8 +400,8 @@ export default function ContactSection({ onOpenConsultation }) {
                   <Clock className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Business Hours</div>
-                  <div className="text-xs sm:text-[13px] font-semibold text-slate-900 mt-0.5">
+                  <div className="text-[11px] font-bold text-black uppercase tracking-wide">Business Hours</div>
+                  <div className="text-xs sm:text-[13px] font-semibold text-black mt-0.5">
                     Monday to Saturday — 10:00 AM to 7:00 PM
                   </div>
                 </div>
@@ -409,7 +412,7 @@ export default function ContactSection({ onOpenConsultation }) {
             {/* Google Maps Embed & Get Directions */}
             <div className="bg-slate-50/70 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-4 sm:p-5">
               <div className="flex items-center justify-between mb-2.5">
-                <span className="text-xs font-bold text-slate-900">
+                <span className="text-xs font-bold text-black">
                   Find Us On Google Maps
                 </span>
                 <a
@@ -437,7 +440,7 @@ export default function ContactSection({ onOpenConsultation }) {
 
             {/* Follow DictoX Marketing Social Channels */}
             <div className="bg-slate-50/70 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,17,168,0.04)] p-4 sm:p-5">
-              <span className="text-xs font-bold text-slate-900 block mb-2.5">
+              <span className="text-xs font-bold text-black block mb-2.5">
                 Follow DictoX Marketing
               </span>
 
@@ -452,7 +455,7 @@ export default function ContactSection({ onOpenConsultation }) {
                   <div className="w-7 h-7 rounded-lg bg-blue-50 text-[#1877F2] flex items-center justify-center">
                     <Facebook className="w-4 h-4 fill-current" />
                   </div>
-                  <span className="text-[10.5px] font-bold text-slate-900 group-hover:text-[#0011a8] transition-colors truncate block mt-1">
+                  <span className="text-[10.5px] font-bold text-black group-hover:text-[#0011a8] transition-colors truncate block mt-1">
                     Facebook
                   </span>
                 </a>
@@ -467,7 +470,7 @@ export default function ContactSection({ onOpenConsultation }) {
                   <div className="w-7 h-7 rounded-lg bg-pink-50 text-[#E4405F] flex items-center justify-center">
                     <Instagram className="w-4 h-4" />
                   </div>
-                  <span className="text-[10.5px] font-bold text-slate-900 group-hover:text-[#E4405F] transition-colors truncate block mt-1">
+                  <span className="text-[10.5px] font-bold text-black group-hover:text-[#E4405F] transition-colors truncate block mt-1">
                     Instagram
                   </span>
                 </a>
@@ -482,7 +485,7 @@ export default function ContactSection({ onOpenConsultation }) {
                   <div className="w-7 h-7 rounded-lg bg-emerald-50 text-[#00a63e] flex items-center justify-center">
                     <WhatsAppIcon className="w-4 h-4 fill-current" />
                   </div>
-                  <span className="text-[10.5px] font-bold text-slate-900 group-hover:text-[#00a63e] transition-colors truncate block mt-1">
+                  <span className="text-[10.5px] font-bold text-black group-hover:text-[#00a63e] transition-colors truncate block mt-1">
                     WhatsApp
                   </span>
                 </a>

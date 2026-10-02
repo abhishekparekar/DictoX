@@ -17,18 +17,21 @@ export default function FinalCTA({ onOpenConsultation }) {
           <div className="relative z-10 max-w-3xl mx-auto space-y-4 sm:space-y-5">
             
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5 text-black" />
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider">
+              <Sparkles className="w-3.5 h-3.5 text-[#00a63e]" />
               <span>READY TO GET MORE FROM YOUR ADS?</span>
             </div>
 
             {/* Main Headline */}
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-[1.15]">
-              Let's Build A Performance Marketing Strategy For Your Business.
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-[1.15]">
+              Let's Build A Performance Marketing Strategy{' '}
+              <span className="block mt-1 sm:mt-1.5 bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+                For Your Business.
+              </span>
             </h2>
 
             {/* Subtext */}
-            <p className="text-xs sm:text-sm md:text-base text-slate-900 font-medium max-w-xl mx-auto leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base text-slate-600 font-medium max-w-xl mx-auto leading-relaxed">
               Stop guessing with generic agency retainers. Get a custom, data-backed customer acquisition roadmap tailored to your profit margins.
             </p>
 

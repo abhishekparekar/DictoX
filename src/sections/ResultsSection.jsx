@@ -137,15 +137,18 @@ export default function ResultsSection({ onOpenConsultation }) {
         
         {/* Header & Subheading */}
         <AnimatedSection direction="up" className="text-center max-w-3xl mx-auto mb-6 sm:mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-black text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2 shadow-2xs">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0011a8] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2 shadow-2xs">
             RESULTS / CASE STUDIES ⭐
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-black leading-tight">
-            Real Campaigns. Real Results.
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-tight">
+            Real Campaigns.{' '}
+            <span className="bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent">
+              Real Results.
+            </span>
           </h2>
 
-          <p className="mt-2.5 text-xs sm:text-sm md:text-base text-slate-900 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-2.5 text-xs sm:text-sm md:text-base text-black font-medium max-w-2xl mx-auto leading-relaxed">
             Every case study represents verified performance data, transparent ad spend, and measurable customer acquisition.
           </p>
         </AnimatedSection>
@@ -197,10 +200,10 @@ export default function ResultsSection({ onOpenConsultation }) {
                   
                   {/* Campaign Objective */}
                   <div>
-                    <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                    <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-black block mb-1">
                       Campaign Objective
                     </span>
-                    <p className="text-xs sm:text-[13px] text-slate-700 font-medium leading-snug line-clamp-2">
+                    <p className="text-xs sm:text-[13px] text-black font-medium leading-snug line-clamp-2">
                       {item.objective}
                     </p>
                   </div>
@@ -210,17 +213,17 @@ export default function ResultsSection({ onOpenConsultation }) {
                     
                     {/* Metric 1: Ad Spend */}
                     <div className="p-1.5">
-                      <span className="text-[10px] text-slate-400 font-bold uppercase block leading-none mb-1">
+                      <span className="text-[10px] text-black font-bold uppercase block leading-none mb-1">
                         Ad Spend
                       </span>
-                      <span className="text-xs sm:text-sm font-extrabold text-slate-900 truncate block">
+                      <span className="text-xs sm:text-sm font-extrabold text-black truncate block">
                         {item.adSpend}
                       </span>
                     </div>
 
                     {/* Metric 2: Leads Generated */}
                     <div className="p-1.5 border-l border-slate-200 pl-2.5">
-                      <span className="text-[10px] text-slate-400 font-bold uppercase block leading-none mb-1">
+                      <span className="text-[10px] text-black font-bold uppercase block leading-none mb-1">
                         Leads Generated
                       </span>
                       <span className="text-xs sm:text-sm font-black text-[#0011a8] truncate block">
@@ -230,7 +233,7 @@ export default function ResultsSection({ onOpenConsultation }) {
 
                     {/* Metric 3: Cost Per Lead */}
                     <div className="p-1.5 border-t border-slate-200 pt-2">
-                      <span className="text-[10px] text-slate-400 font-bold uppercase block leading-none mb-1">
+                      <span className="text-[10px] text-black font-bold uppercase block leading-none mb-1">
                         Cost Per Lead
                       </span>
                       <span className="text-xs sm:text-sm font-black text-[#00a63e] truncate block">
@@ -240,10 +243,10 @@ export default function ResultsSection({ onOpenConsultation }) {
 
                     {/* Metric 4: Campaign Duration */}
                     <div className="p-1.5 border-t border-l border-slate-200 pt-2 pl-2.5">
-                      <span className="text-[10px] text-slate-400 font-bold uppercase block leading-none mb-1">
+                      <span className="text-[10px] text-black font-bold uppercase block leading-none mb-1">
                         Duration
                       </span>
-                      <span className="text-xs sm:text-sm font-bold text-slate-700 truncate block">
+                      <span className="text-xs sm:text-sm font-bold text-black truncate block">
                         {item.duration}
                       </span>
                     </div>
@@ -342,10 +345,10 @@ export default function ResultsSection({ onOpenConsultation }) {
               
               {/* Objective */}
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-black block mb-1">
                   Campaign Objective
                 </span>
-                <p className="text-xs sm:text-sm font-semibold text-slate-800 leading-relaxed">
+                <p className="text-xs sm:text-sm font-semibold text-black leading-relaxed">
                   {selectedCaseStudy.objective}
                 </p>
               </div>
@@ -353,20 +356,20 @@ export default function ResultsSection({ onOpenConsultation }) {
               {/* 4-Box Key Metrics Table */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">
                 <div className="p-2">
-                  <span className="text-[10px] font-bold uppercase text-slate-400 block mb-0.5">Ad Spend</span>
-                  <span className="text-xs sm:text-sm font-extrabold text-slate-900">{selectedCaseStudy.adSpend}</span>
+                  <span className="text-[10px] font-bold uppercase text-black block mb-0.5">Ad Spend</span>
+                  <span className="text-xs sm:text-sm font-extrabold text-black">{selectedCaseStudy.adSpend}</span>
                 </div>
                 <div className="p-2 border-l border-slate-200">
-                  <span className="text-[10px] font-bold uppercase text-slate-400 block mb-0.5">Leads</span>
+                  <span className="text-[10px] font-bold uppercase text-black block mb-0.5">Leads</span>
                   <span className="text-xs sm:text-sm font-black text-[#0011a8]">{selectedCaseStudy.leadsGenerated}</span>
                 </div>
                 <div className="p-2 border-t sm:border-t-0 sm:border-l border-slate-200">
-                  <span className="text-[10px] font-bold uppercase text-slate-400 block mb-0.5">Cost/Lead</span>
+                  <span className="text-[10px] font-bold uppercase text-black block mb-0.5">Cost/Lead</span>
                   <span className="text-xs sm:text-sm font-black text-[#00a63e]">{selectedCaseStudy.costPerLead}</span>
                 </div>
                 <div className="p-2 border-t sm:border-t-0 border-l border-slate-200">
-                  <span className="text-[10px] font-bold uppercase text-slate-400 block mb-0.5">Duration</span>
-                  <span className="text-xs sm:text-sm font-bold text-slate-700">{selectedCaseStudy.duration}</span>
+                  <span className="text-[10px] font-bold uppercase text-black block mb-0.5">Duration</span>
+                  <span className="text-xs sm:text-sm font-bold text-black">{selectedCaseStudy.duration}</span>
                 </div>
               </div>
 
@@ -388,7 +391,7 @@ export default function ResultsSection({ onOpenConsultation }) {
                     <Sparkles className="w-3.5 h-3.5 text-[#0011a8]" />
                     <span>Strategy Deployed</span>
                   </div>
-                  <p className="text-xs sm:text-[13px] text-slate-700 leading-relaxed">
+                  <p className="text-xs sm:text-[13px] text-black leading-relaxed">
                     {selectedCaseStudy.strategy}
                   </p>
                 </div>
@@ -398,7 +401,7 @@ export default function ResultsSection({ onOpenConsultation }) {
 
             {/* Modal Footer CTA */}
             <div className="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <span className="text-xs text-slate-500 font-medium">
+              <span className="text-xs text-black font-medium">
                 Want a custom performance plan for your brand?
               </span>
               <button

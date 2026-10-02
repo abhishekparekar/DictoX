@@ -5,17 +5,18 @@ import CounterAnimation from '../components/CounterAnimation';
 export default function TrustBar() {
   return (
     <section className="relative z-20 w-full bg-white border-y border-slate-200/90 shadow-[0_4px_20px_rgba(0,17,168,0.03)] py-3 sm:py-5">
-      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-3.5 sm:gap-5 lg:gap-8">
-          
+
           {/* Left Column: Certifications with Heading */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-1.5 sm:gap-2 shrink-0">
-            <span className="text-[10.5px] sm:text-xs font-bold text-slate-900 tracking-normal">
-              <span className="hidden sm:inline">Trusted Partnerships With Leading Advertising Platforms</span>
-              <span className="sm:hidden">Official Certified Partner</span>
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-1.5 sm:gap-2 shrink-0 w-full lg:w-auto">
+            
+            {/* Full heading — visible on all screen sizes, wraps naturally */}
+            <span className="text-[10.5px] sm:text-xs font-bold text-black tracking-normal leading-snug text-center lg:text-left px-2 sm:px-0 mb-2 sm:mb-0">
+              Trusted Partnerships With Leading Advertising Platforms
             </span>
 
-            <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-7">
+            <div className="flex items-center justify-center lg:justify-start gap-5 sm:gap-7">
               {/* Meta Business Partner Official Lockup */}
               <div className="flex items-center gap-2 group cursor-default">
                 <svg
@@ -29,7 +30,7 @@ export default function TrustBar() {
                   <span className="text-xs sm:text-base font-bold text-black tracking-tight">
                     Meta
                   </span>
-                  <span className="text-[9.5px] sm:text-[11px] font-bold text-slate-800 tracking-tight mt-0.5">
+                  <span className="text-[9.5px] sm:text-[11px] font-bold text-black tracking-tight mt-0.5">
                     Business Partner
                   </span>
                 </div>
@@ -38,7 +39,7 @@ export default function TrustBar() {
               {/* Google Partner Official Lockup */}
               <div className="flex items-center gap-2 group cursor-default">
                 <div className="relative flex items-center shrink-0 group-hover:scale-105 transition-transform">
-                  <svg className="w-4.5 h-7 sm:w-6 sm:h-9" viewBox="0 0 24 34" fill="none" aria-hidden="true">
+                  <svg className="w-5 h-7 sm:w-6 sm:h-9" viewBox="0 0 24 34" fill="none" aria-hidden="true">
                     <rect x="2" y="2" width="5.5" height="26" rx="2" fill="#EA4335" />
                     <rect x="9.5" y="4" width="5.5" height="22" rx="2" fill="#4285F4" />
                     <rect x="17" y="7" width="5.5" height="16" rx="2" fill="#FBBC05" />
@@ -49,7 +50,7 @@ export default function TrustBar() {
                   <span className="text-xs sm:text-base font-bold text-black tracking-tight">
                     Google
                   </span>
-                  <span className="text-[9.5px] sm:text-[11px] font-bold text-slate-800 tracking-tight mt-0.5">
+                  <span className="text-[9.5px] sm:text-[11px] font-bold text-black tracking-tight mt-0.5">
                     Partner
                   </span>
                 </div>
@@ -60,9 +61,9 @@ export default function TrustBar() {
           {/* Desktop Vertical Divider */}
           <div className="hidden lg:block h-10 w-px bg-slate-200" aria-hidden="true" />
 
-          {/* Right Column: 3 Metric Counters with Circular Dark Badges */}
+          {/* Right Column: 3 Metric Counters */}
           <div className="grid grid-cols-3 gap-2 sm:gap-6 md:gap-8 items-center w-full lg:w-auto border-t lg:border-t-0 border-slate-100 pt-2.5 sm:pt-3 lg:pt-0">
-            
+
             {/* Metric 1: Years Experience */}
             <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3 group">
               <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black text-white flex items-center justify-center shrink-0 shadow-xs border border-slate-800 group-hover:scale-105 transition-all">
@@ -72,7 +73,7 @@ export default function TrustBar() {
                 <div className="text-sm sm:text-lg md:text-xl font-black text-black tracking-tight leading-tight">
                   <CounterAnimation end={5} suffix="+" />
                 </div>
-                <span className="text-[10px] sm:text-xs text-slate-900 font-bold tracking-normal whitespace-nowrap">
+                <span className="text-[10px] sm:text-xs text-black font-bold tracking-normal whitespace-nowrap">
                   <span className="hidden sm:inline">Years Experience</span>
                   <span className="sm:hidden">Years Exp</span>
                 </span>
@@ -88,7 +89,7 @@ export default function TrustBar() {
                 <div className="text-sm sm:text-lg md:text-xl font-black text-black tracking-tight leading-tight">
                   <CounterAnimation end={500} suffix="+" />
                 </div>
-                <span className="text-[10px] sm:text-xs text-slate-900 font-bold tracking-normal whitespace-nowrap">
+                <span className="text-[10px] sm:text-xs text-black font-bold tracking-normal whitespace-nowrap">
                   Brands
                 </span>
               </div>
@@ -104,7 +105,7 @@ export default function TrustBar() {
                   <span className="hidden sm:inline">₹<CounterAnimation end={10} suffix="+ Crore" /></span>
                   <span className="sm:hidden">₹<CounterAnimation end={10} suffix="Cr+" /></span>
                 </div>
-                <span className="text-[10px] sm:text-xs text-slate-900 font-bold tracking-normal whitespace-nowrap">
+                <span className="text-[10px] sm:text-xs text-black font-bold tracking-normal whitespace-nowrap">
                   <span className="hidden sm:inline">Ad Spend Managed</span>
                   <span className="sm:hidden">Ad Spend</span>
                 </span>

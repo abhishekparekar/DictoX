@@ -14,7 +14,9 @@ import {
   query,
   orderBy,
   onSnapshot,
-  serverTimestamp 
+  serverTimestamp,
+  enableIndexedDbPersistence,
+  setLogLevel
 } from "firebase/firestore";
 
 // Your web app's Firebase configuration
@@ -35,6 +37,23 @@ export const app = initializeApp(firebaseConfig);
 // Initialize Firestore Database
 export const db = getFirestore(app);
 
+// Suppress noisy Firestore offline/connectivity warnings in console.
+// Only real errors will be shown. The "Could not reach Cloud Firestore backend"
+// warning is a normal informational log that fires when offline — not a real error.
+setLogLevel("error");
+
+// Enable offline persistence so the app works even without internet
+// (cached data is served from IndexedDB when offline)
+if (typeof window !== "undefined") {
+  enableIndexedDbPersistence(db).catch((err) => {
+    // "failed-precondition" = multiple tabs open (only one tab gets persistence)
+    // "unimplemented" = browser doesn't support IndexedDB (rare)
+    if (err.code !== "failed-precondition" && err.code !== "unimplemented") {
+      console.warn("Firestore offline persistence could not be enabled:", err.code);
+    }
+  });
+}
+
 // Safe browser analytics initialization
 export let analytics = null;
 if (typeof window !== "undefined") {
@@ -43,6 +62,15 @@ if (typeof window !== "undefined") {
       analytics = getAnalytics(app);
     }
   }).catch(() => {});
+}
+
+// ─── Helper: Race a Firestore promise against a fast timeout ──────────────────
+// Prevents the app from hanging 10s when offline. Returns null on timeout.
+function withTimeout(promise, ms = 3000) {
+  return Promise.race([
+    promise,
+    new Promise((resolve) => setTimeout(() => resolve(null), ms))
+  ]);
 }
 
 // Multi-tenant configuration specifically for DictoX: "dictox-web"
@@ -191,23 +219,18 @@ export async function saveTenantResult(resultData) {
 
 /**
  * Fetches dynamic results from tenant "dictox-web"
+ * Uses withTimeout to fail fast when offline (no 10s hang).
  */
 export async function fetchTenantResults() {
   try {
     const resultsCol = collection(db, "tenants", TENANT_ID, "results");
-    const snap = await getDocs(query(resultsCol, orderBy("createdAt", "desc")));
-    if (!snap.empty) {
+    const snap = await withTimeout(getDocs(query(resultsCol, orderBy("createdAt", "desc"))));
+    if (snap && !snap.empty) {
       return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
     }
     return [];
-  } catch (err) {
-    console.warn("fetchTenantResults fallback:", err);
-    try {
-      const snap = await getDocs(collection(db, "tenants", TENANT_ID, "results"));
-      return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
-    } catch (e) {
-      return [];
-    }
+  } catch {
+    return [];
   }
 }
 
@@ -246,23 +269,18 @@ export async function saveTenantBrand(brandData) {
 
 /**
  * Fetches dynamic brand logos from tenant "dictox-web"
+ * Uses withTimeout to fail fast when offline (no 10s hang).
  */
 export async function fetchTenantBrands() {
   try {
     const brandsCol = collection(db, "tenants", TENANT_ID, "brands");
-    const snap = await getDocs(query(brandsCol, orderBy("createdAt", "desc")));
-    if (!snap.empty) {
+    const snap = await withTimeout(getDocs(query(brandsCol, orderBy("createdAt", "desc"))));
+    if (snap && !snap.empty) {
       return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
     }
     return [];
-  } catch (err) {
-    console.warn("fetchTenantBrands fallback:", err);
-    try {
-      const snap = await getDocs(collection(db, "tenants", TENANT_ID, "brands"));
-      return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
-    } catch (e) {
-      return [];
-    }
+  } catch {
+    return [];
   }
 }
 

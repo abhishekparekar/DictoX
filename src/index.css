@@ -75,13 +75,13 @@
     @apply transition-all duration-300 hover:border-blue-200 hover:shadow-[0_12px_32px_rgba(0,17,168,0.08)] hover:-translate-y-0.5;
   }
 
-  /* Brand Heading Styles - Solid Proper Black */
+  /* DictoX Logo-Inspired Brand Gradient Text (Royal Blue to Vibrant Green) */
   .dictox-brand-gradient {
-    @apply text-black font-black;
+    @apply bg-gradient-to-r from-[#0011a8] via-[#1d4ed8] to-[#00a63e] bg-clip-text text-transparent font-black;
   }
 
   .adymize-title {
-    @apply text-black font-extrabold;
+    @apply bg-gradient-to-r from-[#0011a8] via-[#2563eb] to-[#00a63e] bg-clip-text text-transparent font-extrabold;
   }
 
   /* Floating section tab navigation */

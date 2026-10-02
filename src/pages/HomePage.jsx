@@ -11,7 +11,6 @@ import IndustriesSection from '../sections/IndustriesSection';
 import LogoWall from '../sections/LogoWall';
 import TestimonialsSection from '../sections/TestimonialsSection';
 import AboutFounderSection from '../sections/AboutFounderSection';
-import CourseSection from '../sections/CourseSection';
 import FAQSection from '../sections/FAQSection';
 import ContactSection from '../sections/ContactSection';
 
@@ -32,7 +31,6 @@ export default function HomePage({ onOpenConsultation }) {
       <LogoWall />
       <TestimonialsSection onOpenConsultation={onOpenConsultation} />
       <AboutFounderSection onOpenConsultation={onOpenConsultation} />
-      <CourseSection onOpenConsultation={onOpenConsultation} />
       <FAQSection onOpenConsultation={onOpenConsultation} />
       <ContactSection onOpenConsultation={onOpenConsultation} />
     </>
