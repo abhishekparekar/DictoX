@@ -64,7 +64,7 @@ if (typeof window !== "undefined") {
 
 // ─── Helper: Race a Firestore promise against a fast timeout ──────────────────
 // Prevents the app from hanging 10s when offline. Returns null on timeout.
-function withTimeout(promise, ms = 3000) {
+function withTimeout(promise, ms = 8000) {
   return Promise.race([
     promise,
     new Promise((resolve) => setTimeout(() => resolve(null), ms))
@@ -233,6 +233,20 @@ export async function fetchTenantResults() {
 }
 
 /**
+ * Updates an existing result/case study under tenant "dictox-web"
+ */
+export async function updateTenantResult(docId, data) {
+  try {
+    const docRef = doc(db, 'tenants', TENANT_ID, 'results', docId);
+    await updateDoc(docRef, { ...data, updatedAt: serverTimestamp() });
+    return true;
+  } catch (err) {
+    console.error('Error updating result:', err);
+    return false;
+  }
+}
+
+/**
  * Deletes a result
  */
 export async function deleteTenantResult(docId) {
@@ -308,6 +322,20 @@ export function subscribeTenantBrands(callback) {
 }
 
 /**
+ * Updates an existing brand under tenant "dictox-web"
+ */
+export async function updateTenantBrand(docId, data) {
+  try {
+    const docRef = doc(db, 'tenants', TENANT_ID, 'brands', docId);
+    await updateDoc(docRef, { ...data, updatedAt: serverTimestamp() });
+    return true;
+  } catch (err) {
+    console.error('Error updating brand:', err);
+    return false;
+  }
+}
+
+/**
  * Deletes a brand logo
  */
 export async function deleteTenantBrand(docId) {
@@ -326,7 +354,7 @@ export async function deleteTenantBrand(docId) {
 // =========================================================================
 
 export const DEFAULT_SETTINGS = {
-  logoUrl: '/images/logo1.png',
+  logoUrl: '/images/logo2.png',
   phone1: '+91 7796407424',
   phone2: '+91 9834036821',
   whatsapp: '917796407424',

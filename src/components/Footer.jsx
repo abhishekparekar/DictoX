@@ -9,7 +9,6 @@ import { fetchTenantSettings, DEFAULT_SETTINGS } from '../firebase';
 
 export default function Footer({ onOpenConsultation }) {
   const [settings, setSettings] = useState(DEFAULT_SETTINGS);
-  const [darkBgLogo, setDarkBgLogo] = useState(null);
   const [legalModal, setLegalModal] = useState(null);
 
   useEffect(() => {
@@ -23,32 +22,6 @@ export default function Footer({ onOpenConsultation }) {
     }
     loadSettings();
   }, []);
-
-  useEffect(() => {
-    const rawLogo = settings?.logoUrl || '/images/logo1.png';
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
-    img.src = rawLogo;
-    img.onload = () => {
-      try {
-        const canvas = document.createElement('canvas');
-        canvas.width = img.naturalWidth || img.width;
-        canvas.height = img.naturalHeight || img.height;
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0);
-        const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const d = imgData.data;
-        for (let i = 0; i < d.length; i += 4) {
-          if (d[i + 3] > 15) {
-            const isGreen = d[i + 1] > 105 && d[i + 1] > d[i] * 1.15 && d[i + 1] > d[i + 2] * 1.05;
-            if (!isGreen) { d[i] = 255; d[i + 1] = 255; d[i + 2] = 255; }
-          }
-        }
-        ctx.putImageData(imgData, 0, 0);
-        setDarkBgLogo(canvas.toDataURL('image/png'));
-      } catch { /* fallback */ }
-    };
-  }, [settings?.logoUrl]);
 
   const services = [
     { name: 'Meta Ads', path: '/services?service=meta-ads' },
@@ -81,10 +54,10 @@ export default function Footer({ onOpenConsultation }) {
           <div className="col-span-2 sm:col-span-2 lg:col-span-4 space-y-4">
             <Link to="/" className="inline-block focus:outline-none group">
               <img
-                src={darkBgLogo || settings?.logoUrl || '/images/logo1.png'}
+                src="/images/logo2_dark.png"
                 alt="DictoX Marketing"
-                className={`h-9 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain transition-transform duration-200 group-hover:scale-105 ${!darkBgLogo ? 'filter brightness-0 invert' : ''}`}
-                onError={(e) => { e.target.src = '/images/logo1.png'; }}
+                className="footer-logo transition-transform duration-200 group-hover:scale-105"
+                onError={(e) => { e.target.src = '/images/logo2.png'; }}
               />
             </Link>
 

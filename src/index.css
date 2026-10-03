@@ -206,3 +206,48 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ─── Navbar Logo: Ensure full logo visibility on all devices ─── */
+/* On extra small phones (< 380px), keep logo at minimum visible size */
+@media (max-width: 379px) {
+  .navbar-logo {
+    height: 32px !important;
+    max-width: 130px !important;
+  }
+  /* Make "Chat Now" button slightly smaller to give logo more room */
+  .navbar-chat-btn-mobile {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    font-size: 9px !important;
+  }
+}
+
+/* Sidebar logo: Full visibility on white background */
+.sidebar-logo {
+  height: 36px;
+  width: auto;
+  max-width: 175px;
+  object-fit: contain;
+}
+@media (min-width: 640px) {
+  .sidebar-logo {
+    height: 44px;
+    max-width: 200px;
+  }
+}
+
+/* Footer logo: Properly displayed on dark background */
+.footer-logo {
+  height: 40px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  /* Ensure the logo is bright on dark backgrounds */
+  filter: brightness(1.05);
+}
+@media (min-width: 640px) {
+  .footer-logo {
+    height: 52px;
+    max-width: 240px;
+  }
+}

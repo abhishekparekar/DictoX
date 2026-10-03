@@ -25,7 +25,7 @@ export default function Navbar({ onOpenConsultation }) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [logoUrl, setLogoUrl] = useState('/images/logo1.png');
+  const [logoUrl, setLogoUrl] = useState('/images/logo2.png');
   const location = useLocation();
 
   // Load dynamic tenant logo if available
@@ -125,13 +125,13 @@ export default function Navbar({ onOpenConsultation }) {
         }`}>
           
           {/* Brand Official Transparent Big Logo */}
-          <Link to="/" className="flex items-center focus:outline-none shrink-0 group py-0.5">
+          <Link to="/" className="flex items-center focus:outline-none shrink-0 group py-1">
             <img
-              src={logoUrl || '/images/logo1.png'}
+              src={logoUrl || '/images/logo2.png'}
               alt="DictoX Marketing - Performance Marketing Agency"
-              className="h-9 sm:h-11 md:h-12 w-auto max-w-[155px] sm:max-w-[195px] md:max-w-[225px] object-contain transition-transform duration-200 group-hover:scale-[1.03]"
+              className="navbar-logo h-9 sm:h-11 md:h-12 lg:h-13 w-auto max-w-[150px] sm:max-w-[200px] md:max-w-[230px] object-contain transition-transform duration-200 group-hover:scale-[1.03]"
               onError={(e) => {
-                e.target.src = '/images/logo1.png';
+                e.target.src = '/images/logo2.png';
               }}
             />
           </Link>
@@ -181,7 +181,7 @@ export default function Navbar({ onOpenConsultation }) {
           <div className="flex lg:hidden items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               onClick={onOpenConsultation}
-              className="bg-[#090d16] hover:bg-[#0011a8] text-white text-[11px] sm:text-xs font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-xs cursor-pointer active:scale-95 transition-all"
+              className="navbar-chat-btn-mobile bg-[#090d16] hover:bg-[#0011a8] text-white text-[10px] sm:text-xs font-bold px-2.5 sm:px-4 py-1.5 rounded-full shadow-xs cursor-pointer active:scale-95 transition-all whitespace-nowrap"
             >
               <span>Chat Now</span>
             </button>
@@ -189,7 +189,7 @@ export default function Navbar({ onOpenConsultation }) {
             {/* Hamburger Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="p-1.5 sm:p-2 rounded-xl bg-slate-50 text-black hover:text-black hover:bg-slate-100 active:scale-95 transition-all focus:outline-none cursor-pointer border border-slate-200"
+              className="p-1.5 sm:p-2 rounded-xl bg-slate-50 text-black hover:text-black hover:bg-slate-100 active:scale-95 transition-all focus:outline-none cursor-pointer border border-slate-200 shrink-0"
               aria-label="Open mobile navigation sidebar"
             >
               <Menu className="w-5 h-5" />
@@ -230,11 +230,11 @@ export default function Navbar({ onOpenConsultation }) {
               <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/70 shrink-0">
                 <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2">
                   <img
-                    src={logoUrl || '/images/logo1.png'}
+                    src={logoUrl || '/images/logo2.png'}
                     alt="DictoX Marketing Logo"
-                    className="h-8 sm:h-9 w-auto max-w-[160px] object-contain"
+                    className="sidebar-logo"
                     onError={(e) => {
-                      e.target.src = '/images/logo1.png';
+                      e.target.src = '/images/logo2.png';
                     }}
                   />
                 </Link>

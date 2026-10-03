@@ -33,7 +33,7 @@ export default function ContactSection({ onOpenConsultation }) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [errors, setErrors] = useState({});
 
-  const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=Office+No.+603+6th+Floor+Navale+Icon+Bengaluru+Mumbai+Hwy+Near+Navale+Bridge+Wadgaon+Budruk+Narhe+Pune+Maharashtra+411041';
+  const googleMapsUrl = 'https://www.google.com/maps/place/Dictoxmarketing+Agency/@18.4599824,73.8223866,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc29594a13408cf:0x23940b71dd371765!8m2!3d18.4599824!4d73.8223866!16s%2Fg%2F11n55wblq4';
 
   const validate = () => {
     const errs = {};
@@ -428,8 +428,8 @@ export default function ContactSection({ onOpenConsultation }) {
 
               <div className="w-full h-36 sm:h-44 rounded-xl overflow-hidden border border-slate-200 bg-slate-100">
                 <iframe
-                  title="DictoX Marketing Office Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.582845661649!2d73.8183!3d18.4485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2953da5049db3%3A0xc3952f4a5fef4aa!2sNavale%20Icon!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                  title="DictoX Marketing Agency Location - Narhe, Pune"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.6!2d73.8201!3d18.4600!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc29594a13408cf%3A0x23940b71dd371765!2sDictoxmarketing%20Agency!5e0!3m2!1sen!2sin!4v1727944800000!5m2!1sen!2sin"
                   className="w-full h-full border-0"
                   allowFullScreen=""
                   loading="lazy"
